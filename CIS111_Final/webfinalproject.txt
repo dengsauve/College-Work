@@ -1,0 +1,90 @@
+#Final Project
+
+#ZOMFG!!! CREATIVITY!!! But use descriptor tags, though. Really.
+#HOME SCREEN
+#Header Section <header>
+#	menu items in header
+#	list formated linear
+#		<nav>home | resume | projects | contact me</nav>
+#</header>
+	
+<main>
+Body Section
+<section> </section> Xn
+
+image of self
+caption image w/your name
+<figure figcaption?>
+welcome message
+
+
+</main>
+
+<footer>
+Footer Section
+</footer>
+
+Remember <article> tags
+
+#####################################
+
+RESUME PAGE
+
+Keep same header/footer design between pages
+
+make sure to style header link to indicate what page you're on
+
+Skills: - Table of skills that you know
+
+Work Experience: -List of experience
+
+Education: -List of education
+
+Awards: -List of Awards
+
+Ideas: Link to school / work / programming language home page
+
+######################################
+
+Projects Page
+
+List classes that have been taken
+ex. CIS111 -- HTML/CSS 1
+	-description
+    CIS112 -- Photoshop
+	-description
+
+
+Need individual page for classwork (I'm thinking more hidden/unhidden)
+
+For each weekly quiz, take a screenshot (appears on left) h3 objectives learned
+	list of objectives (all text to right)
+	if clicked on assignment image or title, open assignmnent in new tab
+
+Do similar work for other classes
+
+######################################
+
+Contact Me
+
+Basic h1 contact me
+
+form to fill out
+	textbox for firstname lastname
+	email
+	dropdown for services needed or info
+	textarea for description
+	submit button
+
+
+#######################################
+
+Follow up QA
+
+Linking
+
+#######################################
+
+General Ideas
+
+Thinking of doing a inland northwest forest background, nice transparent grayblue divs overlay.
