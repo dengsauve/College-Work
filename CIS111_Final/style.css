@@ -1,3 +1,8 @@
+ul a{
+  color: black;
+  text-decoration: none;
+}
+
 article div{
   font-family: 'Poiret One',sans-serif;
   display: inline-block;
@@ -6,6 +11,7 @@ article div{
 }
 
 body{
+  background-color: #fffbc3;
   height: 100%;
   margin: 0px;
 }
@@ -78,7 +84,7 @@ img.profile:hover{
 }
 
 li.active{
-  background-color: #7DF9FF;
+  background-color: #ffeb81;
   border-radius: 5px;
 }
 
@@ -94,10 +100,11 @@ nav ul li{
   list-style: none;
   display: inline;
   transition-duration: .5s;
+  border-radius: 5px;
 }
 
 nav ul li:hover{
-  background-color: #7DF9FF;
+  background-color: #ffeb81;
   border-radius: 5px;
   transition-duration: .5s;
 }
