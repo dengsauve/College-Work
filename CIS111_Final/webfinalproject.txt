@@ -28,19 +28,19 @@ Remember <article> tags
 
 #####################################
 
-RESUME PAGE
+#RESUME PAGE
+#
+#Keep same header/footer design between pages
+#
+#make sure to style header link to indicate what page you're on
 
-Keep same header/footer design between pages
+#Skills: - Table of skills that you know
 
-make sure to style header link to indicate what page you're on
+#Work Experience: -List of experience
 
-Skills: - Table of skills that you know
+#Education: -List of education
 
-Work Experience: -List of experience
-
-Education: -List of education
-
-Awards: -List of Awards
+#Awards: -List of Awards
 
 Ideas: Link to school / work / programming language home page
 
@@ -65,16 +65,16 @@ Do similar work for other classes
 
 ######################################
 
-Contact Me
+#Contact Me
 
-Basic h1 contact me
+#Basic h1 contact me
 
-form to fill out
-	textbox for firstname lastname
-	email
-	dropdown for services needed or info
-	textarea for description
-	submit button
+#form to fill out
+#	textbox for firstname lastname
+#	email
+#	dropdown for services needed or info
+#	textarea for description
+#	submit button
 
 
 #######################################
