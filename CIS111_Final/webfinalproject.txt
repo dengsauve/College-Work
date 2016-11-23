@@ -7,14 +7,14 @@
 #	list formated linear
 #		<nav>home | resume | projects | contact me</nav>
 #</header>
-	
-<main>
-Body Section
-<section> </section> Xn
 
-image of self
-caption image w/your name
-<figure figcaption?>
+#<main>
+#Body Section
+#<section> </section> Xn
+
+#image of self
+#caption image w/your name
+#<figure figcaption?>
 welcome message
 
 
