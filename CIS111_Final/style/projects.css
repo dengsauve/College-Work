@@ -1,0 +1,14 @@
+a.projects{
+  text-decoration: none;
+  color: black;
+}
+
+h2.projects{
+  font-family: 'Poiret One', sans-serif;
+  text-decoration: underline;
+}
+
+p.projects{
+  font-family: 'Poiret One';
+  font-size: 18px;
+}

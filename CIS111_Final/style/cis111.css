@@ -1,0 +1,15 @@
+table.cis111 tr td{
+  padding: 10px;
+}
+
+table.cis111 tr td img{
+  border-radius: 10px;
+  width: 600px;
+  box-shadow: 0 0 10px #000000;
+}
+
+table.cis111 tr td{
+  vertical-align: top;
+  font-family: 'Poiret One', sans-serif;
+  font-weight: bold;
+}

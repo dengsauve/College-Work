@@ -1,0 +1,30 @@
+table.skills tr td{
+  text-align: center;
+  padding: 5px 30px 5px 30px;
+}
+
+h2.skills, h2.experience, h2.education, h2.awards{
+  text-align: center;
+  font-family: 'Poiret One', sans-serif;
+  transition-duration: .5s;
+}
+
+div.list-wrapper{
+  text-align: left;
+  display: inline-block;
+  margin: 0px auto 0px auto;
+}
+
+h2.experience:hover, h2.education:hover, h2.awards:hover{
+  margin-top: 0px;
+  padding-bottom: 19.9167px;
+  transition-duration: .5s;
+}
+
+ul.experience, ul.education, ul.awards{
+  line-height: 30px;
+  padding-left: 160px;
+  font-family: sans-serif;
+  display: inline-block;
+  margin: 0px auto 0px auto;
+}

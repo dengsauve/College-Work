@@ -1,0 +1,41 @@
+div.landing{
+  max-width: 350px;
+  text-align: left;
+}
+
+div.landing h3{
+  margin: 0px;
+}
+
+h3.landing{
+  padding-left: 10px;
+  transition-duration: .5s;
+}
+
+h3.landing:hover{
+  padding-left: 25px;
+  transition-duration: .5s;
+}
+
+img.profile{
+  height: 300px;
+  display: inline-block;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px black;
+  transition-duration: 2s;
+}
+
+img.profile:hover{
+  box-shadow: 3px 3px 10px red;
+  transition-duration: 2s;
+}
+
+p.landing{
+  padding-left: 10px;
+  transition-duration: .5s;
+}
+
+p.landing:hover{
+  padding-left: 25px;
+  transition-duration: .5s;
+}
