@@ -3,6 +3,11 @@ ul a{
   text-decoration: none;
 }
 
+a.projects{
+  text-decoration: none;
+  color: black;
+}
+
 article div{
   font-family: 'Poiret One',sans-serif;
   display: inline-block;
@@ -83,6 +88,11 @@ h2.experience:hover, h2.education:hover, h2.awards:hover{
   transition-duration: .5s;
 }
 
+h2.projects{
+  font-family: 'Poiret One', sans-serif;
+  text-decoration: underline;
+}
+
 header div h1, nav ul{
   text-align: center;
   padding: 0px;
@@ -105,6 +115,22 @@ img.profile{
 img.profile:hover{
   box-shadow: 3px 3px 10px red;
   transition-duration: 2s;
+}
+
+table.cis111 tr td{
+  padding: 10px;
+}
+
+table.cis111 tr td img{
+  border-radius: 10px;
+  width: 600px;
+  box-shadow: 0 0 10px #000000;
+}
+
+table.cis111 tr td{
+  vertical-align: top;
+  font-family: 'Poiret One', sans-serif;
+  font-weight: bold;
 }
 
 input, textarea{
@@ -145,6 +171,11 @@ p.landing{
 p.landing:hover{
   padding-left: 25px;
   transition-duration: .5s;
+}
+
+p.projects{
+  font-family: 'Poiret One';
+  font-size: 18px;
 }
 
 table{
