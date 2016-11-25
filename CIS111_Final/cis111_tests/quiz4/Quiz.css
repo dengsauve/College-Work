@@ -1,0 +1,25 @@
+body{
+	background-color: #cccccc;
+}
+h1{
+	color: green;
+}
+h2{
+	color: blue;
+	font-size: 24px;
+	border-bottom: 5px solid gray;
+}
+ul li{
+	font-size: 18px;
+	text-decoration: underline;
+}
+ul li:first-child{
+	background-color: green;
+}
+ol li{
+	font-size: 24px;
+	font-weight: bold;
+}
+.red-text{
+	color: red;
+}
