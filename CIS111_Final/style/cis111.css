@@ -1,10 +1,19 @@
+table.cis111{
+  border-collapse: separate;
+  border-spacing: 0px 25px;
+}
+
 table.cis111 tr td{
   padding: 10px;
 }
 
+table.cis111 tr td:first-child{
+  border-right: 2px solid black;
+}
+
 table.cis111 tr td img{
   border-radius: 10px;
-  width: 600px;
+  width: 350px;
   box-shadow: 0 0 10px #000000;
 }
 
@@ -12,4 +21,10 @@ table.cis111 tr td{
   vertical-align: top;
   font-family: 'Poiret One', sans-serif;
   font-weight: bold;
+}
+
+div.table-wrap{
+  width: 800px;
+  display: block;
+  margin: 0px auto 0px auto;
 }
