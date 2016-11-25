@@ -133,6 +133,21 @@ table.cis111 tr td{
   font-weight: bold;
 }
 
+table.cis112 tr td{
+  text-align: center;
+  padding: 10px;
+}
+
+table.cis112 tr td img{
+  border-radius: 10px;
+  height: 400px;
+  box-shadow: 0 0 10px #000000;
+}
+
+table.cis112 tr td img:hover{
+  animation: spin;
+}
+
 input, textarea{
   display: block;
 }
