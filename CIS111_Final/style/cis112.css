@@ -6,7 +6,7 @@ table.cis112 tr td{
 table.cis112 tr td img{
   border-radius: 10px;
   height: 400px;
-  box-shadow: 0 0 10px #000000;
+  box-shadow: 2px 2px 7px #000000;
 }
 
 table.cis112 tr td img:hover{
