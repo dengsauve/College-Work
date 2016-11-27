@@ -13,7 +13,11 @@ article div{
 body{
   background-color: #fffbc3;
   min-height: 100%;
+  min-width: 532px;
   margin: 0px;
+  /* Testing new Styles */
+  background-image: url("images/body-bg.jpg");
+  background-attachment: fixed;
 }
 
 figcaption{
@@ -52,12 +56,20 @@ header h1{
 }
 
 li.active{
-  background-color: #ffeb81;
+  background-color: rgba(54, 212, 222, .8);
   border-radius: 5px;
 }
 
-main div{
+main div.main-wrapper{
+  display: block;
+  width: 50%;
+  min-width: 530px;
+  margin: 0px auto 5px auto;
+  padding: 5px 15px 5px 15px;
   text-align: center;
+  background-color: rgba(54, 212, 222, .8);
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px grey;
 }
 
 nav ul li{
@@ -72,7 +84,7 @@ nav ul li{
 }
 
 nav ul li:hover{
-  background-color: #ffeb81;
+  background-color: rgba(54, 212, 222, .8);
   border-radius: 5px;
   transition-duration: .5s;
 }
