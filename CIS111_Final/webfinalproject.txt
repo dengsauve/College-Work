@@ -5,7 +5,7 @@
 #Header Section <header>
 #	menu items in header
 #	list formated linear
-#		<nav>home | resume | projects | contact me</nav>
+#		<nav>home | resume | projects | Contact</nav>
 #</header>
 
 #<main>
@@ -65,9 +65,9 @@ Do similar work for other classes
 
 ######################################
 
-#Contact Me
+#Contact
 
-#Basic h1 contact me
+#Basic h1 Contact
 
 #form to fill out
 #	textbox for firstname lastname

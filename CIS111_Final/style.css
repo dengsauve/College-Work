@@ -5,6 +5,8 @@ ul a{
 
 article div{
   font-family: 'Poiret One',sans-serif;
+  font-size: 18px;
+  font-weight: bold;
   display: inline-block;
   height: auto;
   vertical-align: top;
@@ -58,7 +60,7 @@ header h1{
 }
 
 li.active{
-  background-color: rgba(54, 212, 222, .8);
+  background-color: rgba(114, 170, 173, 0.6);
   border-radius: 5px;
 }
 
@@ -69,7 +71,7 @@ main div.main-wrapper{
   margin: 0px auto 5px auto;
   padding: 5px 15px 5px 15px;
   text-align: center;
-  background-color: rgba(54, 212, 222, .8);
+  background-color: rgba(114, 170, 173, 0.8);
   border-radius: 10px;
   box-shadow: 5px 5px 15px grey;
 }
@@ -81,14 +83,14 @@ nav ul li{
   font-size: 24px;
   list-style: none;
   display: inline;
-  transition-duration: .5s;
+  transition-duration: .25s;
   border-radius: 5px;
 }
 
 nav ul li:hover{
-  background-color: rgba(54, 212, 222, .8);
+  background-color: rgba(114, 170, 173, 0.4);
   border-radius: 5px;
-  transition-duration: .5s;
+  transition-duration: .25s;
 }
 
 table{

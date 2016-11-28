@@ -3,7 +3,7 @@ article{
 }
 
 div.landing{
-  max-width: 350px;
+  max-width: 450px;
   text-align: left;
 }
 
@@ -15,8 +15,10 @@ div.main-wrapper{
 }
 
 h3.landing{
+  font-size: 22px;
   padding-left: 10px;
   transition-duration: .5s;
+  border-bottom: 1px solid black;
 }
 
 h3.landing:hover{

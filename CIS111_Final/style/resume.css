@@ -1,12 +1,14 @@
 table.skills tr td{
   text-align: center;
   padding: 5px 30px 5px 30px;
+  font-size: 20px;
 }
 
 h2.skills, h2.experience, h2.education, h2.awards{
   text-align: center;
   font-family: 'Poiret One', sans-serif;
   transition-duration: .5s;
+  border-bottom: 1px solid black;
 }
 
 div.list-wrapper{
@@ -24,5 +26,6 @@ h2.experience:hover, h2.education:hover, h2.awards:hover{
 ul.experience, ul.education, ul.awards{
   line-height: 30px;
   font-family: sans-serif;
+  font-size: 18px;
   margin: 0px auto 0px auto;
 }
