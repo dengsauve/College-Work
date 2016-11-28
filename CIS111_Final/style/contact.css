@@ -24,12 +24,21 @@ form.contact input, form.contact textarea{
 }
 
 form.contact button{
+  margin: 0px 0px 0px 0px;
+  box-shadow: 2px 2px 5px black;
+  transition-duration: .1s;
   border: 2px solid grey;
   border-radius: 5px;
   font-size: 16px;
   font-weight: 500;
   padding: 5px;
   background-color: rgba(114, 170, 173, 0.5);
+}
+
+form.contact button:hover{
+  margin: -1px 1px 1px -1px;
+  box-shadow: 3px 3px 3px black;
+  transition-duration: .1s;
 }
 
 table.social tr td a img{
@@ -40,4 +49,8 @@ textarea{
   height: 150px;
   width: 500px;
   resize: none;
+}
+
+textarea:focus, form.contact input:focus{
+  box-shadow: inset 0px 0px 5px grey;
 }
