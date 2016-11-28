@@ -11,8 +11,8 @@ h2.skills, h2.experience, h2.education, h2.awards{
 
 div.list-wrapper{
   text-align: left;
-  display: inline-block;
-  margin: 0px auto 0px auto;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
 }
 
 h2.experience:hover, h2.education:hover, h2.awards:hover{
@@ -23,8 +23,6 @@ h2.experience:hover, h2.education:hover, h2.awards:hover{
 
 ul.experience, ul.education, ul.awards{
   line-height: 30px;
-  padding-left: 160px;
   font-family: sans-serif;
-  display: inline-block;
   margin: 0px auto 0px auto;
 }

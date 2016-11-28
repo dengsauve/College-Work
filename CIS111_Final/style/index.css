@@ -1,3 +1,7 @@
+article{
+  padding-top: 30px;
+}
+
 div.landing{
   max-width: 350px;
   text-align: left;
@@ -5,6 +9,9 @@ div.landing{
 
 div.landing h3{
   margin: 0px;
+}
+
+div.main-wrapper{
 }
 
 h3.landing{

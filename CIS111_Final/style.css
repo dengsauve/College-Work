@@ -18,6 +18,8 @@ body{
   /* Testing new Styles */
   background-image: url("images/body-bg.jpg");
   background-attachment: fixed;
+  overflow-y: scroll;
+  /*Setting overflow-y always visible, would cause wierd bump switching between pages.*/
 }
 
 figcaption{
