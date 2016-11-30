@@ -1,18 +1,11 @@
-article{
-  padding-top: 30px;
-}
+article{padding-top: 30px;}
 
 div.landing{
   max-width: 450px;
   text-align: left;
 }
 
-div.landing h3{
-  margin: 0px;
-}
-
-div.main-wrapper{
-}
+div.landing h3{margin: 0px;}
 
 h3.landing{
   font-size: 22px;

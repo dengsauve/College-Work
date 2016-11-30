@@ -9,6 +9,4 @@ table.cis112 tr td img{
   box-shadow: 2px 2px 7px #000000;
 }
 
-table.cis112 tr td img:hover{
-  animation: spin;
-}
+table.cis112 tr td img:hover{animation: spin;}

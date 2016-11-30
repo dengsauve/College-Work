@@ -1,3 +1,5 @@
+!!!! make sure to edit contact.css due to no button anymore
+
 #Final Project
 
 #ZOMFG!!! CREATIVITY!!! But use descriptor tags, though. Really.

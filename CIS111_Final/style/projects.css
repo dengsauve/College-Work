@@ -1,6 +1,7 @@
 a.projects{
   text-decoration: none;
   color: black;
+  background-color: inherit;
 }
 
 h2.projects{

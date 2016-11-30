@@ -3,13 +3,9 @@ table.cis111{
   border-spacing: 0px 25px;
 }
 
-table.cis111 tr td{
-  padding: 10px;
-}
+table.cis111 tr td{padding: 10px;}
 
-table.cis111 tr td:first-child{
-  border-right: 2px solid black;
-}
+table.cis111 tr td:first-child{border-right: 2px solid black;}
 
 table.cis111 tr td img{
   border-radius: 10px;
