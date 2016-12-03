@@ -5,11 +5,12 @@ a.projects{
 }
 
 h2.projects{
-  font-family: 'Poiret One', sans-serif;
+  font-family: 'Poiret One',
+  sans-serif;
   text-decoration: underline;
 }
 
 p.projects{
-  font-family: sans-serif, 'Poiret One';
+  font-family: sans-serif;
   font-size: 18px;
 }

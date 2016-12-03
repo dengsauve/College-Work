@@ -1,3 +1,7 @@
+Notes From Watching Bret's Last Video:
+header main and footer are just wrappers
+
+
 !!!! make sure to edit contact.css due to no button anymore
 
 #Final Project
