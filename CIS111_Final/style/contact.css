@@ -10,7 +10,7 @@ form.contact{
   text-align: left;
 }
 
-form.contact input, form.contact textarea{
+form.contact input, form.contact textarea, form.contact select{
   display: block;
   border: 1px solid grey;
   border-radius: 5px;
@@ -19,9 +19,11 @@ form.contact input, form.contact textarea{
   font-family: sans-serif;
   font-size: 16px;
   font-weight: normal;
-  color: black;
+  color: #333333;
   background-color: rgba(114, 170, 173, 0.5);
 }
+
+form.contact select{width: 232px;}
 
 table.social tr td a img{height: 50px;}
 
@@ -31,4 +33,4 @@ textarea{
   resize: none;
 }
 
-textarea:focus, form.contact input:focus{box-shadow: inset 0px 0px 5px grey;}
+textarea:focus, form.contact input:focus, form.contact select:focus{box-shadow: inset 0px 0px 5px grey;}
