@@ -1,0 +1,39 @@
+body{
+	font-size: 16px;
+}
+
+header{
+	background-color: skyblue;
+}
+
+main{
+	background-color: lightblue;
+}
+
+footer{
+	background-color: skyblue;
+	color: #222;
+	text-align: center;
+}
+
+p.snippet{
+	text-align: justify;
+}
+
+iframe{
+	border-radius: 10px;
+}
+
+.portfolio img{
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+}
+
+.portfolio div{
+	padding: 15px;
+}
+
+.ornament h2{
+	text-align: center;
+}
