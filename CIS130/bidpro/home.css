@@ -3,6 +3,9 @@ main{
 }
 
 header{
-    background-color: red;
+
 }
 
+.navbar-default{
+    background-color: cornflowerblue;
+}
