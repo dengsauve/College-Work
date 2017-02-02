@@ -1,0 +1,15 @@
+Enter Employee's Name: Dennis Sauve
+Enter number of hours worked in a week: 32
+Enter hourly pay rate: 11
+Enter federal tax withholding rate: .17
+Enter state tax withholding rate: .01
+
+Employee Name: Dennis Sauve
+Hours Worked: 32
+Pay Rate: $11/hour
+Gross Pay: $352.0
+Deductions:
+  Federal Withholding (17.0%): $59.84
+  State Withholding (1.0%): $3.52
+  Total Deduction:  $63.36
+Net Pay:  $288.64
