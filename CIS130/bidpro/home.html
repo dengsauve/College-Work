@@ -13,14 +13,28 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a alt="BidPro Logo" class="">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                        <a class="navbar-brand">
                             <img alt="BidPro Logo" src="images/BidProLogo.gif">
                         </a>
                     </div>
+                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                          <li><a href="#">American Airlines</a></li>
+                          <li><a href="#">Alaska Airlines</a></li>
+                          <li><a href="#">Frontier Airlines</a></li>
+                          <li><a href="#">UPS</a></li>
+                        </ul>
+                      </div>
                 </div>
             </nav>
         </header>
-        
+
         <main class="container">
             <section class="well">
                 <div class="row">
@@ -33,7 +47,7 @@
                         <p class="text-muted">
                             Version
                         </p>
-                    </article>             
+                    </article>
                 </div>
             </section>
             <section class="well">
@@ -75,11 +89,12 @@
                 </div>
             </section>
         </main>
-    
+
         <footer class="container-fluid text-center">
             <hr />
             Copyright &copy; 1993-2017 Exceptional Design Enterprises
         </footer>
-    
+      <script src='js/jquery-3.1.1.min.js'></script>
+      <script src='js/bootstrap.min.js'></script>
     </body>
 </html>

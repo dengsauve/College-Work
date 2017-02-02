@@ -7,5 +7,12 @@ header{
 }
 
 .navbar-default{
-    background-color: cornflowerblue;
+    background-color: #95B4D0;
+    background: linear-gradient(#8FAECB, #95B4D0);
+    color: currentColor;
+}
+
+.navbar-brand{
+  height: 100%;
+  padding: 0px;
 }
