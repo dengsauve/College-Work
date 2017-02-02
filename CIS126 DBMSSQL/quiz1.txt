@@ -32,10 +32,10 @@ select TOP(1) PartNo, Description, Price
 	order by Price desc
 
 6.
-select *
-	into vwTableErrors
-	from Products
-	where Description is null
+create view vwTableErrors
+    as select *
+    from Products
+    where Description is null
 
 7.
 select distinct Description
