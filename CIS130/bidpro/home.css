@@ -10,6 +10,10 @@ ul.nav.navbar-nav.navbar-right li a{
   color: white;
 }
 
+ul.nav.navbar-nav.navbar-right li a:hover{
+  color: black;
+}
+
 .navbar-default{
     background-color: #95B4D0;
     background: linear-gradient(#8FAECB, #95B4D0);
