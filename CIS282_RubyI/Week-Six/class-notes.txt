@@ -9,7 +9,7 @@ to the fact that bad things might happen.
 r   read-only           Starts at the beginning of the file
 r+  read-write          Starts at the beginning of the file
 w   Write               Truncates existing file to 0 length
-w+  Write               
+w+  Write
 a   Write Only
 a+  Read-Write
 b   Binary File Mode    Windows silly way of reading data
