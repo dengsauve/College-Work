@@ -9,7 +9,8 @@
 #
 ############################################################
 
-menu = 'Welcome User
+menu = 'Inventory Control System
+
   1. View all Products
   2. Add a Product
   3. Remove a Product
@@ -22,14 +23,23 @@ menu = 'Welcome User
 '
 
 def view_products (inventory)
-
+  puts "\n"+'Item'.ljust(6) + 'Description'.ljust(30) + 'Price'.rjust(9)
+  puts '----'.ljust(6) + ('-'*28).ljust(30) + '---------'.ljust(9)
+  inventory.each { |i| puts i[0].to_s.ljust(6) + i[1][0].ljust(30) + '$' + (i[1][1].to_s).rjust(8)}
+  puts
 end
 
 def add_product (inventory)
+  puts "\nNew Product Entry\n\n"
   new_num = rand(100..999)
   while inventory.has_key?(new_num)
     new_num = rand(100..999)
   end
+  print 'Product Description: '
+  product = gets.chomp
+  print 'Product Price: $'
+  price = gets.chomp.to_f
+  puts new_num.to_s + ' ' + product + ' ' + price.to_s
 end
 
 def remove_product (inventory)
