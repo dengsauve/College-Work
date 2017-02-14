@@ -19,7 +19,8 @@ menu = 'Inventory Control System
   6. View Lowest Priced Product
   7. View Sum of all Product Prices
 
-  8. Exit
+  8. Save Changes and Exit
+  9. Exit without Saving
 '
 
 def view_products (inventory)
@@ -39,7 +40,8 @@ def add_product (inventory)
   product = gets.chomp
   print 'Product Price: $'
   price = gets.chomp.to_f
-  puts new_num.to_s + ' ' + product + ' ' + price.to_s
+  inventory[new_num] = [product, price]
+  puts "\nNew Product Entered: "+new_num.to_s + ' ' + product + ' ' + price.to_s+"\n\n"
 end
 
 def remove_product (inventory)
@@ -57,7 +59,7 @@ end
 def update_product (inventory)
   print "\nPlease enter the item number to update: "
   item_number = gets.chomp.to_i
-  if inventory.has?(item_number)
+  if inventory.has_key?(item_number)
     print 'Please enter the new description: '
     description = gets.chomp
     print 'Please enter a new price: '
@@ -112,13 +114,17 @@ def startup
 end
 
 def shutdown (inventory)
-  
+  f, write_string = File.open('product.txt', 'w'), ''
+  inventory.each do |i|
+    write_string += (i[0].to_s+','+i[1][0].to_s+','+i[1][1].to_s+"\n")
+  end
+  f.write(write_string)
+  f.close
 end
 
 inventory, choice = startup, ''
-puts inventory
 
-while choice != '8'
+while choice != '8' and choice != '9'
   puts menu
   print "\nPlease enter a choice:"
   choice = gets.chomp
@@ -139,6 +145,7 @@ while choice != '8'
       product_sum(inventory)
     when '8'
       shutdown(inventory)
+    when '9'
     else
       puts "\nPlease enter a valid choice.\n"
   end
