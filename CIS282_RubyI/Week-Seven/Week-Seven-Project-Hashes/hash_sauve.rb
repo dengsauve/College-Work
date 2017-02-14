@@ -80,11 +80,25 @@ def highest_priced (inventory)
 end
 
 def lowest_priced (inventory)
-
+  lowest_price, lowest_item = nil, nil
+  inventory.each do |i|
+    if lowest_price
+      if i[1][1] < lowest_price
+        lowest_price, lowest_item = i[1][1], i[0]
+      end
+    else
+      lowest_price, lowest_item = i[1][1], i[0]
+    end
+  end
+  puts "\nThe lowest priced item is: " + inventory[lowest_item][0] + "\n\n"
 end
 
 def product_sum (inventory)
-
+  sum = 0.0
+  inventory.each do |i|
+    sum += i[1][1]
+  end
+  puts "\n$"+sum.round(2).to_s+"\n\n"
 end
 
 def startup
@@ -95,6 +109,10 @@ def startup
   inventory = {}
   product_data.each { |i| inventory[i.split(',')[0].to_i] = [i.split(',')[1], i.split(',')[2].to_f] }
   inventory
+end
+
+def shutdown (inventory)
+  
 end
 
 inventory, choice = startup, ''
@@ -120,6 +138,7 @@ while choice != '8'
     when '7'
       product_sum(inventory)
     when '8'
+      shutdown(inventory)
     else
       puts "\nPlease enter a valid choice.\n"
   end

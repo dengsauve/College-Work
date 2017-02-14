@@ -10,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Week-Seven@hash_sauve.coverage" NAME="hash_sauve Coverage Results" MODIFIED="1487109664572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week-Seven-Project-Hashes" MODULE_NAME="Week-Seven" />
+    <SUITE FILE_PATH="coverage/Week-Seven@hash_sauve.coverage" NAME="hash_sauve Coverage Results" MODIFIED="1487110425255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week-Seven-Project-Hashes" MODULE_NAME="Week-Seven" />
     <SUITE FILE_PATH="coverage/Week-Seven@week_seven_sandbox.coverage" NAME="week-seven-sandbox Coverage Results" MODIFIED="1487002342156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Week-Seven" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -22,17 +22,18 @@
       <file leaf-file-name="hash_sauve.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Week-Seven-Project-Hashes/hash_sauve.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="71" column="30" lean-forward="false" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+            <state relative-caret-position="125">
+              <caret line="114" column="2" lean-forward="true" selection-start-line="114" selection-start-column="2" selection-end-line="114" selection-end-column="2" />
               <folding>
                 <element signature="e#580#860#0" expanded="false" />
                 <element signature="e#862#1187#0" expanded="false" />
                 <element signature="e#1189#1526#0" expanded="false" />
                 <element signature="e#1528#1962#0" expanded="false" />
                 <element signature="e#1964#2216#0" expanded="false" />
-                <element signature="e#2288#2531#0" expanded="false" />
-                <element signature="e#2581#3068#0" expanded="false" />
-                <marker date="1487109664458" expanded="false" signature="345:578" ph="..." />
+                <element signature="e#2218#2573#0" expanded="false" />
+                <element signature="e#2575#2705#0" expanded="false" />
+                <element signature="e#2707#2950#0" expanded="false" />
+                <marker date="1487110653446" expanded="false" signature="345:578" ph="..." />
               </folding>
             </state>
           </provider>
@@ -324,12 +325,12 @@
       <updated>1487000127512</updated>
       <workItem from="1487000128891" duration="198000" />
       <workItem from="1487001951275" duration="1013000" />
-      <workItem from="1487093803617" duration="9745000" />
+      <workItem from="1487093803617" duration="10944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10956000" />
+    <option name="totallyTimeSpent" value="12155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1655" y="-876" width="1545" height="876" extended-state="6" />
@@ -385,9 +386,10 @@
             <element signature="e#1189#1526#0" expanded="false" />
             <element signature="e#1528#1962#0" expanded="false" />
             <element signature="e#1964#2216#0" expanded="false" />
-            <element signature="e#2288#2531#0" expanded="false" />
-            <element signature="e#2581#3068#0" expanded="false" />
-            <marker date="1487109664458" expanded="false" signature="345:578" ph="..." />
+            <element signature="e#2218#2573#0" expanded="false" />
+            <element signature="e#2575#2705#0" expanded="false" />
+            <element signature="e#2707#2950#0" expanded="false" />
+            <marker date="1487110653446" expanded="false" signature="345:578" ph="..." />
           </folding>
         </state>
       </provider>
@@ -417,17 +419,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Week-Seven-Project-Hashes/hash_sauve.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="71" column="30" lean-forward="false" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+        <state relative-caret-position="125">
+          <caret line="114" column="2" lean-forward="true" selection-start-line="114" selection-start-column="2" selection-end-line="114" selection-end-column="2" />
           <folding>
             <element signature="e#580#860#0" expanded="false" />
             <element signature="e#862#1187#0" expanded="false" />
             <element signature="e#1189#1526#0" expanded="false" />
             <element signature="e#1528#1962#0" expanded="false" />
             <element signature="e#1964#2216#0" expanded="false" />
-            <element signature="e#2288#2531#0" expanded="false" />
-            <element signature="e#2581#3068#0" expanded="false" />
-            <marker date="1487109664458" expanded="false" signature="345:578" ph="..." />
+            <element signature="e#2218#2573#0" expanded="false" />
+            <element signature="e#2575#2705#0" expanded="false" />
+            <element signature="e#2707#2950#0" expanded="false" />
+            <marker date="1487110653446" expanded="false" signature="345:578" ph="..." />
           </folding>
         </state>
       </provider>
