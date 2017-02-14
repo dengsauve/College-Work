@@ -43,15 +43,40 @@ def add_product (inventory)
 end
 
 def remove_product (inventory)
-
+  puts "\nRemove Product by Item Number\n"
+  print 'Please enter an Item Number to remove: '
+  item_number = gets.chomp.to_i
+  if inventory.has_key?(item_number)
+    inventory.delete(item_number)
+    puts "\nThe item has been removed from inventory."
+  else
+    puts "\nThat item does not exist."
+  end
 end
 
 def update_product (inventory)
-
+  print "\nPlease enter the item number to update: "
+  item_number = gets.chomp.to_i
+  if inventory.has?(item_number)
+    print 'Please enter the new description: '
+    description = gets.chomp
+    print 'Please enter a new price: '
+    price = gets.chomp.to_f
+    inventory[item_number] = [description, price]
+    print 'Item successfully updated!'
+  else
+    print'That item does not exist.'
+  end
 end
 
 def highest_priced (inventory)
-
+  high_price, high_item = 0.0, 0
+  inventory.each do |i|
+    if i[1][1] > high_price
+      high_price, high_item = i[1][1], i[0]
+    end
+  end
+  puts "\nThe highest priced item is: " + inventory[high_item][0] + "\n\n"
 end
 
 def lowest_priced (inventory)
