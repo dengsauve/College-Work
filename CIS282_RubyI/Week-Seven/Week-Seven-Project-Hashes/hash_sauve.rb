@@ -9,25 +9,22 @@
 #
 ############################################################
 
-menu = 'Inventory Control System
-
+menu = "\nInventory Control System\n
+  #  Option
+---  -------------------------------
   1. View all Products
   2. Add a Product
   3. Remove a Product
   4. Update a Product
   5. View Highest Priced Product
   6. View Lowest Priced Product
-  7. View Sum of all Product Prices
-
+  7. View Sum of all Product Prices\n
   8. Save Changes and Exit
-  9. Exit without Saving
-'
+  9. Exit without Saving"
 
 def view_products (inventory)
-  puts "\n"+'Item'.ljust(6) + 'Description'.ljust(30) + 'Price'.rjust(9)
-  puts '----'.ljust(6) + ('-'*28).ljust(30) + '---------'.ljust(9)
-  inventory.each { |i| puts i[0].to_s.ljust(6) + i[1][0].ljust(30) + '$' + (i[1][1].to_s).rjust(8)}
-  puts
+  puts "\n"+'Item'.ljust(6) + 'Description'.ljust(30) + 'Price'.rjust(9) +"\n"+'----'.ljust(6) + ('-'*28).ljust(30) +('-'*9).ljust(9)
+  inventory.sort_by{ |k,v| k }.each{ |i| puts i[0].to_s.ljust(6) + i[1][0].ljust(30) + '$' + (i[1][1].to_s).rjust(8)}
 end
 
 def add_product (inventory)
@@ -45,16 +42,14 @@ def add_product (inventory)
 end
 
 def remove_product (inventory)
-  puts "\nRemove Product by Item Number\n"
-  print 'Please enter an Item Number to remove: '
+  print "\nRemove Product by Item Number\nPlease enter an Item Number to remove: "
   item_number = gets.chomp.to_i
   if inventory.has_key?(item_number)
     inventory.delete(item_number)
     puts "\nThe item has been removed from inventory."
   else
     puts "\nThat item does not exist."
-  end
-end
+  end end
 
 def update_product (inventory)
   print "\nPlease enter the item number to update: "
@@ -68,8 +63,7 @@ def update_product (inventory)
     print 'Item successfully updated!'
   else
     print'That item does not exist.'
-  end
-end
+  end end
 
 def highest_priced (inventory)
   high_price, high_item = 0.0, 0
@@ -90,8 +84,7 @@ def lowest_priced (inventory)
       end
     else
       lowest_price, lowest_item = i[1][1], i[0]
-    end
-  end
+    end end
   puts "\nThe lowest priced item is: " + inventory[lowest_item][0] + "\n\n"
 end
 
@@ -105,10 +98,8 @@ end
 
 def startup
   f = File.open('product.txt')
-  product_data = f.readlines.each {|line| line.chomp!}
+  product_data, inventory = f.readlines.each {|line| line.chomp!}, {}
   f.close
-
-  inventory = {}
   product_data.each { |i| inventory[i.split(',')[0].to_i] = [i.split(',')[1], i.split(',')[2].to_f] }
   inventory
 end
