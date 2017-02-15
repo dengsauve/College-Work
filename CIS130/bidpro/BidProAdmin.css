@@ -24,3 +24,8 @@ ul.nav.navbar-nav.navbar-right li a:hover{
   height: 100%;
   padding: 0px;
 }
+
+.btn-primary{
+    background-color: #95B4D0;
+    border-color: #95B4D0;
+}
