@@ -10,6 +10,10 @@ ul.nav.navbar-nav.navbar-right li a{
   color: white;
 }
 
+ul.nav.navbar-nav.navbar-right li ul a{
+  color: inherit;
+}
+
 ul.nav.navbar-nav.navbar-right li a:hover{
   color: black;
 }
@@ -23,4 +27,23 @@ ul.nav.navbar-nav.navbar-right li a:hover{
 .navbar-brand{
   height: 100%;
   padding: 0px;
+}
+
+.btn-primary{
+    background-color: #95B4D0;
+    border-color: #95B4D0;
+}
+
+.navbar-toggle{
+    background-color: white;
+}
+
+.navbar-toggle .icon-bar{
+    background-color: #95B4D0 !important;
+}
+
+@media (max-width: 767px) {
+    li.open ul.dropdown-menu li a{
+        color: white !important;
+    }
 }
