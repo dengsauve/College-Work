@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c061833-e784-465f-84cd-7554091bdfca" name="Default" comment="" />
+    <list default="true" id="9c061833-e784-465f-84cd-7554091bdfca" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Week-Seven-Project-Hashes/hash_sauve.rb" afterPath="$PROJECT_DIR$/Week-Seven-Project-Hashes/hash_sauve.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Week-Seven-Project-Hashes/product.txt" afterPath="$PROJECT_DIR$/Week-Seven-Project-Hashes/product.txt" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Week-Seven@hash_sauve.coverage" NAME="hash_sauve Coverage Results" MODIFIED="1487117096371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week-Seven-Project-Hashes" MODULE_NAME="Week-Seven" />
+    <SUITE FILE_PATH="coverage/Week-Seven@hash_sauve.coverage" NAME="hash_sauve Coverage Results" MODIFIED="1487495127122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week-Seven-Project-Hashes" MODULE_NAME="Week-Seven" />
     <SUITE FILE_PATH="coverage/Week-Seven@week_seven_sandbox.coverage" NAME="week-seven-sandbox Coverage Results" MODIFIED="1487002342156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Week-Seven" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -22,22 +26,9 @@
       <file leaf-file-name="hash_sauve.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Week-Seven-Project-Hashes/hash_sauve.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="98" column="11" lean-forward="false" selection-start-line="98" selection-start-column="11" selection-end-line="98" selection-end-column="11" />
-              <folding>
-                <element signature="e#674#959#0" expanded="false" />
-                <element signature="e#961#1359#0" expanded="false" />
-                <element signature="e#1361#1688#0" expanded="false" />
-                <element signature="e#1690#2128#0" expanded="false" />
-                <element signature="e#2130#2382#0" expanded="false" />
-                <element signature="e#2384#2737#0" expanded="false" />
-                <element signature="e#2739#2869#0" expanded="false" />
-                <element signature="e#2871#3111#0" expanded="false" />
-                <element signature="e#3113#3330#0" expanded="false" />
-                <element signature="e#3365#3909#0" expanded="false" />
-                <marker date="1487117096258" expanded="false" signature="345:671" ph="..." />
-                <marker date="1487117096258" expanded="true" signature="345:672" ph="..." />
-              </folding>
+            <state relative-caret-position="-957">
+              <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,6 +55,9 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -81,9 +75,12 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="55" />
-    <option name="y" value="24" />
+    <option name="y" value="-876" />
     <option name="width" value="1545" />
     <option name="height" value="876" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -345,22 +342,23 @@
       <workItem from="1487001951275" duration="1013000" />
       <workItem from="1487093803617" duration="11002000" />
       <workItem from="1487114434231" duration="2674000" />
+      <workItem from="1487494779524" duration="424000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14887000" />
+    <option name="totallyTimeSpent" value="15311000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="24" width="1545" height="876" extended-state="6" />
+    <frame x="55" y="-876" width="1545" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17411003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48090616" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33462784" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -391,20 +389,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#674#959#0" expanded="false" />
-            <element signature="e#961#1359#0" expanded="false" />
-            <element signature="e#1361#1688#0" expanded="false" />
-            <element signature="e#1690#2128#0" expanded="false" />
-            <element signature="e#2130#2382#0" expanded="false" />
-            <element signature="e#2384#2737#0" expanded="false" />
-            <element signature="e#2739#2869#0" expanded="false" />
-            <element signature="e#2871#3111#0" expanded="false" />
-            <element signature="e#3113#3330#0" expanded="false" />
-            <element signature="e#3365#3909#0" expanded="false" />
-            <marker date="1487117096258" expanded="false" signature="345:671" ph="..." />
-            <marker date="1487117096258" expanded="true" signature="345:672" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -427,20 +412,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#674#959#0" expanded="false" />
-            <element signature="e#961#1359#0" expanded="false" />
-            <element signature="e#1361#1688#0" expanded="false" />
-            <element signature="e#1690#2128#0" expanded="false" />
-            <element signature="e#2130#2382#0" expanded="false" />
-            <element signature="e#2384#2737#0" expanded="false" />
-            <element signature="e#2739#2869#0" expanded="false" />
-            <element signature="e#2871#3111#0" expanded="false" />
-            <element signature="e#3113#3330#0" expanded="false" />
-            <element signature="e#3365#3909#0" expanded="false" />
-            <marker date="1487117096258" expanded="false" signature="345:671" ph="..." />
-            <marker date="1487117096258" expanded="true" signature="345:672" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -458,6 +430,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Week-Seven-Project-Hashes/hash_sauve.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-957">
+          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Week-Seven-Project-Hashes/orig_product.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -471,27 +451,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Week-Seven-Project-Hashes/hash_sauve.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="98" column="11" lean-forward="false" selection-start-line="98" selection-start-column="11" selection-end-line="98" selection-end-column="11" />
-          <folding>
-            <element signature="e#674#959#0" expanded="false" />
-            <element signature="e#961#1359#0" expanded="false" />
-            <element signature="e#1361#1688#0" expanded="false" />
-            <element signature="e#1690#2128#0" expanded="false" />
-            <element signature="e#2130#2382#0" expanded="false" />
-            <element signature="e#2384#2737#0" expanded="false" />
-            <element signature="e#2739#2869#0" expanded="false" />
-            <element signature="e#2871#3111#0" expanded="false" />
-            <element signature="e#3113#3330#0" expanded="false" />
-            <element signature="e#3365#3909#0" expanded="false" />
-            <marker date="1487117096258" expanded="false" signature="345:671" ph="..." />
-            <marker date="1487117096258" expanded="true" signature="345:672" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -24,7 +24,7 @@ menu = "\nInventory Control System\n
 
 def view_products (inventory)
   puts "\n"+'Item'.ljust(6) + 'Description'.ljust(30) + 'Price'.rjust(9) +"\n"+'----'.ljust(6) + ('-'*28).ljust(30) +('-'*9).ljust(9)
-  inventory.sort_by{ |k,v| k }.each{ |i| puts i[0].to_s.ljust(6) + i[1][0].ljust(30) + '$' + (i[1][1].to_s).rjust(8)}
+  inventory.sort_by{ |k| k }.each{ |i| puts i[0].to_s.ljust(6) + i[1][0].ljust(30) + '$' + (i[1][1].to_s).rjust(8)}
 end
 
 def add_product (inventory)
