@@ -1,0 +1,20 @@
+.padding-right-sm{
+    padding-right: 10px;
+}
+
+.bid-types td{
+    vertical-align: middle !important;
+}
+
+.bid-types th:nth-child(3),
+.bid-types th:nth-child(4),
+.bid-types th:nth-child(5),
+.bid-types td:nth-child(3),
+.bid-types td:nth-child(4),
+.bid-types td:nth-child(5){
+    text-align: center;
+}
+
+.bid-types td:last-child{
+    width: 130px;
+}
