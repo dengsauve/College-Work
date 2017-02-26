@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa0f6356-0ee2-4ff7-a833-4345e664d7bd" name="Default" comment="Printing Completed">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CIS282_RubyI/Final-Maze/maze_sauve.rb" afterPath="$PROJECT_DIR$/CIS282_RubyI/Final-Maze/maze_sauve.rb" />
     </list>
     <ignored path="College-Work.iws" />
@@ -16,7 +17,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/College-Work@header_comments_sauve.coverage" NAME="header_comments_sauve Coverage Results" MODIFIED="1488099274381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CIS282_RubyI" MODULE_NAME="College-Work" />
-    <SUITE FILE_PATH="coverage/College-Work@maze_sauve.coverage" NAME="maze_sauve Coverage Results" MODIFIED="1488107378841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CIS282_RubyI/Final-Maze" MODULE_NAME="College-Work" />
+    <SUITE FILE_PATH="coverage/College-Work@maze_sauve.coverage" NAME="maze_sauve Coverage Results" MODIFIED="1488109199712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CIS282_RubyI/Final-Maze" MODULE_NAME="College-Work" />
     <SUITE FILE_PATH="coverage/College-Work@rps_sauve.coverage" NAME="rps_sauve Coverage Results" MODIFIED="1485455947489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CIS282_RubyI" MODULE_NAME="College-Work" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -31,8 +32,8 @@
       <file leaf-file-name="maze_sauve.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CIS282_RubyI/Final-Maze/maze_sauve.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -335,12 +336,12 @@
       <workItem from="1488099123697" duration="301000" />
       <workItem from="1488099667044" duration="21000" />
       <workItem from="1488099756911" duration="3682000" />
-      <workItem from="1488106371603" duration="1243000" />
+      <workItem from="1488106371603" duration="2871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10116000" />
+    <option name="totallyTimeSpent" value="11744000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -430,8 +431,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CIS282_RubyI/Final-Maze/maze_sauve.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>

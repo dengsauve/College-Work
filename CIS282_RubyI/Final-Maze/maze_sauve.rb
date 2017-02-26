@@ -7,7 +7,7 @@
 #  Description:  A maze solving program.
 #
 ############################################################
-
+$debug = true
 def print_menu
   Dir.glob('*.mz').each_with_index{|f,i|puts"#{(i+1).to_s.rjust(2)} - #{f}#{"\n"+(i+2).to_s.rjust(2)+' - exit'if i==Dir.glob('*.mz').size-1}"}
 end
@@ -29,7 +29,35 @@ end
 
 # 3.	Solve the maze by printing a character "path" from the beginning to the end which is specified by S (start) and F (finish).
 
+def pathfinder(maze, counter=0, unexplored_territory=true)
+  while counter==0
+    maze.each_with_index do |array, row|
+      array.each_with_index do |cell, col|
+        if cell == 'F'
+          #east
+          if maze[row][col+1] == ' '
+            maze[row][col+1] = counter
+          end
+          #north
+          if maze[row-1][col] == ' '
+            maze[row-1][col] = counter
+          end
+          #west
+          if maze[row][col-1] == ' '
+            maze[row][col-1] = counter
+          end
+          #south
+          if maze[row+1][col] == ' '
+            maze[row+1][col] = counter
+          end
+        end
+      end
+      end
+      counter+=1
+  end
+  print_maze(maze) if $debug
 
+end
 
 
 
@@ -54,6 +82,7 @@ end
 maze = read_maze(0)
 # puts maze.inspect
 print_maze(maze)
+pathfinder(maze)
 
 
 
