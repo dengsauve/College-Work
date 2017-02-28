@@ -14,7 +14,6 @@ def print_menu
 end
 
 # 1.	Read the maze into memory into some structure for processing – DOUBLE ARRAY
-
 def read_maze(index, maze=[])
   File.open(Dir.glob('*.mz')[index]).each { |line| maze << line.strip.split('') }
   maze
@@ -45,37 +44,25 @@ def pathfinder(maze, counter=0, unexplored_territory=true, starting_cell=[])
     maze.each_with_index do |array, row|
       array.each_with_index do |cell, col|
         if cell == (counter-1)
-          #east
-          if maze[row][col+1] == 'S'
-            unexplored_territory = false
-            starting_cell = [row, col]
+          if maze[row][col+1] == 'S'#east
+            unexplored_territory = false; starting_cell = [row, col]
           elsif maze[row][col+1] == ' '
-              maze[row][col+1] = counter
-              dig_dug = false
+              maze[row][col+1] = counter; dig_dug = false
           end
-          #north
-          if maze[row-1][col] == 'S'
-            unexplored_territory = false
-            starting_cell = [row, col]
+          if maze[row-1][col] == 'S'#north
+            unexplored_territory = false; starting_cell = [row, col]
           elsif maze[row-1][col] == ' '
-              maze[row-1][col] = counter
-              dig_dug = false
+              maze[row-1][col] = counter; dig_dug = false
           end
-          #west
-          if maze[row][col-1] == 'S'
-            unexplored_territory = false
-            starting_cell = [row, col]
+          if maze[row][col-1] == 'S'#west
+            unexplored_territory = false; starting_cell = [row, col]
           elsif maze[row][col-1] == ' '
-              maze[row][col-1] = counter
-              dig_dug = false
+              maze[row][col-1] = counter; dig_dug = false
           end
-          #south
-          if maze[row+1][col] == 'S'
-            unexplored_territory = false
-            starting_cell = [row, col]
+          if maze[row+1][col] == 'S'#south
+            unexplored_territory = false; starting_cell = [row, col]
           elsif maze[row+1][col] == ' '
-              maze[row+1][col] = counter
-              dig_dug = false
+              maze[row+1][col] = counter; dig_dug = false
           end end end end
     if dig_dug
       unexplored_territory = false
@@ -121,16 +108,10 @@ def pathfinder(maze, counter=0, unexplored_territory=true, starting_cell=[])
 end
 
 
-
-
-
-
 # 4.	Print the final maze with the path shown
 
 
-
 # 5.	IF there is no solution, then print an appropriate message and re-display the menu
-
 
 
 # There are 10 mazes provided called "maze1.mz" through "maze10.mz" which you can use to test your solution.
@@ -140,7 +121,8 @@ end
 
 
 print_menu
-maze = read_maze(0)
+maze_choice = gets.chomp.to_i
+maze = read_maze(maze_choice)
 print_maze(maze)
 maze = pathfinder(maze)
 print_maze(maze)
