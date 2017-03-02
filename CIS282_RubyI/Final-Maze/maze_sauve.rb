@@ -21,7 +21,11 @@ end
 
 # 2.	Print out the maze before it is solved
 def print_maze(maze)
-  maze.each { |row| row.each { |col| print col.to_s.ljust(3)};puts}
+  if $debug
+    maze.each { |row| row.each { |col| print col.to_s.ljust(3)};puts}
+  else
+    maze.each { |row| row.each { |col| print col.to_s};puts}
+  end
 end
 
 # 3.	Solve the maze by printing a character "path" from the beginning to the end which is specified by S (start) and F (finish).
@@ -119,12 +123,11 @@ end
 
 # A short description of the algorithm as well as the mazes are provided in an attachment here.
 
-
-print_menu
-maze_choice = gets.chomp.to_i
-maze = read_maze(maze_choice)
-print_maze(maze)
-maze = pathfinder(maze)
-print_maze(maze)
-
-
+maze_choice = 0
+while maze_choice != 11
+  print_menu
+  maze_choice = gets.chomp.to_i-1
+  maze = read_maze(maze_choice)
+  print_maze(maze)
+  print_maze(pathfinder(maze))
+end
