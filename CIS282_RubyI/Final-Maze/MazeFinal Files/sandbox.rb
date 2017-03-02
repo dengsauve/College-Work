@@ -1,0 +1,1 @@
+puts 'hi' + " \n".strip + 'there'
