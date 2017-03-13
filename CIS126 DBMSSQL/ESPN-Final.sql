@@ -1,3 +1,5 @@
+/* Still need to code in batting leaders for BA, HR, RBI, OBP, and H */
+
 select nameFirst + ' ' + nameLast as 'NAME',
 	G as 'GP',
 	AB,
