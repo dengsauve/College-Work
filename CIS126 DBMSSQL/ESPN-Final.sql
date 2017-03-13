@@ -10,8 +10,8 @@ select G as 'GP',
 	BB,
 	SO,
 	SB,
-	(H*1.0)/(case when AB=0 then 1 else AB end) as BA
-	/* Needs OBP (On base percentage) */
+	(H*1.0)/(case when AB=0 then 1 else AB end) as BA,
+	((H + BB + HBP)*1.0 / (case when (AB + BB + HBP)=0 then 1 else (AB + BB + HBP) end)) as OBP
 	/* Needs SLG (Slugging Percentage) */
 	/* Needs OPS (OBP + SLG) */
 	from db_Baseball2015.vwPlayersBatting
