@@ -1,5 +1,49 @@
-/* Still need to code in batting leaders for BA, HR, RBI, OBP, and H */
-
+/* BA Leader */
+select TOP(1) 'Batting AVG' as 'Leader',
+	nameFirst + ' ' + nameLast as 'Name',
+	(H*1.0)/(case when AB=0 then 1 else AB end) as 'BA'
+	from db_Baseball2015.vwPlayersBatting
+	where (AB*1.0) / (select MAX(G) from db_Baseball2015.vwPlayersBatting where teamID='LAN' and yearID=2010) >= 3.1
+	and yearID=2010
+	and teamID='LAN'
+	order by 'BA' desc;
+/* HR Leader */
+select TOP(1) 'Home Runs' as 'Leader',
+	nameFirst + ' ' + nameLast as 'Name',
+	HR
+	from db_Baseball2015.vwPlayersBatting
+	where (AB*1.0) / (select MAX(G) from db_Baseball2015.vwPlayersBatting where teamID='LAN' and yearID=2010) >= 3.1
+	and yearID=2010
+	and teamID='LAN'
+	order by HR desc;
+/* RBI Leader */
+select TOP(1) 'RBI' as 'Leader',
+	nameFirst + ' ' + nameLast as 'Name',
+	RBI
+	from db_Baseball2015.vwPlayersBatting
+	where (AB*1.0) / (select MAX(G) from db_Baseball2015.vwPlayersBatting where teamID='LAN' and yearID=2010) >= 3.1
+	and yearID=2010
+	and teamID='LAN'
+	order by RBI desc;
+/* OBP Leader */
+select TOP(1) 'OBP' as 'Leader',
+	nameFirst + ' ' + nameLast as 'Name',
+	((H + BB + HBP)*1.0 / (case when (AB + BB + HBP)=0 then 1 else (AB + BB + HBP) end)) as 'OBP'
+	from db_Baseball2015.vwPlayersBatting
+	where (AB*1.0) / (select MAX(G) from db_Baseball2015.vwPlayersBatting where teamID='LAN' and yearID=2010) >= 3.1
+	and yearID=2010
+	and teamID='LAN'
+	order by 'OBP' desc;
+/* Still need to code in batting leaders for H */
+select TOP(1) 'Hits' as 'Leader',
+	nameFirst + ' ' + nameLast as 'Name',
+	H
+	from db_Baseball2015.vwPlayersBatting
+	where (AB*1.0) / (select MAX(G) from db_Baseball2015.vwPlayersBatting where teamID='LAN' and yearID=2010) >= 3.1
+	and yearID=2010
+	and teamID='LAN'
+	order by H desc;
+/* Main Body of Page Data */
 select nameFirst + ' ' + nameLast as 'NAME',
 	G as 'GP',
 	AB,
@@ -20,7 +64,7 @@ select nameFirst + ' ' + nameLast as 'NAME',
 	from db_Baseball2015.vwPlayersBatting
 	where yearID=2010 and teamID='LAN'
 	order by 'BA' desc;
-
+/* Footer/Total Data */
 select teamID as 'NAME',
 	MAX(G) as 'GP',
 	SUM(AB) as 'AB',
