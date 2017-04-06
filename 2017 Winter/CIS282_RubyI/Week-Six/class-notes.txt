@@ -1,0 +1,15 @@
+Turns out the exclamation point has a purpose
+
+example - delete! will modify the string in place (the variable itself)
+whereas - delete will simply return a modified string, leaving the original variable alone
+
+In a way, it's kind of elegant. Adding the exclamation point almost says "Hey! Listen!" and draws your attention
+to the fact that bad things might happen.
+
+r   read-only           Starts at the beginning of the file
+r+  read-write          Starts at the beginning of the file
+w   Write               Truncates existing file to 0 length
+w+  Write
+a   Write Only
+a+  Read-Write
+b   Binary File Mode    Windows silly way of reading data

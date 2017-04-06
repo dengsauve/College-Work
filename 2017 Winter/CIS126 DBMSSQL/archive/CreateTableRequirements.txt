@@ -1,0 +1,19 @@
+Using the following description, design a table by hand to manage someone’s coin collection:
+
+As a coin collector and I would like to place my collection on-line.  I manage only American penny, nickel, dime, quarter, half dollar and dollar coins.  Each coin has a date, a mint mark, a value, condition and a date it was last appraised.  I keep a 3/5 card on each coin where I keep general comments as well.
+
+Create the table named CoinCollection by hand, in your Database, using the following guidelines. I will give you creative freedom outside of my specs.
+
+    The mint marks are either D (Denver), P or blank (Philadelphia) , S (San Francisco), O (New Orleans), C C (Carson City).  Allow only these abbreviations.
+
+    Conditions are P(Proof), BU (Brilliant Un-circulated), UC (Un-circulated), VF (Very Fine), (F)Fine, G (Good), P (Poor).    Allow only these conditions.
+
+    Only P, N, D, Q, HD, D should be allowed as coin types.
+
+    Decide what should be filled when a record is added (nulls).
+
+    The greatest portion of my collection are in pennies.  Default the data type to a penny.
+
+    Decide on an appropriate Primary key.
+
+    Add 5 sample records and test your work.

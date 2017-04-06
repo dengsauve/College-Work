@@ -1,3 +1,0 @@
-100,multipass,19.97
-101,shoes,88.88
-102,momo steering wheel,224.99

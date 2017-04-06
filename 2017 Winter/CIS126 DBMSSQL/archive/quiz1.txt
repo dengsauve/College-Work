@@ -1,0 +1,53 @@
+1.
+select ProdIDpk,
+		PartNo as Part#,
+		Description,
+		Price,
+		Cost,
+		ReorderPoint,
+		QtyOnHand,
+		Unit
+	from Products
+
+2.
+select * 
+	from Products
+	where QtyOnHand < ReorderPoint
+
+3.
+select PartNo, Description, (QtyOnHand * Price) as InventoryValue
+	from Products
+	order by PartNo asc
+
+4.
+Select PartNo, Cost, QtyOnHand
+	into AcctRep
+	from Products
+	where Cost >= 10
+
+5.
+select TOP(1) PartNo, Description, Price
+	from Products
+	where Price is not null
+	order by Price desc
+
+6.
+create view vwTableErrors
+    as select *
+    from Products
+    where Description is null
+
+7.
+select distinct Description
+	into partDescriptions
+	from Products
+	order by Description asc
+
+E.C.
+select PartNo,
+		Description,
+		Price,
+		Cost,
+		(Price-Cost) as "Profit Margin", 
+		(Price/Cost) as "Percentage Markup"
+	from Products

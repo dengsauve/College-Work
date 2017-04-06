@@ -1,0 +1,44 @@
+article{padding-top: 30px;}
+
+article div{
+  font-family: 'Poiret One',sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+  height: auto;
+  vertical-align: top;
+}
+
+div.landing{
+  max-width: 450px;
+  text-align: left;
+}
+
+h3.landing, p.landing{
+  padding-left: 10px;
+  transition-duration: .5s;
+}
+
+h3.landing{
+    margin: 0px;
+  font-size: 22px;
+  border-bottom: 1px solid black;
+}
+
+h3.landing:hover, p.landing:hover{
+  padding-left: 25px;
+  transition-duration: .5s;
+}
+
+img.profile{
+  height: 300px;
+  display: inline-block;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px black;
+  transition-duration: .75s;
+}
+
+img.profile:hover{
+  box-shadow: 3px 3px 10px red;
+  transition-duration: .75s;
+}

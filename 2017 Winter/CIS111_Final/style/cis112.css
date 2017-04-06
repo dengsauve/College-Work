@@ -1,0 +1,15 @@
+table.cis112{
+  max-width: 500px;
+}
+
+table.cis112 tr td{
+  text-align: center;
+  padding: 10px;
+}
+
+table.cis112 tr td img{
+  border-radius: 10px;
+  max-width: 240px;
+  height: auto;
+  box-shadow: 2px 2px 7px #000000;
+}
