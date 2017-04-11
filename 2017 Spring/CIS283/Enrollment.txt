@@ -1320,8 +1320,8 @@ NOTE NUM_ _DIV_ NUM_SECT _ID_  UNIT___TITLE____ _CR_EQUIV ___NAME_____ NUM _ROOM
      R204 CONST 130  CO  R202  RC  FAC:Sustain    .0 10.4 Wavada J     644 0216  F           8:30A 12:00P     2      0     2   .0 
                                                           Wavada J     644 0216  F           1:00P  4:30P 
                                                           Wavada J     644 0216  Sa          8:30A  1:30P 
-                                                                                                   _____ _____ _____ _____ ______ 
-   * DEPARTMENT/DIVISION CONST - - - - - - - - - - - - - - - - - - - - - - -- - - - TOTAL CLASSES:     3    25     5    42    3.5 
+                                                                                                   _____ _____ _____ ______
+   * DEPARTMENT/DIVISION CONST - - - - - - - - - - - - - - - - - - - - - - -- - - - TOTAL CLASSES:     3 _____    25     5    42    3.5
   
 966  0252 COS   101  AN        BD  INTRO COSMO   2.0  2.0 Paul K       001 0109  MT         11:30A 12:30P    20     14     6  1.9 
            Permission is required to register in this class 
