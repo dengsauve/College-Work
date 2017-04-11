@@ -20,6 +20,7 @@ while department != 'EXIT'
   # get input from user
   print 'Enter Department: '
   department = gets.chomp.upcase
+  break if department == 'EXIT'
   print 'Enter Class Number: '
   class_number = gets.chomp
 
