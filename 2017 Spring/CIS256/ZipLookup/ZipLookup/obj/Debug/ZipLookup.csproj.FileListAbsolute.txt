@@ -1,0 +1,9 @@
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\bin\Debug\ZipLookup.exe.config
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\bin\Debug\ZipLookup.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\bin\Debug\ZipLookup.pdb
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.csprojResolveAssemblyReference.cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.Form1.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.Properties.Resources.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.csproj.GenerateResource.Cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.pdb
