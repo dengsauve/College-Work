@@ -1,0 +1,9 @@
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ContributionsDemo\ContributionsDemo\bin\Debug\ContributionsDemo.exe.config
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ContributionsDemo\ContributionsDemo\bin\Debug\ContributionsDemo.exe
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ContributionsDemo\ContributionsDemo\bin\Debug\ContributionsDemo.pdb
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ContributionsDemo\ContributionsDemo\obj\Debug\ContributionsDemo.csprojResolveAssemblyReference.cache
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ContributionsDemo\ContributionsDemo\obj\Debug\ContributionsDemo.Form1.resources
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ContributionsDemo\ContributionsDemo\obj\Debug\ContributionsDemo.Properties.Resources.resources
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ContributionsDemo\ContributionsDemo\obj\Debug\ContributionsDemo.csproj.GenerateResource.Cache
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ContributionsDemo\ContributionsDemo\obj\Debug\ContributionsDemo.exe
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ContributionsDemo\ContributionsDemo\obj\Debug\ContributionsDemo.pdb
