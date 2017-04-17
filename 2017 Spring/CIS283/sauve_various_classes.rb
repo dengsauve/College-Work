@@ -5,9 +5,13 @@
 #  Assignment:   Ruby Classes
 #  Class:        CIS283
 #  Description:  A Program that implements ruby classes to
-#                store object information.
+#                store object information. This is an
+#                exercise in learning about the nature of
+#                Classes, and therefore the attr_accessor
+#                cannot be used. Lots of typing...
 #
 ############################################################
+
 
 class Person
   def initialize(first_name, last_name, age, hair_color, eye_color)
@@ -133,7 +137,7 @@ puts '',home.to_s, ''
 player_one = Character.new('Raistlin Majere: The Greatest Mage Ever', 'human', 5, 500)
 player_one.set_name('Raistlin Majere')
 puts player_one.get_name
-player_one.set_race('civlized human')
+player_one.set_race('civilized human')
 puts player_one.get_race
 player_one.set_hit_points(13)
 puts player_one.get_hit_points
