@@ -34,7 +34,7 @@
             this.tblZipcodesTableAdapter = new ZipLookup.dsauve_w17DataSet1TableAdapters.tblZipcodesTableAdapter();
             this.tableAdapterManager = new ZipLookup.dsauve_w17DataSet1TableAdapters.TableAdapterManager();
             this.lblCity = new System.Windows.Forms.Label();
-            this.txtState = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
             this.lblZip = new System.Windows.Forms.Label();
             this.txtZip = new System.Windows.Forms.TextBox();
             this.btnZip = new System.Windows.Forms.Button();
@@ -67,25 +67,25 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(23, 23);
+            this.lblCity.Location = new System.Drawing.Point(23, 21);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(24, 13);
             this.lblCity.TabIndex = 0;
             this.lblCity.Text = "City";
             // 
-            // txtState
+            // lblState
             // 
-            this.txtState.AutoSize = true;
-            this.txtState.Location = new System.Drawing.Point(23, 63);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(32, 13);
-            this.txtState.TabIndex = 1;
-            this.txtState.Text = "State";
+            this.lblState.AutoSize = true;
+            this.lblState.Location = new System.Drawing.Point(23, 51);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(32, 13);
+            this.lblState.TabIndex = 1;
+            this.lblState.Text = "State";
             // 
             // lblZip
             // 
             this.lblZip.AutoSize = true;
-            this.lblZip.Location = new System.Drawing.Point(23, 110);
+            this.lblZip.Location = new System.Drawing.Point(23, 83);
             this.lblZip.Name = "lblZip";
             this.lblZip.Size = new System.Drawing.Size(47, 13);
             this.lblZip.TabIndex = 2;
@@ -93,23 +93,24 @@
             // 
             // txtZip
             // 
-            this.txtZip.Location = new System.Drawing.Point(150, 107);
+            this.txtZip.Location = new System.Drawing.Point(150, 80);
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(100, 20);
-            this.txtZip.TabIndex = 3;
+            this.txtZip.TabIndex = 0;
             // 
             // btnZip
             // 
-            this.btnZip.Location = new System.Drawing.Point(150, 133);
+            this.btnZip.Location = new System.Drawing.Point(150, 106);
             this.btnZip.Name = "btnZip";
             this.btnZip.Size = new System.Drawing.Size(100, 23);
-            this.btnZip.TabIndex = 4;
+            this.btnZip.TabIndex = 1;
             this.btnZip.Text = "Check Zip";
             this.btnZip.UseVisualStyleBackColor = true;
+            this.btnZip.Click += new System.EventHandler(this.btnZip_Click);
             // 
             // lblCityDyn
             // 
-            this.lblCityDyn.Location = new System.Drawing.Point(150, 22);
+            this.lblCityDyn.Location = new System.Drawing.Point(150, 20);
             this.lblCityDyn.Name = "lblCityDyn";
             this.lblCityDyn.Size = new System.Drawing.Size(100, 23);
             this.lblCityDyn.TabIndex = 5;
@@ -117,7 +118,7 @@
             // 
             // lblStateDyn
             // 
-            this.lblStateDyn.Location = new System.Drawing.Point(150, 63);
+            this.lblStateDyn.Location = new System.Drawing.Point(150, 51);
             this.lblStateDyn.Name = "lblStateDyn";
             this.lblStateDyn.Size = new System.Drawing.Size(100, 23);
             this.lblStateDyn.TabIndex = 6;
@@ -126,13 +127,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 176);
+            this.ClientSize = new System.Drawing.Size(274, 147);
             this.Controls.Add(this.lblStateDyn);
             this.Controls.Add(this.lblCityDyn);
             this.Controls.Add(this.btnZip);
             this.Controls.Add(this.txtZip);
             this.Controls.Add(this.lblZip);
-            this.Controls.Add(this.txtState);
+            this.Controls.Add(this.lblState);
             this.Controls.Add(this.lblCity);
             this.Name = "Form1";
             this.Text = "Zip Lookup";
@@ -151,7 +152,7 @@
         private dsauve_w17DataSet1TableAdapters.tblZipcodesTableAdapter tblZipcodesTableAdapter;
         private dsauve_w17DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label lblCity;
-        private System.Windows.Forms.Label txtState;
+        private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.Label lblZip;
         private System.Windows.Forms.TextBox txtZip;
         private System.Windows.Forms.Button btnZip;

@@ -22,26 +22,51 @@ namespace ZipLookup
         {
             // TODO: This line of code loads data into the 'dsauve_w17DataSet1.tblZipcodes' table. You can move, or remove it, as needed.
             this.tblZipcodesTableAdapter.Fill(this.dsauve_w17DataSet1.tblZipcodes);
-
-            var strQuerey = "SELECT zip, city, state FROM dbo.tblZipcodes";
-            SqlConnection cn = new SqlConnection("Data Source=134.39.173.35;Initial Catalog=Contributions;User ID=dsauve_w17;Password=HJpo11er");
-
-            //Note: The connection string defaults to SQL Server
-            //cnStr = ;
-
-            //Assign Connection string to the connection object
-            //cn.ConnectionString = cnStr;
-            //Open the connetion to the SQL Server
-            cn.Open();
-            //You would do something here
-
-            //Close the connection to SQl Server
-            cn.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        private void label1_Click(object sender, EventArgs e){}
 
+        private void btnZip_Click(object sender, EventArgs e)
+        {
+            // Initialize the Strings
+            String cnStr, strSQL;
+
+            SqlConnection cn = new SqlConnection();
+            // NOTE: Could be SqlConnection cn = new SqlConnection("Data Source=134.39.173.35;Initial Catalog=Contributions;User ID=dsauve_w17;Password=HJpo11er");
+            // This has the advantage of being short and sweet.
+
+            cnStr = "Data Source=134.39.173.35;Initial Catalog=Contributions;User ID=dsauve_w17;Password=HJpo11er";
+            // NOTE: Could also be cn.ConnectionString = "Data Source=134.39.173.35;Initial Catalog=Contributions;User ID=dsauve_w17;Password=HJpo11er";
+            cn.ConnectionString = cnStr;
+
+            // Open the connetion to the SQL Server
+            cn.Open();
+
+            // Create the SQL Query
+            strSQL = "SELECT city, state FROM dbo.tblZipcodes where zip='" + txtZip.Text + "'";
+
+            // Create the SqlCommand Object
+            SqlCommand cmd = new SqlCommand(strSQL, cn);
+
+            // Create the SqlDataReader Object from Executing the SqlCommand Object
+            SqlDataReader rdrZip = cmd.ExecuteReader();
+
+            // Read the data from the SqlDataReader
+            rdrZip.Read();
+
+            // Check to see if there are any results
+            if (rdrZip.HasRows)
+            {
+                // Set the labels to the appropriate values
+                lblCityDyn.Text = rdrZip["city"].ToString();
+                lblStateDyn.Text = rdrZip["state"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Zip Not Found.");
+            }
+            //Close the connection to SQl Server
+            cn.Close();
         }
     }
 }
