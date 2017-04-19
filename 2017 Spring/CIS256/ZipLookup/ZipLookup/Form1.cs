@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ZipLookup
 {
@@ -22,24 +23,25 @@ namespace ZipLookup
             // TODO: This line of code loads data into the 'dsauve_w17DataSet1.tblZipcodes' table. You can move, or remove it, as needed.
             this.tblZipcodesTableAdapter.Fill(this.dsauve_w17DataSet1.tblZipcodes);
 
+            var strQuerey = "SELECT zip, city, state FROM dbo.tblZipcodes";
+            SqlConnection cn = new SqlConnection("Data Source=134.39.173.35;Initial Catalog=Contributions;User ID=dsauve_w17;Password=HJpo11er");
+
+            //Note: The connection string defaults to SQL Server
+            //cnStr = ;
+
+            //Assign Connection string to the connection object
+            //cn.ConnectionString = cnStr;
+            //Open the connetion to the SQL Server
+            cn.Open();
+            //You would do something here
+
+            //Close the connection to SQl Server
+            cn.Close();
         }
 
-        private void tblZipcodesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.tblZipcodesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dsauve_w17DataSet1);
-
-        }
-
-        private void zipTextBox_TextChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            tblZipcodesBindingSource.Filter = "zip='" + zipTextBox.Text + "'";
         }
     }
 }

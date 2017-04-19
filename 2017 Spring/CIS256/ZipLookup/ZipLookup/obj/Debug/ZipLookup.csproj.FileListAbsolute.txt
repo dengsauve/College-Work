@@ -7,3 +7,12 @@ C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\Zip
 C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.csproj.GenerateResource.Cache
 C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.exe
 C:\Dennis\Code\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.pdb
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\bin\Debug\ZipLookup.exe.config
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.exe
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.pdb
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\bin\Debug\ZipLookup.exe
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\bin\Debug\ZipLookup.pdb
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.csprojResolveAssemblyReference.cache
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.Form1.resources
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.Properties.Resources.resources
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\ZipLookup\ZipLookup\obj\Debug\ZipLookup.csproj.GenerateResource.Cache

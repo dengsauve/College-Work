@@ -51,6 +51,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsauve_w17DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsauve_w17DataSet1.cs">
+      <DependentUpon>dsauve_w17DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsauve_w17DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
