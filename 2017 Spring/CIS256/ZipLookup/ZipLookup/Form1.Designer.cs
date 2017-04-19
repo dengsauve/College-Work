@@ -29,87 +29,138 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.lblState = new System.Windows.Forms.Label();
-            this.txtZip = new System.Windows.Forms.TextBox();
-            this.btnLookup = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dsauve_w17DataSet = new ZipLookup.dsauve_w17DataSet();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsauve_w17DataSet)).BeginInit();
+            System.Windows.Forms.Label zipLabel;
+            System.Windows.Forms.Label cityLabel;
+            System.Windows.Forms.Label stateLabel;
+            this.dsauve_w17DataSet1 = new ZipLookup.dsauve_w17DataSet1();
+            this.tblZipcodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblZipcodesTableAdapter = new ZipLookup.dsauve_w17DataSet1TableAdapters.tblZipcodesTableAdapter();
+            this.tableAdapterManager = new ZipLookup.dsauve_w17DataSet1TableAdapters.TableAdapterManager();
+            this.zipTextBox = new System.Windows.Forms.TextBox();
+            this.cityTextBox = new System.Windows.Forms.TextBox();
+            this.stateTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            zipLabel = new System.Windows.Forms.Label();
+            cityLabel = new System.Windows.Forms.Label();
+            stateLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dsauve_w17DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblZipcodesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblCity
+            // dsauve_w17DataSet1
             // 
-            this.lblCity.Location = new System.Drawing.Point(12, 9);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(155, 13);
-            this.lblCity.TabIndex = 0;
-            this.lblCity.Text = "City";
-            this.lblCity.Click += new System.EventHandler(this.lblCity_Click);
+            this.dsauve_w17DataSet1.DataSetName = "dsauve_w17DataSet1";
+            this.dsauve_w17DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // lblState
+            // tblZipcodesBindingSource
             // 
-            this.lblState.Location = new System.Drawing.Point(12, 40);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(88, 13);
-            this.lblState.TabIndex = 2;
-            this.lblState.Text = "State";
+            this.tblZipcodesBindingSource.DataMember = "tblZipcodes";
+            this.tblZipcodesBindingSource.DataSource = this.dsauve_w17DataSet1;
             // 
-            // txtZip
+            // tblZipcodesTableAdapter
             // 
-            this.txtZip.Location = new System.Drawing.Point(106, 37);
-            this.txtZip.Name = "txtZip";
-            this.txtZip.Size = new System.Drawing.Size(75, 20);
-            this.txtZip.TabIndex = 3;
+            this.tblZipcodesTableAdapter.ClearBeforeFill = true;
             // 
-            // btnLookup
+            // tableAdapterManager
             // 
-            this.btnLookup.Location = new System.Drawing.Point(106, 63);
-            this.btnLookup.Name = "btnLookup";
-            this.btnLookup.Size = new System.Drawing.Size(75, 23);
-            this.btnLookup.TabIndex = 4;
-            this.btnLookup.Text = "Test Zip";
-            this.btnLookup.UseVisualStyleBackColor = true;
-            this.btnLookup.Click += new System.EventHandler(this.btnLookup_Click);
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.tblZipcodesTableAdapter = this.tblZipcodesTableAdapter;
+            this.tableAdapterManager.UpdateOrder = ZipLookup.dsauve_w17DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // bindingSource1
+            // zipLabel
             // 
-            this.bindingSource1.DataSource = this.dsauve_w17DataSet;
-            this.bindingSource1.Position = 0;
+            zipLabel.AutoSize = true;
+            zipLabel.Location = new System.Drawing.Point(69, 108);
+            zipLabel.Name = "zipLabel";
+            zipLabel.Size = new System.Drawing.Size(23, 13);
+            zipLabel.TabIndex = 1;
+            zipLabel.Text = "zip:";
             // 
-            // dsauve_w17DataSet
+            // zipTextBox
             // 
-            this.dsauve_w17DataSet.DataSetName = "dsauve_w17DataSet";
-            this.dsauve_w17DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.zipTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblZipcodesBindingSource, "zip", true));
+            this.zipTextBox.Location = new System.Drawing.Point(108, 105);
+            this.zipTextBox.Name = "zipTextBox";
+            this.zipTextBox.Size = new System.Drawing.Size(100, 20);
+            this.zipTextBox.TabIndex = 2;
+            this.zipTextBox.TextChanged += new System.EventHandler(this.zipTextBox_TextChanged);
+            // 
+            // cityLabel
+            // 
+            cityLabel.AutoSize = true;
+            cityLabel.Location = new System.Drawing.Point(69, 56);
+            cityLabel.Name = "cityLabel";
+            cityLabel.Size = new System.Drawing.Size(26, 13);
+            cityLabel.TabIndex = 3;
+            cityLabel.Text = "city:";
+            // 
+            // cityTextBox
+            // 
+            this.cityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblZipcodesBindingSource, "city", true));
+            this.cityTextBox.Location = new System.Drawing.Point(108, 53);
+            this.cityTextBox.Name = "cityTextBox";
+            this.cityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.cityTextBox.TabIndex = 4;
+            // 
+            // stateLabel
+            // 
+            stateLabel.AutoSize = true;
+            stateLabel.Location = new System.Drawing.Point(69, 82);
+            stateLabel.Name = "stateLabel";
+            stateLabel.Size = new System.Drawing.Size(33, 13);
+            stateLabel.TabIndex = 5;
+            stateLabel.Text = "state:";
+            // 
+            // stateTextBox
+            // 
+            this.stateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblZipcodesBindingSource, "state", true));
+            this.stateTextBox.Location = new System.Drawing.Point(108, 79);
+            this.stateTextBox.Name = "stateTextBox";
+            this.stateTextBox.Size = new System.Drawing.Size(100, 20);
+            this.stateTextBox.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(108, 132);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(202, 98);
-            this.Controls.Add(this.btnLookup);
-            this.Controls.Add(this.txtZip);
-            this.Controls.Add(this.lblState);
-            this.Controls.Add(this.lblCity);
+            this.ClientSize = new System.Drawing.Size(310, 176);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(zipLabel);
+            this.Controls.Add(this.zipTextBox);
+            this.Controls.Add(cityLabel);
+            this.Controls.Add(this.cityTextBox);
+            this.Controls.Add(stateLabel);
+            this.Controls.Add(this.stateTextBox);
             this.Name = "Form1";
             this.Text = "Zip Lookup";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsauve_w17DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsauve_w17DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblZipcodesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCity;
-        private System.Windows.Forms.Label lblState;
-        private System.Windows.Forms.TextBox txtZip;
-        private System.Windows.Forms.Button btnLookup;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private dsauve_w17DataSet dsauve_w17DataSet;
+        private dsauve_w17DataSet1 dsauve_w17DataSet1;
+        private System.Windows.Forms.BindingSource tblZipcodesBindingSource;
+        private dsauve_w17DataSet1TableAdapters.tblZipcodesTableAdapter tblZipcodesTableAdapter;
+        private dsauve_w17DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TextBox zipTextBox;
+        private System.Windows.Forms.TextBox cityTextBox;
+        private System.Windows.Forms.TextBox stateTextBox;
+        private System.Windows.Forms.Button button1;
     }
 }
 

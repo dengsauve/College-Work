@@ -19,41 +19,27 @@ namespace ZipLookup
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsauve_w17DataSet1.tblZipcodes' table. You can move, or remove it, as needed.
+            this.tblZipcodesTableAdapter.Fill(this.dsauve_w17DataSet1.tblZipcodes);
 
         }
 
+        private void tblZipcodesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.tblZipcodesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dsauve_w17DataSet1);
 
+        }
 
-        private void btnLookup_Click(object sender, EventArgs e)
+        private void zipTextBox_TextChanged(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(txtZip.Text))
-            {
-                MessageBox.Show("You need to enter a Zip Code.", "ZipLookup", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-            else
-            {
-                var strZipCode = txtZip.Text;
-                int i = bindingSource1.Find("zip", strZipCode);
-                if (i < 0)
-                {
-                    lblCity.Text = "";
-                    lblState.Text = "";
-                }
-                else
-                {
-                    bindingSource1.Position = i;
-                    DataRowView items = (DataRowView)bindingSource1.List[i];
-                    lblCity.Text = items["city"].ToString();
-                    lblState.Text = items["state"].ToString();
-                }
-            }
-
         }
 
-
-
-
-        private void lblCity_Click(object sender, EventArgs e){}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tblZipcodesBindingSource.Filter = "zip='" + zipTextBox.Text + "'";
+        }
     }
 }
