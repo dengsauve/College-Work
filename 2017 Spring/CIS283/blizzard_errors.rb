@@ -10,8 +10,6 @@ class Error
   def to_xml
     "<e id=\"#{@id}\">#{error_string}</e>"
   end
-
-
 end
 line = '<e id="111">You are attempting to sign in using a locale descriptor for an unsupported language.</e>'
 line =~ /<e\sid="(\d+)">(.+?)<\/e>/
