@@ -1,10 +1,10 @@
 Jukebox
 
 [ ] Write a program that implements a Song class which can store specific information about a particular song.
-[ ] Write the appropriate getter/setter methods (attr_accessor) to set the following information for each Song object
+[X] Write the appropriate getter/setter methods (attr_accessor) to set the following information for each Song object
       Title, Artist, Album, Year, Comments, Length in seconds
 
-[ ] Write some class methods that let you print a song’s details and "play" a song.
+[X] Write some class methods that let you print a song’s details and "play" a song.
     basically just print out a string that says the song is playing
 
 [ ] Write another class called Jukebox which handles storing multiple songs into an array that is INSIDE the Jukebox class.
