@@ -33,6 +33,7 @@
             System.Windows.Forms.Label teamIDLabel;
             System.Windows.Forms.Label salaryLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.Label nameLastLabel;
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.playerIDpkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameLastDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,9 +74,11 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salariesTableAdapter = new SalaryManager.dsauve_w17DataSetTableAdapters.SalariesTableAdapter();
             this.tableAdapterManager = new SalaryManager.dsauve_w17DataSetTableAdapters.TableAdapterManager();
+            this.nameLastTextBox = new System.Windows.Forms.TextBox();
             yearIDLabel = new System.Windows.Forms.Label();
             teamIDLabel = new System.Windows.Forms.Label();
             salaryLabel = new System.Windows.Forms.Label();
+            nameLastLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsauve_w17DataSet)).BeginInit();
@@ -130,7 +133,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(459, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(459, 222);
             this.dataGridView1.TabIndex = 0;
             // 
             // playerIDpkDataGridViewTextBoxColumn
@@ -161,6 +164,7 @@
             // 
             this.playersBindingSource.DataMember = "Players";
             this.playersBindingSource.DataSource = this.dsauve_w17DataSet;
+            this.playersBindingSource.PositionChanged += new System.EventHandler(this.playersBindingSource_PositionChanged);
             // 
             // dsauve_w17DataSet
             // 
@@ -193,7 +197,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(869, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(886, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -272,7 +276,7 @@
             this.groupBox1.Controls.Add(this.salariesDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(489, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(377, 346);
+            this.groupBox1.Size = new System.Drawing.Size(377, 222);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Salary History";
@@ -480,11 +484,30 @@
             this.tableAdapterManager.SalariesTableAdapter = this.salariesTableAdapter;
             this.tableAdapterManager.UpdateOrder = SalaryManager.dsauve_w17DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // nameLastLabel
+            // 
+            nameLastLabel.AutoSize = true;
+            nameLastLabel.Location = new System.Drawing.Point(12, 259);
+            nameLastLabel.Name = "nameLastLabel";
+            nameLastLabel.Size = new System.Drawing.Size(61, 13);
+            nameLastLabel.TabIndex = 3;
+            nameLastLabel.Text = "Last Name:";
+            // 
+            // nameLastTextBox
+            // 
+            this.nameLastTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.playersBindingSource, "nameLast", true));
+            this.nameLastTextBox.Location = new System.Drawing.Point(77, 256);
+            this.nameLastTextBox.Name = "nameLastTextBox";
+            this.nameLastTextBox.Size = new System.Drawing.Size(164, 20);
+            this.nameLastTextBox.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 386);
+            this.ClientSize = new System.Drawing.Size(886, 283);
+            this.Controls.Add(nameLastLabel);
+            this.Controls.Add(this.nameLastTextBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
@@ -552,6 +575,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox nameLastTextBox;
     }
 }
 

@@ -30,5 +30,12 @@ namespace SalaryManager
         {
 
         }
+
+        private void playersBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.playersBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dsauve_w17DataSet);
+        }
     }
 }
