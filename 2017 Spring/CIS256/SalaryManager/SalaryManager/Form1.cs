@@ -25,5 +25,10 @@ namespace SalaryManager
             this.playersTableAdapter.Fill(this.dsauve_w17DataSet.Players);
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

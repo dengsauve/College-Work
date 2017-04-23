@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label yearIDLabel;
             System.Windows.Forms.Label teamIDLabel;
             System.Windows.Forms.Label salaryLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.playerIDpkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameLastDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,37 +41,38 @@
             this.dsauve_w17DataSet = new SalaryManager.dsauve_w17DataSet();
             this.playersTableAdapter = new SalaryManager.dsauve_w17DataSetTableAdapters.PlayersTableAdapter();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.salaryTextBox = new System.Windows.Forms.TextBox();
             this.salariesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salariesTableAdapter = new SalaryManager.dsauve_w17DataSetTableAdapters.SalariesTableAdapter();
-            this.tableAdapterManager = new SalaryManager.dsauve_w17DataSetTableAdapters.TableAdapterManager();
-            this.salariesDataGridView = new System.Windows.Forms.DataGridView();
+            this.teamIDTextBox = new System.Windows.Forms.TextBox();
+            this.yearIDTextBox = new System.Windows.Forms.TextBox();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.yearIDTextBox = new System.Windows.Forms.TextBox();
-            this.teamIDTextBox = new System.Windows.Forms.TextBox();
-            this.salaryTextBox = new System.Windows.Forms.TextBox();
+            this.salariesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salariesTableAdapter = new SalaryManager.dsauve_w17DataSetTableAdapters.SalariesTableAdapter();
+            this.tableAdapterManager = new SalaryManager.dsauve_w17DataSetTableAdapters.TableAdapterManager();
             yearIDLabel = new System.Windows.Forms.Label();
             teamIDLabel = new System.Windows.Forms.Label();
             salaryLabel = new System.Windows.Forms.Label();
@@ -81,11 +82,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salariesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salariesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.salariesDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // yearIDLabel
+            // 
+            yearIDLabel.AutoSize = true;
+            yearIDLabel.Location = new System.Drawing.Point(20, 140);
+            yearIDLabel.Name = "yearIDLabel";
+            yearIDLabel.Size = new System.Drawing.Size(44, 13);
+            yearIDLabel.TabIndex = 2;
+            yearIDLabel.Text = "year ID:";
+            // 
+            // teamIDLabel
+            // 
+            teamIDLabel.AutoSize = true;
+            teamIDLabel.Location = new System.Drawing.Point(17, 166);
+            teamIDLabel.Name = "teamIDLabel";
+            teamIDLabel.Size = new System.Drawing.Size(47, 13);
+            teamIDLabel.TabIndex = 4;
+            teamIDLabel.Text = "team ID:";
+            // 
+            // salaryLabel
+            // 
+            salaryLabel.AutoSize = true;
+            salaryLabel.Location = new System.Drawing.Point(27, 192);
+            salaryLabel.Name = "salaryLabel";
+            salaryLabel.Size = new System.Drawing.Size(37, 13);
+            salaryLabel.TabIndex = 6;
+            salaryLabel.Text = "salary:";
             // 
             // dataGridView1
             // 
@@ -101,7 +130,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(433, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(459, 346);
             this.dataGridView1.TabIndex = 0;
             // 
             // playerIDpkDataGridViewTextBoxColumn
@@ -168,6 +197,13 @@
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -200,16 +236,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -232,6 +261,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(salaryLabel);
             this.groupBox1.Controls.Add(this.salaryTextBox);
             this.groupBox1.Controls.Add(teamIDLabel);
@@ -247,38 +277,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Salary History";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SalaryManager.Properties.Resources.BaseballPlayer;
+            this.pictureBox1.Location = new System.Drawing.Point(280, 137);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 72);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // salaryTextBox
+            // 
+            this.salaryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salariesBindingSource, "salary", true));
+            this.salaryTextBox.Location = new System.Drawing.Point(70, 189);
+            this.salaryTextBox.Name = "salaryTextBox";
+            this.salaryTextBox.Size = new System.Drawing.Size(100, 20);
+            this.salaryTextBox.TabIndex = 7;
+            // 
             // salariesBindingSource
             // 
             this.salariesBindingSource.DataMember = "Players_Salaries";
             this.salariesBindingSource.DataSource = this.playersBindingSource;
             // 
-            // salariesTableAdapter
+            // teamIDTextBox
             // 
-            this.salariesTableAdapter.ClearBeforeFill = true;
+            this.teamIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salariesBindingSource, "teamID", true));
+            this.teamIDTextBox.Location = new System.Drawing.Point(70, 163);
+            this.teamIDTextBox.Name = "teamIDTextBox";
+            this.teamIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.teamIDTextBox.TabIndex = 5;
             // 
-            // tableAdapterManager
+            // yearIDTextBox
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.PlayersTableAdapter = null;
-            this.tableAdapterManager.SalariesTableAdapter = this.salariesTableAdapter;
-            this.tableAdapterManager.UpdateOrder = SalaryManager.dsauve_w17DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // salariesDataGridView
-            // 
-            this.salariesDataGridView.AllowUserToAddRows = false;
-            this.salariesDataGridView.AllowUserToDeleteRows = false;
-            this.salariesDataGridView.AutoGenerateColumns = false;
-            this.salariesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.salariesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn6});
-            this.salariesDataGridView.DataSource = this.salariesBindingSource;
-            this.salariesDataGridView.Location = new System.Drawing.Point(6, 44);
-            this.salariesDataGridView.Name = "salariesDataGridView";
-            this.salariesDataGridView.ReadOnly = true;
-            this.salariesDataGridView.Size = new System.Drawing.Size(351, 56);
-            this.salariesDataGridView.TabIndex = 0;
+            this.yearIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salariesBindingSource, "yearID", true));
+            this.yearIDTextBox.Location = new System.Drawing.Point(70, 137);
+            this.yearIDTextBox.Name = "yearIDTextBox";
+            this.yearIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.yearIDTextBox.TabIndex = 3;
             // 
             // bindingNavigator2
             // 
@@ -309,73 +346,6 @@
             this.bindingNavigator2.TabIndex = 1;
             this.bindingNavigator2.Text = "bindingNavigator2";
             // 
-            // bindingNavigatorMoveFirstItem1
-            // 
-            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
-            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem1.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem1
-            // 
-            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
-            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem1
-            // 
-            this.bindingNavigatorPositionItem1.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem1.AutoSize = false;
-            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem1.Text = "0";
-            this.bindingNavigatorPositionItem1.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem1
-            // 
-            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem1.Text = "of {0}";
-            this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator3
-            // 
-            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem1
-            // 
-            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
-            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem1.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem1
-            // 
-            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
-            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem1.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator4
-            // 
-            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -384,6 +354,13 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem1
+            // 
+            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem1.Text = "of {0}";
+            this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -394,56 +371,82 @@
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // yearIDLabel
+            // bindingNavigatorMoveFirstItem1
             // 
-            yearIDLabel.AutoSize = true;
-            yearIDLabel.Location = new System.Drawing.Point(51, 109);
-            yearIDLabel.Name = "yearIDLabel";
-            yearIDLabel.Size = new System.Drawing.Size(44, 13);
-            yearIDLabel.TabIndex = 2;
-            yearIDLabel.Text = "year ID:";
+            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
+            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
+            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem1.Text = "Move first";
             // 
-            // yearIDTextBox
+            // bindingNavigatorMovePreviousItem1
             // 
-            this.yearIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salariesBindingSource, "yearID", true));
-            this.yearIDTextBox.Location = new System.Drawing.Point(101, 106);
-            this.yearIDTextBox.Name = "yearIDTextBox";
-            this.yearIDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.yearIDTextBox.TabIndex = 3;
+            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
+            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
+            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
             // 
-            // teamIDLabel
+            // bindingNavigatorSeparator2
             // 
-            teamIDLabel.AutoSize = true;
-            teamIDLabel.Location = new System.Drawing.Point(48, 135);
-            teamIDLabel.Name = "teamIDLabel";
-            teamIDLabel.Size = new System.Drawing.Size(47, 13);
-            teamIDLabel.TabIndex = 4;
-            teamIDLabel.Text = "team ID:";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // teamIDTextBox
+            // bindingNavigatorPositionItem1
             // 
-            this.teamIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salariesBindingSource, "teamID", true));
-            this.teamIDTextBox.Location = new System.Drawing.Point(101, 132);
-            this.teamIDTextBox.Name = "teamIDTextBox";
-            this.teamIDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.teamIDTextBox.TabIndex = 5;
+            this.bindingNavigatorPositionItem1.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
+            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem1.Text = "0";
+            this.bindingNavigatorPositionItem1.ToolTipText = "Current position";
             // 
-            // salaryLabel
+            // bindingNavigatorSeparator3
             // 
-            salaryLabel.AutoSize = true;
-            salaryLabel.Location = new System.Drawing.Point(58, 161);
-            salaryLabel.Name = "salaryLabel";
-            salaryLabel.Size = new System.Drawing.Size(37, 13);
-            salaryLabel.TabIndex = 6;
-            salaryLabel.Text = "salary:";
+            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
+            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // salaryTextBox
+            // bindingNavigatorMoveNextItem1
             // 
-            this.salaryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salariesBindingSource, "salary", true));
-            this.salaryTextBox.Location = new System.Drawing.Point(101, 158);
-            this.salaryTextBox.Name = "salaryTextBox";
-            this.salaryTextBox.Size = new System.Drawing.Size(100, 20);
-            this.salaryTextBox.TabIndex = 7;
+            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
+            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
+            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem1.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem1
+            // 
+            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
+            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
+            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem1.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator4
+            // 
+            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
+            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // salariesDataGridView
+            // 
+            this.salariesDataGridView.AllowUserToAddRows = false;
+            this.salariesDataGridView.AllowUserToDeleteRows = false;
+            this.salariesDataGridView.AutoGenerateColumns = false;
+            this.salariesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.salariesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn6});
+            this.salariesDataGridView.DataSource = this.salariesBindingSource;
+            this.salariesDataGridView.Location = new System.Drawing.Point(6, 44);
+            this.salariesDataGridView.Name = "salariesDataGridView";
+            this.salariesDataGridView.ReadOnly = true;
+            this.salariesDataGridView.Size = new System.Drawing.Size(351, 56);
+            this.salariesDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -466,6 +469,17 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
+            // salariesTableAdapter
+            // 
+            this.salariesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.PlayersTableAdapter = null;
+            this.tableAdapterManager.SalariesTableAdapter = this.salariesTableAdapter;
+            this.tableAdapterManager.UpdateOrder = SalaryManager.dsauve_w17DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,7 +489,7 @@
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Salary Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).EndInit();
@@ -485,11 +499,12 @@
             this.bindingNavigator1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salariesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salariesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.salariesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,6 +551,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
