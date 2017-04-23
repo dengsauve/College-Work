@@ -19,6 +19,8 @@ namespace SalaryManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsauve_w17DataSet.Salaries' table. You can move, or remove it, as needed.
+            this.salariesTableAdapter.Fill(this.dsauve_w17DataSet.Salaries);
             // TODO: This line of code loads data into the 'dsauve_w17DataSet.Players' table. You can move, or remove it, as needed.
             this.playersTableAdapter.Fill(this.dsauve_w17DataSet.Players);
 
