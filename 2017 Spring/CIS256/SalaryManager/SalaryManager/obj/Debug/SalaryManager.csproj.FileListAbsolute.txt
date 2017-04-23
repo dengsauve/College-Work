@@ -1,0 +1,9 @@
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\SalaryManager\SalaryManager\bin\Debug\SalaryManager.exe.config
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\SalaryManager\SalaryManager\bin\Debug\SalaryManager.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\SalaryManager\SalaryManager\bin\Debug\SalaryManager.pdb
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\SalaryManager\SalaryManager\obj\Debug\SalaryManager.csprojResolveAssemblyReference.cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\SalaryManager\SalaryManager\obj\Debug\SalaryManager.Form1.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\SalaryManager\SalaryManager\obj\Debug\SalaryManager.Properties.Resources.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\SalaryManager\SalaryManager\obj\Debug\SalaryManager.csproj.GenerateResource.Cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\SalaryManager\SalaryManager\obj\Debug\SalaryManager.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\SalaryManager\SalaryManager\obj\Debug\SalaryManager.pdb
