@@ -308,6 +308,7 @@
             this.salaryTextBox.Name = "salaryTextBox";
             this.salaryTextBox.Size = new System.Drawing.Size(100, 20);
             this.salaryTextBox.TabIndex = 7;
+            this.salaryTextBox.Leave += new System.EventHandler(this.salaryTextBox_Leave);
             // 
             // salariesBindingSource
             // 
@@ -329,6 +330,7 @@
             this.yearIDTextBox.Name = "yearIDTextBox";
             this.yearIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.yearIDTextBox.TabIndex = 3;
+            this.yearIDTextBox.Leave += new System.EventHandler(this.yearIDTextBox_Leave);
             // 
             // bindingNavigator2
             // 
