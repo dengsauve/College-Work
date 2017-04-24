@@ -37,5 +37,10 @@ namespace SalaryManager
             this.playersBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dsauve_w17DataSet);
         }
+
+        private void nameLastTextBox_TextChanged(object sender, EventArgs e)
+        {
+            playersBindingSource.Filter = "nameLast like '" + nameLastTextBox.Text + "%'";
+        }
     }
 }

@@ -32,8 +32,8 @@
             System.Windows.Forms.Label yearIDLabel;
             System.Windows.Forms.Label teamIDLabel;
             System.Windows.Forms.Label salaryLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label nameLastLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.playerIDpkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameLastDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,6 +118,15 @@
             salaryLabel.Size = new System.Drawing.Size(37, 13);
             salaryLabel.TabIndex = 6;
             salaryLabel.Text = "salary:";
+            // 
+            // nameLastLabel
+            // 
+            nameLastLabel.AutoSize = true;
+            nameLastLabel.Location = new System.Drawing.Point(12, 263);
+            nameLastLabel.Name = "nameLastLabel";
+            nameLastLabel.Size = new System.Drawing.Size(98, 13);
+            nameLastLabel.TabIndex = 3;
+            nameLastLabel.Text = "Last Name Search:";
             // 
             // dataGridView1
             // 
@@ -449,7 +458,7 @@
             this.salariesDataGridView.Location = new System.Drawing.Point(6, 44);
             this.salariesDataGridView.Name = "salariesDataGridView";
             this.salariesDataGridView.ReadOnly = true;
-            this.salariesDataGridView.Size = new System.Drawing.Size(351, 56);
+            this.salariesDataGridView.Size = new System.Drawing.Size(365, 56);
             this.salariesDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn3
@@ -484,28 +493,19 @@
             this.tableAdapterManager.SalariesTableAdapter = this.salariesTableAdapter;
             this.tableAdapterManager.UpdateOrder = SalaryManager.dsauve_w17DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // nameLastLabel
-            // 
-            nameLastLabel.AutoSize = true;
-            nameLastLabel.Location = new System.Drawing.Point(12, 259);
-            nameLastLabel.Name = "nameLastLabel";
-            nameLastLabel.Size = new System.Drawing.Size(61, 13);
-            nameLastLabel.TabIndex = 3;
-            nameLastLabel.Text = "Last Name:";
-            // 
             // nameLastTextBox
             // 
-            this.nameLastTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.playersBindingSource, "nameLast", true));
-            this.nameLastTextBox.Location = new System.Drawing.Point(77, 256);
+            this.nameLastTextBox.Location = new System.Drawing.Point(116, 260);
             this.nameLastTextBox.Name = "nameLastTextBox";
-            this.nameLastTextBox.Size = new System.Drawing.Size(164, 20);
+            this.nameLastTextBox.Size = new System.Drawing.Size(355, 20);
             this.nameLastTextBox.TabIndex = 4;
+            this.nameLastTextBox.TextChanged += new System.EventHandler(this.nameLastTextBox_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 283);
+            this.ClientSize = new System.Drawing.Size(886, 303);
             this.Controls.Add(nameLastLabel);
             this.Controls.Add(this.nameLastTextBox);
             this.Controls.Add(this.groupBox1);
