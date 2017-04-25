@@ -75,6 +75,7 @@
             this.salariesTableAdapter = new SalaryManager.dsauve_w17DataSetTableAdapters.SalariesTableAdapter();
             this.tableAdapterManager = new SalaryManager.dsauve_w17DataSetTableAdapters.TableAdapterManager();
             this.nameLastTextBox = new System.Windows.Forms.TextBox();
+            this.playersSalariesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             yearIDLabel = new System.Windows.Forms.Label();
             teamIDLabel = new System.Windows.Forms.Label();
             salaryLabel = new System.Windows.Forms.Label();
@@ -90,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salariesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playersSalariesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // yearIDLabel
@@ -144,6 +146,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(459, 222);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
             // playerIDpkDataGridViewTextBoxColumn
             // 
@@ -299,7 +302,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // salaryTextBox
             // 
@@ -460,7 +462,7 @@
             this.salariesDataGridView.Location = new System.Drawing.Point(6, 44);
             this.salariesDataGridView.Name = "salariesDataGridView";
             this.salariesDataGridView.ReadOnly = true;
-            this.salariesDataGridView.Size = new System.Drawing.Size(365, 56);
+            this.salariesDataGridView.Size = new System.Drawing.Size(365, 87);
             this.salariesDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn3
@@ -503,6 +505,11 @@
             this.nameLastTextBox.TabIndex = 4;
             this.nameLastTextBox.TextChanged += new System.EventHandler(this.nameLastTextBox_TextChanged);
             // 
+            // playersSalariesBindingSource
+            // 
+            this.playersSalariesBindingSource.DataMember = "Players_Salaries";
+            this.playersSalariesBindingSource.DataSource = this.playersBindingSource;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,6 +537,7 @@
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salariesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playersSalariesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -578,6 +586,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox nameLastTextBox;
+        private System.Windows.Forms.BindingSource playersSalariesBindingSource;
     }
 }
 

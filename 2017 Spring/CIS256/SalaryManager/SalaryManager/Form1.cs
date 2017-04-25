@@ -26,16 +26,12 @@ namespace SalaryManager
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void playersBindingSource_PositionChanged(object sender, EventArgs e)
         {
             this.Validate();
             this.playersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dsauve_w17DataSet);
+            //this.tableAdapterManager.UpdateAll(this.dsauve_w17DataSet);//doesn't work and crashes
+            this.playersTableAdapter.Update(this.dsauve_w17DataSet.Players);//doesn't work either, but doesn't crash 
         }
 
         private void nameLastTextBox_TextChanged(object sender, EventArgs e)
@@ -63,6 +59,15 @@ namespace SalaryManager
                 salaryTextBox.Text = "";
                 salaryTextBox.Focus();
             }
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow dgvr in dataGridView1.Rows)
+            {
+                dgvr.DefaultCellStyle.BackColor = Color.White;
+            }
+            dataGridView1.Rows[dataGridView1.CurrentRow.Index].DefaultCellStyle.BackColor = Color.Yellow;
         }
     }
 }
