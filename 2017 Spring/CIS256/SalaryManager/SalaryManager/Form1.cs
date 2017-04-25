@@ -68,6 +68,28 @@ namespace SalaryManager
                 dgvr.DefaultCellStyle.BackColor = Color.White;
             }
             dataGridView1.Rows[dataGridView1.CurrentRow.Index].DefaultCellStyle.BackColor = Color.Yellow;
+            lblRecordNumber.Text = playersBindingSource.Position.ToString();
+            lblRecordTotal.Text = playersBindingSource.Count.ToString();
+        }
+
+        private void btnFirstRecord_Click(object sender, EventArgs e)
+        {
+            playersBindingSource.MoveFirst();
+        }
+
+        private void btnPreviousRecord_Click(object sender, EventArgs e)
+        {
+            playersBindingSource.MovePrevious();
+        }
+
+        private void btnNextRecord_Click(object sender, EventArgs e)
+        {
+            playersBindingSource.MoveNext();
+        }
+
+        private void btnLastRecord_Click(object sender, EventArgs e)
+        {
+            playersBindingSource.MoveLast();
         }
     }
 }
