@@ -12,7 +12,7 @@
 #                will change accordingly. 66 lines total
 #
 ############################################################
-$debug, $slow, maze_choice = false, false, 0
+$debug, $slow, maze_choice = true, true, 0
 def print_menu
   Dir.glob('*.mz').sort.each_with_index{|f,i|puts"#{(i+1).to_s.rjust(2)} - #{f}#{"\n"+(i+2).to_s.rjust(2)+' - exit'if i==Dir.glob('*.mz').size-1}"}
 end
