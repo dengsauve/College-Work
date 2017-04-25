@@ -1,0 +1,16 @@
+html{
+	font-family: helvetica;
+}
+
+label, input, select{
+	font-size: 18px;
+}
+
+input, select{
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+
+.button{
+	margin-top: 0px;
+}

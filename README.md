@@ -14,13 +14,16 @@ Work for a friend on a website for his home automation business.
 Currently studying in a two year software development program, this repo will be the source of all my work.
 
 ## Current Enrollment
-* HTML/CSS II
-* DBMS/SQL
-* Ruby I
+* Mobile Development I
+* Ruby II
+* C# II
 
 ## Past Enrollment
 * HTML/CSS I
-* C#
+* HTML/CSS II
+* DBMS/SQL
+* Ruby I
+* C# I
 * Photoshop
 
 ## Classes Outside of Spokane Community College
