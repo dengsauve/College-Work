@@ -8,3 +8,9 @@ W:\ADO\ExecuteNonQuerywSearch\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.Properti
 W:\ADO\ExecuteNonQuerywSearch\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.csproj.GenerateResource.Cache
 C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.exe
 C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.pdb
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\bin\Debug\ExecuteNonQuery.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\bin\Debug\ExecuteNonQuery.pdb
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.csprojResolveAssemblyReference.cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.frmCommand.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.Properties.Resources.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.csproj.GenerateResource.Cache

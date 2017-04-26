@@ -17,7 +17,7 @@ namespace ExecuteNonQuery
         }
 
         //Connection String
-        String cnStr = "Data Source=134.39.173.35;Initial Catalog=DEMOGUEST;User ID=DEMOGUEST;password=demo";
+        String cnStr = "Data Source=134.39.173.35;Initial Catalog=DEMOGUEST;User ID=DEMOGUEST;password=!Sp0kan3";
         String strSQL;
 
         SqlConnection cn = new SqlConnection();
@@ -101,5 +101,6 @@ namespace ExecuteNonQuery
             txtZip2Find.Visible = false;
           
         }
+
     }
 }
