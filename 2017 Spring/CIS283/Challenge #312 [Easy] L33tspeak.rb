@@ -87,18 +87,10 @@ def ez_leet(word)
   muggle_to_leet(word)
 end
 
-puts ez_leet('31337')
-puts ez_leet('storm')
-
-puts ez_leet('I am elite.')
-puts ez_leet('Da pain!')
-puts ez_leet('Eye need help!')
-puts ez_leet('3Y3 (\)33d j00 t0 g37 d4 d0c70r.')
-puts ez_leet('| n33d m4 p|llz!')
-
-
-
-
-
-
-
+['31337',
+'storm',
+'I am elite.',
+'Da pain!',
+'Eye need help!',
+'3Y3 (\)33d j00 t0 g37 d4 d0c70r.',
+'| n33d m4 p|llz!'].each { |phrase| puts phrase.ljust(40) + "=>\t" + ez_leet(phrase)}
