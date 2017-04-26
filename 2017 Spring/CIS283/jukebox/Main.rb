@@ -27,6 +27,7 @@ def show_menu
 8)  Quit\n\n"
 end
 
+
 def main_menu(choice = 0)
   until (1..8).to_a.include?(choice)
     show_menu
@@ -36,43 +37,63 @@ def main_menu(choice = 0)
   choice
 end
 
+
 def songs_longer_than_seconds
   print 'Enter the minimum length in seconds for a song: '
   seconds = gets.chomp.to_i
+  puts '', "Songs over #{seconds} seconds long:", '-'*"Songs over #{seconds} seconds long:".length
   $seeburg_m100c.library.each do |song|
     if song.length.to_i > seconds
       puts song.details
     end
   end
+  puts
 end
+
 
 def songs_by_artist
-
+  print 'Enter the artist\'s name to see the selections: '
+  puts
+  artist_name = gets.chomp
+  $seeburg_m100c.library.each do |song|
+    if song.artist == artist_name
+      puts song.details
+    end
+  end
+  puts
 end
+
 
 def play_song
 
 end
 
+
 def create_and_add_song_to_jukebox
 
 end
+
 
 def delete_song_from_jukebox
 
 end
 
+
 def update_song_in_jukebox
 
 end
 
-def show_songs_in_jukebox
 
+def show_songs_in_jukebox
+  puts '', 'All Songs Available in Jukebox', '-'*30
+  puts $seeburg_m100c.contents,''
 end
+
 
 def shutdown
 
 end
+
 
 def startup(file_name, jukebox=Jukebox.new)
   File.open(file_name, 'r+').readlines.each do |line|

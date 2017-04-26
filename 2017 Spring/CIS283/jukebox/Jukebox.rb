@@ -20,17 +20,32 @@ class Jukebox
   def initialize
     @library = []
   end
+
+
   def add(track)
     @library << track
   end
+
+
   def delete(track)
     @library.delete(track)
   end
+
+
   def update(track)
     @library.delete(track)
     @library << track
   end
+
+
   def contents
-    @library.each { |i| puts i.details}
+    ret_str = ''
+    @library.each_with_index do |song, index|
+      ret_str += (index+1).to_s + ".\t"
+      ret_str += song.details + "\n"
+    end
+    ret_str
   end
+
+
 end
