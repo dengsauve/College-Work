@@ -1,0 +1,10 @@
+W:\ADO\ExecuteNonQuerywSearch\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.exe
+W:\ADO\ExecuteNonQuerywSearch\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.pdb
+W:\ADO\ExecuteNonQuerywSearch\ExecuteNonQuery\bin\Debug\ExecuteNonQuery.exe
+W:\ADO\ExecuteNonQuerywSearch\ExecuteNonQuery\bin\Debug\ExecuteNonQuery.pdb
+W:\ADO\ExecuteNonQuerywSearch\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.csprojResolveAssemblyReference.cache
+W:\ADO\ExecuteNonQuerywSearch\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.frmCommand.resources
+W:\ADO\ExecuteNonQuerywSearch\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.Properties.Resources.resources
+W:\ADO\ExecuteNonQuerywSearch\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.csproj.GenerateResource.Cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.pdb
