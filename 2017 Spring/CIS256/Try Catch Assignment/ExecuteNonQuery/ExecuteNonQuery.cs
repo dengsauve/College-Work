@@ -17,7 +17,7 @@ namespace ExecuteNonQuery
         }
 
         //Connection String
-        String cnStr = "Data Source=134.39.173.35;Initial Catalog=DEMOGUEST;User ID=DEMOGUEST;password=!Sp0kan3";
+        String cnStr = "Data Source=134.39.173.35;Initial Catalog=DEMOGUEST;User ID=DEMOGUEST;password=d33rpark";
         String strSQL;
 
         SqlConnection cn = new SqlConnection();
@@ -33,7 +33,7 @@ namespace ExecuteNonQuery
             cn.Open();
 
             //This concatenates the insert statement.  Of course you would add loads of error checking.
-            strSQL = "insert into tblZipCodes values ('" + txtZip.Text + "','" + txtCity.Text + "','" + txtState.Text + "')";
+            strSQL = "insert into tblZipcodes (zip, city, state) values ('" + txtZip.Text + "','" + txtCity.Text + "','" + txtState.Text + "')";
 
             //this statement creates the command object and passes in the SQL statement
             //then associates the command to the cn connection object

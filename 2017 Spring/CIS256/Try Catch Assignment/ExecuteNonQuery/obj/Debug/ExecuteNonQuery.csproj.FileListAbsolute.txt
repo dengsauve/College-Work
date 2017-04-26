@@ -14,3 +14,12 @@ C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQu
 C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.frmCommand.resources
 C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.Properties.Resources.resources
 C:\Dennis\Code\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.csproj.GenerateResource.Cache
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\bin\Debug\ExecuteNonQuery.exe.config
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.exe
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.pdb
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\bin\Debug\ExecuteNonQuery.exe
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\bin\Debug\ExecuteNonQuery.pdb
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.csprojResolveAssemblyReference.cache
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.frmCommand.resources
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.Properties.Resources.resources
+W:\Documents\Repos\College-Work\2017 Spring\CIS256\Try Catch Assignment\ExecuteNonQuery\obj\Debug\ExecuteNonQuery.csproj.GenerateResource.Cache
