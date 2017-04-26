@@ -37,7 +37,13 @@ def main_menu(choice = 0)
 end
 
 def songs_longer_than_seconds
-
+  print 'Enter the minimum length in seconds for a song: '
+  seconds = gets.chomp.to_i
+  $seeburg_m100c.library.each do |song|
+    if song.length.to_i > seconds
+      puts song.details
+    end
+  end
 end
 
 def songs_by_artist
@@ -77,26 +83,32 @@ def startup(file_name, jukebox=Jukebox.new)
 end
 
 
-seeburg_m100c = startup('Songs.txt')
+$seeburg_m100c = startup('Songs.txt')
 
-case main_menu
-  when 1
-    songs_longer_than_seconds
-  when 2
-    songs_by_artist
-  when 3
-    play_song
-  when 4
-    create_and_add_song_to_jukebox
-  when 5
-    delete_song_from_jukebox
-  when 6
-    update_song_in_jukebox
-  when 7
-    show_songs_in_jukebox
-  when 8
-    shutdown
-  else
-    puts 'epic fail'
+continuing = true
+
+while continuing
+  case main_menu
+    when 1
+      songs_longer_than_seconds
+    when 2
+      songs_by_artist
+    when 3
+      play_song
+    when 4
+      create_and_add_song_to_jukebox
+    when 5
+      delete_song_from_jukebox
+    when 6
+      update_song_in_jukebox
+    when 7
+      show_songs_in_jukebox
+    when 8
+      continuing = false
+      shutdown
+    else
+      puts 'epic fail'
+  end
 end
+
 

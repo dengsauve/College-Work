@@ -16,6 +16,7 @@
 ############################################################
 
 class Jukebox
+  attr_reader :library
   def initialize
     @library = []
   end
