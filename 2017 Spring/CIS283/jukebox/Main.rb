@@ -65,27 +65,58 @@ end
 
 
 def play_song
-
+  title('What song would you like to play?')
+  puts $seeburg_m100c.contents
+  print "\nSelection: "
+  song_selection = gets.chomp.to_i - 1
+  puts '', $seeburg_m100c.library[song_selection].play, ''
 end
 
 
-def create_and_add_song_to_jukebox
+def create_song
+  # a song is (title, artist, album, year, comments, length)
+  title = please_enter("the song's title")
+  artist = please_enter("the song's artist")
+  album = please_enter("the album the song's on")
+  year = please_enter('the year the song was released')
+  comments = please_enter('any comments about the song')
+  length = please_enter('the length of the song in minutes')
+  Song.new(title, artist, album, year, comments, length)
+end
 
+
+def add_song_to_jukebox
+  $seeburg_m100c.add(create_song)
 end
 
 
 def delete_song_from_jukebox
-
+  title('What song would you like to Delete?')
+  puts $seeburg_m100c.contents, ''
+  song_index = gets.chomp.to_i - 1
+  $seeburg_m100c.delete(song_index)
+  puts 'Song Deleted', ''
 end
 
 
 def update_song_in_jukebox
-
+  title('What song would you like to Update?')
+  puts $seeburg_m100c.contents, ''
+  song_index = gets.chomp.to_i - 1
+  updated_track = create_song
+  title('Are you sure you want to replace?')
+  puts "Original: #{$seeburg_m100c.library[song_index].details}"
+  puts "Replacement: #{updated_track.details}"
+  print '', 'enter to continue, N to cancel'
+  if gets.chomp != 'N'
+    $seeburg_m100c.delete(song_index)
+    $seeburg_m100c.add(updated_track)
+  end
 end
 
 
 def show_songs_in_jukebox
-  puts '', 'All Songs Available in Jukebox', '-'*30
+  title('All Songs Available in Jukebox')
   puts $seeburg_m100c.contents,''
 end
 
@@ -104,6 +135,15 @@ def startup(file_name, jukebox=Jukebox.new)
 end
 
 
+def please_enter(variable_string)
+  print "\nPlease enter #{variable_string}: "
+  gets.chomp
+end
+
+def title(title_string)
+  puts '', title_string, '-'*title_string.length
+end
+
 $seeburg_m100c = startup('Songs.txt')
 
 continuing = true
@@ -117,7 +157,7 @@ while continuing
     when 3
       play_song
     when 4
-      create_and_add_song_to_jukebox
+      add_song_to_jukebox
     when 5
       delete_song_from_jukebox
     when 6

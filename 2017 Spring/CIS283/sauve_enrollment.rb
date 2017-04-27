@@ -10,7 +10,7 @@
 #
 ############################################################
 
-def prompt(string) # takes a string prompt, returns answer
+def prompt(string) # takes a string please_enter, returns answer
   print string
   gets.chomp.upcase
 end

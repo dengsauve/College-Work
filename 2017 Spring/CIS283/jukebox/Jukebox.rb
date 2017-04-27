@@ -27,13 +27,12 @@ class Jukebox
   end
 
 
-  def delete(track)
-    @library.delete(track)
+  def delete(song_index)
+    @library.delete_at(song_index)
   end
 
 
   def update(track)
-    @library.delete(track)
     @library << track
   end
 
