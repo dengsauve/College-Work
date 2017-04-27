@@ -28,10 +28,34 @@ namespace ExecuteNonQuery
             //Assign Connection string to connection object
             cn.ConnectionString = cnStr;
 
-
+            
             //Open the Connection to SQL Server
-            cn.Open();
-
+            
+            try
+            {
+                cn.Open();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.IndexOf("The server was not found or was not accessible") > -1)
+                {
+                    MessageBox.Show("The host server was not found.");
+                }
+                else if (ex.Message.IndexOf("Cannot open database") > -1)
+                {
+                    MessageBox.Show("Cannot open the database.");
+                }
+                else if (ex.Message.IndexOf("Login failed for user") > -1)
+                {
+                    MessageBox.Show("Invalid Username Provided.");
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return;
+            }
+            //*/
             //This concatenates the insert statement.  Of course you would add loads of error checking.
             strSQL = "insert into tblZipcodes (zip, city, state) values ('" + txtZip.Text + "','" + txtCity.Text + "','" + txtState.Text + "')";
 
@@ -40,8 +64,24 @@ namespace ExecuteNonQuery
             SqlCommand cmd = new SqlCommand(strSQL, cn);
 
             //Execute command.  Returns no rows.
-            cmd.ExecuteNonQuery();
-
+            //"Violation of PRIMARY KEY constraint"
+            
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.IndexOf("Violation of PRIMARY KEY constraint") > -1)
+                {
+                    MessageBox.Show("This ZIP code is already in use.");
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            //*/
             //Close Connection
             cn.Close();
         }
