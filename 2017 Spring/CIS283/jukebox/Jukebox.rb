@@ -9,14 +9,13 @@
 #                [X] Write another class called Jukebox which handles storing multiple songs into an array that is INSIDE the Jukebox class.
 #                An object created from this class should respond to:
 #                  [X] adding
-#                  [...] deleting
-#                  [...] updating
+#                  [X] deleting
+#                  [X] updating
 #                  [X] listing all of the Song objects stored inside of it.
 #
 ############################################################
 
 class Jukebox
-  attr_reader :library
   def initialize
     @library = []
   end
@@ -46,5 +45,34 @@ class Jukebox
     ret_str
   end
 
+
+  def songs_longer_than(seconds, ret_str = '')
+    @library.each do |song|
+      if song.length.to_i > seconds
+        ret_str += song.details + "\n"
+      end
+    end
+    ret_str
+  end
+
+
+  def songs_by_artist(artist, ret_str='')
+    @library.each do |song|
+      if song.artist == artist
+        ret_str += '=> ' + song.details + "\n"
+      end
+    end
+    ret_str
+  end
+
+
+  def play_song(song_selection)
+    @library[song_selection].play
+  end
+
+
+  def details_by_index(song_index)
+    @library[song_index].details
+  end
 
 end

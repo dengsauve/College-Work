@@ -9,6 +9,7 @@
 #                [ ] Write a method for converting the object into a tab delimited string suitable for writing/saving.
 #                [ ] Store the information for each new song in a new Song object.
 #                [ ] Then add that song to the Jukebox object through the method "add_song".
+#                [X] Get Rid of any .each items!!!
 #
 ############################################################
 
@@ -42,25 +43,15 @@ def songs_longer_than_seconds
   print 'Enter the minimum length in seconds for a song: '
   seconds = gets.chomp.to_i
   puts '', "Songs over #{seconds} seconds long:", '-'*"Songs over #{seconds} seconds long:".length
-  $seeburg_m100c.library.each do |song|
-    if song.length.to_i > seconds
-      puts song.details
-    end
-  end
-  puts
+  puts $seeburg_m100c.songs_longer_than(seconds) + "\n"
 end
 
 
 def songs_by_artist
-  print 'Enter the artist\'s name to see the selections: '
-  puts
-  artist_name = gets.chomp
-  $seeburg_m100c.library.each do |song|
-    if song.artist == artist_name
-      puts song.details
-    end
-  end
-  puts
+  print "\nEnter the artist\'s name to see the selections: "
+  artist = gets.chomp
+  title("Songs by #{artist}")
+  puts $seeburg_m100c.songs_by_artist(artist) + "\n"
 end
 
 
@@ -69,7 +60,7 @@ def play_song
   puts $seeburg_m100c.contents
   print "\nSelection: "
   song_selection = gets.chomp.to_i - 1
-  puts '', $seeburg_m100c.library[song_selection].play, ''
+  puts '', $seeburg_m100c.play_song(song_selection), ''
 end
 
 
@@ -105,7 +96,7 @@ def update_song_in_jukebox
   song_index = gets.chomp.to_i - 1
   updated_track = create_song
   title('Are you sure you want to replace?')
-  puts "Original: #{$seeburg_m100c.library[song_index].details}"
+  puts "Original: #{$seeburg_m100c.details_by_index(song_index)}"
   puts "Replacement: #{updated_track.details}"
   print '', 'enter to continue, N to cancel'
   if gets.chomp != 'N'

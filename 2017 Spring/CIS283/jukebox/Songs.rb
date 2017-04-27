@@ -27,6 +27,6 @@ class Song
     "#{@title}, by #{@artist} from the album #{@album} - #{@year}"
   end
   def play
-    "Now Playing #{@title}, by #{@artist}"
+    "Now Playing \"#{@title}\", by #{@artist}"
   end
 end
