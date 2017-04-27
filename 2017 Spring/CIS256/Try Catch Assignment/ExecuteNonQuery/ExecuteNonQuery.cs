@@ -25,9 +25,43 @@ namespace ExecuteNonQuery
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            //Check incoming data
+            if (txtZip.Text.Length == 5)
+            {
+                try
+                {
+                    int zipCode = Int32.Parse(txtZip.Text);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("You did enter a fully numeric zipcode.", "Bad ZIP Format");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a 5 digit ZIP code", "Bad ZIP Length");
+                return;
+            }
+            
             //Assign Connection string to connection object
-            cn.ConnectionString = cnStr;
 
+            try
+            {
+                cn.ConnectionString = cnStr;
+            }
+            catch (ArgumentException ex)
+            {
+                if (ex.Message.IndexOf("Keyword not supported") > -1)
+                {
+                    MessageBox.Show("Error in Connection String", "Connection String Error");
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message, "Connection String Error");
+                }
+                return;
+            }
             
             //Open the Connection to SQL Server
             
@@ -47,15 +81,15 @@ namespace ExecuteNonQuery
                 }
                 else if (ex.Message.IndexOf("Login failed for user") > -1)
                 {
-                    MessageBox.Show("Invalid Username Provided.");
+                    MessageBox.Show("Invalid Username or Password.");
                 }
                 else
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "An Error has Occured");
                 }
                 return;
             }
-            //*/
+            
             //This concatenates the insert statement.  Of course you would add loads of error checking.
             strSQL = "insert into tblZipcodes (zip, city, state) values ('" + txtZip.Text + "','" + txtCity.Text + "','" + txtState.Text + "')";
 
@@ -74,14 +108,18 @@ namespace ExecuteNonQuery
             {
                 if (ex.Message.IndexOf("Violation of PRIMARY KEY constraint") > -1)
                 {
-                    MessageBox.Show("This ZIP code is already in use.");
+                    MessageBox.Show("This ZIP code is already in use.", "ZIP code exists");
+                }
+                else if (ex.Message.IndexOf("Incorrect syntax near the keyword") > -1)
+                {
+                    MessageBox.Show("An Error in the SQL text occurred.", "SQL String Error");
                 }
                 else
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
-            //*/
+            
             //Close Connection
             cn.Close();
         }
@@ -110,7 +148,30 @@ namespace ExecuteNonQuery
             //Assign connection string to the connection object
             cn.ConnectionString = cnStr;
             //Open the connection to SQL Server
-            cn.Open();
+            try
+            {
+                cn.Open();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.IndexOf("The server was not found or was not accessible") > -1)
+                {
+                    MessageBox.Show("The host server was not found.");
+                }
+                else if (ex.Message.IndexOf("Cannot open database") > -1)
+                {
+                    MessageBox.Show("Cannot open the database.");
+                }
+                else if (ex.Message.IndexOf("Login failed for user") > -1)
+                {
+                    MessageBox.Show("Invalid Username or Password.");
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message, "An Error has Occured");
+                }
+                return;
+            }
 
             //This statement creates a command object and passes in a SQL Statement
             //The associates the command to the cn Connection Object
