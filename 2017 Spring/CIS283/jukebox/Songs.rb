@@ -23,10 +23,18 @@ class Song
     @comments = comments
     @length = length
   end
+
+
   def details
     "#{@title}, by #{@artist} from the album #{@album} - #{@year}"
   end
+
+
   def play
     "Now Playing \"#{@title}\", by #{@artist}"
+  end
+
+  def to_tab
+    [title, artist, album, year, comments, length].join("\t")
   end
 end

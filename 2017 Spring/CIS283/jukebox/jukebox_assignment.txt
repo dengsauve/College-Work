@@ -16,13 +16,13 @@ Jukebox
 
 [X] The main program should implement a menu that allows a user to create a new song and fill in the appropriate information.
 [X] They should also be able to add, update, delete, print/play a song, and exit.
-[ ] Write a method for converting the object into a tab delimited string suitable for writing/saving.
-[ ] Store the information for each new song in a new Song object.
-    [ ] Then add that song to the Jukebox object through the method "add_song".
+[X] Write a method for converting the object into a tab delimited string suitable for writing/saving.
+[X] Store the information for each new song in a new Song object.
+    [X] Then add that song to the Jukebox object through the method "add_song".
 
 When the user quits:
-    [ ] save the all the song objects from your Jukebox object into a simple tab delimited file – THE SAME ONE FROM WHICH YOU READ THE SONGS.
-    [ ] Read a tab delimited file to populate your songs structure with Song objects and then put those songs into the Jukebox.
+    [X] save the all the song objects from your Jukebox object into a simple tab delimited file – THE SAME ONE FROM WHICH YOU READ THE SONGS.
+    [X] Read a tab delimited file to populate your songs structure with Song objects and then put those songs into the Jukebox.
 
 [X] Your classes should NOT do any printing themselves, but allow the main program which uses them to display the status/strings from your class.
 

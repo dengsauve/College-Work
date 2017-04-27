@@ -5,10 +5,11 @@
 #  Assignment:   Jukebox
 #  Class:        CIS 283
 #  Description:  Main.rb is a the brains of the Jukebox
-#                [X] The main program should implement a menu that allows a user to create a new song and fill in the appropriate information.
-#                [ ] Write a method for converting the object into a tab delimited string suitable for writing/saving.
-#                [ ] Store the information for each new song in a new Song object.
-#                [ ] Then add that song to the Jukebox object through the method "add_song".
+#                [X] The main program should implement a menu that allows a user to create a new song and fill in the
+#                    appropriate information.
+#                [X] Write a method for converting the object into a tab delimited string suitable for writing/saving.
+#                [X] Store the information for each new song in a new Song object.
+#                [X] Then add that song to the Jukebox object through the method "add_song".
 #                [X] Get Rid of any .each items!!!
 #
 ############################################################
@@ -25,7 +26,8 @@ def show_menu
 5)	Delete a song from the jukebox
 6)	Update a song in the jukebox
 7)	Show all songs in the jukebox
-8)  Quit\n\n"
+8)  Quit
+9)  Quit Without Saving\n\n"
 end
 
 
@@ -98,11 +100,12 @@ def update_song_in_jukebox
   title('Are you sure you want to replace?')
   puts "Original: #{$seeburg_m100c.details_by_index(song_index)}"
   puts "Replacement: #{updated_track.details}"
-  print '', 'enter to continue, N to cancel'
+  print "\n", 'enter to continue, N to cancel'
   if gets.chomp != 'N'
     $seeburg_m100c.delete(song_index)
     $seeburg_m100c.add(updated_track)
   end
+  puts
 end
 
 
@@ -112,16 +115,13 @@ def show_songs_in_jukebox
 end
 
 
-def shutdown
-
+def shutdown(file_name)
+  $seeburg_m100c.archive_songs(file_name)
 end
 
 
 def startup(file_name, jukebox=Jukebox.new)
-  File.open(file_name, 'r+').readlines.each do |line|
-    args = line.split("\t")
-    jukebox.add(Song.new(args[0], args[1], args[2], args[3], args[4], args[5]))
-  end
+  jukebox.load_songs(file_name)
   jukebox
 end
 
@@ -131,12 +131,13 @@ def please_enter(variable_string)
   gets.chomp
 end
 
+
 def title(title_string)
   puts '', title_string, '-'*title_string.length
 end
 
-$seeburg_m100c = startup('Songs.txt')
 
+$seeburg_m100c = startup('Songs.txt')
 continuing = true
 
 while continuing
@@ -157,10 +158,10 @@ while continuing
       show_songs_in_jukebox
     when 8
       continuing = false
-      shutdown
+      shutdown('Songs.txt')
+    when 9
+      continuing = false
     else
       puts 'epic fail'
   end
 end
-
-

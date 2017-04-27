@@ -21,6 +21,15 @@ class Jukebox
   end
 
 
+  def archive_songs(file_name)
+    archive = File.open(file_name, 'w+')
+    @library.each do |song|
+      archive.puts song.to_tab
+    end
+    archive.close
+  end
+
+
   def add(track)
     @library << track
   end
@@ -73,6 +82,14 @@ class Jukebox
 
   def details_by_index(song_index)
     @library[song_index].details
+  end
+
+
+  def load_songs(file_name)
+    File.open(file_name, 'r+').readlines.each do |line|
+      args = line.split("\t")
+      add(Song.new(args[0], args[1], args[2], args[3], args[4], args[5]))
+    end
   end
 
 end
