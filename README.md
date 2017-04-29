@@ -2,11 +2,8 @@
 ### CIS111 Final
 My final project for my HTML/CSS I class, this was my first iteration of a personal online portfolio/CV.
 
-### CIS282 Ruby I
-Currently enrolled in this class, backup of all my assignments should the unthinkable happen.
-
 ### Daveys Page
-Work for a friend on a website for his home automation business.
+Work for a friend on a website for his home automation business. (Moving to a new Repo soon)
 
 ## SCC Software Development
 #### All code by Dennis Sauve, not for use in other homework assignments.
