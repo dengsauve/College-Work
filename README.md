@@ -31,3 +31,5 @@ Currently studying in a two year software development program, this repo will be
 * Python I
 * Java I
 * Java II
+* Economics 100
+* PSYC 100
