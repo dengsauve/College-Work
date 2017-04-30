@@ -1,21 +1,16 @@
 # College-Work
-### CIS111 Final
-My final project for my HTML/CSS I class, this was my first iteration of a personal online portfolio/CV.
-
-### Daveys Page
-Work for a friend on a website for his home automation business. (Moving to a new Repo soon)
 
 ## SCC Software Development
-#### All code by Dennis Sauve, not for use in other homework assignments.
+#### All code by Dennis Sauve, not for use by other students' homework assignments.
 
-Currently studying in a two year software development program, this repo will be the source of all my work.
+Currently studying in a two year (then 4 year) software development program, this repo will be the source of all my work.
 
-## Current Enrollment
+### Current Enrollment
 * Mobile Development I
 * Ruby II
 * C# II
 
-## Past Enrollment
+### Past Enrollment
 * HTML/CSS I
 * HTML/CSS II
 * DBMS/SQL
