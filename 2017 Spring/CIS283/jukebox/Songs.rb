@@ -14,7 +14,6 @@
 
 class Song
   attr_reader :title,:artist, :album, :year, :comments, :length
-  attr_writer :title,:artist, :album, :year, :comments, :length
   def initialize(title, artist, album, year, comments, length)
     @title = title
     @artist = artist

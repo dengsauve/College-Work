@@ -45,7 +45,7 @@ def songs_longer_than_seconds
   print 'Enter the minimum length in seconds for a song: '
   seconds = gets.chomp.to_i
   puts '', "Songs over #{seconds} seconds long:", '-'*"Songs over #{seconds} seconds long:".length
-  puts $seeburg_m100c.songs_longer_than(seconds) + "\n"
+  puts $seeburg_m100c.songs_longer_than(seconds), ''
 end
 
 

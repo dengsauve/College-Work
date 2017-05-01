@@ -55,7 +55,8 @@ class Jukebox
   end
 
 
-  def songs_longer_than(seconds, ret_str = '')
+  def songs_longer_than(seconds)
+    ret_str = ''
     @library.each do |song|
       if song.length.to_i > seconds
         ret_str += song.details + "\n"
