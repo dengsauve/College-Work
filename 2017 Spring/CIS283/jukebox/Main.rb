@@ -42,7 +42,7 @@ end
 
 
 def songs_longer_than_seconds
-  print 'Enter the minimum length in seconds for a song: '
+  print "\nEnter the minimum length in seconds for a song: "
   seconds = gets.chomp.to_i
   puts '', "Songs over #{seconds} seconds long:", '-'*"Songs over #{seconds} seconds long:".length
   puts $seeburg_m100c.songs_longer_than(seconds), ''
@@ -79,7 +79,8 @@ end
 
 
 def add_song_to_jukebox
-  $seeburg_m100c.add(create_song)
+  puts
+  puts $seeburg_m100c.add(create_song)
 end
 
 
@@ -103,9 +104,8 @@ def update_song_in_jukebox
   print "\n", 'enter to continue, N to cancel'
   if gets.chomp != 'N'
     $seeburg_m100c.delete(song_index)
-    $seeburg_m100c.add(updated_track)
+    puts $seeburg_m100c.add(updated_track)
   end
-  puts
 end
 
 
@@ -121,22 +121,22 @@ def shutdown(file_name)
     archive.puts song.to_tab
   end
   archive.close
+  exit
 end
 
 
-def startup(file_name, jukebox=Jukebox.new)
+def startup(file_name)
   song_library = []
   File.open(file_name, 'r').readlines.each do |line|
     args = line.split("\t")
     song_library << (Song.new(args[0], args[1], args[2], args[3], args[4], args[5]))
   end
-  jukebox.load_songs(song_library)
-  jukebox
+  $seeburg_m100c.load_songs(song_library)
 end
 
 
 def please_enter(variable_string)
-  print "\nPlease enter #{variable_string}: "
+  print "Please enter #{variable_string}: "
   gets.chomp
 end
 
@@ -146,9 +146,10 @@ def title(title_string)
 end
 
 
-$seeburg_m100c = startup('Songs.txt')
-continuing = true
+$seeburg_m100c = Jukebox.new
+startup('Songs.txt')
 
+continuing = true
 while continuing
   case main_menu
     when 1
@@ -166,10 +167,9 @@ while continuing
     when 7
       show_songs_in_jukebox
     when 8
-      continuing = false
       shutdown('Songs.txt')
     when 9
-      continuing = false
+      exit
     else
       puts 'epic fail'
   end

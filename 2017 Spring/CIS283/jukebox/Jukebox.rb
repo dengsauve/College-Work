@@ -30,6 +30,7 @@ class Jukebox
 
   def add(track)
     @library << track
+    "\n#{track.info} added to Library.\n\n"
   end
 
 
