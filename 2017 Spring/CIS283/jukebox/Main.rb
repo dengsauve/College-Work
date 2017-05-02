@@ -32,7 +32,7 @@ end
 
 
 def main_menu(choice = 0)
-  until (1..8).to_a.include?(choice)
+  until (1..9).to_a.include?(choice)
     show_menu
     print 'Selection: '
     choice = gets.chomp.to_i
