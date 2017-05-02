@@ -6,7 +6,9 @@
 #  Class:        CIS 283
 #  Description:  Jukebox holds the Jukebox class which has
 #                an array of song objects.
-#                [X] Write another class called Jukebox which handles storing multiple songs into an array that is INSIDE the Jukebox class.
+#                [X] Write another class called Jukebox which handles
+#                storing multiple songs into an array that is
+#                INSIDE the Jukebox class.
 #                An object created from this class should respond to:
 #                  [X] adding
 #                  [X] deleting
@@ -21,12 +23,8 @@ class Jukebox
   end
 
 
-  def archive_songs(file_name)
-    archive = File.open(file_name, 'w+')
-    @library.each do |song|
-      archive.puts song.to_tab
-    end
-    archive.close
+  def archive_songs
+    @library
   end
 
 

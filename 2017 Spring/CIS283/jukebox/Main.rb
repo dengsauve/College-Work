@@ -116,7 +116,11 @@ end
 
 
 def shutdown(file_name)
-  $seeburg_m100c.archive_songs(file_name)
+  archive = File.open(file_name, 'w+')
+  $seeburg_m100c.archive_songs.each do |song|
+    archive.puts song.to_tab
+  end
+  archive.close
 end
 
 
