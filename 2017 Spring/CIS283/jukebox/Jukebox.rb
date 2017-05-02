@@ -84,11 +84,8 @@ class Jukebox
   end
 
 
-  def load_songs(file_name)
-    File.open(file_name, 'r+').readlines.each do |line|
-      args = line.split("\t")
-      add(Song.new(args[0], args[1], args[2], args[3], args[4], args[5]))
-    end
+  def load_songs(song_array)
+    @library = song_array
   end
 
 end

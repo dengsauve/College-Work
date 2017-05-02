@@ -125,7 +125,12 @@ end
 
 
 def startup(file_name, jukebox=Jukebox.new)
-  jukebox.load_songs(file_name)
+  song_library = []
+  File.open(file_name, 'r').readlines.each do |line|
+    args = line.split("\t")
+    song_library << (Song.new(args[0], args[1], args[2], args[3], args[4], args[5]))
+  end
+  jukebox.load_songs(song_library)
   jukebox
 end
 
