@@ -1,0 +1,9 @@
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MenusAssignmentSauve\MenusAssignmentSauve\bin\Debug\MenusAssignmentSauve.exe.config
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MenusAssignmentSauve\MenusAssignmentSauve\bin\Debug\MenusAssignmentSauve.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MenusAssignmentSauve\MenusAssignmentSauve\bin\Debug\MenusAssignmentSauve.pdb
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MenusAssignmentSauve\MenusAssignmentSauve\obj\Debug\MenusAssignmentSauve.csprojResolveAssemblyReference.cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MenusAssignmentSauve\MenusAssignmentSauve\obj\Debug\MenusAssignmentSauve.Form1.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MenusAssignmentSauve\MenusAssignmentSauve\obj\Debug\MenusAssignmentSauve.Properties.Resources.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MenusAssignmentSauve\MenusAssignmentSauve\obj\Debug\MenusAssignmentSauve.csproj.GenerateResource.Cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MenusAssignmentSauve\MenusAssignmentSauve\obj\Debug\MenusAssignmentSauve.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MenusAssignmentSauve\MenusAssignmentSauve\obj\Debug\MenusAssignmentSauve.pdb
