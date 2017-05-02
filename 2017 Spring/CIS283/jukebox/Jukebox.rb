@@ -22,27 +22,18 @@ class Jukebox
     @library = []
   end
 
-
   def archive_songs
     @library
   end
-
 
   def add(track)
     @library << track
     "\n#{track.info} added to Library.\n\n"
   end
 
-
   def delete(song_index)
     @library.delete_at(song_index)
   end
-
-
-  def update(track)
-    @library << track
-  end
-
 
   def contents
     ret_str = ''
@@ -52,7 +43,6 @@ class Jukebox
     end
     ret_str
   end
-
 
   def songs_longer_than(seconds)
     ret_str = ''
@@ -64,7 +54,6 @@ class Jukebox
     ret_str
   end
 
-
   def songs_by_artist(artist, ret_str='')
     @library.each do |song|
       if song.artist == artist
@@ -74,16 +63,13 @@ class Jukebox
     ret_str
   end
 
-
   def play_song(song_selection)
     @library[song_selection].play
   end
 
-
   def details_by_index(song_index)
     @library[song_index].details
   end
-
 
   def load_songs(song_array)
     @library = song_array

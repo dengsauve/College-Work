@@ -17,6 +17,15 @@
 require_relative('Jukebox')
 require_relative('Songs')
 
+def startup(file_name)
+  song_library = []
+  File.open(file_name, 'r').readlines.each do |line|
+    args = line.split("\t")
+    song_library << (Song.new(args[0], args[1], args[2], args[3], args[4], args[5]))
+  end
+  $seeburg_m100c.load_songs(song_library)
+end
+
 
 def show_menu
   puts "--- Main Menu --- \n1)  Show all songs that are longer than a user entered value (in seconds)
@@ -66,6 +75,12 @@ def play_song
 end
 
 
+def add_song_to_jukebox
+  puts
+  puts $seeburg_m100c.add(create_song)
+end
+
+
 def create_song
   # a song is (title, artist, album, year, comments, length)
   title = please_enter("the song's title")
@@ -75,12 +90,6 @@ def create_song
   comments = please_enter('any comments about the song')
   length = please_enter('the length of the song in minutes')
   Song.new(title, artist, album, year, comments, length)
-end
-
-
-def add_song_to_jukebox
-  puts
-  puts $seeburg_m100c.add(create_song)
 end
 
 
@@ -122,16 +131,6 @@ def shutdown(file_name)
   end
   archive.close
   exit
-end
-
-
-def startup(file_name)
-  song_library = []
-  File.open(file_name, 'r').readlines.each do |line|
-    args = line.split("\t")
-    song_library << (Song.new(args[0], args[1], args[2], args[3], args[4], args[5]))
-  end
-  $seeburg_m100c.load_songs(song_library)
 end
 
 
