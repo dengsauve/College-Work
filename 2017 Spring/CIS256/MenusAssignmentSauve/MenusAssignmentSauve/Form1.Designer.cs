@@ -39,17 +39,23 @@
             this.txtTheater = new System.Windows.Forms.TextBox();
             this.lblTheater = new System.Windows.Forms.Label();
             this.lblTickets = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblStudent = new System.Windows.Forms.Label();
             this.chkIsStudent = new System.Windows.Forms.CheckBox();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.numTickets = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblLabelTotal = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.calculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblStudentDiscount = new System.Windows.Forms.Label();
+            this.lblCharge = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblGrand = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numTickets)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,7 +70,7 @@
             this.menuItemCalculate});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(226, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(241, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuMain";
             // 
@@ -107,7 +113,7 @@
             // 
             // txtTheater
             // 
-            this.txtTheater.Location = new System.Drawing.Point(137, 27);
+            this.txtTheater.Location = new System.Drawing.Point(149, 27);
             this.txtTheater.Name = "txtTheater";
             this.txtTheater.Size = new System.Drawing.Size(74, 20);
             this.txtTheater.TabIndex = 0;
@@ -130,19 +136,19 @@
             this.lblTickets.TabIndex = 5;
             this.lblTickets.Text = "Number of Tickets:";
             // 
-            // label3
+            // lblStudent
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Are you a Student:";
+            this.lblStudent.AutoSize = true;
+            this.lblStudent.Location = new System.Drawing.Point(12, 81);
+            this.lblStudent.Name = "lblStudent";
+            this.lblStudent.Size = new System.Drawing.Size(95, 13);
+            this.lblStudent.TabIndex = 6;
+            this.lblStudent.Text = "Are you a Student:";
             // 
             // chkIsStudent
             // 
             this.chkIsStudent.AutoSize = true;
-            this.chkIsStudent.Location = new System.Drawing.Point(137, 80);
+            this.chkIsStudent.Location = new System.Drawing.Point(149, 80);
             this.chkIsStudent.Name = "chkIsStudent";
             this.chkIsStudent.Size = new System.Drawing.Size(44, 17);
             this.chkIsStudent.TabIndex = 2;
@@ -151,7 +157,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(137, 104);
+            this.btnCalculate.Location = new System.Drawing.Point(149, 104);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(74, 23);
             this.btnCalculate.TabIndex = 3;
@@ -161,7 +167,7 @@
             // 
             // numTickets
             // 
-            this.numTickets.Location = new System.Drawing.Point(137, 54);
+            this.numTickets.Location = new System.Drawing.Point(149, 54);
             this.numTickets.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -183,11 +189,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblTotal);
+            this.groupBox1.Controls.Add(this.lblGrand);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblCharge);
+            this.groupBox1.Controls.Add(this.lblStudentDiscount);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblSubTotal);
             this.groupBox1.Controls.Add(this.lblLabelTotal);
-            this.groupBox1.Location = new System.Drawing.Point(17, 133);
+            this.groupBox1.Location = new System.Drawing.Point(15, 133);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(194, 41);
+            this.groupBox1.Size = new System.Drawing.Size(208, 84);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
@@ -196,17 +208,17 @@
             this.lblLabelTotal.AutoSize = true;
             this.lblLabelTotal.Location = new System.Drawing.Point(6, 16);
             this.lblLabelTotal.Name = "lblLabelTotal";
-            this.lblLabelTotal.Size = new System.Drawing.Size(34, 13);
+            this.lblLabelTotal.Size = new System.Drawing.Size(56, 13);
             this.lblLabelTotal.TabIndex = 0;
-            this.lblLabelTotal.Text = "Total:";
+            this.lblLabelTotal.Text = "Sub Total:";
             // 
-            // lblTotal
+            // lblSubTotal
             // 
-            this.lblTotal.Location = new System.Drawing.Point(46, 16);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(142, 13);
-            this.lblTotal.TabIndex = 11;
-            this.lblTotal.Text = "$";
+            this.lblSubTotal.Location = new System.Drawing.Point(134, 16);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(66, 13);
+            this.lblSubTotal.TabIndex = 11;
+            this.lblSubTotal.Text = "$";
             // 
             // contextMenuStrip1
             // 
@@ -239,18 +251,69 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Theater Charge:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Student Discount:";
+            // 
+            // lblStudentDiscount
+            // 
+            this.lblStudentDiscount.Location = new System.Drawing.Point(134, 42);
+            this.lblStudentDiscount.Name = "lblStudentDiscount";
+            this.lblStudentDiscount.Size = new System.Drawing.Size(66, 13);
+            this.lblStudentDiscount.TabIndex = 14;
+            this.lblStudentDiscount.Text = "$";
+            // 
+            // lblCharge
+            // 
+            this.lblCharge.Location = new System.Drawing.Point(134, 29);
+            this.lblCharge.Name = "lblCharge";
+            this.lblCharge.Size = new System.Drawing.Size(66, 13);
+            this.lblCharge.TabIndex = 15;
+            this.lblCharge.Text = "$";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Grand Total:";
+            // 
+            // lblGrand
+            // 
+            this.lblGrand.Location = new System.Drawing.Point(134, 68);
+            this.lblGrand.Name = "lblGrand";
+            this.lblGrand.Size = new System.Drawing.Size(66, 13);
+            this.lblGrand.TabIndex = 17;
+            this.lblGrand.Text = "$";
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(226, 189);
+            this.ClientSize = new System.Drawing.Size(241, 235);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.numTickets);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.chkIsStudent);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblStudent);
             this.Controls.Add(this.lblTickets);
             this.Controls.Add(this.lblTheater);
             this.Controls.Add(this.txtTheater);
@@ -283,17 +346,23 @@
         private System.Windows.Forms.TextBox txtTheater;
         private System.Windows.Forms.Label lblTheater;
         private System.Windows.Forms.Label lblTickets;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblStudent;
         private System.Windows.Forms.CheckBox chkIsStudent;
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.NumericUpDown numTickets;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label lblLabelTotal;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem calculateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label lblCharge;
+        private System.Windows.Forms.Label lblStudentDiscount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblGrand;
+        private System.Windows.Forms.Label label5;
     }
 }
 

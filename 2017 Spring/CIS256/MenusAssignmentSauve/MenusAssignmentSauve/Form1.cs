@@ -15,30 +15,51 @@ namespace MenusAssignmentSauve
         public Form1()
         {
             InitializeComponent();
+            lblSubTotal.Text = "";
+            lblCharge.Text = "";
+            lblStudentDiscount.Text = "";
+            lblGrand.Text = "";
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             double baseCost = 7.50;
             baseCost = baseCost * (int)numTickets.Value;
+            lblSubTotal.Text = "$" + Math.Round(baseCost, 1).ToString() + "0";
 
             if (txtTheater.Text == "2")
             {
+                lblCharge.Text = "-$" + Math.Round(baseCost * 0.25, 1).ToString() + "0";
+                lblCharge.ForeColor = Color.Green;
                 baseCost = baseCost * 0.75;
             }
             else if(txtTheater.Text == "3")
             {
+                lblCharge.Text = "$5.00";
+                lblCharge.ForeColor = Color.Black;
                 baseCost += 5.0;
+            }
+            else
+            {
+                lblCharge.Text = "$0.00";
+                lblCharge.ForeColor = Color.Black;
             }
 
             if (chkIsStudent.Checked)
             {
+                lblStudentDiscount.Text = "-$2.00";
+                lblStudentDiscount.ForeColor = Color.Green;
                 baseCost -= 2.0;
+            }
+            else
+            {
+                lblStudentDiscount.Text = "$0.00";
+                lblStudentDiscount.ForeColor = Color.Black;
             }
 
             baseCost = Math.Round(baseCost, 1);
 
-            lblTotal.Text = "$" + baseCost.ToString() + "0";
+            lblGrand.Text = "$" + baseCost.ToString() + "0";
         }
 
         private void menuItemExit_Click(object sender, EventArgs e)
@@ -51,7 +72,12 @@ namespace MenusAssignmentSauve
             txtTheater.Text = "";
             numTickets.Value = 1;
             chkIsStudent.Checked = false;
-            lblTotal.Text = "$";
+            lblSubTotal.Text = "";
+            lblCharge.Text = "";
+            lblCharge.ForeColor = Color.Black;
+            lblStudentDiscount.Text = "";
+            lblStudentDiscount.ForeColor = Color.Black;
+            lblGrand.Text = "";
             txtTheater.Focus();
         }
 
