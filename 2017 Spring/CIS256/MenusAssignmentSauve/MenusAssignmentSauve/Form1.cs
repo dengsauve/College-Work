@@ -100,5 +100,15 @@ namespace MenusAssignmentSauve
         {
             menuItemExit.PerformClick();
         }
+
+        private void toolStripCalculate_Click(object sender, EventArgs e)
+        {
+            btnCalculate.PerformClick();
+        }
+
+        private void toolStripClear_Click(object sender, EventArgs e)
+        {
+            menuItemClear.PerformClick();
+        }
     }
 }
