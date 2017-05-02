@@ -13,7 +13,24 @@ class Person
 
 end
 
+class Child < Person
+  def to_s
+    return 'Young Adult'
+  end
+end
 
-dave = Person.new('gray', 'green', 32, true)
+class GrandChild < Child
+  def to_s
+    return 'Still a baby, nothing to report'
+  end
+end
 
+
+dave = Person.new('gray', 'green', 42, false)
 puts dave.to_s
+
+mini_dave = Child.new('gray', 'green', 23, false)
+puts mini_dave.to_s
+
+micro_dave = GrandChild.new('blonde', 'blue', 1, false)
+puts micro_dave.to_s
