@@ -13,7 +13,7 @@
 ############################################################
 
 class Song
-  attr_reader :title,:artist, :album, :year, :comments, :length
+  attr_reader :artist, :length
   def initialize(title, artist, album, year, comments, length)
     @title = title
     @artist = artist
@@ -36,7 +36,7 @@ class Song
   end
 
   def to_tab
-    [title, artist, album, year, comments, length].join("\t")
+    [@title, @artist, @album, @year, @comments, @length].join("\t")
   end
 
 end

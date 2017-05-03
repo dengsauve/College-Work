@@ -17,13 +17,13 @@
 require_relative('Jukebox')
 require_relative('Songs')
 
-def startup(file_name)
+def startup(file_name, jukebox)
   song_library = []
   File.open(file_name, 'r').readlines.each do |line|
     args = line.split("\t")
     song_library << (Song.new(args[0], args[1], args[2], args[3], args[4], args[5]))
   end
-  $seeburg_m100c.load_songs(song_library)
+  jukebox.load_songs(song_library)
 end
 
 
@@ -50,34 +50,34 @@ def main_menu(choice = 0)
 end
 
 
-def songs_longer_than_seconds
+def songs_longer_than_seconds(jukebox)
   print "\nEnter the minimum length in seconds for a song: "
   seconds = gets.chomp.to_i
   puts '', "Songs over #{seconds} seconds long:", '-'*"Songs over #{seconds} seconds long:".length
-  puts $seeburg_m100c.songs_longer_than(seconds), ''
+  puts jukebox.songs_longer_than(seconds), ''
 end
 
 
-def songs_by_artist
+def songs_by_artist(jukebox)
   print "\nEnter the artist\'s name to see the selections: "
   artist = gets.chomp
   title("Songs by #{artist}")
-  puts $seeburg_m100c.songs_by_artist(artist) + "\n"
+  puts jukebox.songs_by_artist(artist) + "\n"
 end
 
 
-def play_song
+def play_song(jukebox)
   title('What song would you like to play?')
-  puts $seeburg_m100c.contents
+  puts jukebox.contents
   print "\nSelection: "
   song_selection = gets.chomp.to_i - 1
-  puts '', $seeburg_m100c.play_song(song_selection), ''
+  puts '', jukebox.play_song(song_selection), ''
 end
 
 
-def add_song_to_jukebox
+def add_song_to_jukebox(jukebox)
   puts
-  puts $seeburg_m100c.add(create_song)
+  puts jukebox.add(create_song)
 end
 
 
@@ -88,45 +88,45 @@ def create_song
   album = please_enter("the album the song's on")
   year = please_enter('the year the song was released')
   comments = please_enter('any comments about the song')
-  length = please_enter('the length of the song in minutes')
+  length = please_enter('the length of the song in seconds')
   Song.new(title, artist, album, year, comments, length)
 end
 
 
-def delete_song_from_jukebox
+def delete_song_from_jukebox(jukebox)
   title('What song would you like to Delete?')
-  puts $seeburg_m100c.contents, ''
+  puts jukebox.contents, ''
   song_index = gets.chomp.to_i - 1
-  $seeburg_m100c.delete(song_index)
+  jukebox.delete(song_index)
   puts 'Song Deleted', ''
 end
 
 
-def update_song_in_jukebox
+def update_song_in_jukebox(jukebox)
   title('What song would you like to Update?')
-  puts $seeburg_m100c.contents, ''
+  puts jukebox.contents, ''
   song_index = gets.chomp.to_i - 1
   updated_track = create_song
   title('Are you sure you want to replace?')
-  puts "Original: #{$seeburg_m100c.details_by_index(song_index)}"
+  puts "Original: #{jukebox.details_by_index(song_index)}"
   puts "Replacement: #{updated_track.details}"
   print "\n", 'enter to continue, N to cancel'
   if gets.chomp != 'N'
-    $seeburg_m100c.delete(song_index)
-    puts $seeburg_m100c.add(updated_track)
+    jukebox.delete(song_index)
+    puts jukebox.add(updated_track)
   end
 end
 
 
-def show_songs_in_jukebox
+def show_songs_in_jukebox(jukebox)
   title('All Songs Available in Jukebox')
-  puts $seeburg_m100c.contents,''
+  puts jukebox.contents,''
 end
 
 
-def shutdown(file_name)
+def shutdown(file_name, jukebox)
   archive = File.open(file_name, 'w+')
-  $seeburg_m100c.archive_songs.each do |song|
+  jukebox.archive_songs.each do |song|
     archive.puts song.to_tab
   end
   archive.close
@@ -145,28 +145,28 @@ def title(title_string)
 end
 
 
-$seeburg_m100c = Jukebox.new
-startup('Songs.txt')
+seeburg_m100c = Jukebox.new
+startup('Songs.txt', seeburg_m100c)
 
 continuing = true
 while continuing
   case main_menu
     when 1
-      songs_longer_than_seconds
+      songs_longer_than_seconds(seeburg_m100c)
     when 2
-      songs_by_artist
+      songs_by_artist(seeburg_m100c)
     when 3
-      play_song
+      play_song(seeburg_m100c)
     when 4
-      add_song_to_jukebox
+      add_song_to_jukebox(seeburg_m100c)
     when 5
-      delete_song_from_jukebox
+      delete_song_from_jukebox(seeburg_m100c)
     when 6
-      update_song_in_jukebox
+      update_song_in_jukebox(seeburg_m100c)
     when 7
-      show_songs_in_jukebox
+      show_songs_in_jukebox(seeburg_m100c)
     when 8
-      shutdown('Songs.txt')
+      shutdown('Songs.txt', seeburg_m100c)
     when 9
       exit
     else

@@ -56,7 +56,7 @@ class Jukebox
 
   def songs_by_artist(artist, ret_str='')
     @library.each do |song|
-      if song.artist == artist
+      if song.artist.downcase == artist.downcase
         ret_str += '=> ' + song.details + "\n"
       end
     end

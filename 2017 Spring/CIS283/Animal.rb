@@ -10,6 +10,21 @@ class Animal
   end
 end
 
-buffalo = Animal.new('Brown', 'Buffy')
+#buffalo = Animal.new('Brown', 'Buffy')
 
-puts buffalo.to_s
+#puts buffalo.to_s
+
+class Bird < Animal
+  def initialize(color, name, num_wings)
+    super(color, name)
+    @num_wings = num_wings
+  end
+
+  def to_s
+    "#{super} and I have #{@num_wings} wings!"
+  end
+end
+
+eagle = Bird.new("Blue", "Sam", 2)
+
+puts eagle
