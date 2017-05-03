@@ -7,8 +7,8 @@ Please use my attributes exactly – this is MY game, not yours.
 
 This program should have the following classes:
 [X]Character Class
-	[ ]Maximum values should be class variables and should  be checked on input
-	[ ]Attributes:
+	[X]Maximum values should be class variables and should  be checked on input
+	[X]Attributes:
 	    [ ]Name,
 	    [ ]Race,
 		[ ]Hit Points (Max 100),
@@ -47,12 +47,13 @@ This program should have the following classes:
 	    [ ]to_s
 
 
-[ ]Your program will load 2 different characters into your game from a text file which describes each character like this – 3 lines of information representing the character, weapon, and armor.  Each character has their own text file.
+[ ]Your program will load 2 different characters into your game from a text file which describes each character like this
+    3 lines of information representing the character, weapon, and armor.  Each character has their own text file.
 	Dave, elf, 47, 30, 10		#Name, race, hits, strength, agility	turn into a Character Object
 	Bow, 15			#name, hits   turn into a Weapon Object
 	Leather, 10			#name, hits   turn into an Armor Object
 
-[ ]Create a menu exactly like this:
+[X]Create a menu exactly like this:
     Load Character 1
     Load Character 2
     Fight

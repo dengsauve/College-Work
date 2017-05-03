@@ -37,7 +37,7 @@ class Character
   end
 
   def to_s
-    "#{@name} the #{@race}, has #{weapon} equipped, wearing #{armor}"
+    "#{@name} the #{@race}, has #{@weapon} equipped, wearing #{@armor}"
   end
 
   def current_status

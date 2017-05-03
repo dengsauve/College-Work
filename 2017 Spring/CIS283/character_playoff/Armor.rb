@@ -14,11 +14,11 @@
 
 class Armor < Item
   def initialize(name, protection_hits)
-    super
+    @name = name
     @protection_hits = protection_hits
   end
 
   def to_s
-    "#{name} provides #{@damage_hits} points of protection"
+    "#{@name} provides #{@protection_hits} points of protection"
   end
 end

@@ -14,11 +14,11 @@
 
 class Weapon < Item
   def initialize(name, damage_hits)
-    super
+    @name = name
     @damage_hits = damage_hits
   end
 
   def to_s
-    "#{name} does #{@damage_hits} points of damage"
+    "#{@name} does #{@damage_hits} points of damage"
   end
 end
