@@ -5,5 +5,9 @@
 #  Assignment:   Character Playoff
 #  Class:        CIS283
 #  Description:  Weapon Class - Inherits from Item Class
+#                [ ]Attributes:
+#                  [ ]damage_hits
+#                [ ]Methods:
+#                  [ ]to_s
 #
 ############################################################

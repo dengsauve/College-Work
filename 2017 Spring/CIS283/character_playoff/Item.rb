@@ -5,5 +5,7 @@
 #  Assignment:   Character Playoff
 #  Class:        CIS283
 #  Description:  Item Class
+#                Attributes
+#                  [ ]Name
 #
 ############################################################
