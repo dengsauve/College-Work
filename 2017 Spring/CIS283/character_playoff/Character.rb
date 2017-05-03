@@ -24,7 +24,7 @@
 ############################################################
 
 class Character
-
+  attr_reader :name, :race, :hit_points, :current_hit_points, :strength, :agility, :weapon, :armor
   def initialize(name, race, hit_points, strength, agility, weapon, armor)
     @name = name
     @race = race
@@ -49,7 +49,11 @@ class Character
   end
 
   def reduce_hits(points)
-    @current_hit_points - points < 0 ? @current_hit_points -= points : @current_hit_points = 0
+    if @current_hit_points - points > 0
+      @current_hit_points -= points
+    else
+      @current_hit_points = 0
+    end
   end
 
 end

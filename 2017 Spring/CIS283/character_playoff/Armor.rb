@@ -13,6 +13,7 @@
 ############################################################
 
 class Armor < Item
+  attr_reader :protection_hits
   def initialize(name, protection_hits)
     @name = name
     @protection_hits = protection_hits

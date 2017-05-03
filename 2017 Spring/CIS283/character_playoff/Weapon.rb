@@ -13,6 +13,7 @@
 ############################################################
 
 class Weapon < Item
+  attr_reader :damage_hits
   def initialize(name, damage_hits)
     @name = name
     @damage_hits = damage_hits
