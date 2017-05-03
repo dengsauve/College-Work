@@ -52,9 +52,13 @@ end
 
 def songs_longer_than_seconds(jukebox)
   print "\nEnter the minimum length in seconds for a song: "
-  seconds = gets.chomp.to_i
-  puts '', "Songs over #{seconds} seconds long:", '-'*"Songs over #{seconds} seconds long:".length
-  puts jukebox.songs_longer_than(seconds), ''
+  seconds = gets.chomp
+  if seconds.to_i.to_s == seconds
+    puts '', "Songs over #{seconds} seconds long:", '-'*"Songs over #{seconds} seconds long:".length
+    puts jukebox.songs_longer_than(seconds.to_i), ''
+  else
+    puts "\nNot a valid number.\n\n"
+  end
 end
 
 
@@ -70,8 +74,16 @@ def play_song(jukebox)
   title('What song would you like to play?')
   puts jukebox.contents
   print "\nSelection: "
-  song_selection = gets.chomp.to_i - 1
-  puts '', jukebox.play_song(song_selection), ''
+  song_selection = gets.chomp
+  if song_selection.to_i.to_s == song_selection
+    if (1..jukebox.count).include?(song_selection.to_i)
+      puts '', jukebox.play_song(song_selection.to_i - 1), ''
+    else
+      puts "\nInvalid Selection\n\n"
+    end
+  else
+    puts "\nNot a Valid Number.\n\n"
+  end
 end
 
 
@@ -96,24 +108,40 @@ end
 def delete_song_from_jukebox(jukebox)
   title('What song would you like to Delete?')
   puts jukebox.contents, ''
-  song_index = gets.chomp.to_i - 1
-  jukebox.delete(song_index)
-  puts 'Song Deleted', ''
+  song_index = gets.chomp
+  if song_index.to_i.to_s == song_index
+    if (1..jukebox.count).include?(song_index.to_i)
+      jukebox.delete(song_index.to_i - 1)
+      puts 'Song Deleted', ''
+    else
+      puts "\nInvalid Selection.\n\n"
+    end
+  else
+    puts "\nNot a Valid Number.\n\n"
+  end
 end
 
 
 def update_song_in_jukebox(jukebox)
   title('What song would you like to Update?')
   puts jukebox.contents, ''
-  song_index = gets.chomp.to_i - 1
-  updated_track = create_song
-  title('Are you sure you want to replace?')
-  puts "Original: #{jukebox.details_by_index(song_index)}"
-  puts "Replacement: #{updated_track.details}"
-  print "\n", 'enter to continue, N to cancel'
-  if gets.chomp != 'N'
-    jukebox.delete(song_index)
-    puts jukebox.add(updated_track)
+  song_index = gets.chomp
+  if song_index.to_i.to_s == song_index
+    if (1..jukebox.count).include?(song_index.to_i)
+      updated_track = create_song
+      title('Are you sure you want to replace?')
+      puts "Original: #{jukebox.details_by_index(song_index.to_i - 1)}"
+      puts "Replacement: #{updated_track.details}"
+      print "\n", 'enter to continue, N to cancel'
+      if gets.chomp != 'N'
+        jukebox.delete(song_index.to_i - 1)
+        puts jukebox.add(updated_track)
+      end
+    else
+      puts "\nInvalid Selection.\n\n"
+    end
+  else
+    puts "\nNot a Valid Number.\n\n"
   end
 end
 

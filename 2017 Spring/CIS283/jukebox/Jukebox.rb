@@ -75,4 +75,8 @@ class Jukebox
     @library = song_array
   end
 
+  def count
+    @library.length
+  end
+
 end
