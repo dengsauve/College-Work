@@ -5,9 +5,20 @@
 #  Assignment:   Character Playoff
 #  Class:        CIS283
 #  Description:  Weapon Class - Inherits from Item Class
-#                [ ]Attributes:
-#                  [ ]damage_hits
-#                [ ]Methods:
-#                  [ ]to_s
+#                [X]Attributes:
+#                  [X]damage_hits
+#                [...]Methods:
+#                  [...]to_s
 #
 ############################################################
+
+class Weapon < Item
+  def initialize(name, damage_hits)
+    super
+    @damage_hits = damage_hits
+  end
+
+  def to_s
+    "#{name} does #{@damage_hits} points of damage"
+  end
+end
