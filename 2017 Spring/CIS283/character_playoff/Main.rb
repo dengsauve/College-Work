@@ -46,7 +46,9 @@ def fight(character1, character2, dice_bag)
   while character1.current_hit_points > 0 and character2.current_hit_points > 0
     outcome = 0
     while outcome == 0
-      outcome = dice_bag[0].roll - dice_bag[1].roll
+      dice_bag[0].roll
+      dice_bag[1].roll
+      outcome = dice_bag[0].showing - dice_bag[1].showing
     end
     if outcome < 0 # Character 2 wins the roll
       combat(character1, character2, dice_bag)
@@ -56,6 +58,7 @@ def fight(character1, character2, dice_bag)
     print 'Press enter to continue'
     gets
   end
+
   ret_str = "\n#{character1.name + ' WINS!' if character1.current_hit_points > 0}#{character2.name + ' WINS!' if character2.current_hit_points > 0}\n"
   ret_str += "-------------------------\n"
   ret_str += character1.current_status + "\n"
@@ -76,9 +79,13 @@ end
 def attack(target, attacker, dice_bag)
   ret_str = ''
   ret_str += "#{attacker.name} fights with #{attacker.weapon.name}\n"
-  if dice_bag[4].roll < attacker.agility
-    hit = (attacker.strength * 1.0/dice_bag[2].roll + attacker.weapon.damage_hits/dice_bag[4].roll).to_i
-    armor_save = (1.0 * target.armor.protection_hits / dice_bag[6].roll ).to_i
+  dice_bag[4].roll
+  if dice_bag[4].showing < attacker.agility
+    dice_bag[2].roll
+    dice_bag[4].roll
+    dice_bag[6].roll
+    hit = (attacker.strength * 1.0/dice_bag[2].showing + attacker.weapon.damage_hits/dice_bag[4].showing).to_i
+    armor_save = (1.0 * target.armor.protection_hits / dice_bag[6].showing ).to_i
     (hit - armor_save) > 0 ? damage = hit - armor_save : damage = 0
     ret_str += "\tHit: #{hit}\t#{target.name}'s armor saves #{armor_save}\n"
     ret_str += "\t#{target.name}'s hit points are reduced by #{damage}\n"
@@ -116,12 +123,12 @@ while true
   case main_menu.get_menu_choice
     when 1
       character1 = load_character('gimli.txt')
-      puts '', character1.to_s, ''
       character1_created = true
+      puts '', character1.to_s, ''
     when 2
       character2 = load_character('legolas.txt')
-      puts '', character2.to_s, ''
       character2_created = true
+      puts '', character2.to_s, ''
     when 3
       if character1_created and character2_created
         puts fight(character1, character2, dice_bag)

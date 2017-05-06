@@ -16,9 +16,14 @@
 class Dice
   def initialize(num_sides)
     @num_sides = num_sides
+    @showing = 1 + rand(num_sides)
   end
 
   def roll
-    (1..@num_sides).to_a.sample
+    @showing = 1 + rand(@num_sides)
+  end
+
+  def showing
+    @showing
   end
 end
