@@ -23,34 +23,37 @@ def load_character(textfile)
   end
   data.close
 
-  weapon = Weapon.new(args[1][0], args[1][1].strip.to_i)
-  armor = Armor.new(args[2][0], args[2][1].strip.to_i)
-  Character.new(args[0][0], args[0][1], args[0][2].strip.to_i, args[0][3].strip.to_i, args[0][4].strip.to_i, weapon, armor)
+  weapon = Weapon.new(
+      args[1][0],
+      args[1][1].strip.to_i
+  )
+  armor = Armor.new(
+      args[2][0],
+      args[2][1].strip.to_i
+  )
+  return Character.new(
+      args[0][0],
+      args[0][1],
+      args[0][2].strip.to_i,
+      args[0][3].strip.to_i,
+      args[0][4].strip.to_i,
+      weapon,
+      armor
+  )
 end
 
-def fight(character1, character2)
-  c1d6, c2d6 = Dice.new(6), Dice.new(6)
+def fight(character1, character2, dice_bag)
   while character1.current_hit_points > 0 and character2.current_hit_points > 0
     outcome = 0
     while outcome == 0
-      outcome = c1d6.roll - c2d6.roll
+      outcome = dice_bag[0].roll - dice_bag[1].roll
     end
-    if outcome < 0
-      puts '', attack(character1, character2)
-      if character1.current_hit_points > 0 and character2.current_hit_points > 0
-        puts attack(character2, character1) + "\n\n"
-      else
-        puts
-      end
-    else
-      puts '', attack(character2, character1)
-      if character1.current_hit_points > 0 and character2.current_hit_points > 0
-        puts attack(character1, character2) + "\n\n"
-      else
-        puts
-      end
+    if outcome < 0 # Character 2 wins the roll
+      combat(character1, character2, dice_bag)
+    else # Character 1 wins the roll
+      combat(character2, character1, dice_bag)
     end
-    print "Press enter to continue"
+    print 'Press enter to continue'
     gets
   end
   ret_str = "\n#{character1.name + ' WINS!' if character1.current_hit_points > 0}#{character2.name + ' WINS!' if character2.current_hit_points > 0}\n"
@@ -61,20 +64,29 @@ def fight(character1, character2)
   return ret_str
 end
 
-def attack(target, attacker)
+def combat(target, attacker, dice_bag)
+  puts '', attack(target, attacker, dice_bag)
+  if target.current_hit_points > 0 and attacker.current_hit_points > 0
+    puts attack(attacker, target, dice_bag) + "\n\n"
+  else
+    puts
+  end
+end
+
+def attack(target, attacker, dice_bag)
   ret_str = ''
   ret_str += "#{attacker.name} fights with #{attacker.weapon.name}\n"
-  if Dice.new(10).roll < attacker.agility
-    hit = (attacker.strength * 1.0/Dice.new(4).roll + attacker.weapon.damage_hits/Dice.new(8).roll).to_i
-    armor_save = (1.0 * target.armor.protection_hits / Dice.new(15).roll ).to_i
+  if dice_bag[4].roll < attacker.agility
+    hit = (attacker.strength * 1.0/dice_bag[2].roll + attacker.weapon.damage_hits/dice_bag[4].roll).to_i
+    armor_save = (1.0 * target.armor.protection_hits / dice_bag[6].roll ).to_i
     (hit - armor_save) > 0 ? damage = hit - armor_save : damage = 0
     ret_str += "\tHit: #{hit}\t#{target.name}'s armor saves #{armor_save}\n"
-    ret_str += "#{target.name}'s hit points are reduced by #{damage}\n"
+    ret_str += "\t#{target.name}'s hit points are reduced by #{damage}\n"
     target.reduce_hits(damage)
-    ret_str += target.current_status
+    ret_str += "\t" + target.current_status
     return ret_str
   else
-    ret_str += "Misses!"
+    ret_str += "\tMisses!"
     return ret_str
   end
 end
@@ -82,10 +94,20 @@ end
 
 character1, character2 = Character, Character
 character1_created, character2_created = false, false
-main_menu = Menu.new('Load Character 1',
-                     'Load Character 2',
-                     'Fight',
-                     'Quit'
+dice_bag = [
+    Dice.new(6),
+    Dice.new(6),
+    Dice.new(4),
+    Dice.new(5),
+    Dice.new(8),
+    Dice.new(10),
+    Dice.new(15)
+]
+main_menu = Menu.new(
+    'Load Character 1',
+    'Load Character 2',
+    'Fight',
+    'Quit'
 )
 
 main_menu.title=('-- Main Menu --')
@@ -102,7 +124,7 @@ while true
       character2_created = true
     when 3
       if character1_created and character2_created
-        puts fight(character1, character2)
+        puts fight(character1, character2, dice_bag)
       else
         puts "\nYou need to load#{' Character 1' unless character1_created}#{' Character 2' unless character2_created}.\n\n"
       end
