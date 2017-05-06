@@ -13,21 +13,7 @@ require_relative('Dice')
 require_relative('Item')
 require_relative('Weapon')
 require_relative('Armor')
-
-def display_menu
-  choice = 0
-  until (1..4).include?(choice)
-    puts "\n-- Main Menu --"
-    puts "1.\tLoad Character 1
-2.\tLoad Character 2
-3.\tFight
-4.\tQuit"
-
-    print "\nenter your selection: "
-    choice = gets.chomp.to_i
-  end
-  choice
-end
+require_relative('Menu')
 
 # noinspection RubyArgCount
 def load_character(textfile)
@@ -50,22 +36,28 @@ def fight(character1, character2)
       outcome = c1d6.roll - c2d6.roll
     end
     if outcome < 0
-      puts attack(character1, character2)
+      puts '', attack(character1, character2)
       if character1.current_hit_points > 0 and character2.current_hit_points > 0
         puts attack(character2, character1) + "\n\n"
+      else
+        puts
       end
     else
-      puts attack(character2, character1)
+      puts '', attack(character2, character1)
       if character1.current_hit_points > 0 and character2.current_hit_points > 0
         puts attack(character1, character2) + "\n\n"
+      else
+        puts
       end
     end
+    print "Press enter to continue"
+    gets
   end
   ret_str = "\n#{character1.name + ' WINS!' if character1.current_hit_points > 0}#{character2.name + ' WINS!' if character2.current_hit_points > 0}\n"
   ret_str += "-------------------------\n"
   ret_str += character1.current_status + "\n"
   ret_str += character2.current_status + "\n"
-  ret_str += "-------------------------\n"
+  ret_str += "-------------------------\n\n"
   return ret_str
 end
 
@@ -82,7 +74,7 @@ def attack(target, attacker)
     ret_str += target.current_status
     return ret_str
   else
-    ret_str += "Misses!\n"
+    ret_str += "Misses!"
     return ret_str
   end
 end
@@ -90,24 +82,33 @@ end
 
 character1, character2 = Character, Character
 character1_created, character2_created = false, false
+main_menu = Menu.new('Load Character 1',
+                     'Load Character 2',
+                     'Fight',
+                     'Quit'
+)
+
+main_menu.title=('-- Main Menu --')
 
 while true
-  case display_menu
+  case main_menu.get_menu_choice
     when 1
       character1 = load_character('gimli.txt')
-      puts character1.to_s
+      puts '', character1.to_s, ''
       character1_created = true
     when 2
       character2 = load_character('legolas.txt')
-      puts character2.to_s
+      puts '', character2.to_s, ''
       character2_created = true
     when 3
       if character1_created and character2_created
         puts fight(character1, character2)
       else
-        puts "You need to load#{' Character 1' unless character1_created}#{' Character 2' unless character2_created}."
+        puts "\nYou need to load#{' Character 1' unless character1_created}#{' Character 2' unless character2_created}.\n\n"
       end
-    else
+    when main_menu.quit
       exit
+    else
+      puts "\nInvalid Entry\n\n"
   end
 end

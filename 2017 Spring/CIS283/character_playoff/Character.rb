@@ -28,7 +28,13 @@ class Character
   def initialize(name, race, hit_points, strength, agility, weapon, armor)
     @name = name
     @race = race
-    hit_points < 101 ? @hit_points = hit_points : @hit_points = 100
+    if hit_points > 100
+      @hit_points = 100
+    elsif hit_points < 0
+      @hit_points = 0
+    else
+      @hit_points = hit_points
+    end
     @current_hit_points = hit_points
     strength < 51 ? @strength = strength : @strength = 50
     @agility = agility
