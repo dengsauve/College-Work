@@ -36,6 +36,13 @@ class Character
       @hit_points = hit_points
     end
     @current_hit_points = hit_points
+    if strength > 50
+      @strength = 50
+    elsif strength < 0
+      @strength = 0
+    else
+      @strength = strength
+    end
     strength < 51 ? @strength = strength : @strength = 50
     @agility = agility
     @weapon = weapon

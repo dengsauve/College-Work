@@ -65,7 +65,7 @@ def attack(target, attacker)
   ret_str = ''
   ret_str += "#{attacker.name} fights with #{attacker.weapon.name}\n"
   if Dice.new(10).roll < attacker.agility
-    hit = ((attacker.strength * (1.0/Dice.new(4).roll)) + ((attacker.weapon.damage_hits)/Dice.new(8).roll)).to_i
+    hit = (attacker.strength * 1.0/Dice.new(4).roll + attacker.weapon.damage_hits/Dice.new(8).roll).to_i
     armor_save = (1.0 * target.armor.protection_hits / Dice.new(15).roll ).to_i
     (hit - armor_save) > 0 ? damage = hit - armor_save : damage = 0
     ret_str += "\tHit: #{hit}\t#{target.name}'s armor saves #{armor_save}\n"
