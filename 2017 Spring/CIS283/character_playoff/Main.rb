@@ -46,9 +46,7 @@ def fight(character1, character2, dice_bag)
   while character1.current_hit_points > 0 and character2.current_hit_points > 0
     outcome = 0
     while outcome == 0
-      dice_bag[0].roll
-      dice_bag[1].roll
-      outcome = dice_bag[0].showing - dice_bag[1].showing
+      outcome = dice_bag[0].roll - dice_bag[1].roll
     end
     if outcome < 0 # Character 2 wins the roll
       combat(character1, character2, dice_bag)
@@ -79,13 +77,9 @@ end
 def attack(target, attacker, dice_bag)
   ret_str = ''
   ret_str += "#{attacker.name} fights with #{attacker.weapon.name}\n"
-  dice_bag[4].roll
-  if dice_bag[4].showing < attacker.agility
-    dice_bag[2].roll
-    dice_bag[4].roll
-    dice_bag[6].roll
-    hit = (attacker.strength * 1.0/dice_bag[2].showing + attacker.weapon.damage_hits/dice_bag[4].showing).to_i
-    armor_save = (1.0 * target.armor.protection_hits / dice_bag[6].showing ).to_i
+  if dice_bag[4].roll < attacker.agility
+    hit = (attacker.strength * 1.0/dice_bag[2].roll + attacker.weapon.damage_hits/dice_bag[4].roll).to_i
+    armor_save = (1.0 * target.armor.protection_hits / dice_bag[6].roll ).to_i
     (hit - armor_save) > 0 ? damage = hit - armor_save : damage = 0
     ret_str += "\tHit: #{hit}\t#{target.name}'s armor saves #{armor_save}\n"
     ret_str += "\t#{target.name}'s hit points are reduced by #{damage}\n"

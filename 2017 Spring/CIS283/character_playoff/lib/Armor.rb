@@ -15,7 +15,7 @@
 class Armor < Item
   attr_reader :protection_hits
   def initialize(name, protection_hits)
-    @name = name
+    super(name)
     @protection_hits = protection_hits
   end
 
