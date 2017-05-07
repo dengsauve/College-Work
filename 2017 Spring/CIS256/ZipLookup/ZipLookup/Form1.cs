@@ -35,7 +35,7 @@ namespace ZipLookup
             // NOTE: Could be SqlConnection cn = new SqlConnection("Data Source=134.39.173.35;Initial Catalog=Contributions;User ID=dsauve_w17;Password=HJpo11er");
             // This has the advantage of being short and sweet.
 
-            cnStr = "Data Source=134.39.173.35;Initial Catalog=Contributions;User ID=dsauve_w17;Password=HJpo11er";
+            cnStr = "Data Source=[Redacted];Initial Catalog=Contributions;User ID=[Redacted];Password=[Redacted]";
             // NOTE: Could also be cn.ConnectionString = "Data Source=134.39.173.35;Initial Catalog=Contributions;User ID=dsauve_w17;Password=HJpo11er";
             cn.ConnectionString = cnStr;
 
