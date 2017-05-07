@@ -8,12 +8,12 @@
 #
 ############################################################
 
-require_relative('Character')
-require_relative('Dice')
-require_relative('Item')
-require_relative('Weapon')
-require_relative('Armor')
-require_relative('Menu')
+require_relative('lib/Character')
+require_relative('lib/Dice')
+require_relative('lib/Item')
+require_relative('lib/Weapon')
+require_relative('lib/Armor')
+require_relative('lib/Menu')
 
 # noinspection RubyArgCount
 def load_character(textfile)
@@ -122,11 +122,11 @@ main_menu.title=('-- Main Menu --')
 while true
   case main_menu.get_menu_choice
     when 1
-      character1 = load_character('gimli.txt')
+      character1 = load_character('characters/gimli.txt')
       character1_created = true
       puts '', character1.to_s, ''
     when 2
-      character2 = load_character('legolas.txt')
+      character2 = load_character('characters/legolas.txt')
       character2_created = true
       puts '', character2.to_s, ''
     when 3

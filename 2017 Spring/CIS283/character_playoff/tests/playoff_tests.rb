@@ -1,4 +1,4 @@
-require_relative('Dice')
+require_relative('lib/ib/Dice')
 
 def test_dice(side)
   d_6 = Dice.new(side)
