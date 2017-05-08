@@ -44,6 +44,7 @@ end
 
 def fight(character1, character2, dice_bag)
   while character1.current_hit_points > 0 && character2.current_hit_points > 0
+    puts
     outcome = 0
     while outcome == 0 # Prevent Ties
       outcome = dice_bag[0].roll - dice_bag[1].roll
@@ -53,7 +54,7 @@ def fight(character1, character2, dice_bag)
     else # Character 2 wins the roll
       combat(character1, character2, dice_bag)
     end
-    print 'Press enter to continue'
+    print "\nPress enter to continue"
     gets
   end
 
@@ -65,19 +66,19 @@ def fight(character1, character2, dice_bag)
 end
 
 def combat(target, attacker, dice_bag)
-  puts '', attack(target, attacker, dice_bag)
+  puts attack(target, attacker, dice_bag)
   if target.current_hit_points > 0 and attacker.current_hit_points > 0
-    puts attack(attacker, target, dice_bag) + "\n\n"
+    attack(attacker, target, dice_bag)
   else
-    puts "\n\n"
   end
 end
 
 def attack(target, attacker, dice_bag)
   puts "#{attacker.name} fights with #{attacker.weapon.name}"
-  if dice_bag[4].roll < attacker.agility
-    hit = (attacker.strength * 1.0/dice_bag[2].roll + attacker.weapon.damage_hits/dice_bag[4].roll).to_i
+  if dice_bag[5].roll < attacker.agility
+    hit = (attacker.strength * (1.0/dice_bag[2].roll) + attacker.weapon.damage_hits/dice_bag[4].roll).to_i
     armor_save = (1.0 * target.armor.protection_hits / dice_bag[6].roll ).to_i
+
     if (hit - armor_save) > 0
       damage = hit - armor_save
     else
@@ -97,8 +98,6 @@ end
 character1, character2 = Character, Character
 character1_created, character2_created = false, false
 dice_bag = [
-    Dice.new(6),
-    Dice.new(6),
     Dice.new(4),
     Dice.new(5),
     Dice.new(8),
@@ -118,20 +117,34 @@ while true
   case main_menu.get_menu_choice
     when 1
       character1 = load_character('characters/gimli.txt')
+      unless character1_created
+        dice_bag.insert(0, Dice.new(character1.agility))
+      end
       character1_created = true
       puts '', character1.to_s, ''
+
     when 2
       character2 = load_character('characters/legolas.txt')
+      unless character2_created
+        if character1_created
+          dice_bag.insert(1, Dice.new(character2.agility))
+        else
+          dice_bag.insert(0, Dice.new(character2.agility))
+        end
+      end
       character2_created = true
       puts '', character2.to_s, ''
+
     when 3
       if character1_created and character2_created
         fight(character1, character2, dice_bag)
       else
         puts "\nYou need to load#{' Character 1' unless character1_created}#{' Character 2' unless character2_created}.\n\n"
       end
+
     when main_menu.quit
       exit
+
     else
       puts "\nInvalid Entry\n\n"
   end

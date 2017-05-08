@@ -19,6 +19,6 @@ class Dice
   end
 
   def roll
-    return 1 + rand(@num_sides)
+    return rand(1..@num_sides)
   end
 end
