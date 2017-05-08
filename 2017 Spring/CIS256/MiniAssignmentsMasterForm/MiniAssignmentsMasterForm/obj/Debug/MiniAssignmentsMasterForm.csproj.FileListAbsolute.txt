@@ -1,0 +1,9 @@
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MiniAssignmentsMasterForm\MiniAssignmentsMasterForm\bin\Debug\MiniAssignmentsMasterForm.exe.config
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MiniAssignmentsMasterForm\MiniAssignmentsMasterForm\bin\Debug\MiniAssignmentsMasterForm.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MiniAssignmentsMasterForm\MiniAssignmentsMasterForm\bin\Debug\MiniAssignmentsMasterForm.pdb
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MiniAssignmentsMasterForm\MiniAssignmentsMasterForm\obj\Debug\MiniAssignmentsMasterForm.csprojResolveAssemblyReference.cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MiniAssignmentsMasterForm\MiniAssignmentsMasterForm\obj\Debug\MiniAssignmentsMasterForm.Form1.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MiniAssignmentsMasterForm\MiniAssignmentsMasterForm\obj\Debug\MiniAssignmentsMasterForm.Properties.Resources.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MiniAssignmentsMasterForm\MiniAssignmentsMasterForm\obj\Debug\MiniAssignmentsMasterForm.csproj.GenerateResource.Cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MiniAssignmentsMasterForm\MiniAssignmentsMasterForm\obj\Debug\MiniAssignmentsMasterForm.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MiniAssignmentsMasterForm\MiniAssignmentsMasterForm\obj\Debug\MiniAssignmentsMasterForm.pdb
