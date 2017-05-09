@@ -20,6 +20,6 @@ class Weapon < Item
   end
 
   def to_s
-    "#{@name} does #{@damage_hits} points of damage"
+    "#{@name} that does #{@damage_hits} points of damage"
   end
 end
