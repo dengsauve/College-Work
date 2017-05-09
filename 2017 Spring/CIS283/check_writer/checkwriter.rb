@@ -1,7 +1,13 @@
 class Float
 
   def to_check_string
-    dollars = self.to_s.split('.')[0].split(',')
+    dollars = self.to_s.split('.')[0].reverse.scan(/.{1,3}/)
+    if dollars.length == 2
+      x, y = dollars[0].reverse, dollars[1].reverse
+      dollars[0], dollars[1] = y, x
+    else
+      dollars[0].reverse!
+    end
     cents = self.to_s.split('.')[1]
     ones = {
         1 => 'one',
@@ -42,42 +48,82 @@ class Float
     # Parse Dollars
     dollar_string = ''
     if dollars.length == 2
-      dollars[0], dollars[1] = x, y
+      x, y = dollars[0], dollars[1]
       dollars[0], dollars[1] = y, x
+
       if dollars[1].length == 3
-        dollar_string += ones[dollars[0][0].to_i] + ' hundred '
-        dollar_string += tens[dollars[0][1].to_i] + ' '
-        dollar_string += ones[dollars[0][2].to_i] + ' thousand, '
+        dollar_string += ones[dollars[1][0].to_i] + ' hundred '
+        if dollars[1][1] == '1'
+          dollar_string += teens[(dollars[1][1] + dollars[1][2]).to_i] + ' thousand, '
+        else
+          dollar_string += tens[dollars[1][1].to_i]
+          dollar_string += ones[dollars[1][2].to_i] + ' thousand, '
+        end
+
       elsif dollars[1].length == 2
-        dollar_string += tens[dollars[0][0].to_i] + ' '
-        dollar_string += ones[dollars[0][1].to_i] + ' thousand, '
+        if dollars[1][0] == '1'
+          dollar_string += teens[(dollars[1][0] + dollars[1][1]).to_i] + ' thousand, '
+        else
+          dollar_string += tens[dollars[1][0].to_i] + ' '
+          dollar_string += ones[dollars[1][1].to_i] + ' thousand, '
+        end
+
       elsif dollars[1].length == 1
-        dollar_string += ones[dollars[0][0].to_i] + ' thousand, '
+        dollar_string += ones[dollars[1][0].to_i] + ' thousand, '
       end
     end
+
     if dollars[0].length == 3
       dollar_string += ones[dollars[0][0].to_i] + ' hundred '
-      dollar_string += tens[dollars[0][1].to_i] + ' '
-      dollar_string += ones[dollars[0][2].to_i] + ' dollars and '
+      if dollars[0][1] == '1'
+        dollar_string += teens[(dollars[0][1] + dollars[0][2]).to_i] + ' '
+      else
+        dollar_string += tens[dollars[0][1].to_i] + ' '
+        dollar_string += ones[dollars[0][2].to_i] + ' dollars and '
+      end
+
     elsif dollars[0].length == 2
-      dollar_string += tens[dollars[0][0].to_i] + ' '
-      dollar_string += ones[dollars[0][1].to_i] + ' dollars and '
+      if dollars[0][0] == '1'
+        dollar_string += teens[(dollars[0][0] + dollars[0][1]).to_i] + ' dollars and '
+      else
+        dollar_string += tens[dollars[0][0].to_i] + ' '
+        dollar_string += ones[dollars[0][1].to_i] + ' dollars and '
+      end
     elsif dollars[0].length == 1
-      dollar_string += ones[dollars[0][0].to_i] + ' dollars and '
+      if dollars[0][0] == '0'
+        dollar_string += 'Zero dollars and '
+      else
+        dollar_string += ones[dollars[0][0].to_i] + ' dollars and '
+      end
     end
+
     #Parse Cents
     cents_string = ''
     if cents.length == 2
-      cents_string += tens[cents[0].to_i] + ' '
-      cents_string += ones[cents[1].to_i] + 'cents'
+      if cents == '00'
+        cents_string += 'Zero Cents'
+      else
+        cents_string += tens[cents[0].to_i]
+        if cents[1] == '0'
+          cents_string += 'Zero Cents'
+        else
+          cents_string += ones[cents[1].to_i] + ' cents'
+        end
+      end
     else
-      cents_string += tens[cents[0].to_i] + 'cents'
+      if cents == '0'
+        cents_string += 'Zero Cents'
+      else
+        cents_string += tens[cents[0].to_i] + ' cents'
+      end
     end
+
     return dollar_string + cents_string
   end
-
 end
 
-
-puts 55.66.to_check_string
-puts 11.00.to_check_string
+# puts 55.66.to_s + ' -> ' + 55.66.to_check_string
+# puts 11.00.to_s + ' -> ' + 11.00.to_check_string
+# puts 10234.44.to_s + ' -> ' + 10234.44.to_check_string
+# puts 410234.44.to_s + ' -> ' + 410234.44.to_check_string
+# puts 55.60.to_s + ' -> ' + 55.60.to_check_string
