@@ -15,9 +15,8 @@ require_relative('lib/Weapon')
 require_relative('lib/Armor')
 require_relative('lib/Menu')
 
-# noinspection RubyArgCount
-def load_character(textfile)
-  data, args = File.open(textfile, 'r'), []
+def load_character(text_file)
+  data, args = File.open(text_file, 'r'), []
   until data.eof?
     args << data.readline.split(',')
   end
@@ -55,7 +54,7 @@ def fight(character1, character2, dice_bag)
       combat(character1, character2, dice_bag)
     end
     print "\nPress enter to continue"
-    gets
+    gets #pause
   end
 
   puts "\n#{character1.name if character1.current_hit_points > 0}#{character2.name if character2.current_hit_points > 0} WINS!"
@@ -74,10 +73,10 @@ def combat(target, attacker, dice_bag)
 end
 
 def attack(target, attacker, dice_bag)
-  puts "#{attacker.name} fights with #{attacker.weapon.name}"
-  if dice_bag[5].roll < attacker.agility
-    hit = (attacker.strength * (1.0/dice_bag[2].roll) + attacker.weapon.damage_hits/dice_bag[4].roll).to_i
-    armor_save = (1.0 * target.armor.protection_hits / dice_bag[6].roll ).to_i
+  puts attacker.fight_string
+  if dice_bag[4].roll < attacker.agility
+    hit = (attacker.strength * (1.0/dice_bag[2].roll) + attacker.weapon.damage_hits/dice_bag[3].roll).to_i
+    armor_save = (1.0 * target.armor.protection_hits / dice_bag[5].roll ).to_i
 
     if (hit - armor_save) > 0
       damage = hit - armor_save
@@ -85,8 +84,7 @@ def attack(target, attacker, dice_bag)
       damage = 0
     end
 
-    puts "\tHit: #{hit}\t#{target.name}'s armor saves #{armor_save}"
-    puts "\t#{target.name}'s hit points are reduced by #{damage}"
+    puts target.damage_string(hit, armor_save, damage)
     target.reduce_hits(damage)
     puts "\t" + target.current_status
   else
@@ -99,7 +97,6 @@ character1, character2 = Character, Character
 character1_created, character2_created = false, false
 dice_bag = [
     Dice.new(4),
-    Dice.new(5),
     Dice.new(8),
     Dice.new(10),
     Dice.new(15)
@@ -137,6 +134,8 @@ while true
 
     when 3
       if character1_created and character2_created
+        character1.revive_character
+        character2.revive_character
         fight(character1, character2, dice_bag)
       else
         puts "\nYou need to load#{' Character 1' unless character1_created}#{' Character 2' unless character2_created}.\n\n"

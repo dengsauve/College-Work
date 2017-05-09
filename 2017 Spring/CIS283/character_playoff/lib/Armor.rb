@@ -20,6 +20,6 @@ class Armor < Item
   end
 
   def to_s
-    "#{@name} that provides #{@protection_hits} points of protection"
+    return "#{@name} that provides #{@protection_hits} points of protection"
   end
 end

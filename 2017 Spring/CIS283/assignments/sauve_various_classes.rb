@@ -65,7 +65,7 @@ class Address
   end
 end
 
-class Character
+class Characters
   def initialize(name, race, hit_points, gold)
     @name = name
     @race = race
@@ -134,7 +134,7 @@ puts '',home.to_s, ''
 
 #Character tests
 
-player_one = Character.new('Raistlin Majere: The Greatest Mage Ever', 'human', 5, 500)
+player_one = Characters.new('Raistlin Majere: The Greatest Mage Ever', 'human', 5, 500)
 player_one.set_name('Raistlin Majere')
 puts player_one.get_name
 player_one.set_race('civilized human')

@@ -50,11 +50,19 @@ class Character
   end
 
   def to_s
-    "#{@name} the #{@race}, has a #{@weapon} equipped, wearing #{@armor}"
+    return "#{@name} the #{@race}, has a #{@weapon} equipped, wearing #{@armor}"
   end
 
   def current_status
-    "#{@name} has #{@current_hit_points} left out of #{@hit_points}."
+    return "#{@name} has #{@current_hit_points} left out of #{@hit_points}."
+  end
+
+  def fight_string
+    return "#{@name} fights with a #{@weapon.name}"
+  end
+
+  def damage_string(hit, armor_save, damage)
+    return "\tHit: #{hit}\t#{@name}'s armor saves #{armor_save}\n\t#{@name}'s hit points are reduced by #{damage}"
   end
 
   def revive_character
