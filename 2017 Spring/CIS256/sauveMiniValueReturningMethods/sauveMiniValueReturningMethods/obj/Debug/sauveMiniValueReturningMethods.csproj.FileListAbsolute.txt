@@ -1,0 +1,9 @@
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\sauveMiniValueReturningMethods\sauveMiniValueReturningMethods\bin\Debug\sauveMiniValueReturningMethods.exe.config
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\sauveMiniValueReturningMethods\sauveMiniValueReturningMethods\bin\Debug\sauveMiniValueReturningMethods.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\sauveMiniValueReturningMethods\sauveMiniValueReturningMethods\bin\Debug\sauveMiniValueReturningMethods.pdb
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\sauveMiniValueReturningMethods\sauveMiniValueReturningMethods\obj\Debug\sauveMiniValueReturningMethods.csprojResolveAssemblyReference.cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\sauveMiniValueReturningMethods\sauveMiniValueReturningMethods\obj\Debug\sauveMiniValueReturningMethods.Form1.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\sauveMiniValueReturningMethods\sauveMiniValueReturningMethods\obj\Debug\sauveMiniValueReturningMethods.Properties.Resources.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\sauveMiniValueReturningMethods\sauveMiniValueReturningMethods\obj\Debug\sauveMiniValueReturningMethods.csproj.GenerateResource.Cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\sauveMiniValueReturningMethods\sauveMiniValueReturningMethods\obj\Debug\sauveMiniValueReturningMethods.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\sauveMiniValueReturningMethods\sauveMiniValueReturningMethods\obj\Debug\sauveMiniValueReturningMethods.pdb
