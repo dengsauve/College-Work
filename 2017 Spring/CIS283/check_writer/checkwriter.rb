@@ -39,72 +39,99 @@ class Float
         18 => 'eighteen',
         19 => 'nineteen'
     }
-    ret_str = ''
+
+    ret_arr = []
     not_teen = true
-
-    ## Parse Dollars ##
-    if dollars.length > 5
-      ret_str += ones[dollars[0].to_i] + ' hundred'
-    end
-    if dollars.length > 4
-      num = dollars[dollars.length - 5].to_i
-      ret_str += (dollars.length > 5 && num != 0 ? ' ' : '' ) +
-          (num == 1 ? teens[(num.to_s + dollars[length - 4]).to_i] : tens[num]) +
-          (num == 0 ? '' : ' ')
-      not_teen = false if num == 1
-    end
-    if dollars.length > 3 and not_teen
-      num = dollars[dollars.length - 4].to_i
-      ret_str += (dollars.length > 4 && num != 0 ? ' ' : '')+
-          ones[num] +
-          ' thousand,'
+    # Parse the basics
+    if dollars == '0'
+      ret_arr << 'Zero dollars and'
+    elsif dollars == '1'
+      ret_arr << 'one dollar and'
     else
+      # Parse 100,000s
+      if dollars.length > 5
+        num = dollars[dollars.length - 6].to_i
+        ret_arr << ones[num]
+        ret_arr << 'hundred'
+      end
+      #Parse 10,000s
+      if dollars.length > 4
+        num = dollars[dollars.length - 5].to_i
+        #Handle Teens
+        if num == 1
+          num = dollars[dollars.length - 4].to_i
+          ret_arr << teens[10 + num]
+          if dollars[(dollars.length-3)..(dollars.length - 1)] == '000'
+            ret_arr << 'thousand'
+          else
+            ret_arr << 'thousand,'
+          end
+          not_teen = false
+        else
+          ret_arr << tens[num] unless num == 0
+        end
+      end
+      #Parse 1,000s
+      if dollars.length > 3 && not_teen
+        num = dollars[dollars.length - 4].to_i
+        ret_arr << ones[num] unless num == 0
+        if dollars[(dollars.length-3)..(dollars.length - 1)] == '000'
+          ret_arr << 'thousand'
+        else
+          ret_arr << 'thousand,'
+        end
+      end
       not_teen = true
-      ret_str += dollars.length > 3 ? ' thousand,' : ''
-    end
-    if dollars.length > 2
-      num = dollars[dollars.length - 3].to_i
-      ret_str += (dollars.length > 3 and num != 0 ? ' ' : '') +
-          ones[num] +
-          (num != 0 ? ' hundred' : '')
-    end
-    if dollars.length > 1
-      num = dollars[dollars.length - 2].to_i
-      ret_str += (dollars.length > 2 && num != 0 ? ' ' : '') +
-          (num == 1 ? teens[(num.to_s + dollars[dollars.length - 1]).to_i] : tens[num]) +
-          (num != 0 ? ' ' : '')
-      if num == 1
-        not_teen = false
-        ret_str += 'dollars and'
+      #Parse 100s
+      if dollars.length > 2
+        num = dollars[dollars.length - 3].to_i
+        ret_arr << ones[num] unless num == 0
+        ret_arr << 'hundred' unless num == 0
       end
-    end
-    if dollars.length == 1
-      if dollars[0] == '0'
-        ret_str += 'Zero dollars and'
-      elsif dollars[0] == '1'
-        ret_str += 'one dollar and'
-      else
-        ret_str += ones[dollars[0].to_i] + ' dollars and'
+      #Parse 10s
+      if dollars.length > 1
+        num = dollars[dollars.length - 2].to_i
+        if num == 1
+          num = dollars[dollars.length - 1].to_i + 10
+          ret_arr << teens[num]
+          not_teen = false
+        else
+          ret_arr << tens[num] unless num == 0
+        end
       end
-    elsif dollars.length > 0 && not_teen
-      ret_str += ones[dollars[dollars.length - 1].to_i] + (dollars[dollars.length-1] == '0' ? '' : ' ') + 'dollars and'
+      #Parse 1s
+      if dollars.length > 0 and not_teen
+        num = dollars[dollars.length - 1].to_i
+        ret_arr << ones[num] unless num == 0
+      end
+      ret_arr << 'dollars and'
     end
 
-    ## Parse Cents ##
-    if cents.length > 1
-      num = cents[0].to_i
-      if num == 0
-        ret_str += ' ' + ones[cents[1].to_i] + (cents[1] == '1' ? ' Cent' : ' Cents')
-      elsif num == 1
-        ret_str += ' ' + teens[(num.to_s + cents[1]).to_i] + ' Cents'
-      else
-        ret_str += ' ' + tens[num] + (cents[1] == '0' ? '' : ' ') + ones[cents[1].to_i] + ' Cents'
-      end
+    #Parse Cents
+    if cents == '01'
+      ret_arr << 'one Cent'
+    elsif cents == '0'
+      ret_arr << 'Zero Cents'
     else
-      ret_str += (cents[0] == '0' ? ' Zero' : ' ' + tens[cents[0].to_i]) + ' Cents'
+      if cents.length == 2
+        num = cents[0].to_i
+        if num == 1
+          num = cents[1].to_i + 10
+          ret_arr << teens[num]
+        else
+          ret_arr << tens[num] unless num == 0
+          num = cents[1].to_i
+          ret_arr << ones[num]
+        end
+      else
+        num = cents[0].to_i
+        ret_arr << tens[num]
+      end
+      ret_arr << 'Cents'
     end
 
-    return ret_str
+    return ret_arr.join(' ')
+
     ## End of Method ##
   end
 end
