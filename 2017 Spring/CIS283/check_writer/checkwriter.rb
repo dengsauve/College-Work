@@ -16,6 +16,7 @@ class Float
         0 => ''
     }
     tens = {
+        1 => 'ten',
         2 => 'twenty',
         3 => 'thirty',
         4 => 'forty',
@@ -40,6 +41,8 @@ class Float
     }
     ret_str = ''
     not_teen = true
+
+    ## Parse Dollars ##
     if dollars.length > 5
       ret_str += ones[dollars[0].to_i] + ' hundred'
     end
@@ -67,17 +70,41 @@ class Float
     end
     if dollars.length > 1
       num = dollars[dollars.length - 2].to_i
-      ret_str += (dollars.length > 1 && num != 0 ? ' ' : '') +
+      ret_str += (dollars.length > 2 && num != 0 ? ' ' : '') +
           (num == 1 ? teens[(num.to_s + dollars[dollars.length - 1]).to_i] : tens[num]) +
           (num != 0 ? ' ' : '')
-      not_teen = false if num == 1
+      if num == 1
+        not_teen = false
+        ret_str += 'dollars and'
+      end
     end
     if dollars.length == 1
-
+      if dollars[0] == '0'
+        ret_str += 'Zero dollars and'
+      elsif dollars[0] == '1'
+        ret_str += 'one dollar and'
+      else
+        ret_str += ones[dollars[0].to_i] + ' dollars and'
+      end
+    elsif dollars.length > 0 && not_teen
+      ret_str += ones[dollars[dollars.length - 1].to_i] + (dollars[dollars.length-1] == '0' ? '' : ' ') + 'dollars and'
     end
-    if dollars.length > 0
 
+    ## Parse Cents ##
+    if cents.length > 1
+      num = cents[0].to_i
+      if num == 0
+        ret_str += ' ' + ones[cents[1].to_i] + (cents[1] == '1' ? ' Cent' : ' Cents')
+      elsif num == 1
+        ret_str += ' ' + teens[(num.to_s + cents[1]).to_i] + ' Cents'
+      else
+        ret_str += ' ' + tens[num] + (cents[1] == '0' ? '' : ' ') + ones[cents[1].to_i] + ' Cents'
+      end
+    else
+      ret_str += (cents[0] == '0' ? ' Zero' : ' ' + tens[cents[0].to_i]) + ' Cents'
     end
+
+    return ret_str
+    ## End of Method ##
   end
-
 end
