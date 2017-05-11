@@ -3,8 +3,7 @@ class Float
   def to_check_string
     dollars = self.to_s.split('.')[0].reverse.scan(/.{1,3}/)
     if dollars.length == 2
-      x, y = dollars[0].reverse, dollars[1].reverse
-      dollars[0], dollars[1] = y, x
+      dollars[1], dollars[0] = dollars[0].reverse, dollars[1].reverse
     else
       dollars[0].reverse!
     end
@@ -54,39 +53,43 @@ class Float
       if dollars[1].length == 3
         dollar_string += ones[dollars[1][0].to_i] + ' hundred '
         if dollars[1][1] == '1'
-          dollar_string += teens[(dollars[1][1] + dollars[1][2]).to_i] + ' thousand, '
+          dollar_string += teens[(dollars[1][1] + dollars[1][2]).to_i] + ' thousand '
         else
           dollar_string += tens[dollars[1][1].to_i]
-          dollar_string += ones[dollars[1][2].to_i] + ' thousand, '
+          dollar_string += ones[dollars[1][2].to_i] + ' thousand '
         end
 
       elsif dollars[1].length == 2
         if dollars[1][0] == '1'
-          dollar_string += teens[(dollars[1][0] + dollars[1][1]).to_i] + ' thousand, '
+          dollar_string += teens[(dollars[1][0] + dollars[1][1]).to_i] + ' thousand '
         else
           dollar_string += tens[dollars[1][0].to_i] + ' '
           dollar_string += ones[dollars[1][1].to_i] + ' thousand, '
         end
 
       elsif dollars[1].length == 1
-        dollar_string += ones[dollars[1][0].to_i] + ' thousand, '
+        dollar_string += ones[dollars[1][0].to_i] + ' thousand '
       end
     end
 
     if dollars[0].length == 3
-      dollar_string += ones[dollars[0][0].to_i] + ' hundred '
-      if dollars[0][1] == '1'
-        dollar_string += teens[(dollars[0][1] + dollars[0][2]).to_i] + ' '
+      if dollars[0] == '000'
+        dollar_string += 'dollars and '
       else
-        dollar_string += tens[dollars[0][1].to_i] + ' '
-        dollar_string += ones[dollars[0][2].to_i] + ' dollars and '
+        dollar_string += ones[dollars[0][0].to_i] + ' hundred' + (dollars[0][1] == '0' ? '' : ' ')
+        if dollars[0][1] == '1'
+          dollar_string += teens[(dollars[0][1] + dollars[0][2]).to_i] + ' dollars and '
+        else
+          dollar_string += tens[dollars[0][1].to_i] + (dollars[0][2] == '0' ? '' : ' ')
+          dollar_string += ones[dollars[0][2].to_i] + ' dollars and '
+        end
       end
 
     elsif dollars[0].length == 2
       if dollars[0][0] == '1'
         dollar_string += teens[(dollars[0][0] + dollars[0][1]).to_i] + ' dollars and '
       else
-        dollar_string += tens[dollars[0][0].to_i] + ' '
+        dollar_string += tens[dollars[0][0].to_i] + (dollars[0][1] == '0' ? '' : ' ')
         dollar_string += ones[dollars[0][1].to_i] + ' dollars and '
       end
     elsif dollars[0].length == 1
@@ -105,15 +108,15 @@ class Float
       if cents == '00'
         cents_string += 'Zero Cents'
       else
-        cents_string += tens[cents[0].to_i]
-        if cents[1] == '0'
-          cents_string += 'Zero Cents'
-        elsif cents[1] == '1'
-          cents_string += 'one cent'
+        if cents[0] == '1'
+          cents_string += cents[1] == 0 ? 'ten cents' : teens[cents.to_i] + ' cents'
+        elsif cents[0] == '0'
+          cents_string += cents[1] == '1' ? 'one cent' : ones[cents[1].to_i] + ' cents'
         else
-          cents_string += ones[cents[1].to_i] + ' cents'
+          cents_string += tens[cents[0].to_i] + ' ' + ones[cents[1].to_i] + ' cents'
         end
       end
+
     else
       if cents == '0'
         cents_string += 'Zero Cents'
