@@ -92,6 +92,8 @@ class Float
     elsif dollars[0].length == 1
       if dollars[0][0] == '0'
         dollar_string += 'Zero dollars and '
+      elsif dollars[0][0] == '1'
+        dollar_string += 'one dollar and '
       else
         dollar_string += ones[dollars[0][0].to_i] + ' dollars and '
       end
@@ -106,6 +108,8 @@ class Float
         cents_string += tens[cents[0].to_i]
         if cents[1] == '0'
           cents_string += 'Zero Cents'
+        elsif cents[1] == '1'
+          cents_string += 'one cent'
         else
           cents_string += ones[cents[1].to_i] + ' cents'
         end
@@ -113,6 +117,8 @@ class Float
     else
       if cents == '0'
         cents_string += 'Zero Cents'
+      elsif cents == '1'
+        cents_string += 'ten cents'
       else
         cents_string += tens[cents[0].to_i] + ' cents'
       end
