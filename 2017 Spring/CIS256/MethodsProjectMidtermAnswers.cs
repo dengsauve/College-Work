@@ -54,3 +54,13 @@ public bool IsNumeric(string testString)
         }
 		
 // Problem 5 - 2
+public bool IsInt(string testString)
+        {  
+            int testTwo;
+            if (int.TryParse(testString, out testTwo))
+                {
+                    return true;
+                }
+            return false;
+        }
+

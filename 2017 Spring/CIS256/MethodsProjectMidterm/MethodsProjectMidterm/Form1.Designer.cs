@@ -45,6 +45,7 @@
             this.lblString = new System.Windows.Forms.Label();
             this.grpEvaluation = new System.Windows.Forms.GroupBox();
             this.lblEvaluation = new System.Windows.Forms.Label();
+            this.btnIsInteger = new System.Windows.Forms.Button();
             this.grpProduct.SuspendLayout();
             this.grpLocation.SuspendLayout();
             this.grpEvaluation.SuspendLayout();
@@ -185,9 +186,9 @@
             // grpEvaluation
             // 
             this.grpEvaluation.Controls.Add(this.lblEvaluation);
-            this.grpEvaluation.Location = new System.Drawing.Point(411, 70);
+            this.grpEvaluation.Location = new System.Drawing.Point(411, 99);
             this.grpEvaluation.Name = "grpEvaluation";
-            this.grpEvaluation.Size = new System.Drawing.Size(137, 64);
+            this.grpEvaluation.Size = new System.Drawing.Size(137, 35);
             this.grpEvaluation.TabIndex = 14;
             this.grpEvaluation.TabStop = false;
             this.grpEvaluation.Text = "Evaluation";
@@ -201,11 +202,22 @@
             this.lblEvaluation.TabIndex = 0;
             this.lblEvaluation.Text = "Evaluation";
             // 
+            // btnIsInteger
+            // 
+            this.btnIsInteger.Location = new System.Drawing.Point(448, 70);
+            this.btnIsInteger.Name = "btnIsInteger";
+            this.btnIsInteger.Size = new System.Drawing.Size(100, 23);
+            this.btnIsInteger.TabIndex = 15;
+            this.btnIsInteger.Text = "Is Integer?";
+            this.btnIsInteger.UseVisualStyleBackColor = true;
+            this.btnIsInteger.Click += new System.EventHandler(this.btnIsInteger_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 155);
+            this.ClientSize = new System.Drawing.Size(572, 155);
+            this.Controls.Add(this.btnIsInteger);
             this.Controls.Add(this.grpEvaluation);
             this.Controls.Add(this.btnIsNumeric);
             this.Controls.Add(this.txtNumString);
@@ -253,6 +265,7 @@
         private System.Windows.Forms.Label lblString;
         private System.Windows.Forms.GroupBox grpEvaluation;
         private System.Windows.Forms.Label lblEvaluation;
+        private System.Windows.Forms.Button btnIsInteger;
     }
 }
 

@@ -22,6 +22,24 @@ namespace MethodsProjectMidterm
         {
 
         }
+
+        // IsInt Code ###### Separation ######
+        private void btnIsInteger_Click(object sender, EventArgs e)
+        {
+            lblEvaluation.Text = IsInt(txtNumString.Text).ToString();
+        }
+
+        public bool IsInt(string testString)
+        {
+            int testTwo;
+            if (int.TryParse(testString, out testTwo))
+                {
+                    return true;
+                }
+            return false;
+        }
+
+        // IsNumeric Code ###### Separation ######
         private void btnIsNumeric_Click(object sender, EventArgs e)
         {
             lblEvaluation.Text = IsNumeric(txtNumString.Text).ToString();
