@@ -1,0 +1,9 @@
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MethodsProjectMidterm\MethodsProjectMidterm\bin\Debug\MethodsProjectMidterm.exe.config
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MethodsProjectMidterm\MethodsProjectMidterm\bin\Debug\MethodsProjectMidterm.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MethodsProjectMidterm\MethodsProjectMidterm\bin\Debug\MethodsProjectMidterm.pdb
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MethodsProjectMidterm\MethodsProjectMidterm\obj\Debug\MethodsProjectMidterm.csprojResolveAssemblyReference.cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MethodsProjectMidterm\MethodsProjectMidterm\obj\Debug\MethodsProjectMidterm.Form1.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MethodsProjectMidterm\MethodsProjectMidterm\obj\Debug\MethodsProjectMidterm.Properties.Resources.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MethodsProjectMidterm\MethodsProjectMidterm\obj\Debug\MethodsProjectMidterm.csproj.GenerateResource.Cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MethodsProjectMidterm\MethodsProjectMidterm\obj\Debug\MethodsProjectMidterm.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MethodsProjectMidterm\MethodsProjectMidterm\obj\Debug\MethodsProjectMidterm.pdb
