@@ -35,7 +35,13 @@
             this.TextNum2 = new System.Windows.Forms.TextBox();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.grpProduct = new System.Windows.Forms.GroupBox();
+            this.lblZip = new System.Windows.Forms.Label();
+            this.txtZip = new System.Windows.Forms.TextBox();
+            this.grpLocation = new System.Windows.Forms.GroupBox();
+            this.btnGetLocation = new System.Windows.Forms.Button();
+            this.lblLocation = new System.Windows.Forms.Label();
             this.grpProduct.SuspendLayout();
+            this.grpLocation.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNumber1
@@ -98,11 +104,60 @@
             this.grpProduct.TabIndex = 6;
             this.grpProduct.TabStop = false;
             // 
+            // lblZip
+            // 
+            this.lblZip.AutoSize = true;
+            this.lblZip.Location = new System.Drawing.Point(213, 15);
+            this.lblZip.Name = "lblZip";
+            this.lblZip.Size = new System.Drawing.Size(50, 13);
+            this.lblZip.TabIndex = 7;
+            this.lblZip.Text = "Zip Code";
+            // 
+            // txtZip
+            // 
+            this.txtZip.Location = new System.Drawing.Point(269, 12);
+            this.txtZip.Name = "txtZip";
+            this.txtZip.Size = new System.Drawing.Size(100, 20);
+            this.txtZip.TabIndex = 8;
+            // 
+            // grpLocation
+            // 
+            this.grpLocation.Controls.Add(this.lblLocation);
+            this.grpLocation.Location = new System.Drawing.Point(216, 70);
+            this.grpLocation.Name = "grpLocation";
+            this.grpLocation.Size = new System.Drawing.Size(153, 70);
+            this.grpLocation.TabIndex = 9;
+            this.grpLocation.TabStop = false;
+            this.grpLocation.Text = "Location";
+            // 
+            // btnGetLocation
+            // 
+            this.btnGetLocation.Location = new System.Drawing.Point(269, 41);
+            this.btnGetLocation.Name = "btnGetLocation";
+            this.btnGetLocation.Size = new System.Drawing.Size(100, 23);
+            this.btnGetLocation.TabIndex = 10;
+            this.btnGetLocation.Text = "Get Location";
+            this.btnGetLocation.UseVisualStyleBackColor = true;
+            this.btnGetLocation.Click += new System.EventHandler(this.btnGetLocation_Click);
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Location = new System.Drawing.Point(6, 16);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(55, 13);
+            this.lblLocation.TabIndex = 0;
+            this.lblLocation.Text = "City, State";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 155);
+            this.ClientSize = new System.Drawing.Size(392, 155);
+            this.Controls.Add(this.btnGetLocation);
+            this.Controls.Add(this.grpLocation);
+            this.Controls.Add(this.txtZip);
+            this.Controls.Add(this.lblZip);
             this.Controls.Add(this.grpProduct);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.TextNum2);
@@ -114,6 +169,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpProduct.ResumeLayout(false);
             this.grpProduct.PerformLayout();
+            this.grpLocation.ResumeLayout(false);
+            this.grpLocation.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,6 +185,11 @@
         private System.Windows.Forms.TextBox TextNum2;
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.GroupBox grpProduct;
+        private System.Windows.Forms.Label lblZip;
+        private System.Windows.Forms.TextBox txtZip;
+        private System.Windows.Forms.GroupBox grpLocation;
+        private System.Windows.Forms.Label lblLocation;
+        private System.Windows.Forms.Button btnGetLocation;
     }
 }
 
