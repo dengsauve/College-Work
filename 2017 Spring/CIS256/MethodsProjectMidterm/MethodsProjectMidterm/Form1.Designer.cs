@@ -40,8 +40,14 @@
             this.grpLocation = new System.Windows.Forms.GroupBox();
             this.btnGetLocation = new System.Windows.Forms.Button();
             this.lblLocation = new System.Windows.Forms.Label();
+            this.btnIsNumeric = new System.Windows.Forms.Button();
+            this.txtNumString = new System.Windows.Forms.TextBox();
+            this.lblString = new System.Windows.Forms.Label();
+            this.grpEvaluation = new System.Windows.Forms.GroupBox();
+            this.lblEvaluation = new System.Windows.Forms.Label();
             this.grpProduct.SuspendLayout();
             this.grpLocation.SuspendLayout();
+            this.grpEvaluation.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNumber1
@@ -103,6 +109,7 @@
             this.grpProduct.Size = new System.Drawing.Size(156, 41);
             this.grpProduct.TabIndex = 6;
             this.grpProduct.TabStop = false;
+            this.grpProduct.Text = "Product";
             // 
             // lblZip
             // 
@@ -125,7 +132,7 @@
             this.grpLocation.Controls.Add(this.lblLocation);
             this.grpLocation.Location = new System.Drawing.Point(216, 70);
             this.grpLocation.Name = "grpLocation";
-            this.grpLocation.Size = new System.Drawing.Size(153, 70);
+            this.grpLocation.Size = new System.Drawing.Size(153, 64);
             this.grpLocation.TabIndex = 9;
             this.grpLocation.TabStop = false;
             this.grpLocation.Text = "Location";
@@ -149,11 +156,60 @@
             this.lblLocation.TabIndex = 0;
             this.lblLocation.Text = "City, State";
             // 
+            // btnIsNumeric
+            // 
+            this.btnIsNumeric.Location = new System.Drawing.Point(448, 41);
+            this.btnIsNumeric.Name = "btnIsNumeric";
+            this.btnIsNumeric.Size = new System.Drawing.Size(100, 23);
+            this.btnIsNumeric.TabIndex = 13;
+            this.btnIsNumeric.Text = "Is Numeric?";
+            this.btnIsNumeric.UseVisualStyleBackColor = true;
+            this.btnIsNumeric.Click += new System.EventHandler(this.btnIsNumeric_Click);
+            // 
+            // txtNumString
+            // 
+            this.txtNumString.Location = new System.Drawing.Point(448, 12);
+            this.txtNumString.Name = "txtNumString";
+            this.txtNumString.Size = new System.Drawing.Size(100, 20);
+            this.txtNumString.TabIndex = 12;
+            // 
+            // lblString
+            // 
+            this.lblString.AutoSize = true;
+            this.lblString.Location = new System.Drawing.Point(408, 15);
+            this.lblString.Name = "lblString";
+            this.lblString.Size = new System.Drawing.Size(34, 13);
+            this.lblString.TabIndex = 11;
+            this.lblString.Text = "String";
+            // 
+            // grpEvaluation
+            // 
+            this.grpEvaluation.Controls.Add(this.lblEvaluation);
+            this.grpEvaluation.Location = new System.Drawing.Point(411, 70);
+            this.grpEvaluation.Name = "grpEvaluation";
+            this.grpEvaluation.Size = new System.Drawing.Size(137, 64);
+            this.grpEvaluation.TabIndex = 14;
+            this.grpEvaluation.TabStop = false;
+            this.grpEvaluation.Text = "Evaluation";
+            // 
+            // lblEvaluation
+            // 
+            this.lblEvaluation.AutoSize = true;
+            this.lblEvaluation.Location = new System.Drawing.Point(6, 16);
+            this.lblEvaluation.Name = "lblEvaluation";
+            this.lblEvaluation.Size = new System.Drawing.Size(57, 13);
+            this.lblEvaluation.TabIndex = 0;
+            this.lblEvaluation.Text = "Evaluation";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 155);
+            this.ClientSize = new System.Drawing.Size(566, 155);
+            this.Controls.Add(this.grpEvaluation);
+            this.Controls.Add(this.btnIsNumeric);
+            this.Controls.Add(this.txtNumString);
+            this.Controls.Add(this.lblString);
             this.Controls.Add(this.btnGetLocation);
             this.Controls.Add(this.grpLocation);
             this.Controls.Add(this.txtZip);
@@ -165,12 +221,14 @@
             this.Controls.Add(this.lblNumber2);
             this.Controls.Add(this.lblNumber1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Midterm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpProduct.ResumeLayout(false);
             this.grpProduct.PerformLayout();
             this.grpLocation.ResumeLayout(false);
             this.grpLocation.PerformLayout();
+            this.grpEvaluation.ResumeLayout(false);
+            this.grpEvaluation.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,6 +248,11 @@
         private System.Windows.Forms.GroupBox grpLocation;
         private System.Windows.Forms.Label lblLocation;
         private System.Windows.Forms.Button btnGetLocation;
+        private System.Windows.Forms.Button btnIsNumeric;
+        private System.Windows.Forms.TextBox txtNumString;
+        private System.Windows.Forms.Label lblString;
+        private System.Windows.Forms.GroupBox grpEvaluation;
+        private System.Windows.Forms.Label lblEvaluation;
     }
 }
 

@@ -22,7 +22,22 @@ namespace MethodsProjectMidterm
         {
 
         }
+        private void btnIsNumeric_Click(object sender, EventArgs e)
+        {
+            lblEvaluation.Text = IsNumeric(txtNumString.Text).ToString();
+        }
 
+        public bool IsNumeric(string testString)
+        {
+            double test = 0.0;
+            if (double.TryParse(testString, out test))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        // Zip Lookup Code ###### Separation ######
         private void btnGetLocation_Click(object sender, EventArgs e)
         {
             lblLocation.Text = getCityState(txtZip.Text);

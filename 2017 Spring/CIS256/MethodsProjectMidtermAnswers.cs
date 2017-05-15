@@ -42,4 +42,15 @@ public string getCityState(string zip)
             }
         }
 
-// Problem 5
+// Problem 5 - 1
+public bool IsNumeric(string testString)
+        {
+            double test = 0.0;
+            if (double.TryParse(testString, out test))
+            {
+                return true;
+            }
+            return false;
+        }
+		
+// Problem 5 - 2
