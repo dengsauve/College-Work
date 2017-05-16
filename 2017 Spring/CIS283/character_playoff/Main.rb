@@ -15,6 +15,23 @@ require_relative('lib/Weapon')
 require_relative('lib/Armor')
 require_relative('lib/Menu')
 
+def get_character
+  valid_file = false
+  ret_str = ''
+  until valid_file
+    print "\nPlease enter the name of your character file: "
+    user_string = gets.chomp
+    if File.file?('characters/'+user_string)
+      ret_str = 'characters/'+user_string
+      valid_file = true
+    elsif File.file?('characters/'+user_string+'.txt')
+      ret_str = 'characters/'+user_string+'.txt'
+      valid_file = true
+    end
+  end
+  return ret_str
+end
+
 def load_character(text_file)
   data, args = File.open(text_file, 'r'), []
   until data.eof?
@@ -113,7 +130,8 @@ main_menu.title=('-- Main Menu --')
 while true
   case main_menu.get_menu_choice
     when 1
-      character1 = load_character('characters/gimli.txt')
+      character_file = get_character()
+      character1 = load_character(character_file)
       unless character1_created
         dice_bag.insert(0, Dice.new(character1.agility))
       end
@@ -121,7 +139,8 @@ while true
       puts '', character1.to_s, ''
 
     when 2
-      character2 = load_character('characters/legolas.txt')
+      character_file = get_character()
+      character2 = load_character(character_file)
       unless character2_created
         if character1_created
           dice_bag.insert(1, Dice.new(character2.agility))
