@@ -1,0 +1,3 @@
+Aragorn,human, 75, 25, 7
+Andúril, 22
+Chain mail and leather, 35
