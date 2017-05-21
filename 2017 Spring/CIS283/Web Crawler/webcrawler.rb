@@ -9,6 +9,17 @@
 #
 ############################################################
 # ruby Web\ Crawler/webcrawler.rb www.sauve.biz
+if ARGV.include?('-h') || ARGV.include?('--help')
+  puts 'Web Crawler
+  About: A ruby script that will go out and comb a website for <a> links, test them, and create a PDF report.
+  Usage: webcrawler.rb <website> <-bv>
+  Commands:
+    -h --help:          Displays help menu
+    -v --verbose:       Outputs events as they occur in program
+    -b --progress-bar:  Displays a progress bar'
+  exit
+end
+
 require_relative('link')
 require 'prawn'
 require 'net/http'
@@ -17,10 +28,18 @@ require 'time'
 # Get Command Line Arg
 url = ARGV[0]
 (ARGV.include?('--verbose') || ARGV.include?('-v')) ? verbose = true : verbose = false
+if ARGV.include?('--progress-bar') || ARGV.include?('-b')
+  require 'ruby-progressbar'
+  bar = true
+else
+  bar = false
+end
 
 # Make HTTP Connection # Download HTML
+# TODO: Make sure that URLS with '/' are named better below for PDF.
 puts "Opening: #{url}" if verbose
-response = Net::HTTP.get_response(url, '/')
+url.scan(/(?:https?:\/\/)?([\w\d]*\.[\w\d]*\.[\w\d]{2,6})(.*)/)
+response = Net::HTTP.get_response($1, $2 == '' ? '/' : $2)
 
 # Create LinkChecker Object
 link_checker = Link_Checker.new(url)
@@ -39,6 +58,9 @@ t_tags.each do |tag|
   if tag[0] =~ /^(?:\/.*)+/
     link_checker.add_link(Link.new(tag[0], link_text, 'internal'))
 
+  elsif tag[0] =~ /mailto:/
+    nil
+
   elsif tag[0] =~ /((?:www\.)?.+?\.[a-z]{2,6})(.*)/
     link_checker.add_link(Link.new([$1, $2], link_text, 'external'))
   end
@@ -46,9 +68,14 @@ end
 
 # Execute LinkChecker.check_links
 puts 'Checking Links' if verbose
+progressbar = ProgressBar.create(:title => 'Progress',
+                                 :total => link_checker.link_list.length,
+                                 :format => '%t %p%% |%b%i|') if bar
+
 link_checker.link_list.each_with_index do |link, index|
   puts "Checking: #{index + 1} of #{link_checker.link_list.length}" if verbose
   puts link.info if verbose
+  progressbar.increment if bar
   link.check_link
 end
 
@@ -61,6 +88,8 @@ Prawn::Document.generate( "pdf_bin/#{url}.pdf" ) do
   text "As of #{Time.now.month}/#{Time.now.day}/#{Time.now.year} - #{Time.now.hour}:#{Time.now.min}", :align => :center
   font "Courier", :size => 10
   text "#{link_checker.good_links}", :align => :left
+
+  # Keeping the 404's on a different page
   start_new_page
   font "Courier", :size => 24
   text "#{url}\n404 Report", :align => :center
