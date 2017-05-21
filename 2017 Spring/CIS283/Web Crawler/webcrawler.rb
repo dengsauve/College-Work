@@ -9,65 +9,63 @@
 #
 ############################################################
 # ruby Web\ Crawler/webcrawler.rb www.sauve.biz
-
-
 require_relative('link')
 require 'prawn'
 require 'net/http'
 require 'time'
 
+# Get Command Line Arg
 url = ARGV[0]
+(ARGV.include?('--verbose') || ARGV.include?('-v')) ? verbose = true : verbose = false
 
-ARGV.include?('--verbose') ? verbose = true : verbose = false
-
+# Make HTTP Connection # Download HTML
+puts "Opening: #{url}" if verbose
 response = Net::HTTP.get_response(url, '/')
 
-website = Link_Checker.new(url, response.body)
-puts 'created website object' if verbose
+# Create LinkChecker Object
+link_checker = Link_Checker.new(url)
 
-puts 'finding links...' if verbose
-scan_data = website.page_body.scan(/<a.*href=["'](?:http:\/\/)?([^'"]*)(?:\/)?["'].*>(.*)<\/a>/)
+# Collect all href tags
+puts 'Looking for tags' if verbose
+t_tags = response.body.scan(/<a.*href=["'](?:https?:\/\/)?([^'"]*)(?:\/)?["'].*>(.*)<\/a>/)
 
-scan_data.each_with_index do |pair, index|
+# Parse Internal, External, and Non-English Characters
+# Net::HTTP.get_response('www.baseurl.com', '/path/here/like/this')
+# Store as Link Objects in LinkChecker.add_link
+t_tags.each do |tag|
+  # Parsing Text for American Characters as click value.
+  link_text = tag[1].scan(/[a-zA-Z\s0-9\/\._\-]*/).join('')
 
-  puts 'scanning ' + (index+1).to_s.ljust(4, '.') + 'of' + scan_data.length.to_s.rjust(4, '.') + '....' + pair[0] if verbose
+  if tag[0] =~ /^(?:\/.*)+/
+    link_checker.add_link(Link.new(tag[0], link_text, 'internal'))
 
-  if pair[0] == website.base_url+'/'
-    nil
-
-  elsif pair[0] =~ /#{website.base_url}/
-    pair[0].scan(/(?:https?:\/\/)?((?:www\.)?.*\.[a-z]{2,6}.*)/)
-    website.add_link(Link.new($1, pair[1]))
-
-  elsif pair[0] =~ /^(?:\/.*)+/
-    website.add_link(Link.new(pair[0], pair[1]))
-
-  elsif pair[0] =~ /\#.*/
-    nil
-
-  else
-    website.add_link(Link.new(pair[0], pair[1]))
+  elsif tag[0] =~ /((?:www\.)?.+?\.[a-z]{2,6})(.*)/
+    link_checker.add_link(Link.new([$1, $2], link_text, 'external'))
   end
 end
 
-#puts website.print_links
-#puts website.print_bad_links
+# Execute LinkChecker.check_links
+puts 'Checking Links' if verbose
+link_checker.link_list.each_with_index do |link, index|
+  puts "Checking: #{index + 1} of #{link_checker.link_list.length}" if verbose
+  puts link.info if verbose
+  link.check_link
+end
 
-#=begin
+# Create a Prawn PDF
+puts 'Generating PDF' if verbose
 Prawn::Document.generate( "pdf_bin/#{url}.pdf" ) do
-  font_families.update(
-      "UbuntuMono" => {
-          :normal => "UbuntuMono-Regular.ttf"
-      }
-  )
   font "Courier", :size => 24
   text "#{url}\nLink Report", :align => :center
   font "Courier", :size => 16
   text "As of #{Time.now.month}/#{Time.now.day}/#{Time.now.year} - #{Time.now.hour}:#{Time.now.min}", :align => :center
-  font "UbuntuMono", :size => 10
-  text "#{website.print_links}", :align => :left
+  font "Courier", :size => 10
+  text "#{link_checker.good_links}", :align => :left
   start_new_page
-  font "UbuntuMono", :size => 10
-  text "#{website.print_bad_links}", :align => :left
+  font "Courier", :size => 24
+  text "#{url}\n404 Report", :align => :center
+  font "Courier", :size => 10
+  text "#{link_checker.bad_links}", :align => :left
 end
-#=end
+
+puts 'Finished' if verbose
