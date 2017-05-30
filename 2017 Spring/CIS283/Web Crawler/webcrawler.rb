@@ -37,6 +37,7 @@ end
 
 # Make HTTP Connection # Download HTML
 # TODO: Make sure that URLS with '/' are named better below for PDF.
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 puts "Opening: #{url}" if verbose
 url.scan(/(?:https?:\/\/)?([\w\d]*\.[\w\d]*\.[\w\d]{2,6})(.*)/)
 response = Net::HTTP.get_response($1, $2 == '' ? '/' : $2)
@@ -88,6 +89,8 @@ Prawn::Document.generate( "pdf_bin/#{url}.pdf" ) do
   text "As of #{Time.now.month}/#{Time.now.day}/#{Time.now.year} - #{Time.now.hour}:#{Time.now.min}", :align => :center
   font "Courier", :size => 10
   text "#{link_checker.good_links}", :align => :left
+  # TODO: Utilize force_encoding
+  #.force_encoding(Encoding::Windows_1252) ?
 
   # Keeping the 404's on a different page
   start_new_page
@@ -95,6 +98,8 @@ Prawn::Document.generate( "pdf_bin/#{url}.pdf" ) do
   text "#{url}\n404 Report", :align => :center
   font "Courier", :size => 10
   text "#{link_checker.bad_links}", :align => :left
+  # TODO: Utilize force_encoding
+  # .force_encoding(Encoding::Windows_1252) ?
 end
 
 puts 'Finished' if verbose
