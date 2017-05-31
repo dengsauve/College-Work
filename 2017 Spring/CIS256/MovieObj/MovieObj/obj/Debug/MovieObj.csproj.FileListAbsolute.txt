@@ -1,0 +1,5 @@
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MovieObj\MovieObj\bin\Debug\MovieObj.dll
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MovieObj\MovieObj\bin\Debug\MovieObj.pdb
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MovieObj\MovieObj\obj\Debug\MovieObj.csprojResolveAssemblyReference.cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MovieObj\MovieObj\obj\Debug\MovieObj.dll
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\MovieObj\MovieObj\obj\Debug\MovieObj.pdb

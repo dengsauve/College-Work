@@ -1,0 +1,10 @@
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\testMovieObj\testMovieObj\bin\Debug\testMovieObj.exe.config
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\testMovieObj\testMovieObj\bin\Debug\testMovieObj.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\testMovieObj\testMovieObj\bin\Debug\testMovieObj.pdb
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\testMovieObj\testMovieObj\bin\Debug\MovieObj.dll
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\testMovieObj\testMovieObj\obj\Debug\testMovieObj.csprojResolveAssemblyReference.cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\testMovieObj\testMovieObj\obj\Debug\testMovieObj.Form1.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\testMovieObj\testMovieObj\obj\Debug\testMovieObj.Properties.Resources.resources
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\testMovieObj\testMovieObj\obj\Debug\testMovieObj.csproj.GenerateResource.Cache
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\testMovieObj\testMovieObj\obj\Debug\testMovieObj.exe
+C:\Dennis\Code\College-Work\2017 Spring\CIS256\testMovieObj\testMovieObj\obj\Debug\testMovieObj.pdb
