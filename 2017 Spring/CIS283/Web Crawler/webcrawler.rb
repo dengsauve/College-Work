@@ -62,7 +62,7 @@ t_tags.each do |tag|
     nil
 
   elsif tag[0] =~ /((?:www\.)?.+?\.[a-z]{2,6})(.*)/
-    link_checker.add_link(Link.new([$1, $2], link_text, 'external'))
+    link_checker.add_link(Link.new([$1, ($2 == '' ? '/' : $2)], link_text, 'external'))
   end
 end
 
