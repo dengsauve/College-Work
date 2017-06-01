@@ -26,11 +26,11 @@ class Link_Checker
   end
 
   def good_links
-    ret_str = ''
+    ret_arr = []
     @link_list.each do | link |
-      ret_str += link.to_s + "\n" unless link.code == '404'
+      ret_arr << link unless link.code == '404'
     end
-    return ret_str
+    return ret_arr
   end
 
   def bad_links
@@ -44,7 +44,7 @@ class Link_Checker
 end
 
 class Link < Link_Checker
-  attr_reader :code
+  attr_reader :code, :link, :click_value, :type
   def initialize(link, click_value, type)
     @link = link
     @click_value = click_value
@@ -70,8 +70,11 @@ class Link < Link_Checker
   end
 
   def to_s
-    return @link.to_s.ljust(60, '.') + @click_value.rjust(30, '.') +  "\n" +
+    return @link.to_s + "\n" +
+        @click_value +  "\n" +
         @type.ljust(60, '.') + @code.rjust(30, '.') + "\n"
   end
+
+  # <c:alink uri="http://adobe.com/missing.html">Missing Page</c:alink>
 
 end
