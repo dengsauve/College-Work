@@ -30,13 +30,20 @@ class Link_Checker
     @link_list.each do | link |
       ret_arr << link unless link.code == '404'
     end
+    ret_arr.sort! { |a, b| a.click_value.downcase <=> b.click_value.downcase }
+    ret_arr.sort! { |a, b| b.type <=> a.type }
+    ret_arr.sort! { |a, b| a.code <=> b.code }
     return ret_arr
   end
 
   def bad_links
-    ret_str = ''
+    ret_arr, ret_str = [], ''
     @link_list.each do | link |
-      ret_str += link.to_s + "\n" if link.code == '404'
+      ret_arr << link if link.code == '404'
+    end
+    ret_arr.sort! { |a, b| a.click_value.downcase <=> b.click_value.downcase }
+    ret_arr.each do | link |
+      ret_str += link.to_s + "\n"
     end
     return ret_str
   end
@@ -56,7 +63,6 @@ class Link < Link_Checker
     if @type == 'internal'
       @code = Net::HTTP.get_response(@@base_url, @link).code
     else
-      #@link.scan(/(?:https?:\/\/)?((?:www\.)?.+?\.[a-z]{2,6})(.*)/)
       @code = Net::HTTP.get_response(@link[0], @link[1]).code
     end
   end
@@ -74,7 +80,5 @@ class Link < Link_Checker
         @click_value +  "\n" +
         @type.ljust(60, '.') + @code.rjust(30, '.') + "\n"
   end
-
-  # <c:alink uri="http://adobe.com/missing.html">Missing Page</c:alink>
 
 end

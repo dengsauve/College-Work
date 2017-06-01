@@ -44,10 +44,10 @@ Prawn::Document.generate("testing.pdf") do |pdf|
   pdf.move_down 10
   pdf.font "Courier", :size => 10
 # pdf.move_down 20
-# TODO: Replace this line:
+# TO: Replace this line:
   #pdf.text "#{@links} #{@click_value}"
-# TODO: by looping through url.links_array, and encoding each link.to_s with encode("Windows-1252", "UTF-8", invalid: :replace, undef: :replace)
-# TODO: Remember to Separate 404 codes from the rest
+# TO: by looping through url.links_array, and encoding each link.to_s with encode("Windows-1252", "UTF-8", invalid: :replace, undef: :replace)
+# TO: Remember to Separate 404 codes from the rest
 # pdf.text "someurltext".force_encoding(Encoding::Windows_1252)
 # pdf.text url.encode("Windows-1252", "UTF-8", invalid: :replace, undef: :replace)
 # pdf.te

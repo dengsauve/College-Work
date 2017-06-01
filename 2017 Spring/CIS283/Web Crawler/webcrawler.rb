@@ -8,12 +8,12 @@
 #                external links on a given website.
 #
 ############################################################
-# ruby Web\ Crawler/webcrawler.rb www.sauve.biz
+
 if ARGV.include?('-h') || ARGV.include?('--help')
   puts 'Web Crawler
-  About: A ruby script that will go out and comb a website for <a> links, test them, and create a PDF report.
-  Usage: webcrawler.rb <website> <-bv>
-  Commands:
+  ABOUT: A ruby script that will go out and comb a website for <a> links, test them, and create a PDF report.
+  USAGE: webcrawler.rb <website> <-bv>
+  COMMANDS:
     -h --help:          Displays help menu
     -v --verbose:       Outputs events as they occur in program
     -b --progress-bar:  Displays a progress bar (needs ruby-progressbar gem installed)'
@@ -37,7 +37,6 @@ else
 end
 
 # Make HTTP Connection # Download HTML
-# TODO: Make sure that URLS with '/' are named better below for PDF.
 puts "Opening: #{url}" if verbose
 url.scan(/(?:https?:\/\/)?([\w\d]*\.[\w\d]*\.[\w\d]{2,6})(.*)/)
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
@@ -55,9 +54,7 @@ t_tags = response.body.scan(/<a.*href=["'](?:https?:\/\/)?([^'"]*)(?:\/)?["'].*>
 # Net::HTTP.get_response('www.baseurl.com', '/path/here/like/this')
 # Store as Link Objects in LinkChecker.add_link
 t_tags.each do |tag|
-  # Parsing Text for American Characters as click value.
   link_text = tag[1]
-
   if tag[0] =~ /^(?:\/.*)+/
     link_checker.add_link(Link.new(tag[0], link_text, 'internal'))
 
@@ -93,7 +90,6 @@ Prawn::Document.generate( "pdf_bin/#{url}.pdf" ) do
   font "Courier", :size => 10
   link_checker.good_links.each do | link |
     # link
-    href_link = ''
     if link.type == 'internal'
       text "URL: " + link.link.to_s.encode("Windows-1252", "UTF-8", invalid: :replace, undef: :replace), :align => :left
       href_link = link_checker.base_url + link.link.to_s
@@ -101,6 +97,7 @@ Prawn::Document.generate( "pdf_bin/#{url}.pdf" ) do
       text "URL: " + link.link.join('').encode("Windows-1252", "UTF-8", invalid: :replace, undef: :replace), :align => :left
       href_link = link.link.join('')
     end
+
     # click text
     click_value_text = link.click_value.to_s.encode("Windows-1252", "UTF-8", invalid: :replace, undef: :replace)
     text "<link href='#{href_link}'>Click Value: #{click_value_text}</link>", :inline_format => true
