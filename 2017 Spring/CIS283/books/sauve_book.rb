@@ -23,4 +23,8 @@ class Book
   def to_s
     return "#{@title}, by: #{@author}, #{@pages} pages"
   end
+
+  def to_f
+    return "#{@title}\t#{@author}\t#{@pages}"
+  end
 end
