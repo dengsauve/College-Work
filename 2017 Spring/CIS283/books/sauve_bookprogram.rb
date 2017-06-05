@@ -48,7 +48,7 @@ def create_book
     print "\nPlease enter the new book author: "
     author = gets.chomp
   end
-  until pages.to_i.to_s == pages
+  until pages.to_i.to_s == pages && pages.to_i >= 0
     print "\nPlease enter the new book length: "
     pages = gets.chomp
   end
@@ -165,4 +165,9 @@ until choice == menu.quit
   end
 end
 
-# TODO: write books out
+# write library to file
+File.open('books_file.txt', 'w'){ |file|
+  library.each do |book|
+    file.puts book.to_f
+  end
+}
