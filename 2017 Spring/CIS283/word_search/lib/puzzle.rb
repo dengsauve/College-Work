@@ -24,6 +24,14 @@ class Puzzle
     return ret_str
   end
 
+  def to_print
+    ret_str = ''
+    @main_grid.each_with_index do | row, index |
+      ret_str += row.join(' ') + "\n"
+    end
+    return ret_str
+  end
+
   def get_grid
     return Marshal.load(Marshal.dump(@main_grid))
   end
