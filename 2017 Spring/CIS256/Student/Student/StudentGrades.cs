@@ -139,18 +139,16 @@ namespace Student
 
         public string getName(string firstName, string lastName)
         {
-            return oFirstName + " " + oLastName;
+            return firstName + " " + lastName;
         }
 
         public string getName(string firstName, string lastName, string middleName)
         {
-            return oFirstName + " " + oMiddleName + " " + oLastName;
+            return firstName + " " + middleName + " " + lastName;
         }
 
         public string getAddress()
         {
-            string city;
-            string state;
             string name;
             if (oMiddleName == "")
             {
@@ -160,7 +158,106 @@ namespace Student
             {
                 name = oFirstName + " " + oMiddleName + " " + oLastName;
             }
+            string cityState = zipLookup(oZip);
 
+            return name + "\n" + oAddress + "\n" + cityState + " " + oZip;
+        }
+
+        public string getAddress(string zip)
+        {
+            string name;
+            if (oMiddleName == "")
+            {
+                name = oFirstName + " " + oLastName;
+            }
+            else
+            {
+                name = oFirstName + " " + oMiddleName + " " + oLastName;
+            }
+            string cityState = zipLookup(zip);
+
+            return name + "\n" + oAddress + "\n" + cityState + " " + zip;
+        }
+
+        public List<string> getClassList()
+        {
+            List<string> classesPassed = new List<string>();
+            for (var i = 0; i < oCourseCompleted.Count; i++)
+            {
+                if(oCourseGrade[i] >= 1.0)
+                {
+                    classesPassed.Add(oCourseCompleted[i]);
+                }
+            }
+            return classesPassed;
+        }
+
+        public List<string> getClassList(List<string> courses, List<float> grades)
+        {
+            List<string> classesPassed = new List<string>();
+            for (var i = 0; i < courses.Count; i++)
+            {
+                if (grades[i] >= 1.0)
+                {
+                    classesPassed.Add(courses[i]);
+                }
+            }
+            return classesPassed;
+        }
+
+        public List<string> getClassFailList()
+        {
+            List<string> classesFailed = new List<string>();
+            for (var i = 0; i < oCourseCompleted.Count; i++)
+            {
+                if (oCourseGrade[i] <= 1.0)
+                {
+                    classesFailed.Add(oCourseCompleted[i]);
+                }
+            }
+            return classesFailed;
+        }
+
+        public List<string> getClassFailList(List<string> courses, List<float> grades)
+        {
+            List<string> classesFailed = new List<string>();
+            for (var i = 0; i < courses.Count; i++)
+            {
+                if (grades[i] <= 1.0)
+                {
+                    classesFailed.Add(courses[i]);
+                }
+            }
+            return classesFailed;
+        }
+
+        public double getGPA()
+        {
+            if(oCourseGrade.Count() > 0)
+            {
+                return oCourseGrade.Average();
+            }
+            else
+            {
+                return 0.0;
+            }
+            
+        }
+
+        public bool isHonorRoll()
+        {
+            if (oCourseGrade.Count() > 0)
+            {
+                return 3.5 >= oCourseGrade.Average();
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private string zipLookup(string zip)
+        {
             // Initialize the Strings
             String cnStr, strSQL;
 
@@ -188,6 +285,8 @@ namespace Student
             rdrZip.Read();
 
             // Check to see if there are any results
+            string city;
+            string state;
             if (rdrZip.HasRows)
             {
                 // Set the labels to the appropriate values
@@ -201,10 +300,8 @@ namespace Student
             }
             //Close the connection to SQl Server
             cn.Close();
-
-            return name + "\n" + oAddress + "\n" + city + ", " + state + " " + oZip;
+            return city + ", " + state;
         }
-
 
     }
 }
