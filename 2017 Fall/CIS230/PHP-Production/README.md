@@ -24,7 +24,7 @@ Login/Logout | /login.html
 
 - [x] Design your navigation using buttons, or graphics, with rollovers as appropriate.
 - [x] Create your CSS for your entire site in an external file that is to be stored in a folder called “css”
-- [ ] Create all of your images in a folder called “images” with appropriate paths to this folder.
+- [x] Create all of your images in a folder called “images” with appropriate paths to this folder.
 - [x] Create an empty folder called “js”
 - [ ] Create “Lorem Ipsum” type placement files for each of the various representative page. There should be NO 404 pages, ie. No links that don’t resolve to a webpage.
 
