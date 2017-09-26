@@ -8,6 +8,10 @@
 
 ?>
 
+</section>
+
+</main><!-- /.container -->
+
 <footer>
 
 

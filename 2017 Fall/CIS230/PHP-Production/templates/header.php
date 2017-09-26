@@ -32,6 +32,9 @@
   <!-- Custom styles for this template -->
   <link href="css/starter-template.css" rel="stylesheet">
 
+  <!-- Personal Style Sheet -->
+  <link href="css/dennissauve.com.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -42,3 +45,9 @@
 
   ?>
 </header>
+
+<!-- Body Starts -->
+
+<main class="container">
+
+  <section class="starter-template">
