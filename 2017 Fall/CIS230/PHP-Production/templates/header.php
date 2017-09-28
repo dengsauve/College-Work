@@ -1,18 +1,13 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Dennis
+ * User: Dennis Sauve
  * Date: 9/25/2017
  * Time: 9:03 AM
  */
 
 /* Code Goes Here */
-
-
 ?>
-
-<!-- HTML Code Here-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
