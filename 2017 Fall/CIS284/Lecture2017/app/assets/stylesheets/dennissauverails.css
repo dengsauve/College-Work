@@ -1,3 +1,5 @@
 table{
     text-align: left;
+    border: solid lightgray 2px;
+    box-shadow: gray 5px 5px 10px;
 }
