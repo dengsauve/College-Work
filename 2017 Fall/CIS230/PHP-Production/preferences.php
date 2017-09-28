@@ -1,5 +1,6 @@
 <?php
 
+$title = "Preferences";
 include 'templates/header.php';
 
 ?>

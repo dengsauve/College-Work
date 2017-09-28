@@ -7,6 +7,8 @@
  */
 
 /* Code Goes Here */
+$website = "Dennis Sauve"
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +21,20 @@
   <meta name="author" content="">
   <link rel="icon" href="favicon.ico">
 
-  <title>Dennis Sauve</title>
+  <title>
+    <?php
+
+    if($title != "")
+    {
+      echo $website . ": " . $title;
+    }
+    else
+    {
+      echo $website;
+    }
+
+    ?>
+  </title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">

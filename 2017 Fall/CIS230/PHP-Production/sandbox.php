@@ -1,5 +1,6 @@
 <?php
 
+$title = "Sandbox";
 include 'templates/header.php';
 
 ?>

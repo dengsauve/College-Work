@@ -1,5 +1,6 @@
 <?php
 
+$title = "Blog";
 include 'templates/header.php';
 
 ?>
