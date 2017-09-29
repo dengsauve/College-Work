@@ -8,18 +8,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "DS", {controller: "page", action: "products"}, class: "navbar-brand" %> <!-- <a class="navbar-brand" href="/index.php">DS</a> -->
+      <%= link_to "DS", {controller: "movies", action: "index"}, class: "navbar-brand" %> <!-- <a class="navbar-brand" href="/index.php">DS</a> -->
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/movies">Movies</a></li>
-        <li><%= link_to "Articles", controller: "page", action: "articles" %></li>
-        <li><%= link_to "Blog", controller: "page", action: "blog" %></li>
-        <li><%= link_to "Calendar", controller: "page", action: "calendar" %></li>
-        <li><%= link_to "Contact Us", controller: "page", action: "contact_us" %></li>
-        <li><%= link_to "Login", controller: "page", action: "login" %></li>
-        <li><%= link_to "Preferences", controller: "page", action: "preferences" %></li>
-        <li><%= link_to "Products", controller: "page", action: "products" %></li>
+        <%= current_page?( controller: "movies", action: "index" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><a href="/movies">Movies</a></li>
+        <%= current_page?( controller: "page", action: "articles" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Articles", {controller: "page", action: "articles"} %> </li>
+        <%= current_page?( controller: "page", action: "blog" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Blog", {controller: "page", action: "blog"} %> </li>
+        <%= current_page?( controller: "page", action: "calendar" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Calendar", {controller: "page", action: "calendar"} %> </li>
+        <%= current_page?( controller: "page", action: "contact_us" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Contact Us", {controller: "page", action: "contact_us"} %> </li>
+        <%= current_page?( controller: "page", action: "login" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Login", {controller: "page", action: "login"} %> </li>
+        <%= current_page?( controller: "page", action: "preferences" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Preferences", {controller: "page", action: "preferences"} %> </li>
+        <%= current_page?( controller: "page", action: "products" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Products", {controller: "page", action: "products"} %> </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
