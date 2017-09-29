@@ -13,3 +13,11 @@ article.blog{
 article p{
     text-align: left;
 }
+
+
+img.product-image{
+    max-height: 200px;
+    max-width: 90%;
+    border-radius: 15px;
+    float: right;
+}
