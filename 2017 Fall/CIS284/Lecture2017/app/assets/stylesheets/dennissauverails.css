@@ -3,3 +3,13 @@ table{
     border: solid lightgray 2px;
     box-shadow: gray 5px 5px 10px;
 }
+
+article.blog{
+    background-color: #e4fffc;
+    border-radius: 25px;
+    box-shadow: 2px 2px 7px;
+}
+
+article p{
+    text-align: left;
+}
