@@ -7,6 +7,13 @@ class PageController < ApplicationController
         "Cantelope" => "Tan",
         "Lemon" => "Yellow"
     }
+    @first_name = params['first_name']
+    @last_name = params['last_name']
+    @phone_number = params['phone_number']
+    @question = params['question']
+    @newsletter = params['newsletter']
+    @subscribed = @newsletter == 'subscribed' ? true : false
+    @gender = params['gender']
   end
 
   def products
