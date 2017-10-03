@@ -1,0 +1,18 @@
+<!-- Boilerplate HTML
+<h1>Page#contact_us</h1>
+<p>Find me in app/views/page/contact_us.html.erb</p>
+-->
+
+<h1>Contact Us</h1>
+
+<hr/>
+
+<% params.each do | key, value | %>
+  <%= key %> : <%= value %><br/>
+<% end %>
+
+<% form_tag '/page/contact_us', method: :GET do %>
+  <% #text_field_tag %>
+
+
+<% end %>
