@@ -1,7 +1,7 @@
 <?php
 
   $title = "Contact Us";
-  include 'templates/header.php';
+  include 'includes/header.php';
 
   $name = $_POST['name'];
   $email = $_POST['email'];
@@ -26,18 +26,16 @@
   $num3 = $_POST['num3'];
   $sum = $num1 + $num2 + $num3;
 
-  echo "Num1: $num1   Num2: $num2   Nun3: $num3 <br/>";
-  echo "The sum of num1 and num2 is $sum <br/>";
-  echo "Newsletter: $newsletter <br/>";
-  echo "Contact By: $contactBy";
+  //echo "Num1: $num1   Num2: $num2   Nun3: $num3 <br/>";
+  //echo "The sum of num1 and num2 is $sum <br/>";
+  //echo "Newsletter: $newsletter <br/>";
+  //echo "Contact By: $contactBy";
 
 ?>
 
   <h1>Contact Us</h1>
 
-  <p>This is a contact form.</p>
-
-  <p>Name: <?php echo $name; ?></p>
+  <!-- <p>Name: <?php echo $name; ?></p> -->
 
   <form action="contactus.php" method="post" class="text-left">
 
@@ -80,6 +78,6 @@
 
 <?php
 
-  include 'templates/footer.php';
+  include 'includes/footer.php';
 
 ?>

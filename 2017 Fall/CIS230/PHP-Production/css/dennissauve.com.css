@@ -1,3 +1,25 @@
 iframe {
   border: none;
 }
+
+article.blog{
+  background-color: #e4fffc;
+  border-radius: 25px;
+  box-shadow: 2px 2px 7px;
+  margin-bottom: 25px;
+}
+
+article p{
+  text-align: left;
+}
+
+img.calendar{
+  width: 100%;
+}
+
+img.product-image{
+  max-height: 200px;
+  max-width: 90%;
+  border-radius: 15px;
+  float: right;
+}

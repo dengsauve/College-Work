@@ -1,7 +1,7 @@
 <?php
 
 $title = "Sandbox";
-include 'templates/header.php';
+include 'includes/header.php';
 
 ?>
 
@@ -23,6 +23,6 @@ include 'templates/header.php';
 
 <?php
 
-include 'templates/footer.php';
+include 'includes/footer.php';
 
 ?>

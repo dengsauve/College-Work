@@ -51,7 +51,7 @@ $website = "Dennis Sauve"
 <header>
   <?php
 
-    include 'templates/nav.php';
+    include 'includes/nav.php';
 
   ?>
 </header>
