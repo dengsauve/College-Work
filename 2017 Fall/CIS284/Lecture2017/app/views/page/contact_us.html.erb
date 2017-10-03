@@ -7,6 +7,42 @@
 
 <hr/>
 
+<%= params["a"] %><br/>
+
+<% params.each do | key, value | %>
+  <%= key %> : <%= value %><br/>
+<% end %>
+
+<h1><%= ("Ho<br/>" * 10).html_safe %></h1>
+
+<%= @now.day %><br/>
+<% count = 0 %>
+<% while count < 10 do %>
+  <%= "ho" %><br/>
+  <% count += 1 %>
+<% end %>
+
+<% @a.each do |num| %>
+  <%= num %><br />
+<% end %>
+
+<table class="table table-responsive table-striped table-bordered text-left">
+  <thead>
+  <tr>
+    <th class="col-sm-3">Fruit</th>
+    <th class="col-sm-9">Color</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |fruit, color| %>
+    <tr>
+      <td><%= fruit %></td>
+      <td><%= color %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <form class="text-left">
   <div class="form-group">
     <label for="email">Email address:</label>
@@ -16,5 +52,5 @@
     <label for="tel">Phone number:</label>
     <input type="tel" class="form-control" id="tel">
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>

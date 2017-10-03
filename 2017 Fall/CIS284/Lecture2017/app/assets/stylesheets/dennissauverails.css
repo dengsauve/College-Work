@@ -1,4 +1,4 @@
-table{
+table.movies{
     text-align: left;
     border: solid lightgray 2px;
     box-shadow: gray 5px 5px 10px;
@@ -8,6 +8,7 @@ article.blog{
     background-color: #e4fffc;
     border-radius: 25px;
     box-shadow: 2px 2px 7px;
+    margin-bottom: 25px;
 }
 
 article p{
@@ -20,4 +21,8 @@ img.product-image{
     max-width: 90%;
     border-radius: 15px;
     float: right;
+}
+
+img.calendar{
+    width: 100%;
 }
