@@ -2,6 +2,7 @@
 
   $title = "Contact Us";
   include 'includes/header.php';
+  include 'includes/functions.php';
 
   $name = $_POST['name'];
   $email = $_POST['email'];
@@ -11,6 +12,7 @@
   $contactBy = $_POST['contactBy'];
   $newsletterSubscribed = '';
   $blogSubscribed = '';
+  $restaurant = $_POST['restaurant'];
 
 
   if ($newsletter == "subscribed"){
@@ -30,6 +32,10 @@
   //echo "The sum of num1 and num2 is $sum <br/>";
   //echo "Newsletter: $newsletter <br/>";
   //echo "Contact By: $contactBy";
+  //echo "Restaurant: $restaurant";
+
+  $restaurants = array("Chinese", "American", "Italian", "Mexican", "Japanese", "Egyptian", "Russian");
+  $flags = array('em-cn', 'em-us', 'em-it', 'em-it', 'em-jp', 'em-it', 'em-ru');
 
 ?>
 
@@ -71,6 +77,15 @@
       <label for="byPhone">Contact Me By Email:</label>
       <input type="radio" value="contactEmail" name="contactBy">
 
+      <br/>
+
+      <label for="restaurant">Choose a Restaurant</label>
+
+      <?php
+
+      CreateSelectBox("restaurant", $restaurants, $restaurant)
+
+      ?>
     </div>
 
     <input type="submit" name="submit" value="Ask a Question" class="btn btn-primary">

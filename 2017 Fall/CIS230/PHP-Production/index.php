@@ -2,7 +2,11 @@
 
 $title = "Home";
 include 'includes/header.php';
+include 'includes/functions.php';
 
+
+$users = array('Dennis', 'Dave', 'Tom', 'Bret', 'Tim');
+$user = $_POST['user'];
 ?>
 
   <h1>Home Page</h1>
@@ -12,6 +16,16 @@ include 'includes/header.php';
     <iframe src="https://giphy.com/embed/KOVlHmbBA09XO" class="giphy-embed" allowFullScreen></iframe>
   </section>
   -->
+
+  <section>
+    <form action="index.php" method="post" class="col-md-6 col-md-offset-3 text-left">
+      <div class="form-group">
+        <label for="user">Choose a user:</label>
+        <?php CreateSelectBox('user', $users, $user); ?>
+      </div>
+      <input type="submit" class="btn btn-primary" />
+    </form>
+  </section>
 
   <section class="col-xs-12 col-md-8">
 
