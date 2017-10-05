@@ -9,7 +9,7 @@ include 'includes/header.php';
 
 <hr/>
 
-<form class="text-left">
+<form class="text-left col-md-6 col-md-offset-3">
   <div class="form-group">
     <label for="username">Username:</label>
     <input type="text" class="form-control" id="username">

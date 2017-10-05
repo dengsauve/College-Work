@@ -37,7 +37,7 @@
 
   <!-- <p>Name: <?php echo $name; ?></p> -->
 
-  <form action="contactus.php" method="post" class="text-left">
+  <form action="contactus.php" method="post" class="text-left col-md-6 col-md-offset-3">
 
     <div class="form-group">
 

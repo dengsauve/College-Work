@@ -18,7 +18,7 @@ if ($remember=="remember"){
 
 <h1>Login</h1>
 
-  <form class="text-left" method="post">
+  <form class="text-left col-md-6 col-md-offset-3" method="post">
     <div class="form-group">
       <label for="email">Email address:</label>
       <input type="email" class="form-control" id="email" name="email" value="<?php echo ($remembered ? $email : ''); ?>">
