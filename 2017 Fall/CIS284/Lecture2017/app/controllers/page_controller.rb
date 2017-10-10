@@ -8,7 +8,7 @@ class PageController < ApplicationController
     @last_name = params['last_name']
 
     @error = ''
-    if @first_name.strip == ''
+    if @first_name.to_s.strip == ''
       @error = "First Name is Required!"
     end
 
@@ -32,9 +32,12 @@ class PageController < ApplicationController
 
   def products
     @products = {
-        "Watermelon" => "Green",
-        "Cantelope" => "Tan",
-        "Lemon" => "Yellow"
+        "Snow Skiis" => "$200.00",
+        "Snow boards" => "$150.00",
+        "Snow books" => "$100.00",
+        "Mittens" => "$9.00",
+        "Gloves" => "$15.00",
+        "Hats" => "$20.00"
     }
   end
 

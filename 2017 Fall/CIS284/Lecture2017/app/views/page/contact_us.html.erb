@@ -12,6 +12,8 @@
   <%= "<h2>#{@error}</h2>".html_safe %>
 <% end %>
 
+<%= flash.now[:message] = "Hello There" %>
+
 <!-- Debugging code, removed before production
 
 <div>
