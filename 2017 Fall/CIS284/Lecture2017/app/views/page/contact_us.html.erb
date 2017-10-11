@@ -7,108 +7,100 @@
 
 <hr/>
 
-<!-- Debugging code, removed before production
-
 <div>
 
-  <%= "First Name: #{@first_name}" %><br/>
-  <%= "Last Name: #{@last_name}" %><br/>
-  <%= "Phone Numer: #{@phone_number}" %><br/>
-  <%= "Question: #{@question}" %><br/>
-  <%= "Newsletter: #{@newsletter}" %><br/>
-  <%= "Gender: #{@gender}" %><br/>
+  <%= form_tag "/page/contact_us", method: :get, class: 'text-left col-md-6 col-md-offset-3' do %>
+
+    <div class="form-group">
+
+      <%= label_tag 'name', 'Enter your name:' %>
+      <%= text_field_tag 'name', @name, class: 'form-control' %>
+      <% if flash.now[:name_error] %>
+          <%= flash.now[:name_error] %>
+      <% end %>
+
+    </div>
+
+    <div class="form-group">
+
+      <%= label_tag 'email', 'Enter your email:' %>
+      <%= text_field_tag 'email', @email, class:'form-control', type: 'email' %>
+      <% if flash.now[:email_error] %>
+        <%= flash.now[:email_error] %>
+      <% end %>
+
+    </div>
+
+    <div class="form-group">
+
+      <%= label_tag 'phone_number', 'Phone number:' %>
+      <%= phone_field_tag 'phone_number', @phone_number, class: 'form-control', pattern: '[0-9]*' %>
+
+    </div>
+
+    <div class="form-group">
+
+      <%= label_tag 'question', 'Enter Your Question:' %>
+      <%= text_area_tag 'question', @question, class: 'form-control' %>
+
+    </div>
+
+    <div class="form-group">
+
+      <section>
+        <%= label_tag 'contact_email', 'Contact me by Email' %>
+        <%= radio_button_tag 'contact_method', 'email', @contact_method == 'email' %>
+      </section>
+
+      <section>
+        <%= label_tag 'contact_phone', 'Contact me by Phone' %>
+        <%= radio_button_tag 'contact_method', 'phone', @contact_method == 'phone' %>
+      </section>
+
+    </div>
+
+    <div class="form-group">
+
+      <%= label_tag 'products', 'What product do you have a question about?' %>
+      <%= select_tag('products', options_for_select(@products, @selected_product), class: 'form-control') %>
+
+    </div>
+
+    <div class="form-group">
+
+      <%= label_tag 'newsletter', 'Subscribed to our Newsletter:' %>
+      <%= check_box_tag 'newsletter', 'subscribed', @subscribed %>
+
+    </div>
+
+    <div class="form-group">
+
+      <%= label_tag 'youtube', 'Subscribed to our YouTube Channel:' %>
+      <%= check_box_tag 'youtube', 'watching', @watching %>
+
+    </div>
+
+
+
+    <%= submit_tag 'Submit Question', class: 'btn btn-primary' %>
+
+  <% end %>
+</div>
+
+<div class="col-xs-12 col-md-6 col-md-push-3">
+
+  <dl class="dl-horizontal text-left">
+
+    <dt>Name</dt><dd><%= @name %></dd>
+    <dt>Email</dt><dd><%= @email %></dd>
+    <dt>Phone Numer</dt><dd><%= @phone_number %></dd>
+    <dt>Question</dt><dd><%= @question %></dd>
+    <dt>Contact</dt><dd><%= @contact_method %></dd>
+    <dt>Product</dt><dd><%= @selected_product %></dd>
+    <dt>Newsletter</dt><dd><%= @newsletter %></dd>
+    <dt>YouTube</dt><dd><%= @youtube %></dd>
+
+  </dl>
 
 </div>
 
--->
-
-<%= form_tag "/page/contact_us", method: :get, class: 'text-left col-md-6 col-md-offset-3' do %>
-
-  <div class="form-group">
-
-    <%= label_tag 'name', 'Enter your name:' %>
-    <%= text_field_tag 'name', @name, class: 'form-control' %>
-    <% if flash.now[:name_error] %>
-        <%= flash.now[:name_error] %>
-    <% end %>
-
-  </div>
-
-  <div class="form-group">
-
-    <%= label_tag 'email', 'Enter your email:' %>
-    <%= text_field_tag 'email', @email, class:'form-control', type: 'email' %>
-    <% if flash.now[:email_error] %>
-      <%= flash.now[:email_error] %>
-    <% end %>
-
-  </div>
-
-  <div class="form-group">
-
-    <%= label_tag 'phone_number', 'Phone number:' %>
-    <%= phone_field_tag 'phone_number', @phone_number, class: 'form-control', pattern: '[0-9]*' %>
-
-  </div>
-
-  <div class="form-group">
-
-    <%= label_tag 'question', 'Enter Your Question:' %>
-    <%= text_area_tag 'question', @question, class: 'form-control' %>
-
-  </div>
-
-
-  <div class="form-group">
-
-    <%= label_tag 'products', 'What product do you have a question about?' %>
-    <%= select_tag('products', options_for_select(@products, @selected_product), class: 'form-control') %>
-
-  </div>
-
-
-  <!--
-  <div class="form-group">
-
-    <%= label_tag 'gender_male', 'Male' %>
-    <%= radio_button_tag 'gender', 'male', @gender == 'male' %>
-    <%= label_tag 'gender_female', 'Female' %>
-    <%= radio_button_tag 'gender', 'female', @gender == 'female' %>
-
-  </div>
-  -->
-
-  <div class="form-group">
-
-    <%= label_tag 'newsletter', 'Subscribed to our Newsletter:' %>
-    <%= check_box_tag 'newsletter', 'subscribed', @subscribed %>
-
-  </div>
-
-  <div class="form-group">
-
-    <%= label_tag 'youtube', 'Subscribed to our YouTube Channel:' %>
-    <%= check_box_tag 'youtube', 'watching', @watching %>
-
-  </div>
-
-
-
-  <%= submit_tag 'Submit Question', class: 'btn btn-primary' %>
-
-<% end %>
-
-
-<!--
-<form class="text-left">
-  <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email">
-  </div>
-  <div class="form-group">
-    <label for="tel">Phone number:</label>
-    <input type="tel" class="form-control" id="tel">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
--->

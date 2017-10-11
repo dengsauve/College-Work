@@ -1,8 +1,6 @@
 class PageController < ApplicationController
   def contact_us
 
-    @now = DateTime.now
-
     @name = params['name']
 
     @email = params['email']
@@ -17,7 +15,7 @@ class PageController < ApplicationController
     @youtube = params['youtube']
     @watching = @youtube == 'watching'
 
-    @gender = params['gender']
+    @contact_method = params['contact_method']
 
     @products = [
         "Snow Skiis",
@@ -37,8 +35,6 @@ class PageController < ApplicationController
     if @email != nil && @email.to_s.strip == ''
       flash.now[:email_error] = "Email is Required!"
     end
-
-    #flash.now[:message] = "Hello There"
 
   end
 
