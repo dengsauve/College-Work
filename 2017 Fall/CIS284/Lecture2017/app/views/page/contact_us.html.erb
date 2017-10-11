@@ -7,13 +7,6 @@
 
 <hr/>
 
-
-<% if @error != '' %>
-  <%= "<h2>#{@error}</h2>".html_safe %>
-<% end %>
-
-<%= flash.now[:message] = "Hello There" %>
-
 <!-- Debugging code, removed before production
 
 <div>
@@ -33,14 +26,21 @@
 
   <div class="form-group">
 
-    <%= label_tag 'first_name', 'Enter your first name:' %>
-    <%= text_field_tag 'first_name', @first_name, class: 'form-control' %>
+    <%= label_tag 'name', 'Enter your name:' %>
+    <%= text_field_tag 'name', @name, class: 'form-control' %>
+    <% if flash.now[:name_error] %>
+        <%= flash.now[:name_error] %>
+    <% end %>
 
   </div>
+
   <div class="form-group">
 
-    <%= label_tag 'last_name', 'Enter your last name:' %>
-    <%= text_field_tag 'last_name', @last_name, class: 'form-control' %>
+    <%= label_tag 'email', 'Enter your email:' %>
+    <%= text_field_tag 'email', @email, class:'form-control', type: 'email' %>
+    <% if flash.now[:email_error] %>
+      <%= flash.now[:email_error] %>
+    <% end %>
 
   </div>
 
@@ -58,6 +58,26 @@
 
   </div>
 
+
+  <div class="form-group">
+
+    <%= label_tag 'products', 'What product do you have a question about?' %>
+    <%= select_tag('products', options_for_select(@products, @selected_product), class: 'form-control') %>
+
+  </div>
+
+
+  <!--
+  <div class="form-group">
+
+    <%= label_tag 'gender_male', 'Male' %>
+    <%= radio_button_tag 'gender', 'male', @gender == 'male' %>
+    <%= label_tag 'gender_female', 'Female' %>
+    <%= radio_button_tag 'gender', 'female', @gender == 'female' %>
+
+  </div>
+  -->
+
   <div class="form-group">
 
     <%= label_tag 'newsletter', 'Subscribed to our Newsletter:' %>
@@ -67,18 +87,12 @@
 
   <div class="form-group">
 
-    <%= label_tag 'gender_male', 'Male' %>
-    <%= radio_button_tag 'gender', 'male', @gender == 'male' %>
-    <%= label_tag 'gender_female', 'Female' %>
-    <%= radio_button_tag 'gender', 'female', @gender == 'female' %>
+    <%= label_tag 'youtube', 'Subscribed to our YouTube Channel:' %>
+    <%= check_box_tag 'youtube', 'watching', @watching %>
 
   </div>
 
-  <div class="form-group">
 
-    <%= select_tag('restaurants', options_for_select(@restaurants, @selected_restaurant)) %>
-
-  </div>
 
   <%= submit_tag 'Submit Question', class: 'btn btn-primary' %>
 

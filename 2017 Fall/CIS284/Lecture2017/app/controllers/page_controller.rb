@@ -1,32 +1,44 @@
 class PageController < ApplicationController
   def contact_us
-    @a = [1, 2, 3, 4, 5, 6]
 
     @now = DateTime.now
 
-    @first_name = params['first_name']
-    @last_name = params['last_name']
+    @name = params['name']
 
-    @error = ''
-    if @first_name.to_s.strip == ''
-      @error = "First Name is Required!"
-    end
+    @email = params['email']
 
     @phone_number = params['phone_number']
 
     @question = params['question']
 
     @newsletter = params['newsletter']
-    @subscribed = @newsletter == 'subscribed' ? true : false
+    @subscribed = @newsletter == 'subscribed'# ? true : false
+
+    @youtube = params['youtube']
+    @watching = @youtube == 'watching'
 
     @gender = params['gender']
 
-    @restaurants = [
-        "Red Dragon Chinese",
-        "McDonalds",
-        "Taco Bell"
+    @products = [
+        "Snow Skiis",
+        "Snow boards",
+        "Snow books",
+        "Mittens",
+        "Gloves",
+        "Hats"
     ]
-    @selected_restaurant = params['restaurants']
+    @selected_product = params['products']
+
+
+    if @name != nil && @name.to_s.strip == ''
+      flash.now[:name_error] = "Name is Required!"
+    end
+
+    if @email != nil && @email.to_s.strip == ''
+      flash.now[:email_error] = "Email is Required!"
+    end
+
+    #flash.now[:message] = "Hello There"
 
   end
 
