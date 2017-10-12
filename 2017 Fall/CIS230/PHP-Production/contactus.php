@@ -4,8 +4,13 @@
   include 'includes/header.php';
   include 'includes/functions.php';
 
+  $submit = $_POST['submit'];
+
   $name = $_POST['name'];
   $email = $_POST['email'];
+  if( empty($email) && !empty($submit)){
+    echo "<h3>Please enter an email address!</h3>";
+  }
   $question = $_POST['question'];
   $newsletter = $_POST['newsletter'];
   $blog = $_POST['blog'];
@@ -34,6 +39,7 @@
   //echo "Contact By: $contactBy";
   //echo "Restaurant: $restaurant";
 
+  // Was really hoping to put country flags next to restaurants in select drop down...
   $restaurants = array("Chinese", "American", "Italian", "Mexican", "Japanese", "Egyptian", "Russian");
   $flags = array('em-cn', 'em-us', 'em-it', 'em-it', 'em-jp', 'em-it', 'em-ru');
 
