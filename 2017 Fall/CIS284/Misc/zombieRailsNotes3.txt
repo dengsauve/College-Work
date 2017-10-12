@@ -1,0 +1,46 @@
+# show.html.erb
+<% tweet = Tweet.find(1) %>
+
+<%= link_to tweet.zombie.name, zombie_path(tweet.zombie) %>
+
+OR
+
+<%= link_to tweet.zombie.name, tweet.zombie %>
+
+
+
+<h1><%= tweet.status %></h1>
+<h1><small>Posted by <%= link_to tweet.zombie.name, tweet.zombie %></small></h1>
+
+#index.hmtl.erb
+
+<h1>List tweets</h1>
+<table>
+	<tr>
+		<th>Status</th>
+		<th>Zombie</th>
+	</tr>
+<% Tweet.all.each do |tweet| %>
+	<tr>
+		<td><%= tweet.status %></td>
+		<td><%= tweet.zombie.name %></td>
+	</tr>
+<% end %>
+</table>
+
+<h1>Linked to List tweets</h1>
+<table>
+	<tr>
+		<th>Status</th>
+		<th>Zombie</th>
+	</tr>
+<% Tweet.all.each do |tweet| %>
+	<tr>
+		<td><%= link_to tweet.status, tweet %></td>
+		<td><%= link_to tweet.zombie.name, tweet.zombie %></td>
+		<td><%= link_to "Edit", edit_tweet_path(tweet) %></td>
+		<td><%= link_to "Destroy", tweet, method: :delete %></td>
+	</tr>
+<% end %>
+</table>
+
