@@ -14,7 +14,7 @@
 
 function CreateSelectBox($selectBoxName, $optionsArray, $selectedOption)
 {
-  echo "<select name=\"$selectBoxName\" class=\"form-control\">";
+  echo "<select name=\"$selectBoxName\" class=\"form-control\" id=\"$selectBoxName\">";
   $count = 0;
   while ($count < count($optionsArray)) {
 

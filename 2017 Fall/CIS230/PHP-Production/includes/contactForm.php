@@ -80,7 +80,7 @@ if ($new_products == "subscribed"){
   <div class="radio">
 
     <label>
-      <input type="radio" value="contactPhone" name="contactBy" id="phone" <?php echo ($contactBy == 'contactPhone' ? 'checked' : '') ?> >
+      <input type="radio" value="contactPhone" name="contactBy" <?php echo ($contactBy == 'contactPhone' ? 'checked' : '') ?> >
       <strong>Contact Me By Phone</strong>
     </label>
 
@@ -89,13 +89,13 @@ if ($new_products == "subscribed"){
   <div class="radio">
 
     <label>
-      <input type="radio" value="contactEmail" name="contactBy" id="email" <?php echo ($contactBy == 'contactEmail' ? 'checked' : '') ?> >
+      <input type="radio" value="contactEmail" name="contactBy" <?php echo ($contactBy == 'contactEmail' ? 'checked' : '') ?> >
       <strong>Contact Me By Email</strong>
     </label>
 
   </div>
 
-  <label for="restaurant">Choose a Restaurant</label>
+  <label for="product">Choose a Restaurant</label>
 
   <?php
 
@@ -107,7 +107,7 @@ if ($new_products == "subscribed"){
 
     <label for="newsletter">
       <input type="checkbox" value="subscribed" name="newsletter" id="newsletter" <?php echo $newsletter_subscribed; ?> >
-      <strong>Subscribed to Newsletter</strong>
+      <strong>Subscribe to Newsletter</strong>
     </label>
 
   </div>
@@ -122,5 +122,5 @@ if ($new_products == "subscribed"){
   </div>
 
   <input type="submit" name="submit" value="Ask a Question" class="btn btn-primary">
-  
+
 </form>
