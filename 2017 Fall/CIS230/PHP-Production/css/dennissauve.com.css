@@ -24,4 +24,8 @@ img.product-image{
   float: right;
 }
 
+textarea{
+  resize: none;
+}
+
 
