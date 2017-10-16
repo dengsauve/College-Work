@@ -123,7 +123,7 @@ $calendar_title = date("F Y", mktime(0,0,0,$month, 1, $year));
       }
 
       //closing the table
-      
+
       echo "</table>";
 
       ?>
