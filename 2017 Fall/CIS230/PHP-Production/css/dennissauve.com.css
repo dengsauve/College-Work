@@ -24,6 +24,17 @@ img.product-image{
   float: right;
 }
 
+table.calendar-lg tr td{
+  width: 14.2857%; /* (100 / 7) for days of the week */
+  padding-bottom: 7%;
+  transition-duration: .2s;
+}
+
+table.calendar-lg tr td:hover{
+  background-color: #e3e3e3;
+  transition-duration: .15s;
+}
+
 textarea{
   resize: none;
 }
