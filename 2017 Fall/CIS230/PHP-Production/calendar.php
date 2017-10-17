@@ -2,8 +2,7 @@
 
 $title = "Calendar";
 include 'includes/header.php';
-
-$days = array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+include 'includes/functions.php';
 
 $month = $_GET["month"];
 if(empty( $month )){
@@ -15,116 +14,44 @@ if(empty( $year )){
   $year = date("y");
 }
 
-$firstOfTheMonth = mktime(0,0,0, $month, 1, $year);
-$firstDay = date("w", $firstOfTheMonth); // w is numeric of day of the week
-$lastDay = date("t"); // t is numeric of number of days in month
+$nextMonth = $month + 1;
+$nextYear = $year;
+$previousMonth = $month - 1;
+$previousYear = $year;
 
-$calendar_title = date("F Y", mktime(0,0,0,$month, 1, $year));
+if ( (int)$month == 12 ){
+  $nextMonth = 1;
+  $nextYear = $year + 1;
+}
 
-// Please see documentation at: http://php.net/manual/en/function.date.php
+if ( (int)$month == 1 ){
+  $previousMonth = 12;
+  $previousYear = $year - 1;
+}
+
+
 ?>
 
   <h1>Calendar</h1>
   <hr/>
+
+<div>
+
+  <section class="col-xs-6">
+    <a class="btn btn-info btn-sm" href="/calendar.php?month=<?php echo $previousMonth; ?>&year=<?php echo $previousYear; ?>">Previous Month</a>
+  </section>
+  <section class="col-xs-6">
+    <a class="btn btn-info btn-sm" href="/calendar.php?month=<?php echo $nextMonth; ?>&year=<?php echo $nextYear; ?>">Next Month</a>
+  </section>
+
+</div>
+
 <div> <!-- Calendar Here -->
 
       <?php
 
-      // starting the table
-
-      echo "<table class=\"calendar-lg table table-responsive table-bordered\">";
-      echo "<caption class=\"text-center\"><strong>$calendar_title</strong></caption>";
-
-      // Printing the Names of the days of the week.
-
-      echo "<thead><tr>";
-
-      foreach ($days as $day) {
-          echo "<th class=\"text-center\">$day</th>\n";
-        }
-
-      echo "</tr></thead><tr>";
-
-      // loop and print blank cells
-
-      $cpFirstDay = $firstDay;
-      while( $cpFirstDay > 0 ){
-        echo "<td>&nbsp;</td>";
-        $cpFirstDay -= 1;
-      }
-
-      $count = 8 - $firstDay;
-      $day = 1;
-
-      // loop and print the rest of the days in the first week
-
-      while ( $day < $count ){
-        echo "<td class='text-left'>$day</td>";
-        $day += 1;
-      }
-
-      echo "</tr>";
-
-      // looping and printing all the 'filler weeks'
-
-      while($day <= ((int)($lastDay / 7) * 7)){
-
-        $currentDay = mktime(0,0,0, $month, $day, $year);
-
-        if( date("w", $currentDay) == 0 ){
-          echo "\n\t<tr><!-- Filler Week -->\n\n";
-        }
-
-        echo "\t\t<td class='text-left'>" . $day . "</td>\n";
-
-        $day += 1;
-
-        if( date("w", $currentDay) == 6  ){
-          echo "\n\t</tr>\n";
-        }
-
-      }
-
-      // looping and printing the last week
-
-      while( $day <= $lastDay ){
-
-        $currentDay = mktime(0,0,0, $month, $day, $year);
-
-        if( date("w", $currentDay) == 0 ){
-          echo "\n\t<tr><!-- Final Week -->\n\n";
-        }
-
-        echo "\t\t<td class='text-left'>" . $day . "</td>\n";
-
-        $day += 1;
-
-        // handling any 'blank days' left on calendar
-
-        if( $day > $lastDay){
-
-          $currentDay = mktime(0,0,0, $month, $day, $year);
-
-          $finalCell = date("w", $currentDay);
-          while( $finalCell < 6){
-
-            echo "\t\t<td class='text-left'>&nbsp;</td>\n";
-
-            $day += 1;
-            $currentDay = mktime(0,0,0, $month, $day, $year);
-            $finalCell = date("w", $currentDay);
-
-          }
-
-          echo "\t\t<td class='text-left'>&nbsp;</td>\n";
-
-          echo "\n\t</tr>\n";
-        }
-      }
-
-      //closing the table
-
-      echo "</table>";
+      echo miniCalendar($month, $year, true);
+      echo miniCalendar($month, $year, false);
 
       ?>
 
