@@ -37,6 +37,18 @@ function CreateSelectBox($selectBoxName, $optionsArray, $selectedOption)
 }
 
 
+function db_connect()
+{
+  $db = new mysqli('mysqldev.dennissauve.com', 'dengsauve', 'HJpo11ersql', 'phpdevdennissauvecom');
+
+  if ($db->connect_errno) {
+    echo "Failed to connect to Database: (" . $db->connect_errno . ")" . $db->connect_error;
+  }
+
+  return $db;
+}
+
+
 function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
 
   $ret_str = ""; // String to rendered in HTML page

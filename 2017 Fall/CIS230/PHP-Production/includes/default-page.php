@@ -1,6 +1,8 @@
 <?php
 
+  $title = "default-page";
   include 'includes/header.php';
+
 
 ?>
 
