@@ -26,6 +26,7 @@
         <li <?php echo ($title == "Products" ? "class=\"active\"" : ""); ?>><a href="/products.php">Products</a></li>
         <li <?php echo ($title == "Blog" ? "class=\"active\"" : ""); ?>><a href="/blog.php">Blog</a></li>
         <li <?php echo ($title == "Calendar" ? "class=\"active\"" : ""); ?>><a href="/calendar.php">Calendar</a></li>
+        <li <?php echo ($title == "Restaurants" ? "class=\"active\"" : ""); ?>><a href="/restaurants.php">Restaurants</a></li>
         <!-- <li <?php echo ($title == "Maps" ? "class=\"active\"" : ""); ?>><a href="/maps.php">Maps</a></li> -->
         <li <?php echo ($title == "Preferences" ? "class=\"active\"" : ""); ?>><a href="/preferences.php">Preferences</a></li>
         <li <?php echo ($title == "Login" ? "class=\"active\"" : ""); ?>><a href="/login.php">Login</a></li>

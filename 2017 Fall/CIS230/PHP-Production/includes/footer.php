@@ -12,10 +12,10 @@
 
 </main><!-- /.container -->
 
-<footer>
-
-
-
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">Dennis Sauve's PHP Production Site for CIS 230</p>
+  </div>
 </footer>
 <!-- Bootstrap core JavaScript
 ================================================== -->

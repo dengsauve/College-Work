@@ -59,7 +59,7 @@ echo $table;
   while (list($id, $name, $location, $priceRangeLow, $priceRangeHigh, $tags, $modifiedAt, $createdAt) = $result->fetch_row()) {
     echo "<tr>\n",
         "\t<th scope='row'>" . $id . "</th>\n",
-        "\t<td><a href='restaurant.php?id=$id'>" . $name . "</a></td>\n",
+        "\t<td><a href='restaurant.php?id=$id' title='Details'>" . $name . "</a></td>\n",
         "\t<td>" . $location . "</td>\n",
         "\t<td>" . $priceRangeLow . "</td>\n",
         "\t<td>" . $priceRangeHigh . "</td>\n",
