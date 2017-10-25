@@ -8,8 +8,28 @@ module ApplicationHelper
     first_day = current_date.at_beginning_of_month.wday
     cal_str = ''
 
-    # Previous and next buttons
+    # Previous and next params
+    previous_month = month - 1
+    previous_year = year
+    next_month = month + 1
+    next_year = year
 
+    # Logic for edge cases
+    if month == 1
+      previous_month = 12
+      previous_year = year - 1
+    elsif month == 12
+      next_year = year + 1
+      next_month = 1
+    end
+
+    cal_str += '<div class="col-xs-6">'
+    cal_str += link_to 'Previous Month', calendar_path(month: previous_month, year: previous_year), class: 'btn btn-info'
+    cal_str += '</div>'
+
+    cal_str += '<div class="col-xs-6">'
+    cal_str += link_to 'Next Month', calendar_path(month: next_month, year: next_year), class: 'btn btn-info'
+    cal_str += '</div>'
 
     cal_str += '<table class="table table-bordered">'
 
