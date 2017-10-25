@@ -56,6 +56,15 @@ class PageController < ApplicationController
   end
 
   def calendar
+    @month = params[:month].to_i
+    if @month == 0
+      @month = Time.now.month # current month
+    end
+
+    @year = params[:year].to_i
+    if @year == 0
+      @year = Time.now.year # current year
+    end
   end
 
   def articles
