@@ -68,13 +68,13 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
 
   $firstOfTheMonth = mktime(0,0,0, $month, 1, $year);
   $firstDay = date("w", $firstOfTheMonth); // w is numeric of day of the week
-  $lastDay = date("t"); // t is numeric of number of days in month
+  $lastDay = date("t", $firstOfTheMonth); // t is numeric of number of days in month
 
 // Please see documentation at: http://php.net/manual/en/function.date.php
 
   $calendar_title = date("F Y", mktime(0,0,0,$month, 1, $year));
 
-// starting the table TODO: Move this calendar to a function (mini calendar)
+// starting the table
 
   if( $large ){
     $ret_str .= "<table class=\"calendar-lg table table-responsive table-bordered \">";
@@ -182,9 +182,9 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
   //closing the table
 
   if( $large ){
-    $ret_str .= "</table></div>";
-  }else{
     $ret_str .= "</table>";
+  }else{
+    $ret_str .= "</table></div>";
   }
 
   return $ret_str;
