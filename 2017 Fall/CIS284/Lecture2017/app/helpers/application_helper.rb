@@ -6,6 +6,8 @@ module ApplicationHelper
     current_date = Date.new(year, month)
 
     first_day = current_date.at_beginning_of_month.wday
+    last_day = current_date.at_end_of_month.day
+
     cal_str = ''
 
     # Previous and next params
@@ -59,14 +61,49 @@ module ApplicationHelper
       cal_str += '    <td>&nbsp;</td>'
     end
 
+    target_day = 0
+
     #Create the first week of the month - days
     (7 - first_day).times do |date|
       cal_str += '    <td>' + (date + 1).to_s + '</td>'
+      target_day = date
     end
 
     cal_str += '</tr>'
+
+    ((last_day - target_day) / 7).times do
+      cal_str += '<tr>'
+      7.times do
+        cal_str += '<td>' + target_day.to_s + '</td>'
+        target_day += 1
+      end
+      cal_str += '</tr>'
+    end
+
+    if target_day < last_day
+      count = 0
+      cal_str += '<tr>'
+
+      while target_day <= last_day
+        cal_str += '<td>' + target_day.to_s + '</td>'
+        target_day += 1
+        count += 1
+      end
+
+      (7 - count).times do
+        cal_str += '<td>&nbsp;</td>'
+      end
+
+      cal_str += '</tr>'
+
+    end
+
+
+    # cal_str += '</tr>'
     cal_str += '</tbody>'
     cal_str += '</table>'
+
+
 
     return cal_str
 

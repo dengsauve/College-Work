@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   get 'page/login'
 
-  get 'page/calendar((/:month)/:year)', to: 'page#calendar', as: 'calendar'
+  get 'calendar((/:month)/:year)', to: 'page#calendar', as: 'calendar'
 
-
+  root 'page#articles'
 
   resources :movies
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
