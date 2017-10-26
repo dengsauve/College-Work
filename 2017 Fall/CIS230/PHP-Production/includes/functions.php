@@ -48,6 +48,22 @@ function db_connect()
   return $db;
 }
 
+/** **************************************************
+ *
+ * miniCalendar(month, year, large?)
+ *
+ * Creates a calendar based on a month and year
+ * The Calendar is large or small based on the large bool
+ *
+ * Returns a string of HTML for Calendar
+ *
+ * @param $monthToDisplay
+ * @param $yearToDisplay
+ * @param $large
+ *
+ * @return string
+ *
+ * **************************************************/
 
 function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
 
@@ -68,26 +84,27 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
 
   $firstOfTheMonth = mktime(0,0,0, $month, 1, $year);
   $firstDay = date("w", $firstOfTheMonth); // w is numeric of day of the week
-  $lastDay = date("t", $firstOfTheMonth); // t is numeric of number of days in month
 
-// Please see documentation at: http://php.net/manual/en/function.date.php
+  $lastDay = date("t", $firstOfTheMonth); // t is numeric of number of days in month
+  $lastOfTheMonth = mktime(0,0,0, $month, $lastDay, $year);
+  $lastWeekDay = date("w", $lastOfTheMonth);
 
   $calendar_title = date("F Y", mktime(0,0,0,$month, 1, $year));
 
-// starting the table
-
+  // starting the table
   if( $large ){
     $ret_str .= "<table class=\"calendar-lg table table-responsive table-bordered \">";
   }else{
     $ret_str .= "<div class='calendar-mini'><table class=\"calendar-lg table table-responsive table-bordered table-condensed \">";
   }
 
+  // Adding the title to the calendar
   $ret_str .= "<caption class=\"text-center\"><strong>$calendar_title</strong></caption>";
 
-  // Printing the Names of the days of the week.
-
+  // Opening the Table Head
   $ret_str .= "<thead><tr>";
 
+  // Printing the Names of the days of the week.
   foreach ($days as $day => $d) {
     if($large) {
       $ret_str .= "<th class=\"text-center\"><span class='hidden-xs hidden-sm'>$day</span><span class='hidden-md hidden-lg'>$d</span></th>\n";
@@ -96,55 +113,62 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
     }
   }
 
-  $ret_str .= "</tr></thead><tr>";
+  // Close Table Head
+  $ret_str .= "</tr></thead>";
+
+  // Open Row for First Week
+  $ret_str .= "<tr>";
 
   // loop and print blank cells
-
   $cpFirstDay = $firstDay;
   while( $cpFirstDay > 0 ){
     $ret_str .= "<td>&nbsp;</td>";
     $cpFirstDay -= 1;
   }
 
-  $count = 8 - $firstDay;
   $day = 1;
 
   // loop and print the rest of the days in the first week
-
-  while ( $day < $count ){
+  while ( $day < ( 8 - $firstDay ) ){
     $ret_str .= "<td class='text-left'>$day</td>";
     $day += 1;
   }
 
+  // Close the first week
   $ret_str .= "</tr>";
 
   // looping and printing all the 'filler weeks'
-
   while($day <= ((int)($lastDay / 7) * 7)){
 
     $currentDay = mktime(0,0,0, $month, $day, $year);
 
+    // Check if Current Day is the start of a new week (row)
     if( date("w", $currentDay) == 0 ){
       $ret_str .= "\n\t<tr><!-- Filler Week -->\n\n";
     }
 
-    if( $day == date("j") && $month == date("n")){
+    // Check if day is current month/day (over years so you can easily see day on next year)
+    if( $day == date("j") && $month == date("n") ){
       $ret_str .= "\t\t<td class='text-left'><strong>" . $day . "</strong></td>\n";
-    }else {
+    } else {
       $ret_str .= "\t\t<td class='text-left'>" . $day . "</td>\n";
     }
 
-    $day += 1;
-
+    // Check if currentDay is the end of a week (row)
     if( date("w", $currentDay) == 6  ){
       $ret_str .= "\n\t</tr>\n";
     }
 
+    $day += 1;
+
   }
 
-  // looping and printing the last week TODO: See Feb and March of 2018, issues with weeks
+  // Dummy variable to check for 28 day months
+  $mLastDay = $lastDay;
 
-  while( $day <= $lastDay ){
+  // looping and printing the last week FIXED_TODO: See Feb and March of 2018, issues with weeks
+  while( $day <= $lastDay or ($mLastDay % 7) == 0 ){
+    $mLastDay = 1;
 
     $currentDay = mktime(0,0,0, $month, $day, $year);
 
@@ -152,24 +176,23 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
       $ret_str .= "\n\t<tr><!-- Final Week -->\n\n";
     }
 
-    $ret_str .= "\t\t<td class='text-left'>" . $day . "</td>\n";
+    if ($day <= $lastDay) {
+      $ret_str .= "\t\t<td class='text-left'>" . $day . "</td>\n";
+    }
 
     $day += 1;
 
     // handling any 'blank days' left on calendar
+    if($day > $lastDay and $lastWeekDay != 6){
 
-    if( $day > $lastDay){
-
-      $currentDay = mktime(0,0,0, $month, $day, $year);
+      $currentDay = mktime(0,0,0, $month, $day , $year);
 
       $finalCell = date("w", $currentDay);
-      while( $finalCell < 6){
+      while( $finalCell < 6 or ($month == 2 and $finalCell <= 6) ){
 
         $ret_str .= "\t\t<td class='text-left'>&nbsp;</td>\n";
 
-        $day += 1;
-        $currentDay = mktime(0,0,0, $month, $day, $year);
-        $finalCell = date("w", $currentDay);
+        $finalCell += 1; //date("w", $currentDay);
 
       }
 
