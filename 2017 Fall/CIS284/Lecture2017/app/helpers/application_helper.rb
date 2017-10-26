@@ -33,7 +33,7 @@ module ApplicationHelper
     cal_str += link_to 'Next Month', calendar_path(month: next_month, year: next_year), class: 'btn btn-info'
     cal_str += '</div>'
 
-    cal_str += '<table class="table table-bordered">'
+    cal_str += '<table class="table table-bordered calendar">'
 
     # Calendar Title
     cal_str += '<caption class="text-center"><strong>'
@@ -65,7 +65,7 @@ module ApplicationHelper
 
     #Create the first week of the month - days
     (7 - first_day).times do |date|
-      cal_str += '    <td>' + (date + 1).to_s + '</td>'
+      cal_str += '    <td class="text-left">' + (date + 1).to_s + '</td>'
       target_day = date
     end
 
@@ -74,7 +74,7 @@ module ApplicationHelper
     ((last_day - target_day) / 7).times do
       cal_str += '<tr>'
       7.times do
-        cal_str += '<td>' + target_day.to_s + '</td>'
+        cal_str += '<td class="text-left">' + target_day.to_s + '</td>'
         target_day += 1
       end
       cal_str += '</tr>'
@@ -85,7 +85,7 @@ module ApplicationHelper
       cal_str += '<tr>'
 
       while target_day <= last_day
-        cal_str += '<td>' + target_day.to_s + '</td>'
+        cal_str += '<td class="text-left">' + target_day.to_s + '</td>'
         target_day += 1
         count += 1
       end

@@ -26,3 +26,16 @@ img.product-image{
 img.calendar{
     width: 100%;
 }
+
+/* Calendar CSS
+-------------------------------------------------- */
+table.calendar tr td{
+    width: 14.2857%; /* (100 / 7) for days of the week */
+    padding-bottom: 7%;
+    transition-duration: .2s;
+}
+
+table.calendar tr td:hover{
+    background-color: #e3e3e3;
+    transition-duration: .15s;
+}
