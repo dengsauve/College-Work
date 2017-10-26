@@ -188,12 +188,16 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
       $currentDay = mktime(0,0,0, $month, $day , $year);
 
       $finalCell = date("w", $currentDay);
-      while( $finalCell < 6 or ($month == 2 and $finalCell <= 6) ){
+      while( $finalCell < 6 or ($month == 2 and $finalCell < 6) ){
 
         $ret_str .= "\t\t<td class='text-left'>&nbsp;</td>\n";
 
         $finalCell += 1; //date("w", $currentDay);
 
+      }
+
+      if ($month == 2 and date("L", $firstOfTheMonth) == 0){
+        $ret_str .= "\t\t<td class='text-left'>&nbsp;</td>\n";
       }
 
       $ret_str .= "\t\t<td class='text-left'>&nbsp;</td>\n";
