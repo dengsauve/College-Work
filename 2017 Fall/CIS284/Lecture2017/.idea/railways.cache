@@ -1,0 +1,25 @@
+          Prefix Verb   URI Pattern                          Controller#Action
+     restaurants GET    /restaurants(.:format)               restaurants#index
+                 POST   /restaurants(.:format)               restaurants#create
+  new_restaurant GET    /restaurants/new(.:format)           restaurants#new
+ edit_restaurant GET    /restaurants/:id/edit(.:format)      restaurants#edit
+      restaurant GET    /restaurants/:id(.:format)           restaurants#show
+                 PATCH  /restaurants/:id(.:format)           restaurants#update
+                 PUT    /restaurants/:id(.:format)           restaurants#update
+                 DELETE /restaurants/:id(.:format)           restaurants#destroy
+ page_contact_us GET    /page/contact_us(.:format)           page#contact_us
+   page_products GET    /page/products(.:format)             page#products
+page_preferences GET    /page/preferences(.:format)          page#preferences
+       page_blog GET    /page/blog(.:format)                 page#blog
+   page_articles GET    /page/articles(.:format)             page#articles
+      page_login GET    /page/login(.:format)                page#login
+        calendar GET    /calendar((/:month)/:year)(.:format) page#calendar
+            root GET    /                                    page#articles
+          movies GET    /movies(.:format)                    movies#index
+                 POST   /movies(.:format)                    movies#create
+       new_movie GET    /movies/new(.:format)                movies#new
+      edit_movie GET    /movies/:id/edit(.:format)           movies#edit
+           movie GET    /movies/:id(.:format)                movies#show
+                 PATCH  /movies/:id(.:format)                movies#update
+                 PUT    /movies/:id(.:format)                movies#update
+                 DELETE /movies/:id(.:format)                movies#destroy
