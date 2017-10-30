@@ -27,6 +27,10 @@ img.calendar{
     width: 100%;
 }
 
+textarea{
+    resize: none; /* Seriously needs to be implemented by more websites */
+}
+
 /* Calendar CSS
 -------------------------------------------------- */
 table.calendar tr td{

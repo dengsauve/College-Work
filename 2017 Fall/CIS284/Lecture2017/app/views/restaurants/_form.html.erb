@@ -1,4 +1,4 @@
-<%= form_with(model: restaurant, local: true) do |form| %>
+<%= form_with(model: restaurant, local: true, class:"col-md-6 col-md-push-3 text-left") do |form| %>
   <% if restaurant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :restaurant_name %>
+    <%= form.text_field :name, id: :restaurant_name, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :location %>
-    <%= form.text_area :location, id: :restaurant_location %>
+    <%= form.text_area :location, id: :restaurant_location, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :cuisine %>
-    <%= form.text_field :cuisine, id: :restaurant_cuisine %>
+    <%= form.text_field :cuisine, id: :restaurant_cuisine, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :low_price_range %>
-    <%= form.text_field :low_price_range, id: :restaurant_low_price_range %>
+    <%= form.text_field :low_price_range, id: :restaurant_low_price_range, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :high_price_range %>
-    <%= form.text_field :high_price_range, id: :restaurant_high_price_range %>
+    <%= form.text_field :high_price_range, id: :restaurant_high_price_range, class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-primary" %>
   </div>
 <% end %>
