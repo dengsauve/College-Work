@@ -2,9 +2,10 @@
 
 <h1>Restaurants</h1>
 
-<table class="table">
+<table class="table text-left">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Name</th>
       <th>Location</th>
       <th>Cuisine</th>
@@ -17,14 +18,15 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
+        <td><%= restaurant.id %></td>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.location %></td>
         <td><%= restaurant.cuisine %></td>
         <td><%= restaurant.low_price_range %></td>
         <td><%= restaurant.high_price_range %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', restaurant, class:"btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class:"btn btn-info" %></td>
+        <td><%= link_to 'Destroy', restaurant, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
