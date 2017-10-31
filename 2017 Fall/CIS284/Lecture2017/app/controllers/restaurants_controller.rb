@@ -4,7 +4,13 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    @page = (params[:page].to_i <= 0 ? 1 : params[:page].to_i)
+    @per_page = params[:per].to_i
+    # @offset = (@page - 1) * @per_page
+
+    @total = (Restaurant.count / @per_page.to_f).ceil
+
+    @restaurants = Restaurant.page(@page).per(@per_page)
   end
 
   # GET /restaurants/1

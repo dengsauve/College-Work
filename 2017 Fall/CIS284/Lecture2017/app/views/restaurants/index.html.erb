@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Restaurants</h1>
+<h1>Restaurants - Page <%= @page %> of <%= @total %></h1>
+
+<div class="col-xs-12">
+  <%= paginate @restaurants %>
+</div>
 
 <table class="table text-left">
   <thead>
@@ -21,11 +25,11 @@
       <tr>
         <td><%= restaurant.id %></td>
         <td><%= restaurant.name %></td>
-        <td><%= truncate restaurant.location %></td>
+        <td><%= truncate restaurant.location, length: 14 %></td>
         <td><%= restaurant.cuisine %></td>
         <td><%= number_to_currency restaurant.low_price_range %></td>
         <td><%= number_to_currency restaurant.high_price_range %></td>
-        <td><%= truncate restaurant.image %></td>
+        <td><%= truncate restaurant.image, length: 20 %></td>
         <td><%= link_to 'Show', restaurant, class:"btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class:"btn btn-info" %></td>
         <td><%= link_to 'Destroy', restaurant, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,6 +37,10 @@
     <% end %>
   </tbody>
 </table>
+
+<div class="col-xs-12">
+  <%= paginate @restaurants %>
+</div>
 
 <br>
 

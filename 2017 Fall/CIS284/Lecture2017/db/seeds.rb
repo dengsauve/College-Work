@@ -8,10 +8,21 @@
 
 include Faker
 
-puts Name.name
-puts Name.first_name
-puts Name.last_name
-puts Name.title
+
+Restaurant.destroy_all
+
+100.times do
+  restaurant = Restaurant.create(
+                             name: Company.name,
+                             location: Address.city + ', ' + Address.state,
+                             cuisine: Food.dish,
+                             low_price_range: rand(1.0..5.0),
+                             high_price_range: rand(10.0..71.0),
+                             image: Placeholdit.image("#{rand(50..100)}x#{rand(50..100)}")
+  )
+
+  puts restaurant.inspect
+end
 
 
 
