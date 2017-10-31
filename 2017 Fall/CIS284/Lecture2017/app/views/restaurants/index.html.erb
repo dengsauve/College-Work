@@ -11,6 +11,7 @@
       <th>Cuisine</th>
       <th>Low price range</th>
       <th>High price range</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,10 +21,11 @@
       <tr>
         <td><%= restaurant.id %></td>
         <td><%= restaurant.name %></td>
-        <td><%= restaurant.location %></td>
+        <td><%= truncate restaurant.location %></td>
         <td><%= restaurant.cuisine %></td>
-        <td><%= restaurant.low_price_range %></td>
-        <td><%= restaurant.high_price_range %></td>
+        <td><%= number_to_currency restaurant.low_price_range %></td>
+        <td><%= number_to_currency restaurant.high_price_range %></td>
+        <td><%= truncate restaurant.image %></td>
         <td><%= link_to 'Show', restaurant, class:"btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class:"btn btn-info" %></td>
         <td><%= link_to 'Destroy', restaurant, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -17,12 +17,18 @@
 
 <p>
   <strong>Low price range:</strong>
-  <%= @restaurant.low_price_range %>
+  <%= number_to_currency @restaurant.low_price_range %>
 </p>
 
 <p>
   <strong>High price range:</strong>
-  <%= @restaurant.high_price_range %>
+  <%= number_to_currency @restaurant.high_price_range %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @restaurant.image, class:"img-thumbnail" %>
+  <!-- <img src="<%= @restaurant.image %>" alt="<%= @restaurant.name %> picture" class="img-thumbnail" /> -->
 </p>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class:"btn btn-primary" %> |

@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+include Faker
+
+puts Name.name
+puts Name.first_name
+puts Name.last_name
+puts Name.title
+
+
+

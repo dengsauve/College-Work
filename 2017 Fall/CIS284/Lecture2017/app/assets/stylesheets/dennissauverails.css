@@ -27,6 +27,10 @@ img.calendar{
     width: 100%;
 }
 
+img.img-thumbnail{
+    height: 140px;
+}
+
 textarea{
     resize: none; /* Seriously needs to be implemented by more websites */
 }
