@@ -8,7 +8,12 @@ class RestaurantsController < ApplicationController
     @per_page = params[:per].to_i
     # @offset = (@page - 1) * @per_page
 
-    @total = (Restaurant.count / @per_page.to_f).ceil
+    unless @per_page == 0
+      @total = (Restaurant.count / @per_page.to_f).ceil
+    else
+      @total = 0
+    end
+
 
     @restaurants = Restaurant.page(@page).per(@per_page)
   end

@@ -1,4 +1,5 @@
 class Restaurant < ApplicationRecord
+  has_many :reviews
 
   # Ensures there's a name in the form
   validates_presence_of :name
