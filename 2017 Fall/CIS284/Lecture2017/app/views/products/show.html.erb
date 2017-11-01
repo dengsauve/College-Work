@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Quantity on hand:</strong>
+  <%= @product.quantity_on_hand %>
+</p>
+
+<p>
+  <strong>Selling price:</strong>
+  <%= @product.selling_price %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @product.cost %>
+</p>
+
+<p>
+  <strong>Shipping weight:</strong>
+  <%= @product.shipping_weight %>
+</p>
+
+<p>
+  <strong>Image thumbnail:</strong>
+  <%= @product.image_thumbnail %>
+</p>
+
+<p>
+  <strong>Image full:</strong>
+  <%= @product.image_full %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
