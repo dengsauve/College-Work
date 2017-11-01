@@ -29,19 +29,19 @@ end
 
 Product.destroy_all
 
-1000.times do
+10000.times do
   retail = ( Commerce.price + rand(10000) )
-  image_id = rand(0..10)
+  image_id = rand(1..10)
 
   product = Product.create(
                        name: Commerce.product_name, #string
                        description: Lorem.paragraph(8), # textarea
                        quantity_on_hand: rand(500), # integer
                        selling_price: retail, # decimal
-                       cost: retail * .8, # decimal
+                       cost: (retail * 0.8), # decimal
                        shipping_weight: rand(2..75), # integer
-                       image_thumbnail: LoremPixel("150x150", false, 'technics', image_id), # image URL 150x150
-                       image_full: LoremPixel("1920x1080", false, 'technics', image_id) # image URL 1920x1080 TODO: Ensure these two match!
+                       image_thumbnail: LoremPixel.image("150x150", false, 'technics', image_id), # image URL 150x150
+                       image_full: LoremPixel.image("1920x1080", false, 'technics', image_id) # image URL 1920x1080 TODO: Ensure these two match!
   )
 
   puts product.inspect

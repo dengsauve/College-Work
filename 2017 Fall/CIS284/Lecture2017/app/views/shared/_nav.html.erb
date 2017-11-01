@@ -19,7 +19,7 @@
         <%= current_page?( controller: "page", action: "contact_us" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Contact Us", page_contact_us_path %> </li>
         <%= current_page?( controller: "page", action: "login" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Login", page_login_path %> </li>
         <%= current_page?( controller: "page", action: "preferences" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Preferences", page_preferences_path %> </li>
-        <%= current_page?( controller: "page", action: "products" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Products", page_products_path %> </li>
+        <%= current_page?( controller: "products", action: "index" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Products", products_path %> </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

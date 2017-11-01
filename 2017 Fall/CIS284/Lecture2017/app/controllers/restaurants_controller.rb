@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @page = (params[:page].to_i <= 0 ? 1 : params[:page].to_i)
-    @per_page = params[:per].to_i
+    @per_page = ( params[:per].to_i <= 0 ? 10 : params[:per].to_i )
     # @offset = (@page - 1) * @per_page
 
     unless @per_page == 0

@@ -47,3 +47,24 @@ table.calendar tr td:hover{
     background-color: #e3e3e3;
     transition-duration: .15s;
 }
+
+/* Pagination CSS
+ * Will only be used if I can't hack the
+ * pagination class
+-------------------------------------------------- */
+
+/* Hierarchy
+
+nav.pagination
+    span.first
+    span.prev
+    span.page current
+    span.page
+        a
+    span.page gap
+    span.next
+    span.last
+
+ */
+
+
