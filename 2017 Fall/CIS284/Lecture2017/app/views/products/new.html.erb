@@ -1,5 +1,9 @@
 <h1>New Product</h1>
 
-<%= render 'form', product: @product %>
+<hr/>
 
-<%= link_to 'Back', products_path %>
+<div class="text-left col-md-6 col-md-push-3">
+  <%= render 'form', product: @product %>
+
+  <%= link_to 'Back', products_path, class:"btn btn-default" %>
+</div>

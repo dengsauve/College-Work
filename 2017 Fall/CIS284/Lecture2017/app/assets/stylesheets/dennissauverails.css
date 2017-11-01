@@ -33,6 +33,7 @@ img.img-thumbnail{
 
 textarea{
     resize: none; /* Seriously needs to be implemented by more websites */
+    height: 150px !important;
 }
 
 /* Calendar CSS

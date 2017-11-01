@@ -11,47 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
+    <%= form.text_field :name, id: :product_name, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :product_description %>
+    <%= form.text_area :description, id: :product_description, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :quantity_on_hand %>
-    <%= form.number_field :quantity_on_hand, id: :product_quantity_on_hand %>
+    <%= form.number_field :quantity_on_hand, id: :product_quantity_on_hand, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :selling_price %>
-    <%= form.text_field :selling_price, id: :product_selling_price %>
+    <%= form.text_field :selling_price, id: :product_selling_price, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :cost %>
-    <%= form.text_field :cost, id: :product_cost %>
+    <%= form.text_field :cost, id: :product_cost, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :shipping_weight %>
-    <%= form.text_field :shipping_weight, id: :product_shipping_weight %>
+    <%= form.text_field :shipping_weight, id: :product_shipping_weight, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :image_thumbnail %>
-    <%= form.text_field :image_thumbnail, id: :product_image_thumbnail %>
+    <%= form.text_field :image_thumbnail, id: :product_image_thumbnail, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :image_full %>
-    <%= form.text_field :image_full, id: :product_image_full %>
+    <%= form.text_field :image_full, id: :product_image_full, class:"form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions text-left">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

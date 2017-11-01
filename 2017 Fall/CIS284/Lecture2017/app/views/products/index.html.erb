@@ -32,8 +32,8 @@
         <td><%= product.name %></td>
         <td><%= truncate product.description, length: 24 %></td>
         <td><%= product.quantity_on_hand %></td>
-        <td><%= product.selling_price %></td>
-        <td><%= product.cost %></td>
+        <td><%= number_to_currency product.selling_price %></td>
+        <td><%= number_to_currency product.cost %></td>
         <td><%= product.shipping_weight %></td>
         <td><%= truncate product.image_thumbnail, length: 16 %></td>
         <td><%= truncate product.image_full, length: 16 %></td>

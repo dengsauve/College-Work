@@ -1,44 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="col-md-6 col-md-push-3 text-left">
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
 
-<p>
-  <strong>Quantity on hand:</strong>
-  <%= @product.quantity_on_hand %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
 
-<p>
-  <strong>Selling price:</strong>
-  <%= @product.selling_price %>
-</p>
+  <p>
+    <strong>Quantity on hand:</strong>
+    <%= @product.quantity_on_hand %>
+  </p>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @product.cost %>
-</p>
+  <p>
+    <strong>Selling price:</strong>
+    <%= @product.selling_price %>
+  </p>
 
-<p>
-  <strong>Shipping weight:</strong>
-  <%= @product.shipping_weight %>
-</p>
+  <p>
+    <strong>Cost:</strong>
+    <%= @product.cost %>
+  </p>
 
-<p>
-  <strong>Image thumbnail:</strong>
-  <%= @product.image_thumbnail %>
-</p>
+  <p>
+    <strong>Shipping weight:</strong>
+    <%= @product.shipping_weight %>
+  </p>
 
-<p>
-  <strong>Image full:</strong>
-  <%= @product.image_full %>
-</p>
+  <p>
+    <strong>Image thumbnail:</strong>
+    <a href="<%= @product.image_thumbnail %>">
+      <%= @product.image_thumbnail %>
+    </a>
+  </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <p>
+    <strong>Image full:</strong>
+    <a href="<%= @product.image_full %>">
+      <%= @product.image_full %>
+    </a>
+  </p>
+  <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-info" %> |
+  <%= link_to 'Back', products_path, class:"btn btn-default" %>
+</div>
+
