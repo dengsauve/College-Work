@@ -19,8 +19,6 @@ list($id, $name, $location, $priceRangeLow, $priceRangeHigh, $tags, $modifiedAt,
 
 $detail = <<<END_OF_DETAIL
 
-<a href="restaurants.php">See All Restaurants</a>
-
 <h1>Restaurant</h1>
 
 <p>This is a page that shows one restaurants details.</p>
@@ -33,7 +31,8 @@ $detail = <<<END_OF_DETAIL
 <p>$modifiedAt</p>
 <p>$createdAt</p>
 
-<a href="restaurant_edit.php?id=$id">Edit This Restaurant!</a>
+<a href="restaurant_edit.php?id=$id" class="btn btn-info btn-sm">Edit This Restaurant!</a>
+<a href="restaurants.php" class="btn btn-default btn-sm">See All Restaurants</a>
 
 END_OF_DETAIL;
 

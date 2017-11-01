@@ -27,27 +27,38 @@ if ( empty($submit) ) {
   $tags = $_POST["tags"];
 
   // Check code for errors
-  // Update the database with POST data
+  $found_error = false;
+  if( empty( $name ) ){
+    $name_error = "Name is Required";
+    $found_error = true;
+  }
+  if (empty( $location ) ){
+    $location_error = "Location is Required";
+    $found_error = true;
+  }
 
-  $modifiedAt = date_create()->format("Y-m-d H:i:s");
+  if (!$found_error){
+    // Update the database with POST data
 
-  $sql = "UPDATE restaurants SET name='$name',
+    $modifiedAt = date_create()->format("Y-m-d H:i:s");
+
+    $sql = "UPDATE restaurants SET name='$name',
                                   location='$location',
                                   priceRangeLow='$priceRangeLow',
                                   priceRangeHigh='$priceRangeHigh',
                                   tags='$tags',
                                   modifiedAt='$modifiedAt'
-WHERE id='$id'";
+                                  WHERE id='$id'";
 
-  echo $sql;
+    $result = $db->query($sql);
 
-  $result = $db->query($sql);
+    echo 'Updated Database!';
 
-  echo 'Updated Database!';
+    ob_clean();
+    header("Location: /restaurant.php?id=$id");
+    exit;
+  }
 
-  ob_clean();
-  header("Location: /restaurant.php?id=$id");
-  exit;
 }
 
 // Variables are populated
@@ -63,11 +74,13 @@ $form = <<<END_OF_EDITING
     <div class="form-group">
       <label for="name">Name:</label>
       <input class="form-control" type="text" name="name" id="name" value="$name" />    
+      <p class="help-block">$name_error</p>
     </div>
     
     <div class="form-group">
       <label for="location">Location:</label>
       <input type="text" class="form-control" name="location" id="location" value="$location" />
+      <p class="help-block">$location_error</p>
     </div>
     
     <div class="form-group">

@@ -34,9 +34,15 @@ mysqli_close( $db );
 
 // Here Doc
 $table = <<<END_OF_TABLE
-<h1>This will be a listing of Restaurants</h1>
+<h1>Restaurants</h1>
 
 <hr/>
+
+<div class="text-left">
+  <a href="restaurant_new.php" class="btn btn-primary">Create Restaurant</a>
+</div>
+
+<br />
 
 <table class="table text-left table-hover">
   <thead>
@@ -47,8 +53,7 @@ $table = <<<END_OF_TABLE
       <th>Price Range Low</th>
       <th>Price Range High</th>
       <th>Tags</th>
-      <th>Modified At</th>
-      <th>Created At</th>
+      <th>Controls</th>
     </tr>
   </thead>
   <tbody>  
@@ -64,8 +69,7 @@ echo $table;
         "\t<td>" . $priceRangeLow . "</td>\n",
         "\t<td>" . $priceRangeHigh . "</td>\n",
         "\t<td>" . $tags . "</td>\n",
-        "\t<td>" . $modifiedAt . "</td>\n",
-        "\t<td>" . $createdAt . "</td>\n",
+        "\t<td><a href='restaurant_edit.php?id=" . $id . "' class='btn btn-info btn-sm'>Edit</a></td>\n",
         "<tr>\n";
   }
 
@@ -74,6 +78,10 @@ echo $table;
   ?>
   </tbody>
 </table>
+
+<div class="text-left">
+  <a href="restaurant_new.php" class="btn btn-primary">Create Restaurant</a>
+</div>
 
 <?php
 
