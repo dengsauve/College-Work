@@ -1,0 +1,71 @@
+<table border="0" cellpadding="5" cellspacing="5" align="center">
+	<tbody>
+		<tr>
+			<td>
+				<a ui-sref="spiceRubs" href="#/SpiceRubs">
+					<img alt="Spice Rubs" style="border:none" src="/app/shop/products/images/SpiceRubs_cube.png">
+				</a>
+			</td>
+			<td>
+				<a ui-sref="cookbooks" href="#/Cookbooks">
+					<img alt="Cookbooks" style="border:none" src="/app/shop/products/images/Cookbooks_cube.png">
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a ui-sref="bakingPlanks" href="#/BakingPlanks">
+					<img alt="Baking Planks" style="border:none" src="/app/shop/products/images/BakingPlanks_cube.png">
+				</a>
+			</td>
+			<td>
+				<a ui-sref="bbqPlanks" href="#/BBQPlanks">
+					<img alt="BBQ Planks" style="border:none" src="/app/shop/products/images/BBQ_Planks_cube.png">
+				</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="hidden-xs" style="position:relative; left:40px; top:0px; width:625px; padding-top:30px; background-image: url(/app/images/PaperBackground_Middle.png); background-repeat:repeat-y">
+	<div class="dotted_line_top" style="margin: 0px 25px 0 25px"><div id="content_title" class="dotted_line_bottom dotted_line_right" style="width:250px">
+		PLANKCOOKING PRODUCTS
+	</div>
+</div>
+<div style="margin-top:15px; position:relative">
+	<table border="0" cellpadding="5" cellspacing="5" align="center"><tbody><tr><td><a ui-sref="spiceRubs" href="#/SpiceRubs"><img alt="Spice Rubs" style="border:none" src="/app/shop/products/images/SpiceRubs_cube.png"></a></td><td><a ui-sref="cookbooks" href="#/Cookbooks"><img alt="Cookbooks" style="border:none" src="/app/shop/products/images/Cookbooks_cube.png"></a></td></tr><tr><td><a ui-sref="bakingPlanks" href="#/BakingPlanks"><img alt="Baking Planks" style="border:none" src="/app/shop/products/images/BakingPlanks_cube.png"></a></td><td><a ui-sref="bbqPlanks" href="#/BBQPlanks"><img alt="BBQ Planks" style="border:none" src="/app/shop/products/images/BBQ_Planks_cube.png"></a></td></tr></tbody></table>
+</div>
+<div style="width:626px; height:35px; background-image: url(/app/images/PaperBackground_Bottom.png); background-repeat:no-repeat">
+	&nbsp;
+</div></div>
+
+<div class="col-md-9 ng-scope" ng-app="jhr-shop">
+        <!-- uiView: --><ui-view class="ng-scope">
+			<jhr-products class="ng-scope ng-isolate-scope">
+				<div class="hidden-xs" style="position:relative; left:40px; top:0px; width:625px; padding-top:30px; background-image: url(/app/images/PaperBackground_Middle.png); background-repeat:repeat-y">
+					<div class="dotted_line_top" style="margin: 0px 25px 0 25px"><div id="content_title" class="dotted_line_bottom dotted_line_right" style="width:250px">
+						PLANKCOOKING PRODUCTS
+					</div>
+				</div>
+				<div style="margin-top:15px; position:relative">
+					<table border="0" cellpadding="5" cellspacing="5" align="center"><tbody><tr><td><a ui-sref="spiceRubs" href="#/SpiceRubs"><img alt="Spice Rubs" style="border:none" src="/app/shop/products/images/SpiceRubs_cube.png"></a></td><td><a ui-sref="cookbooks" href="#/Cookbooks"><img alt="Cookbooks" style="border:none" src="/app/shop/products/images/Cookbooks_cube.png"></a></td></tr><tr><td><a ui-sref="bakingPlanks" href="#/BakingPlanks"><img alt="Baking Planks" style="border:none" src="/app/shop/products/images/BakingPlanks_cube.png"></a></td><td><a ui-sref="bbqPlanks" href="#/BBQPlanks"><img alt="BBQ Planks" style="border:none" src="/app/shop/products/images/BBQ_Planks_cube.png"></a></td></tr></tbody></table>
+				</div>
+				<div style="width:626px; height:35px; background-image: url(/app/images/PaperBackground_Bottom.png); background-repeat:no-repeat">
+					&nbsp;
+				</div>
+			</div>
+			<div class="visible-xs">
+				<div style="display:inline-block">
+					<div class="dotted_line_top" style="margin:10px 0px 0 0px">
+						<div id="content_title" class="dotted_line_bottom dotted_line_right" style="width:250px">
+							PLANKCOOKING PRODUCTS
+						</div>
+					</div>
+					<div style="margin-top:15px; position:relative">
+						<table border="0" cellpadding="5" cellspacing="5" align="center"><tbody><tr><td><a ui-sref="spiceRubs" href="#/SpiceRubs"><img alt="Spice Rubs" style="border:none" src="/app/shop/products/images/SpiceRubs_cube.png" class="img-responsive"></a></td><td><a ui-sref="cookbooks" href="#/Cookbooks"><img alt="Cookbooks" style="border:none" src="/app/shop/products/images/Cookbooks_cube.png" class="img-responsive"></a></td></tr><tr><td><a ui-sref="bakingPlanks" href="#/BakingPlanks"><img alt="Baking Planks" style="border:none" src="/app/shop/products/images/BakingPlanks_cube.png" class="img-responsive"></a></td><td><a ui-sref="bbqPlanks" href="#/BBQPlanks"><img alt="BBQ Planks" style="border:none" src="/app/shop/products/images/BBQ_Planks_cube.png" class="img-responsive"></a></td></tr></tbody></table>
+					</div>
+				</div>
+			</div>
+		</jhr-products>
+	</ui-view>
+</div>
