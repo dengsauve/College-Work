@@ -77,6 +77,7 @@ table.calendar-lg tr td:hover{
   transition-duration: .15s;
 }
 
+
 textarea{
   resize: none;
 }

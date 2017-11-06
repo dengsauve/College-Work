@@ -10,26 +10,10 @@ $sql = "select * from restaurants";
 
 $result = $db->query($sql);
 
-/*
-$sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'phpdevdennissauvecom' AND TABLE_NAME = 'restaurants';";
-$table_headers = $db->query($sql);
-*/
-
-/*
-echo "<pre class='text-left'>";
-print_r($result);
-echo "</pre>";
-*/
-
 mysqli_close( $db );
 
-//echo $headers = $table_headers->fetch_row();
-
-/*
- * while (list($header) = $table_headers->fetch_row()) {
- *   echo "<th>$header</th>";
- * }
-*/
+// Get incoming delete message
+$deleteMessage = $_GET['dmsg'];
 
 
 // Here Doc
@@ -37,6 +21,8 @@ $table = <<<END_OF_TABLE
 <h1>Restaurants</h1>
 
 <hr/>
+
+<p class="help-block">$deleteMessage</p>
 
 <div class="text-left">
   <a href="restaurant_new.php" class="btn btn-primary">Create Restaurant</a>
@@ -65,11 +51,14 @@ echo $table;
     echo "<tr>\n",
         "\t<th scope='row'>" . $id . "</th>\n",
         "\t<td><a href='restaurant.php?id=$id' title='Details'>" . $name . "</a></td>\n",
-        "\t<td>" . $location . "</td>\n",
+        "\t<td>" . substr($location, 0, 20) . "..." . "</td>\n",
         "\t<td>" . $priceRangeLow . "</td>\n",
         "\t<td>" . $priceRangeHigh . "</td>\n",
         "\t<td>" . $tags . "</td>\n",
-        "\t<td><a href='restaurant_edit.php?id=" . $id . "' class='btn btn-info btn-sm'>Edit</a></td>\n",
+        "\t<td class='text-nowrap'>
+              <a href='restaurant_edit.php?id=" . $id . "' class='btn btn-info btn-sm'>Edit</a>
+              <a href='restaurant_delete.php?id=" . $id . "' class='btn btn-danger btn-sm'>Delete</a>
+           </td>\n",
         "<tr>\n";
   }
 
