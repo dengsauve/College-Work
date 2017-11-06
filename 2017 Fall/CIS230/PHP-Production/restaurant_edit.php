@@ -22,18 +22,28 @@ if ( empty($submit) ) {
   // Get data from posted form
   $name = $_POST["name"];
   $location = $_POST["location"];
-  $priceRangeLow = $_POST["priceRangeLow"];
-  $priceRangeHigh = $_POST["priceRangeHigh"];
+  $priceRangeLow = (float)$_POST["priceRangeLow"];
+  $priceRangeHigh = (float)$_POST["priceRangeHigh"];
   $tags = $_POST["tags"];
 
   // Check code for errors
   $found_error = false;
+
+  // Check for a name present
   if( empty( $name ) ){
     $name_error = "Name is Required";
     $found_error = true;
   }
+
+  // Check for a location
   if (empty( $location ) ){
     $location_error = "Location is Required";
+    $found_error = true;
+  }
+
+  // Check that priceLow is less than priceHigh
+  if( $priceRangeLow > $priceRangeHigh){
+    $priceRangeError = "Price Range Low must be less than Price Range High";
     $found_error = true;
   }
 
@@ -85,12 +95,13 @@ $form = <<<END_OF_EDITING
     
     <div class="form-group">
       <label for="priceRangeLow">Price Range Low:</label>
-      <input type="number" class="form-control" name="priceRangeLow" id="priceRangeLow" value="$priceRangeLow" />
+      <input type="number" step=".01" class="form-control" name="priceRangeLow" id="priceRangeLow" value="$priceRangeLow" />
+      <p class="help-block">$priceRangeError</p>
     </div>
     
     <div class="form-group">
       <label for="priceRangeHigh">Price Range High:</label>
-      <input class="form-control" type="number" name="priceRangeHigh" id="priceRangeHigh" value="$priceRangeHigh" />    
+      <input class="form-control" step=".01" type="number" name="priceRangeHigh" id="priceRangeHigh" value="$priceRangeHigh" />   
     </div>
     
     <div class="form-group">
