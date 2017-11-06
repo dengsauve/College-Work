@@ -29,7 +29,7 @@ for( $i=0; $i < 20; $i++){
 }
 */
 
-for( $i; $i < 20; $i++ ){
+for( $i=0; $i < 20; $i++ ){
   $title = $faker->company;
   $author = $faker->name;
   $article_text = $faker->text(1000);
@@ -41,11 +41,13 @@ for( $i; $i < 20; $i++ ){
   echo $published_string . "<br/>";
   echo "<br/>";
 
-  $sql = "insert into `articles` (`title`, `author`, `article_text`, `published_date`, `created_at`, `modified_at`)
-          values (NULL, '$title', '$author', '$article_text', '$published_string', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)";
+  $sql = "INSERT INTO articles (`article_id`, `title`, `author`, `article_text`, `published_date`, `created_at`, `modified_at`)
+          VALUES (NULL, '$title', '$author', '$article_text', '$published_string', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)";
 
   echo $sql . "<br/><br/>";
 
   $result = $db->query($sql);
 
 }
+
+$db->close();

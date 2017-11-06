@@ -6,7 +6,7 @@ include 'includes/functions.php';
 
 $db = db_connect();
 
-$sql = "select * from articles order by modifiedAt DESC LIMIT 1";
+$sql = "select * from articles order by modified_at DESC LIMIT 1";
 
 $result = $db->query($sql);
 
@@ -19,7 +19,7 @@ $detail = <<<END_OF_DETAIL
 
 <h1>Articles</h1>
 
-<p>This is a page that shows one restaurants details.</p>
+<p>This is a page that shows one article.</p>
 
 <h2>$name</h2>
 <p>$author</p>
@@ -28,8 +28,8 @@ $detail = <<<END_OF_DETAIL
 <p>$created_at</p>
 <p>$modified_at</p>
 
-<a href="restaurant_edit.php?id=$id" class="btn btn-info btn-sm">Edit This Restaurant!</a>
-<a href="restaurants.php" class="btn btn-default btn-sm">See All Restaurants</a>
+<a href="restaurant_edit.php?id=$id" class="btn btn-info btn-sm">Edit This Article!</a>
+<a href="restaurants.php" class="btn btn-default btn-sm">See All Articles</a>
 
 END_OF_DETAIL;
 
