@@ -13,7 +13,7 @@ echo $faker->bs;
 echo "<br/><br/>";
 
 /*
-for( $i=0; $i < 20; $i++){
+for( $i=0; $i < 200; $i++){
   $name = $faker->name;
   $location = $faker->address;
   $priceRangeLow = rand(1, 10);
@@ -29,6 +29,7 @@ for( $i=0; $i < 20; $i++){
 }
 */
 
+/*
 for( $i=0; $i < 20; $i++ ){
   $title = $faker->company;
   $author = $faker->name;
@@ -49,5 +50,7 @@ for( $i=0; $i < 20; $i++ ){
   $result = $db->query($sql);
 
 }
+
+*/
 
 $db->close();

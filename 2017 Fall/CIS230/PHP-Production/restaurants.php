@@ -6,14 +6,62 @@ include 'includes/functions.php';
 
 $db = db_connect();
 
-$sql = "select * from restaurants";
+// number of records to display per page
+$perPage = 10;
+if( !empty($_GET['perPage'] && is_numeric($_GET['perPage']))){
+  $perPage = $_GET['perPage'];
+}
+
+// which page of records you want to see
+$page = 1;
+if ( !empty($_GET['page'] && is_numeric($_GET['page']))){
+  $page = $_GET['page'];
+}
+
+// showing where to start in the sql string
+$startRecord = ($page - 1) * $perPage;
+
+// Getting the total number of records from table
+$totalRestaurants = $db->query('select count(id) from restaurants')->fetch_row()[0];
+$totalPages = $totalRestaurants / $perPage;
+$lastPage = round(( 1.0 * $totalRestaurants / $perPage), 0, PHP_ROUND_HALF_UP);
+
+// sql command based on OPTIONAL url parameters
+$sql = "select * from restaurants limit $perPage offset $startRecord";
 
 $result = $db->query($sql);
 
 mysqli_close( $db );
 
+
 // Get incoming delete message
 $deleteMessage = $_GET['dmsg'];
+
+
+// Pagination Buttons
+if($page <= 1){
+  // Gives the pagination buttons as disabled
+  $previousButton = "<a href='/restaurants.php?page=$previousPage' class='btn btn-info btn-small disabled'>Previous Page</a>";
+  $firstButton = "<a href='/restaurants.php?page=1' class='btn btn-info btn-small disabled'>First Page</a>";
+}else{
+  // Gives the pagination buttons
+  $previousPage = $page - 1;
+  $previousButton = "<a href='/restaurants.php?page=$previousPage' class='btn btn-info btn-small'>Previous Page</a>";
+  $firstButton = "<a href='/restaurants.php?page=1' class='btn btn-info btn-small'>First Page</a>";
+}
+
+if( $page >= $totalPages){
+  // Gives the pagination buttons as disabled
+  $nextButton = "<a href='/restaurants.php?page=$nextPage' class='btn btn-info btn-small disabled'>Next Page</a>";
+  $lastButton = "<a href='/restaurants.php?page=$lastPage' class='btn btn-info btn-small disabled'>Last Page</a>";
+}else{
+  // Gives the pagination buttons
+  $nextPage = $page + 1;
+  $nextButton = "<a href='/restaurants.php?page=$nextPage' class='btn btn-info btn-small'>Next Page</a>";
+  $lastButton = "<a href='/restaurants.php?page=$lastPage' class='btn btn-info btn-small'>Last Page</a>";
+}
+
+
 
 
 // Here Doc
@@ -24,8 +72,15 @@ $table = <<<END_OF_TABLE
 
 <p class="help-block">$deleteMessage</p>
 
-<div class="text-left">
-  <a href="restaurant_new.php" class="btn btn-primary">Create Restaurant</a>
+<div>
+  <div class="text-center col-xs-6">
+    $firstButton
+    $previousButton
+  </div>
+  <div class="text-center col-xs-6">
+    $nextButton
+    $lastButton
+  </div>
 </div>
 
 <br />
