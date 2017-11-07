@@ -48,6 +48,12 @@ div.calendar-mini{
   margin: auto;
 }
 
+dl.restaurant-review{
+  background-color: lightgrey;
+  border-radius: 15px;
+  padding: 20px;
+}
+
 iframe {
   border: none;
 }
@@ -63,6 +69,16 @@ img.product-image{
   float: right;
 }
 
+img.review-star{
+  height: 30px;
+  width: 30px;
+}
+
+img.review-star-sm{
+  height: 15px;
+  width: 15px;
+}
+
 table.calendar-lg{
   transition-duration: .2s;
 }
@@ -76,7 +92,6 @@ table.calendar-lg tr td:hover{
   background-color: #e3e3e3;
   transition-duration: .15s;
 }
-
 
 textarea{
   resize: none;
