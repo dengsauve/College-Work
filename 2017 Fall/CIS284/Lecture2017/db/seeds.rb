@@ -8,7 +8,7 @@
 
 include Faker
 
-=begin
+
 
 Restaurant.destroy_all
 
@@ -21,12 +21,18 @@ Restaurant.destroy_all
                              high_price_range: rand(10.0..71.0),
                              image: Placeholdit.image("#{rand(50..100)}x#{rand(50..100)}")
   )
-
+  rand(3..30).times do
+    restaurant.reviews.create(
+                          name: Name.first_name,
+                          review_text: Lorem.paragraph,
+                          rating: rand(1..5)
+    )
+  end
   puts restaurant.inspect
 end
 
-=end
 
+=begin
 Product.destroy_all
 
 10000.times do
@@ -46,6 +52,8 @@ Product.destroy_all
 
   puts product.inspect
 end
+
+=end
 
 
 

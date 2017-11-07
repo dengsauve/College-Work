@@ -31,6 +31,16 @@ img.img-thumbnail{
     height: 140px;
 }
 
+img.rating-fork-sm{
+    height: 15px;
+    width: 15px;
+}
+
+img.rating-fork{
+    height: 25px;
+    width: 25px;
+}
+
 textarea{
     resize: none; /* Seriously needs to be implemented by more websites */
     height: 150px !important;

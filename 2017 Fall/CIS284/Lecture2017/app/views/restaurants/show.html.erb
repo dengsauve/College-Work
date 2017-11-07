@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Restaurant</h1>
+
 <p>
   <strong>Name:</strong>
   <%= @restaurant.name %>
@@ -31,10 +33,24 @@
   <!-- <img src="<%= @restaurant.image %>" alt="<%= @restaurant.name %> picture" class="img-thumbnail" /> -->
 </p>
 
-# List All Reivews
+<h2>Ratings! <%= (image_tag('fork.png', class: 'rating-fork') * @restaurant.reviews.all.average( :rating )).html_safe %></h2>
 
-# Form Data
+<hr/>
 
+<% @restaurant.reviews.each do |review| %>
 
+  <div class="text-left">
+    <p>
+      <%= time_ago_in_words(review.created_at) %> ago,
+      <%= review.name %> wrote:
+      <%= (image_tag('fork.png', class: 'rating-fork-sm') * review.rating).html_safe %>
+    </p>
+    <p><%= review.review_text %></p>
+  </div>
+
+<% end %>
+
+<div>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class:"btn btn-primary" %> |
 <%= link_to 'Back', restaurants_path, class:"btn btn-default" %>
+</div>
