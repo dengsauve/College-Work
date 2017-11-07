@@ -17,7 +17,7 @@ $user = $_POST['user'];
   </section>
   -->
 
-  <section>
+  <section class="home-form-group col-xs-12">
     <form action="index.php" method="post" class="col-md-6 col-md-offset-3 text-left">
       <div class="form-group">
         <label for="user">Choose a user:</label>
@@ -29,7 +29,7 @@ $user = $_POST['user'];
 
   <section class="col-xs-12 col-md-8">
 
-    <article class="col-xs-12">
+    <article class="col-xs-12 well">
       <h2>Article 1 Here</h2>
       <p>
         Donec dapibus nulla vel vestibulum tincidunt. Etiam a tincidunt elit, et tempus orci. Sed semper fringilla dui, et condimentum magna elementum non. Maecenas faucibus nulla in nisl efficitur, volutpat luctus urna tempor. Integer porttitor at tellus at porttitor. Aenean rhoncus suscipit faucibus. Vivamus dignissim quis nulla quis auctor. Sed non sagittis dolor, vitae finibus nunc. Duis ut nulla luctus, posuere diam ut, ultricies ante. Duis egestas a urna sit amet fringilla. Mauris at dui convallis, sagittis justo sit amet, cursus mi. Mauris vitae hendrerit orci.
@@ -44,7 +44,7 @@ $user = $_POST['user'];
       </p>
     </article>
 
-    <article class="col-xs-12">
+    <article class="col-xs-12 well">
       <h2>Article 2 Here</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ante at sem condimentum consequat non quis lectus. Aenean ultricies, diam tincidunt dictum commodo, magna orci faucibus lorem, non eleifend nisi lectus vitae ex. Cras eget est eu nisi sodales consequat eget at nisi. Fusce convallis dignissim ante eu venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur mi enim, bibendum et maximus eget, interdum nec lectus. Nullam efficitur, urna sed consectetur convallis, erat ex ultricies mi, sed rutrum sem risus sit amet enim. Etiam faucibus, justo nec mollis volutpat, lectus arcu hendrerit dui, eu ultricies nulla odio vitae turpis. Fusce nec arcu in lorem placerat ornare nec sed nunc. Sed dictum laoreet tempor. Pellentesque commodo tempus leo, at gravida ante congue nec.

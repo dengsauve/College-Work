@@ -65,7 +65,8 @@ function db_connect()
  *
  * **************************************************/
 
-function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
+function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false )
+{
 
   $ret_str = ""; // String to rendered in HTML page
 
@@ -82,19 +83,19 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
       'Saturday' => 'S'
   );
 
-  $firstOfTheMonth = mktime(0,0,0, $month, 1, $year);
+  $firstOfTheMonth = mktime(0, 0, 0, $month, 1, $year);
   $firstDay = date("w", $firstOfTheMonth); // w is numeric of day of the week
 
   $lastDay = date("t", $firstOfTheMonth); // t is numeric of number of days in month
-  $lastOfTheMonth = mktime(0,0,0, $month, $lastDay, $year);
+  $lastOfTheMonth = mktime(0, 0, 0, $month, $lastDay, $year);
   $lastWeekDay = date("w", $lastOfTheMonth);
 
-  $calendar_title = date("F Y", mktime(0,0,0,$month, 1, $year));
+  $calendar_title = date("F Y", mktime(0, 0, 0, $month, 1, $year));
 
   // starting the table
-  if( $large ){
+  if ($large) {
     $ret_str .= "<table class=\"calendar-lg table table-responsive table-bordered \">";
-  }else{
+  } else {
     $ret_str .= "<div class='calendar-mini'><table class=\"calendar-lg table table-responsive table-bordered table-condensed \">";
   }
 
@@ -106,9 +107,9 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
 
   // Printing the Names of the days of the week.
   foreach ($days as $day => $d) {
-    if($large) {
+    if ($large) {
       $ret_str .= "<th class=\"text-center\"><span class='hidden-xs hidden-sm'>$day</span><span class='hidden-md hidden-lg'>$d</span></th>\n";
-    }else{
+    } else {
       $ret_str .= "<th class=\"text-center\">$d</th>\n";
     }
   }
@@ -121,7 +122,7 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
 
   // loop and print blank cells
   $cpFirstDay = $firstDay;
-  while( $cpFirstDay > 0 ){
+  while ($cpFirstDay > 0) {
     $ret_str .= "<td>&nbsp;</td>";
     $cpFirstDay -= 1;
   }
@@ -129,7 +130,7 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
   $day = 1;
 
   // loop and print the rest of the days in the first week
-  while ( $day < ( 8 - $firstDay ) ){
+  while ($day < (8 - $firstDay)) {
     $ret_str .= "<td class='text-left'>$day</td>";
     $day += 1;
   }
@@ -138,24 +139,24 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
   $ret_str .= "</tr>";
 
   // looping and printing all the 'filler weeks'
-  while($day <= ((int)($lastDay / 7) * 7)){
+  while ($day <= ((int)($lastDay / 7) * 7)) {
 
-    $currentDay = mktime(0,0,0, $month, $day, $year);
+    $currentDay = mktime(0, 0, 0, $month, $day, $year);
 
     // Check if Current Day is the start of a new week (row)
-    if( date("w", $currentDay) == 0 ){
+    if (date("w", $currentDay) == 0) {
       $ret_str .= "\n\t<tr><!-- Filler Week -->\n\n";
     }
 
     // Check if day is current month/day (over years so you can easily see day on next year)
-    if( $day == date("j") && $month == date("n") ){
+    if ($day == date("j") && $month == date("n")) {
       $ret_str .= "\t\t<td class='text-left'><strong>" . $day . "</strong></td>\n";
     } else {
       $ret_str .= "\t\t<td class='text-left'>" . $day . "</td>\n";
     }
 
     // Check if currentDay is the end of a week (row)
-    if( date("w", $currentDay) == 6  ){
+    if (date("w", $currentDay) == 6) {
       $ret_str .= "\n\t</tr>\n";
     }
 
@@ -167,12 +168,12 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
   $mLastDay = $lastDay;
 
   // looping and printing the last week FIXED_TODO: See Feb and March of 2018, issues with weeks
-  while( $day <= $lastDay or ($mLastDay % 7) == 0 ){
+  while ($day <= $lastDay or ($mLastDay % 7) == 0) {
     $mLastDay = 1;
 
-    $currentDay = mktime(0,0,0, $month, $day, $year);
+    $currentDay = mktime(0, 0, 0, $month, $day, $year);
 
-    if( date("w", $currentDay) == 0 ){
+    if (date("w", $currentDay) == 0) {
       $ret_str .= "\n\t<tr><!-- Final Week -->\n\n";
     }
 
@@ -183,12 +184,12 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
     $day += 1;
 
     // handling any 'blank days' left on calendar
-    if($day > $lastDay and $lastWeekDay != 6){
+    if ($day > $lastDay and $lastWeekDay != 6) {
 
-      $currentDay = mktime(0,0,0, $month, $day , $year);
+      $currentDay = mktime(0, 0, 0, $month, $day, $year);
 
       $finalCell = date("w", $currentDay);
-      while( $finalCell < 6 or ($month == 2 and $finalCell < 6) ){
+      while ($finalCell < 6 or ($month == 2 and $finalCell < 6)) {
 
         $ret_str .= "\t\t<td class='text-left'>&nbsp;</td>\n";
 
@@ -196,7 +197,7 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
 
       }
 
-      if ($month == 2 and date("L", $firstOfTheMonth) == 0){
+      if ($month == 2 and date("L", $firstOfTheMonth) == 0) {
         $ret_str .= "\t\t<td class='text-left'>&nbsp;</td>\n";
       }
 
@@ -208,17 +209,65 @@ function miniCalendar( $monthToDisplay, $yearToDisplay, $large=false ){
 
   //closing the table
 
-  if( $large ){
+  if ($large) {
     $ret_str .= "</table>";
-  }else{
+  } else {
     $ret_str .= "</table></div>";
   }
 
   return $ret_str;
-
-
 }
 
+/** **************************************************
+ *
+ * time_elapsed_string($datetime, $full = false)
+ * by: bafromca on StackOverflow
+ * see: https://stackoverflow.com/a/32723846
+ *
+ * Creates reader friendly elapsed time from timestamp
+ *
+ * Returns a string of elapsed time.
+ *
+ * @param $datetime
+ * @param $full
+ *
+ * @return string
+ *
+ * **************************************************/
+
+function time_elapsed_string($datetime, $full = false) {
+  $now = new DateTime;
+  $then = new DateTime( $datetime );
+  $diff = (array) $now->diff( $then );
+
+  $diff['w']  = floor( $diff['d'] / 7 );
+  $diff['d'] -= $diff['w'] * 7;
+
+  $string = array(
+      'y' => 'year',
+      'm' => 'month',
+      'w' => 'week',
+      'd' => 'day',
+      'h' => 'hour',
+      'i' => 'minute',
+      's' => 'second',
+  );
+
+  foreach( $string as $k => & $v )
+  {
+    if ( $diff[$k] )
+    {
+      $v = $diff[$k] . ' ' . $v .( $diff[$k] > 1 ? 's' : '' );
+    }
+    else
+    {
+      unset( $string[$k] );
+    }
+  }
+
+  if ( ! $full ) $string = array_slice( $string, 0, 1 );
+  return $string ? implode( ', ', $string ) . ' ago' : 'just now';
+}
 
 
 ?>

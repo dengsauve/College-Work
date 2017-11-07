@@ -12,8 +12,14 @@ echo $faker->bs;
 
 echo "<br/><br/>";
 
-/*
+
+// Delete all restaurants and reviews
+$result = $db->query("delete from restaurants");
+$result = $db->query("delete from reviews");
+
+// Populate restaurants and reviews table
 for( $i=0; $i < 200; $i++){
+  // restaurant values
   $name = $faker->name;
   $location = $faker->address;
   $priceRangeLow = rand(1, 10);
@@ -26,8 +32,23 @@ for( $i=0; $i < 200; $i++){
   echo $sql;
 
   $result = $db->query($sql);
+
+  // $restaurantIDFK declared outside loop, as we only need the id of last restaurant created
+  $restaurantIDFK = $db->insert_id;
+
+  $numReviews = rand(1,10);
+  for( $j=0; $j < $numReviews; $j++){
+    $author = $faker->name;
+    $reviewText = $faker->bs;
+    $rating = rand(1,5);
+
+    $sql = "insert into reviews (id, author, review, rating, created_at, restaurantIDFK)
+                    values (null, '$author', '$reviewText', $rating, CURRENT_TIMESTAMP, $restaurantIDFK)";
+
+    $result = $db->query($sql);
+  }
 }
-*/
+
 
 /*
 for( $i=0; $i < 20; $i++ ){
@@ -52,5 +73,10 @@ for( $i=0; $i < 20; $i++ ){
 }
 
 */
+
+
+
+
+
 
 $db->close();

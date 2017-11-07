@@ -28,12 +28,16 @@ body {
 
 /* Dennis's Custom CSS for site
 -------------------------------------------------- */
+
+/* Not used anymore b/c of bootstrap .well class
+--------------------------------------------------
 article.blog{
   background-color: #e4fffc;
   border-radius: 25px;
   box-shadow: 2px 2px 7px;
   margin-bottom: 25px;
 }
+*/
 
 article p{
   text-align: left;
@@ -75,6 +79,10 @@ img.review-star{
 img.review-star-sm{
   height: 15px;
   width: 15px;
+}
+
+section.home-form-group{
+  margin-bottom: 15px;
 }
 
 table.calendar-lg{
