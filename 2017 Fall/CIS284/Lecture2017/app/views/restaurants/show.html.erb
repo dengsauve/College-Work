@@ -2,6 +2,8 @@
 
 <h1>Restaurant</h1>
 
+<hr/>
+
 <p>
   <strong>Name:</strong>
   <%= @restaurant.name %>
@@ -33,24 +35,61 @@
   <!-- <img src="<%= @restaurant.image %>" alt="<%= @restaurant.name %> picture" class="img-thumbnail" /> -->
 </p>
 
+<div>
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant), class:"btn btn-primary" %> |
+  <%= link_to 'Back', restaurants_path, class:"btn btn-default" %>
+</div>
+
 <h2>Ratings! <%= (image_tag('fork.png', class: 'rating-fork') * @restaurant.reviews.all.average( :rating )).html_safe %></h2>
 
 <hr/>
 
+<!-- Reviews Go Here -->
+
 <% @restaurant.reviews.each do |review| %>
 
-  <div class="text-left">
+  <div class="text-left well well-sm">
     <p>
-      <%= time_ago_in_words(review.created_at) %> ago,
+      <%= time_ago_in_words(review.created_at).titleize %> ago,
       <%= review.name %> wrote:
-      <%= (image_tag('fork.png', class: 'rating-fork-sm') * review.rating).html_safe %>
+      <%= (image_tag('fork.png', class: 'rating-fork-sm') * review.rating.to_i).html_safe %>
     </p>
     <p><%= review.review_text %></p>
+    <p>
+      <%= link_to 'Remove',
+                   restaurant_review_path(@restaurant, review),
+                   method: :delete, data: {confirm: 'Are you sure you want to delete?'},
+                   class: 'btn btn-default btn-sm' %>
+    </p>
   </div>
 
 <% end %>
 
-<div>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant), class:"btn btn-primary" %> |
-<%= link_to 'Back', restaurants_path, class:"btn btn-default" %>
-</div>
+<!-- End of Reviews -->
+
+<!-- New Review Form Here -->
+
+<%= form_for([@restaurant, @restaurant.reviews.build], :html => {:class => 'col-md-6 text-left'}) do |form| %>
+
+  <%= form.hidden_field :restaurant_id %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control', id: :review_name %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :review_text %>
+    <%= form.text_area :review_text, class: 'form-control', id: :review_review_text %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, class: 'form-control', id: :review_rating %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit %>
+  </div>
+
+<% end %>

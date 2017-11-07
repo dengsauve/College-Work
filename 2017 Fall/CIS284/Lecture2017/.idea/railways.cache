@@ -1,41 +1,49 @@
-          Prefix Verb   URI Pattern                          Controller#Action
-        products GET    /products(.:format)                  products#index
-                 POST   /products(.:format)                  products#create
-     new_product GET    /products/new(.:format)              products#new
-    edit_product GET    /products/:id/edit(.:format)         products#edit
-         product GET    /products/:id(.:format)              products#show
-                 PATCH  /products/:id(.:format)              products#update
-                 PUT    /products/:id(.:format)              products#update
-                 DELETE /products/:id(.:format)              products#destroy
-         reviews GET    /reviews(.:format)                   reviews#index
-                 POST   /reviews(.:format)                   reviews#create
-      new_review GET    /reviews/new(.:format)               reviews#new
-     edit_review GET    /reviews/:id/edit(.:format)          reviews#edit
-          review GET    /reviews/:id(.:format)               reviews#show
-                 PATCH  /reviews/:id(.:format)               reviews#update
-                 PUT    /reviews/:id(.:format)               reviews#update
-                 DELETE /reviews/:id(.:format)               reviews#destroy
-     restaurants GET    /restaurants(.:format)               restaurants#index
-                 POST   /restaurants(.:format)               restaurants#create
-  new_restaurant GET    /restaurants/new(.:format)           restaurants#new
- edit_restaurant GET    /restaurants/:id/edit(.:format)      restaurants#edit
-      restaurant GET    /restaurants/:id(.:format)           restaurants#show
-                 PATCH  /restaurants/:id(.:format)           restaurants#update
-                 PUT    /restaurants/:id(.:format)           restaurants#update
-                 DELETE /restaurants/:id(.:format)           restaurants#destroy
- page_contact_us GET    /page/contact_us(.:format)           page#contact_us
-   page_products GET    /page/products(.:format)             page#products
-page_preferences GET    /page/preferences(.:format)          page#preferences
-       page_blog GET    /page/blog(.:format)                 page#blog
-   page_articles GET    /page/articles(.:format)             page#articles
-      page_login GET    /page/login(.:format)                page#login
-        calendar GET    /calendar((/:month)/:year)(.:format) page#calendar
-            root GET    /                                    page#articles
-          movies GET    /movies(.:format)                    movies#index
-                 POST   /movies(.:format)                    movies#create
-       new_movie GET    /movies/new(.:format)                movies#new
-      edit_movie GET    /movies/:id/edit(.:format)           movies#edit
-           movie GET    /movies/:id(.:format)                movies#show
-                 PATCH  /movies/:id(.:format)                movies#update
-                 PUT    /movies/:id(.:format)                movies#update
-                 DELETE /movies/:id(.:format)                movies#destroy
+                Prefix Verb   URI Pattern                                            Controller#Action
+              products GET    /products(.:format)                                    products#index
+                       POST   /products(.:format)                                    products#create
+           new_product GET    /products/new(.:format)                                products#new
+          edit_product GET    /products/:id/edit(.:format)                           products#edit
+               product GET    /products/:id(.:format)                                products#show
+                       PATCH  /products/:id(.:format)                                products#update
+                       PUT    /products/:id(.:format)                                products#update
+                       DELETE /products/:id(.:format)                                products#destroy
+               reviews GET    /reviews(.:format)                                     reviews#index
+                       POST   /reviews(.:format)                                     reviews#create
+            new_review GET    /reviews/new(.:format)                                 reviews#new
+           edit_review GET    /reviews/:id/edit(.:format)                            reviews#edit
+                review GET    /reviews/:id(.:format)                                 reviews#show
+                       PATCH  /reviews/:id(.:format)                                 reviews#update
+                       PUT    /reviews/:id(.:format)                                 reviews#update
+                       DELETE /reviews/:id(.:format)                                 reviews#destroy
+    restaurant_reviews GET    /restaurants/:restaurant_id/reviews(.:format)          reviews#index
+                       POST   /restaurants/:restaurant_id/reviews(.:format)          reviews#create
+ new_restaurant_review GET    /restaurants/:restaurant_id/reviews/new(.:format)      reviews#new
+edit_restaurant_review GET    /restaurants/:restaurant_id/reviews/:id/edit(.:format) reviews#edit
+     restaurant_review GET    /restaurants/:restaurant_id/reviews/:id(.:format)      reviews#show
+                       PATCH  /restaurants/:restaurant_id/reviews/:id(.:format)      reviews#update
+                       PUT    /restaurants/:restaurant_id/reviews/:id(.:format)      reviews#update
+                       DELETE /restaurants/:restaurant_id/reviews/:id(.:format)      reviews#destroy
+           restaurants GET    /restaurants(.:format)                                 restaurants#index
+                       POST   /restaurants(.:format)                                 restaurants#create
+        new_restaurant GET    /restaurants/new(.:format)                             restaurants#new
+       edit_restaurant GET    /restaurants/:id/edit(.:format)                        restaurants#edit
+            restaurant GET    /restaurants/:id(.:format)                             restaurants#show
+                       PATCH  /restaurants/:id(.:format)                             restaurants#update
+                       PUT    /restaurants/:id(.:format)                             restaurants#update
+                       DELETE /restaurants/:id(.:format)                             restaurants#destroy
+       page_contact_us GET    /page/contact_us(.:format)                             page#contact_us
+         page_products GET    /page/products(.:format)                               page#products
+      page_preferences GET    /page/preferences(.:format)                            page#preferences
+             page_blog GET    /page/blog(.:format)                                   page#blog
+         page_articles GET    /page/articles(.:format)                               page#articles
+            page_login GET    /page/login(.:format)                                  page#login
+              calendar GET    /calendar((/:month)/:year)(.:format)                   page#calendar
+                  root GET    /                                                      page#articles
+                movies GET    /movies(.:format)                                      movies#index
+                       POST   /movies(.:format)                                      movies#create
+             new_movie GET    /movies/new(.:format)                                  movies#new
+            edit_movie GET    /movies/:id/edit(.:format)                             movies#edit
+                 movie GET    /movies/:id(.:format)                                  movies#show
+                       PATCH  /movies/:id(.:format)                                  movies#update
+                       PUT    /movies/:id(.:format)                                  movies#update
+                       DELETE /movies/:id(.:format)                                  movies#destroy
