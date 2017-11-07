@@ -71,7 +71,7 @@ while(list( $id, $author, $review, $rating, $createdAt, $restaurantIDFK ) = $res
 
   $review_section = <<<END_OF_REVIEWS
   
-  <div>
+  <div class="well well-sm">
   
     <dl class="text-left restaurant-review">
     

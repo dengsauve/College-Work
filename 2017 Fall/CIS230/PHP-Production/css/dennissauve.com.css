@@ -49,9 +49,7 @@ div.calendar-mini{
 }
 
 dl.restaurant-review{
-  background-color: lightgrey;
-  border-radius: 15px;
-  padding: 20px;
+  margin-bottom: 0px;
 }
 
 iframe {
