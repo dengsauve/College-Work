@@ -1,12 +1,13 @@
 <?php
 
-$title = "Articles";
+$title = "Article";
 include 'includes/header.php';
 include 'includes/functions.php';
 
+$id = $_GET["id"];
 $db = db_connect();
 
-$sql = "select * from articles order by modified_at DESC LIMIT 1";
+$sql = "select * from articles where article_id=$id";
 
 $result = $db->query($sql);
 
@@ -18,7 +19,7 @@ $timeAgoWords = time_elapsed_string($published_date);
 
 $detail = <<<END_OF_DETAIL
 
-<h1>Articles</h1>
+<h1>Article</h1>
 
 <hr />
 
