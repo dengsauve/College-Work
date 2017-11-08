@@ -1,6 +1,6 @@
 <?php
 
-$title = "Articles";
+$title = "Article";
 include 'includes/header.php';
 include 'includes/functions.php';
 
@@ -30,6 +30,7 @@ $detail = <<<END_OF_DETAIL
   <p>Created On: $created_at</p>
   <p>Last Modified: $modified_at</p>
 </article>
+<a href="article_new.php" class="btn btn-primary btn-sm">Create New Article</a>
 <a href="article_edit.php?id=$id" class="btn btn-info btn-sm">Edit This Article</a>
 <a href="articles_all.php" class="btn btn-default btn-sm">See All Articles</a>
 

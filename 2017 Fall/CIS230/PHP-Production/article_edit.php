@@ -2,11 +2,17 @@
 
 ob_start();
 
+$title = 'Edit Article';
+
 include 'includes/functions.php';
 include 'includes/header.php';
 
 // Get the article's information from database
 $db = db_connect();
+$id = $_GET["id"];
+$sql = "select * from articles where article_id=$id";
+$result = $db->query($sql);
+list($id, $title, $author, $articleText, $published, $created, $modified) = $result->fetch_row();
 
 if( !empty($_POST['submit']) ){
   // Get variables
@@ -14,84 +20,55 @@ if( !empty($_POST['submit']) ){
   $title = $_POST['title'];
   $author = $_POST['author'];
   $articleText = $_POST['articleText'];
-  $published = date('Y-m-d H:i:s' ,$_POST['Published']);
+  $published = $_POST['published'];
 
-  // Update Query
-  $sql = "update articles set title='$title',
-                              author='$author',
-                              article_text='$articleText',
-                              published_date='$published',
-                              modified_at=CURRENT_TIMESTAMP
-                              where article_id='$id'";
+  // check for errors
+  $errorsFound = false;
 
-  $result = $db->query($sql);
+  if( empty($title) ){
+    $errorsFound = true;
+    $titleError = 'Title is required!';
+  }
 
-  ob_clean();
-  header("Location: /article.php?id=$id");
-  exit;
+  if( empty($author) ){
+    $errorsFound = true;
+    $authorError = 'Author is required!';
+  }
 
+  if( empty($articleText) ){
+    $errorsFound = true;
+    $articleTextError = 'Article text is required!';
+  }
+
+  if( empty($published) ){
+    $errorsFound = true;
+    $publishedError = 'Published Date is required!';
+  }
+
+  if( DateTime::createFromFormat('Y-m-d H:i:s', $published) === FALSE ){
+    $errorsFound = true;
+    $publishedError = 'Published Date must match the format YYYY-MM-DD hh:mm:ss';
+  }
+
+  if( !$errorsFound ) {
+    // Update Query
+    $sql = "update articles set title='$title',
+                                author='$author',
+                                article_text='$articleText',
+                                published_date='$published',
+                                modified_at=CURRENT_TIMESTAMP
+                                where article_id='$id'";
+
+    $result = $db->query($sql);
+
+    ob_clean();
+    header("Location: /article.php?id=$id");
+    exit;
+  }
 }
 
 
-
-$id = $_GET["id"];
-$sql = "select * from articles where article_id=$id";
-$result = $db->query($sql);
-list($id, $title, $author, $articleText, $published, $created, $modified) = $result->fetch_row();
-
-
-$editForm = <<<END_OF_EDIT_FORM
-
-<div class="col-md-6 col-md-offset-3">
-<form action="article_edit.php" method="post">
-
-  <input type="hidden" name="id" value="$id"/>
-  
-  <section class="form-group">
-    <label for="title">Article Title</label>
-    <input type="text" name="title" class="form-control" value="$title"/>
-  </section>
-  
-  <section class="form-group">
-    <label for="author">Author</label>
-    <input type="text" name="author" class="form-control" value="$author"/>
-  </section>
-  
-  <section class="form-group">
-    <label for="published">Published Date</label>
-    <input type="text" name="published" class="form-control" value="$published"/>
-  </section>
-  
-  <section class="form-group">
-    <label for="articleText">Article Text</label>
-    <textarea class="form-control" name="articleText" >$articleText</textarea>
-  </section>
-  
-  <input type="submit" name="submit" value="Save Changes" class="btn btn-primary">
-  <a href="article.php?id=$id" class="btn btn-default">Cancel</a>
-  
-</form>
-
-</div>
-
-END_OF_EDIT_FORM;
-echo $editForm;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$formAction = "article_edit.php?id=$id";
+include 'includes/articleForm.php';
 
 include 'includes/footer.php';

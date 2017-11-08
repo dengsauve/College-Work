@@ -30,7 +30,21 @@
         <!-- <li <?php echo ($title == "Maps" ? "class=\"active\"" : ""); ?>><a href="/maps.php">Maps</a></li> -->
         <!--<li <?php /*echo ($title == "Preferences" ? "class=\"active\"" : ""); */?>><a href="/preferences.php">Preferences</a></li>-->
         <!--<li <?php /*echo ($title == "Login" ? "class=\"active\"" : ""); */?>><a href="/login.php">Login</a></li>-->
-        <li <?php echo ($title == "Articles" ? "class=\"active\"" : ""); ?>><a href="/articles.php">Articles</a>
+        <li role="presentation" class="dropdown<?php
+        if( $title == "Article" || $title == "Article List" ){
+          echo " active";
+        }else{
+          echo "";
+        }
+        ?>">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            Articles <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li <?php echo ($title == "Article" ? "class=\"active\"" : ""); ?>><a href="/articles.php">Latest Article</a></li>
+            <li <?php echo ($title == "Article List" ? "class=\"active\"" : ""); ?>><a href="/articles_all.php">Article List</a></li>
+          </ul>
+        </li>
         <li role="presentation" class="dropdown<?php
           if( $title == "Contact Us" || $title == "Products" || $title == "Preferences" || $title == "Login" ){
             echo " active";

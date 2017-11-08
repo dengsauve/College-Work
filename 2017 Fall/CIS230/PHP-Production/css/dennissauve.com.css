@@ -103,4 +103,8 @@ textarea{
   resize: none;
 }
 
+textarea.article-text{
+  height: 200px;
+}
+
 
