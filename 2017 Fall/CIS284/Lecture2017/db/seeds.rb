@@ -59,13 +59,13 @@ end
 
 Article.destroy_all
 
-50.times do
+100.times do
   article = Article.create(
                        title: MostInterestingManInTheWorld.quote,# string
                        author: Name.name,# string
                        published_date: Faker::Date.between(100.days.ago, Date.today),# datetime
                        published: Boolean.boolean(0.8),# boolean
-                       context: Lorem.paragraphs,# text field
+                       context: Lorem.paragraphs.join(' '),# text field
                        avatar_url: LoremPixel.image("150x150", false, 'people')# string url to image
   )
 

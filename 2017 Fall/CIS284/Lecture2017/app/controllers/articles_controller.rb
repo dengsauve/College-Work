@@ -4,7 +4,18 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @page = (params[:page].to_i <= 0 ? 1 : params[:page].to_i)
+    @per_page = ( params[:per].to_i <= 0 ? 10 : params[:per].to_i )
+    # @offset = (@page - 1) * @per_page
+
+    unless @per_page == 0
+      @total = (Article.count / @per_page.to_f).ceil
+    else
+      @total = 0
+    end
+
+
+    @articles = Article.order(published_date: :desc).page(@page).per(@per_page)
   end
 
   # GET /articles/1
