@@ -6,6 +6,8 @@
  * Time: 9:03 AM
  */
 
+session_start();
+
 /* Code Goes Here */
 $website = "Dennis Sauve"
 
@@ -58,6 +60,13 @@ $website = "Dennis Sauve"
 
 <!-- Body Starts -->
 
+
 <main class="container">
 
   <section class="starter-template">
+<?php
+if( !empty($_SESSION["email"]) ){
+  $_userEmail = $_SESSION["email"];
+  echo "<p class='text-left help-block'>Welcome $_userEmail</p>";
+}
+?>

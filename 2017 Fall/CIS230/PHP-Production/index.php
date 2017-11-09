@@ -7,6 +7,19 @@ include 'includes/functions.php';
 
 $users = array('Dennis', 'Dave', 'Tom', 'Bret', 'Tim');
 $user = $_POST['user'];
+
+$db = db_connect();
+
+$sql = "select * from articles order by modified_at DESC LIMIT 1";
+
+$result = $db->query($sql);
+
+mysqli_close( $db );
+
+list($id, $name, $author, $article_text, $published_date, $created_at, $modified_at) = $result->fetch_row();
+
+$timeAgoWords = time_elapsed_string($published_date);
+
 ?>
 
   <h1>Home Page</h1>
@@ -30,22 +43,26 @@ $user = $_POST['user'];
   <section class="col-xs-12 col-md-8">
 
     <article class="col-xs-12 well">
-      <h2>Article 1 Here</h2>
-      <p>
-        Donec dapibus nulla vel vestibulum tincidunt. Etiam a tincidunt elit, et tempus orci. Sed semper fringilla dui, et condimentum magna elementum non. Maecenas faucibus nulla in nisl efficitur, volutpat luctus urna tempor. Integer porttitor at tellus at porttitor. Aenean rhoncus suscipit faucibus. Vivamus dignissim quis nulla quis auctor. Sed non sagittis dolor, vitae finibus nunc. Duis ut nulla luctus, posuere diam ut, ultricies ante. Duis egestas a urna sit amet fringilla. Mauris at dui convallis, sagittis justo sit amet, cursus mi. Mauris vitae hendrerit orci.
-      </p>
+      <?php
+      $newestArticle = <<<END_OF_ARTICLE
 
-      <p>
-        Dolores repudiandae cu vis, eu velit offendit mei. Principes disputando has ut, mei prima lucilius recteque ex. Porro iuvaret invidunt usu id, ut mazim accommodare duo. Ex possit interesset nam, ius no tincidunt argumentum, quo similique gloriatur ex. Quo ei doming everti menandri.
-      </p>
+      <h2>$name</h2>
+      <p>By: $author, $timeAgoWords</p>
+      <p class="text-justify">$article_text</p>
+      <p>Published On: $published_date</p>
+      <p>Created On: $created_at</p>
+      <p>Last Modified: $modified_at</p>
 
-      <p>
-        Duo ea laudem soluta omnesque. Duis deleniti sea no, eu vis vitae scriptorem. Harum laudem cu ius, quo id adhuc putant. At posidonium instructior necessitatibus pro, cum pericula moderatius et.
-      </p>
+END_OF_ARTICLE;
+
+      echo $newestArticle;
+
+
+      ?>
     </article>
 
     <article class="col-xs-12 well">
-      <h2>Article 2 Here</h2>
+      <h2>Blog Here</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ante at sem condimentum consequat non quis lectus. Aenean ultricies, diam tincidunt dictum commodo, magna orci faucibus lorem, non eleifend nisi lectus vitae ex. Cras eget est eu nisi sodales consequat eget at nisi. Fusce convallis dignissim ante eu venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur mi enim, bibendum et maximus eget, interdum nec lectus. Nullam efficitur, urna sed consectetur convallis, erat ex ultricies mi, sed rutrum sem risus sit amet enim. Etiam faucibus, justo nec mollis volutpat, lectus arcu hendrerit dui, eu ultricies nulla odio vitae turpis. Fusce nec arcu in lorem placerat ornare nec sed nunc. Sed dictum laoreet tempor. Pellentesque commodo tempus leo, at gravida ante congue nec.
       </p>

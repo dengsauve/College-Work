@@ -1,13 +1,17 @@
 <?php
 
+session_start();
+
+$_SESSION["User"] = "Dennis";
+
 $title = "Restaurant";
 include 'includes/header.php';
 include 'includes/functions.php';
 
-$id = $_GET['id'];
-$restaurantID = $id;
-
 $db = db_connect();
+
+$id = mysqli_real_escape_string( $db, $_GET['id'] );
+$restaurantID = $id;
 
 $sql = "select * from restaurants where id=$id";
 
@@ -16,6 +20,8 @@ $result = $db->query($sql);
 list($id, $name, $location, $priceRangeLow, $priceRangeHigh, $tags, $modifiedAt, $createdAt) = $result->fetch_row();
 
 echo '<div class="col-md-6 col-md-push-3">';
+
+
 
 $detail = <<<END_OF_DETAIL
 

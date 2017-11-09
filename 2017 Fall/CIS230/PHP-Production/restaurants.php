@@ -1,5 +1,6 @@
 <?php
 
+
 $title = 'Restaurants';
 include 'includes/header.php';
 include 'includes/functions.php';
@@ -60,8 +61,6 @@ if( $page >= $totalPages){
   $nextButton = "<a href='/restaurants.php?page=$nextPage' class='btn btn-info btn-small'>Next Page</a>";
   $lastButton = "<a href='/restaurants.php?page=$lastPage' class='btn btn-info btn-small'>Last Page</a>";
 }
-
-
 
 
 // Here Doc

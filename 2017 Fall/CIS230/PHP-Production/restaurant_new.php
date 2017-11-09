@@ -19,11 +19,11 @@ $tags = '';
 
 if( !empty( $submit ) ) {
 
-  $name = $_POST["name"];
-  $location = $_POST["location"];
-  $priceRangeLow = $_POST["priceRangeLow"];
-  $priceRangeHigh = $_POST["priceRangeHigh"];
-  $tags = $_POST["tags"];
+  $name = mysqli_real_escape_string( $db, $_POST["name"] );
+  $location = mysqli_real_escape_string( $db, $_POST["location"] );
+  $priceRangeLow = mysqli_real_escape_string( $db, $_POST["priceRangeLow"] );
+  $priceRangeHigh = mysqli_real_escape_string( $db, $_POST["priceRangeHigh"] );
+  $tags = mysqli_real_escape_string( $db, $_POST["tags"] );
 
   // Check code for errors
   $found_error = false;
