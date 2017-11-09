@@ -9,11 +9,11 @@
 include Faker
 
 
-=begin
+#=begin
 
 Restaurant.destroy_all
 
-100.times do
+200.times do
   restaurant = Restaurant.create(
                              name: Company.name,
                              location: Address.city + ', ' + Address.state,
@@ -22,7 +22,7 @@ Restaurant.destroy_all
                              high_price_range: rand(10.0..71.0),
                              image: Placeholdit.image("#{rand(50..100)}x#{rand(50..100)}")
   )
-  rand(3..30).times do
+  rand(3..5).times do
     restaurant.reviews.create(
                           name: Name.first_name,
                           review_text: Lorem.paragraph,
@@ -32,12 +32,12 @@ Restaurant.destroy_all
   puts restaurant.inspect
 end
 
-=end
+#=end
 
-=begin
+#=begin
 Product.destroy_all
 
-10000.times do
+200.times do
   retail = ( Commerce.price + rand(10000) )
   image_id = rand(1..10)
 
@@ -55,11 +55,11 @@ Product.destroy_all
   puts product.inspect
 end
 
-=end
+#=end
 
 Article.destroy_all
 
-100.times do
+200.times do
   article = Article.create(
                        title: MostInterestingManInTheWorld.quote,# string
                        author: Name.name,# string
