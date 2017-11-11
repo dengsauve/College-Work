@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin, except:[:show, :index]
   before_action :authenticate_user!
 
   # GET /restaurants
@@ -75,6 +75,15 @@ class RestaurantsController < ApplicationController
   end
 
   private
+
+    def authenticate_admin
+      if( current_user.try( :admin? ) )
+        return
+      else
+        redirect_to root_url
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
       @restaurant = Restaurant.find(params[:id])
