@@ -76,14 +76,6 @@ class RestaurantsController < ApplicationController
 
   private
 
-    def authenticate_admin
-      if( current_user.try( :admin? ) )
-        return
-      else
-        redirect_to root_url
-      end
-    end
-
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
       @restaurant = Restaurant.find(params[:id])
