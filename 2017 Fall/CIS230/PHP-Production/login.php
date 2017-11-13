@@ -1,5 +1,6 @@
 <?php
 
+ob_start();
 session_start();
 
 $title = "Login";
@@ -11,19 +12,32 @@ $db = db_connect();
 // get data
 if( !empty($_POST["submit"]) ) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
-  $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
+  $password = mysqli_real_escape_string($db, $_POST['pwd']);
   $remember = mysqli_real_escape_string($db, $_POST['remember']);
   $rememberChecked = $remember == "remember" ? 'checked="Checked"' : '';
 
-  $_SESSION["email"] = $email;
+  // check password on email
+  $sql = "select * from users where email='$email'";
+  $result = $db->query($sql);
+  list($id, $email, $name, $password_crypt) = $result->fetch_row();
+
+  if( password_verify($password, $password_crypt) ){
+    $_SESSION["email"] = $email;
+
+    //redirect to the top page
+    ob_clean();
+    header("Location: /");
+  }else{
+    $error_message = "Unknown Credentials - Please Try Again";
+  }
 }
-
-
 
 ?>
 
 <h1>Login</h1>
+<hr/>
 
+<p class="help-block"><?php echo $error_message; ?></p>
   <form class="text-left col-md-6 col-md-offset-3" method="post" action="login.php">
     <div class="form-group">
       <label for="email">Email address:</label>
@@ -31,7 +45,7 @@ if( !empty($_POST["submit"]) ) {
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input disabled type="password" class="form-control" id="pwd" name="pwd" value="<?php echo ($remembered ? $pwd : ''); ?>">
+      <input type="password" class="form-control" id="pwd" name="pwd" value="<?php echo ($remembered ? $pwd : ''); ?>">
     </div>
     <div class="form-group">
       <label for="remember">Remember me</label>
@@ -44,4 +58,5 @@ if( !empty($_POST["submit"]) ) {
 
 include 'includes/footer.php';
 
+ob_flush();
 ?>
