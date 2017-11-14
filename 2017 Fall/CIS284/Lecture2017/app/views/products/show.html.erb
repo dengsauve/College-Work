@@ -48,5 +48,33 @@
   <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-info" %> |
   <%= link_to 'Back', products_path, class:"btn btn-default" %> |
   <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+
+  <!-- New Review Form Here -->
+
+  <%= form_for([@product, @product.product_reviews.build], :html => {:class => 'col-md-6 text-left'}) do |form| %>
+
+    <%= form.hidden_field :product_id %>
+
+    <div class="form-group">
+      <%= form.label :author %>
+      <%= form.text_field :author, class: 'form-control', id: :product_review_author %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :review_text %>
+      <%= form.text_area :comment, class: 'form-control', id: :product_review_comment %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :rating %>
+      <%= form.number_field :rating, class: 'form-control', id: :product_review_rating %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
 </div>
+
 

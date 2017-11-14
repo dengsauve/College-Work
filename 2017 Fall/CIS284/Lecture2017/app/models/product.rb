@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  has_many :product_reviews, dependent: :destroy
 
   # Ensure name
   validates :name, presence: true
