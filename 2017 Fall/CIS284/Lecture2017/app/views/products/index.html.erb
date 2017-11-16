@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Products</h1>
 
 <hr />
@@ -11,39 +9,43 @@
   <%= paginate @products %>
 </div>
 
-<table class="table text-left">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Qty. on hand</th>
-      <th>Selling price</th>
-      <th>Cost</th>
-      <th>Shipping weight</th>
-      <th>Image thumbnail</th>
-      <th>Image full</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
+<div class="table-responsive">
+  <table class="table text-left">
+    <thead>
       <tr>
-        <td><%= product.name %></td>
-        <td><%= truncate product.description, length: 24 %></td>
-        <td><%= product.quantity_on_hand %></td>
-        <td><%= number_to_currency product.selling_price %></td>
-        <td><%= number_to_currency product.cost %></td>
-        <td><%= product.shipping_weight %></td>
-        <td><%= truncate product.image_thumbnail, length: 16 %></td>
-        <td><%= truncate product.image_full, length: 16 %></td>
-        <td><%= link_to 'Show', product, class: "btn btn-info btn-sm" %></td>
-        <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-info btn-sm" %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Avg. Rating</th>
+        <th>Qty. on hand</th>
+        <th>Selling price</th>
+        <th>Cost</th>
+        <th>Shipping weight</th>
+        <th>Image thumbnail</th>
+        <th>Image full</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= truncate product.description, length: 24 %></td>
+          <td><%= product.product_reviews.all.average(:rating).to_i %></td>
+          <td><%= product.quantity_on_hand %></td>
+          <td><%= number_to_currency product.selling_price %></td>
+          <td><%= number_to_currency product.cost %></td>
+          <td><%= product.shipping_weight %></td>
+          <td><%= truncate product.image_thumbnail, length: 16 %></td>
+          <td><%= truncate product.image_full, length: 16 %></td>
+          <td><%= link_to 'Show', product, class: "btn btn-info btn-sm" %></td>
+          <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-info btn-sm" %></td>
+          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 

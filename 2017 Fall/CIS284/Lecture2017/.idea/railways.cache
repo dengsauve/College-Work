@@ -1,4 +1,12 @@
                   Prefix Verb   URI Pattern                                            Controller#Action
+         product_reviews GET    /product_reviews(.:format)                             product_reviews#index
+                         POST   /product_reviews(.:format)                             product_reviews#create
+      new_product_review GET    /product_reviews/new(.:format)                         product_reviews#new
+     edit_product_review GET    /product_reviews/:id/edit(.:format)                    product_reviews#edit
+          product_review GET    /product_reviews/:id(.:format)                         product_reviews#show
+                         PATCH  /product_reviews/:id(.:format)                         product_reviews#update
+                         PUT    /product_reviews/:id(.:format)                         product_reviews#update
+                         DELETE /product_reviews/:id(.:format)                         product_reviews#destroy
                 articles GET    /articles(.:format)                                    articles#index
                          POST   /articles(.:format)                                    articles#create
              new_article GET    /articles/new(.:format)                                articles#new

@@ -24,11 +24,12 @@ class ProductReviewsController < ApplicationController
   # POST /product_reviews
   # POST /product_reviews.json
   def create
+    @product = Product.find(product_review_params[:product_id])
     @product_review = ProductReview.new(product_review_params)
 
     respond_to do |format|
       if @product_review.save
-        format.html { redirect_to @product_review, notice: 'Product review was successfully created.' }
+        format.html { redirect_to @product, notice: 'Product review was successfully created.' }
         format.json { render :show, status: :created, location: @product_review }
       else
         format.html { render :new }
@@ -54,11 +55,10 @@ class ProductReviewsController < ApplicationController
   # DELETE /product_reviews/1
   # DELETE /product_reviews/1.json
   def destroy
+    @product = Product.find(@product_review.product_id)
     @product_review.destroy
-    respond_to do |format|
-      format.html { redirect_to product_reviews_url, notice: 'Product review was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    redirect_to product_path(@product.id, notice: 'Product review was successfully destroyed.')
   end
 
   private

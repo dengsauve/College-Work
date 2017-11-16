@@ -40,7 +40,7 @@
   <%= link_to 'Back', restaurants_path, class:"btn btn-default" %>
 </div>
 
-<h2>Ratings! <%= (image_tag('fork.png', class: 'rating-fork') * @restaurant.reviews.all.average( :rating )).html_safe %></h2>
+<h2>Ratings! <%= (image_tag('fork.png', class: 'rating-fork') * @restaurant.reviews.all.average( :rating ).to_i).html_safe %></h2>
 
 <hr/>
 

@@ -9,7 +9,7 @@
 include Faker
 
 
-#=begin
+=begin
 
 Restaurant.destroy_all
 
@@ -32,7 +32,7 @@ Restaurant.destroy_all
   puts restaurant.inspect
 end
 
-#=end
+=end
 
 #=begin
 Product.destroy_all
@@ -52,11 +52,25 @@ Product.destroy_all
                        image_full: LoremPixel.image("1920x1080", false, 'technics', image_id) # image URL 1920x1080 TODO: Ensure these two match!
   )
 
+  rand(0..10).times do
+    product_review = ProductReview.create(
+                                      author: Name.name,
+                                      comment: Lorem.paragraph,
+                                      rating: rand(1..10),
+                                      product_id: product.id
+    )
+
+    puts product_review.inspect
+  end
+
   puts product.inspect
 end
 
 #=end
 
+# Article Seeds
+
+=begin
 Article.destroy_all
 
 200.times do
@@ -71,4 +85,4 @@ Article.destroy_all
 
   puts article.inspect
 end
-
+=end

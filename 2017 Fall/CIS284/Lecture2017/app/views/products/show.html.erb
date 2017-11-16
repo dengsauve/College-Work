@@ -1,80 +1,109 @@
-<p id="notice"><%= notice %></p>
-
 <div class="col-md-6 col-md-push-3 text-left">
 
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </p>
+  <h1>Product</h1>
+  <hr/>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </p>
+  <section class="panel panel-default">
+    <p class="panel-heading">
+      <strong>Name: </strong><%= @product.name %>
+    </p>
 
-  <p>
-    <strong>Quantity on hand:</strong>
-    <%= @product.quantity_on_hand %>
-  </p>
+    <p class="panel-body">
+      <strong>Description:</strong>
+      <%= @product.description %>
+    </p>
 
-  <p>
-    <strong>Selling price:</strong>
-    <%= @product.selling_price %>
-  </p>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Quantity on hand:</strong>
+        <span class="pull-right"><%= @product.quantity_on_hand %></span>
+      </li>
 
-  <p>
-    <strong>Cost:</strong>
-    <%= @product.cost %>
-  </p>
+      <li class="list-group-item">
+        <strong>Selling price:</strong>
+        <span class="pull-right"><%= @product.selling_price %></span>
+      </li>
 
-  <p>
-    <strong>Shipping weight:</strong>
-    <%= @product.shipping_weight %>
-  </p>
+      <li class="list-group-item">
+        <strong>Cost:</strong>
+        <span class="pull-right"><%= @product.cost %></span>
+      </li>
 
-  <p>
-    <strong>Image thumbnail:</strong>
-    <a href="<%= @product.image_thumbnail %>">
-      <%= @product.image_thumbnail %>
-    </a>
-  </p>
+      <li class="list-group-item">
+        <strong>Shipping weight:</strong>
+        <span class="pull-right"><%= @product.shipping_weight %></span>
+      </li>
 
-  <p>
-    <strong>Image full:</strong>
-    <a href="<%= @product.image_full %>">
-      <%= @product.image_full %>
-    </a>
-  </p>
-  <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-info" %> |
-  <%= link_to 'Back', products_path, class:"btn btn-default" %> |
-  <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      <li class="list-group-item">
+        <a href="<%= @product.image_full %>">
+          <%= image_tag @product.image_thumbnail, class: "img-thumbnail" %>
+        </a>
+      </li>
 
-  <!-- New Review Form Here -->
+    </ul>
+  </section>
+  <section class="review-btn-area">
+    <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-info" %>
+    <%= link_to 'Back', products_path, class:"btn btn-default" %>
+    <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  </section>
 
-  <%= form_for([@product, @product.product_reviews.build], :html => {:class => 'col-md-6 text-left'}) do |form| %>
+  <!-- End of Product Section-->
 
-    <%= form.hidden_field :product_id %>
+  <!-- Reviews Go Here -->
 
-    <div class="form-group">
-      <%= form.label :author %>
-      <%= form.text_field :author, class: 'form-control', id: :product_review_author %>
-    </div>
+  <h2>Product Reviews <%= (image_tag('fork.png', class:'rating-fork') * @product.product_reviews.all.average( :rating ).to_i).html_safe %></h2>
+  <hr/>
 
-    <div class="form-group">
-      <%= form.label :review_text %>
-      <%= form.text_area :comment, class: 'form-control', id: :product_review_comment %>
-    </div>
+  <% @product.product_reviews.each do |review| %>
 
-    <div class="form-group">
-      <%= form.label :rating %>
-      <%= form.number_field :rating, class: 'form-control', id: :product_review_rating %>
-    </div>
-
-    <div class="form-group">
-      <%= form.submit %>
-    </div>
+    <article class="text-left panel panel-default">
+      <p class="panel-heading">
+        <%= time_ago_in_words(review.created_at).titleize %> ago,
+        <%= review.author %> wrote:
+        <%= (image_tag('fork.png', class: 'rating-fork-sm') * review.rating.to_i).html_safe %>
+      </p>
+      <div class="panel-body">
+        <p><%= review.comment %></p>
+        <%= link_to 'Remove',
+                    product_review_path(review, @product),
+                    method: :delete, data: {confirm: 'Are you sure you want to delete?'},
+                    class: 'btn btn-default btn-sm' %>
+      </div>
+    </article>
 
   <% end %>
+
+
+  <!-- End of Reviews -->
+
+  <!-- New Review Form Here -->
+  <section>
+    <%= form_for(@product.product_reviews.build, :html => {:class => 'text-left'}) do |form| %>
+
+      <%= form.hidden_field :product_id, value: @product.id %>
+
+      <div class="form-group">
+        <%= form.label :author %>
+        <%= form.text_field :author, class: 'form-control', id: :product_review_author %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :review_text %>
+        <%= form.text_area :comment, class: 'form-control', id: :product_review_comment %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :rating %>
+        <%= form.number_field :rating, class: 'form-control', id: :product_review_rating %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit %>
+      </div>
+
+    <% end %>
+  </section>
 </div>
 
 

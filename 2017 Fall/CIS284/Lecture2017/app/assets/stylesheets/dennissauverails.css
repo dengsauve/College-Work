@@ -41,6 +41,10 @@ img.rating-fork{
     width: 25px;
 }
 
+section.review-btn-area{
+   //margin-bottom: 15px;
+}
+
 textarea{
     resize: none; /* Seriously needs to be implemented by more websites */
     height: 150px !important;
