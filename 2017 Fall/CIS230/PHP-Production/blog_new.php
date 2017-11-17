@@ -1,8 +1,8 @@
 <?php
 
-$title = "Blog";
-
 ob_start();
+
+$title = 'New Article';
 
 include 'includes/functions.php';
 include 'includes/header.php';
@@ -15,8 +15,8 @@ if( !empty($_POST['submit']) ){
   // Get variables
   $title = $_POST['title'];
   $author = $_POST['author'];
-  $blogText = $_POST['blogText'];
-  $datePosted = $_POST['published'];
+  $articleText = $_POST['articleText'];
+  $published = $_POST['published'];
 
   // check for errors
   $errorsFound = false;
@@ -31,12 +31,12 @@ if( !empty($_POST['submit']) ){
     $authorError = 'Author is required!';
   }
 
-  if( empty($blogText) ){
+  if( empty($articleText) ){
     $errorsFound = true;
     $articleTextError = 'Article text is required!';
   }
 
-  if( empty($datePosted) ){
+  if( empty($published) ){
     $errorsFound = true;
     $publishedError = 'Published Date is required!';
   }
@@ -50,39 +50,20 @@ if( !empty($_POST['submit']) ){
     // Connect to db
     $db = db_connect();
     // Insert new record Query
-    $sql = "insert into blogs (blogs_id, title, author, datePosted, blog_text)
-                        values (null, '$title', '$author', '$datePosted', '$blogText')";
+    $sql = "insert into articles (article_id, title, author, article_text, published_date, created_at, modified_at)
+                        values (null, '$title', '$author', '$articleText', '$published', current_timestamp, current_timestamp)";
     // Execute Query
     $result = $db->query($sql);
     // Grab id of record created
     $id = $db->insert_id;
     // Redirect
     ob_clean();
-    header("Location: /blog.php");
+    header("Location: /article.php?id=$id");
     exit;
   }
 }
 
-
-
-$formAction = 'blog.php';
-
-?>
-
-<div class="col-xs-12 col-md-8 col-md-offset-2">
-  <h1>Blog</h1>
-
-  <hr/>
-
-
-
-  <?php
-    include 'includes/blogForm.php';
-  ?>
-
-</div>
-<?php
+$formAction = 'article_new.php';
+include 'includes/articleForm.php';
 
 include 'includes/footer.php';
-
-?>
