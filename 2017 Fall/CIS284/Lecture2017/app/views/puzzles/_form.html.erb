@@ -1,0 +1,18 @@
+<%= form_with(model: puzzle, local: true) do |form| %>
+
+  <!-- TODO: Make form bootstrap -->
+
+  <div class="field">
+    <%= form.label :puzzle_name %>
+    <%= form.text_field :puzzle_name, id: :puzzle_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :word_list %>
+    <%= form.text_area :word_list, id: :word_list %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

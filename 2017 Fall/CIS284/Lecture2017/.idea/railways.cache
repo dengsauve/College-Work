@@ -78,3 +78,5 @@ cancel_user_registration GET    /users/cancel(.:format)                         
                          PATCH  /movies/:id(.:format)                                  movies#update
                          PUT    /movies/:id(.:format)                                  movies#update
                          DELETE /movies/:id(.:format)                                  movies#destroy
+             puzzles_new GET    /puzzles/new(.:format)                                 puzzles#new
+            puzzles_show GET    /puzzles/show(.:format)                                puzzles#show
