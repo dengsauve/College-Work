@@ -24,12 +24,14 @@ class PuzzlesController < ApplicationController
   # POST /puzzles
   # POST /puzzles.json
   def create
-  #   @puzzle = Puzzle.new(puzzle_params)
-
     @puzzle_name = params[:puzzle_name]
     @word_list = params[:word_list]
 
+    pdf = Puzzle.new( @puzzle_name, @word_list)
 
+    send_data pdf.render, filename: "#{@puzzle_name}.pdf", type: 'application/pdf'
+
+  #   @puzzle = Puzzle.new(puzzle_params)
   #   respond_to do |format|
   #     if @puzzle.save
   #       format.html { redirect_to @puzzle, notice: 'Puzzle was successfully created.' }
@@ -39,7 +41,7 @@ class PuzzlesController < ApplicationController
   #       format.json { render json: @puzzle.errors, status: :unprocessable_entity }
   #     end
   #   end
-  # end
+  end
 
   # PATCH/PUT /puzzles/1
   # PATCH/PUT /puzzles/1.json
@@ -75,5 +77,5 @@ class PuzzlesController < ApplicationController
     def puzzle_params
       params.require(:puzzle).permit(:new, :show)
     end
-  end
+
 end

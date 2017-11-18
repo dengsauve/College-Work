@@ -1,3 +1,5 @@
+<% tinymce %>
+
 <div class="col-md-6 col-md-push-3 text-left">
 
   <h1>Product</h1>
@@ -90,7 +92,7 @@
 
       <div class="form-group">
         <%= form.label :review_text %>
-        <%= form.text_area :comment, class: 'form-control', id: :product_review_comment %>
+        <%= form.text_area :comment, class: 'tinymce', id: :product_review_comment %>
       </div>
 
       <div class="form-group">

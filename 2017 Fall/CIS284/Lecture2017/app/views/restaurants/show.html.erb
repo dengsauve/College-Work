@@ -1,3 +1,4 @@
+<% tinymce %>
 <p id="notice"><%= notice %></p>
 
 <h1>Restaurant</h1>
@@ -80,7 +81,7 @@
 
   <div class="form-group">
     <%= form.label :review_text %>
-    <%= form.text_area :review_text, class: 'form-control', id: :review_review_text %>
+    <%= form.text_area :review_text, class: 'tinymce', id: :review_review_text %>
   </div>
 
   <div class="form-group">
