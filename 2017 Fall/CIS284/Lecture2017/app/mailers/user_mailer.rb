@@ -8,7 +8,8 @@ class UserMailer < ApplicationMailer
   def contact_email
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    # mail to: "to@example.org"
+    mail to: "dengsauve@yahoo.com"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

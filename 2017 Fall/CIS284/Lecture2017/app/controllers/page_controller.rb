@@ -27,6 +27,8 @@ class PageController < ApplicationController
     ]
     @selected_product = params['products']
 
+    @submit = params['commit']
+
 
     if @name != nil && @name.to_s.strip == ''
       flash.now[:name_error] = "Name is Required!"
@@ -34,6 +36,11 @@ class PageController < ApplicationController
 
     if @email != nil && @email.to_s.strip == ''
       flash.now[:email_error] = "Email is Required!"
+    end
+
+    if @submit == 'Submit Question'
+      #send an email
+      UserMailer.contact_email.deliver_now
     end
 
   end
