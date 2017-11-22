@@ -1,5 +1,11 @@
 <?php
 
+$todaysDate = date('Y-m-d H:n:s');
+
+if( empty($datePosted) ){
+  $datePosted = $todaysDate;
+}
+
 $newForm = <<<END_OF_EDIT_FORM
 
 

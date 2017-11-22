@@ -63,7 +63,11 @@ if( !empty($_POST['submit']) ){
   }
 }
 
+$db = db_connect();
+$sql = "select * from blogs order by datePosted desc limit 1";
 
+$result = $db->query($sql);
+list($id, $title, $author, $date, $text ) = $result->fetch_row();
 
 $formAction = 'blog.php';
 
@@ -74,11 +78,15 @@ $formAction = 'blog.php';
 
   <hr/>
 
+  <div class="well">
+    <?php
+      echo "<h3>$title</h3>";
+      echo "<h5>by: $author</h5>";
+      echo "<p>$text</p>";
+    ?>
+  </div>
 
-
-  <?php
-    include 'includes/blogForm.php';
-  ?>
+  <a href="blog_new.php" class="btn btn-success">Create New Post</a>
 
 </div>
 <?php
