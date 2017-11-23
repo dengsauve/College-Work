@@ -12,6 +12,15 @@ include 'includes/functions.php';
 include 'includes/header.php';
 
 $db = db_connect();
+
+$delete_id = $_GET["id"];
+if( !empty($delete_id) ){
+  // Create SQL query to delete blog with passed id
+  $sql = "delete from blogs where `blogs_id`=$delete_id";
+  //Execute the query
+  $result = $db->query($sql);
+}
+
 $sql = "select * from blogs";
 
 $result = $db->query($sql);
@@ -38,12 +47,14 @@ echo $tableHead;
 
 while( list($id, $title, $author, $date, $text) = $result->fetch_row() ){
   echo "<tr>\n";
-  echo "<td>$title</td><td>$author</td><td>$date</td>";
-  echo "<td class='text-right'><a href='blog_edit.php?id=$id' class='btn btn-info btn-xs'>Edit</a>";
-  echo " <a href='blog_delete.php?id=$id' class='btn btn-danger btn-xs'>Delete</a></td>";
+  echo "<td><a href='blog_show.php?id=$id'>" . $title . "</a></td>";
+  echo "<td>$author</td><td>$date</td>";
+  echo "<td class='text-right'><a href='blog_update.php?id=$id' class='btn btn-info btn-xs'>Update</a>";
+  echo " <a href='blog_all.php?id=$id' class='btn btn-danger btn-xs'>Delete</a></td>";
   echo "</tr>\n";
 }
 
 echo "</tbody>\n</table>\n</div>";
+echo "<a href=\"blog_new.php\" class=\"btn btn-success pull-left\">Create New Post</a>";
 
 include 'includes/footer.php';

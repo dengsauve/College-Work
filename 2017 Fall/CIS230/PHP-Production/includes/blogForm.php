@@ -37,7 +37,7 @@ $newForm = <<<END_OF_EDIT_FORM
   </section>
   
   <input type="submit" name="submit" value="Save Changes" class="btn btn-primary">
-  <a href="article.php?id=$id" class="btn btn-default">Cancel</a>
+  <a href="blog_all.php" class="btn btn-default">Back</a>
   
 </form>
 

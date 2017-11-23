@@ -71,24 +71,32 @@ list($id, $title, $author, $date, $text ) = $result->fetch_row();
 
 $formAction = 'blog.php';
 
+$createdMessage = $_GET['msg'];
+
 ?>
 
 <div class="col-xs-12 col-md-8 col-md-offset-2">
+  <p class="help-block"><?php echo $createdMessage; ?></p>
   <h1>Blog</h1>
 
   <hr/>
 
-  <div class="well">
+  <div class="well text-left">
     <?php
       echo "<h3>$title</h3>";
       echo "<h5>by: $author</h5>";
-      echo "<p>$text</p>";
+      echo "<p>" . nl2br($text) . "</p>";
     ?>
   </div>
 
-  <a href="blog_new.php" class="btn btn-success">Create New Post</a>
+
+  <a href="blog_new.php" class="btn btn-success pull-left" id="create-post-button">Create New Post</a>
+  <a href="blog_all.php" class="btn btn-info pull-left" id="see-posts-button">See All Blog Posts</a>
+
+
 
 </div>
+
 <?php
 
 include 'includes/footer.php';

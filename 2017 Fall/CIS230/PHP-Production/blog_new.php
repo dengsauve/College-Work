@@ -1,6 +1,6 @@
 <?php
 
-$title = "Blog";
+$title = "New Blog";
 
 ob_start();
 
@@ -10,13 +10,15 @@ include 'includes/header.php';
 $title='';
 
 $published = date('Y-m-d H:i:s');
+// Connect to db
+$db = db_connect();
 
 if( !empty($_POST['submit']) ){
   // Get variables
-  $title = $_POST['title'];
-  $author = $_POST['author'];
-  $blogText = $_POST['blogText'];
-  $datePosted = $_POST['published'];
+  $title = mysqli_real_escape_string( $db, $_POST['title'] );
+  $author = mysqli_real_escape_string( $db, $_POST['author'] );
+  $blogText = mysqli_real_escape_string( $db, $_POST['blogText'] );
+  $datePosted = mysqli_real_escape_string( $db, $_POST['published'] );
 
   // check for errors
   $errorsFound = false;
@@ -47,8 +49,6 @@ if( !empty($_POST['submit']) ){
   }
 
   if( !$errorsFound ) {
-    // Connect to db
-    $db = db_connect();
     // Insert new record Query
     $sql = "insert into blogs (blogs_id, title, author, datePosted, blog_text)
                         values (null, '$title', '$author', '$datePosted', '$blogText')";
@@ -56,9 +56,14 @@ if( !empty($_POST['submit']) ){
     $result = $db->query($sql);
     // Grab id of record created
     $id = $db->insert_id;
+    if( empty($id) ){
+      $createdMessage = "Failed to create blog entry";
+    }else{
+      $createdMessage = "Created blog entry";
+    }
     // Redirect
     ob_clean();
-    header("Location: /blog.php");
+    header("Location: /blog.php?msg=$createdMessage");
     exit;
   }
 }

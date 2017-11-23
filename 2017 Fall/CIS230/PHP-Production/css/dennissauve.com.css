@@ -39,6 +39,12 @@ article.blog{
 }
 */
 
+#create-post-button,
+#see-posts-button,
+#comment-button{
+  margin: auto 10px 15px auto;
+}
+
 article p{
   text-align: left;
 }
