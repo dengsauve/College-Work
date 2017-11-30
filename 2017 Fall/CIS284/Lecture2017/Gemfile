@@ -36,7 +36,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-#gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+
+# Solution to fix bcrypt not loading - b/c rails is buggy af with this
+# .First of all comment out # gem bcrypt, '3.1.11' and run bundle install.
+# After that uninstall the gem with gem uninstall bcrypt.
+# Then re-install gem install bcrypt --platform=ruby.
+# The important part, un-comment gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw] and then bundle install.
+# Thats it. Note the mingw part at the end.This should be the key.
+gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
