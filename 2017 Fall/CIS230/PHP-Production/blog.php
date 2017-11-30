@@ -89,8 +89,11 @@ $createdMessage = $_GET['msg'];
     ?>
   </div>
 
-
-  <a href="blog_new.php" class="btn btn-success pull-left" id="create-post-button">Create New Post</a>
+<?php
+  if( !empty($_SESSION["user"]) ){
+    echo '<a href="blog_new.php" class="btn btn-success pull-left" id="create-post-button">Create New Post</a>';
+  }
+?>
   <a href="blog_all.php" class="btn btn-info pull-left" id="see-posts-button">See All Blog Posts</a>
 
 

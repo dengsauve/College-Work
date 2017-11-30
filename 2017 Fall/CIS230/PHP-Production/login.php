@@ -14,7 +14,6 @@ if( !empty($_POST["submit"]) ) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password = mysqli_real_escape_string($db, $_POST['pwd']);
   $remember = mysqli_real_escape_string($db, $_POST['remember']);
-  $rememberChecked = $remember == "remember" ? 'checked="Checked"' : '';
 
   // check password on email
   $sql = "select * from users where email='$email'";
@@ -23,6 +22,7 @@ if( !empty($_POST["submit"]) ) {
 
   if( password_verify($password, $password_crypt) ){
     $_SESSION["email"] = $email;
+    $_SESSION["user"] = $name;
 
     //redirect to the top page
     ob_clean();
@@ -31,6 +31,8 @@ if( !empty($_POST["submit"]) ) {
     $error_message = "Unknown Credentials - Please Try Again";
   }
 }
+
+//echo password_hash("424242", PASSWORD_DEFAULT);
 
 ?>
 
@@ -46,10 +48,6 @@ if( !empty($_POST["submit"]) ) {
     <div class="form-group">
       <label for="pwd">Password:</label>
       <input type="password" class="form-control" id="pwd" name="pwd" value="<?php echo ($remembered ? $pwd : ''); ?>">
-    </div>
-    <div class="form-group">
-      <label for="remember">Remember me</label>
-      <input type="checkbox" id="remember" name="remember" value="remember" <?php echo $rememberChecked; ?> >
     </div>
     <input type="submit" name="submit" value="login" class="btn btn-primary">
   </form>

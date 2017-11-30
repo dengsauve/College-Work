@@ -25,6 +25,11 @@ $sql = "select * from blogs";
 
 $result = $db->query($sql);
 
+$adminString = "";
+if( !empty($_SESSION["user"]) ){
+  $adminString = "<th></th>";
+}
+
 $tableHead = <<<END_OF_TABLE_HEAD
 <h2>$title</h2>
 <hr />
@@ -36,7 +41,7 @@ $tableHead = <<<END_OF_TABLE_HEAD
         <th>Title</th>
         <th>Author</th>
         <th>Date</th>
-        <th></th>
+        $adminString
       </tr>
     </thead>
     <tbody>  
@@ -49,12 +54,16 @@ while( list($id, $title, $author, $date, $text) = $result->fetch_row() ){
   echo "<tr>\n";
   echo "<td><a href='blog_show.php?id=$id'>" . $title . "</a></td>";
   echo "<td>$author</td><td>$date</td>";
-  echo "<td class='text-right'><a href='blog_update.php?id=$id' class='btn btn-info btn-xs'>Update</a>";
-  echo " <a href='blog_all.php?id=$id' class='btn btn-danger btn-xs'>Delete</a></td>";
+  if( !empty($_SESSION["user"]) ){
+    echo "<td class='text-right'><a href='blog_update.php?id=$id' class='btn btn-info btn-xs'>Update</a>";
+    echo " <a href='blog_all.php?id=$id' class='btn btn-danger btn-xs'>Delete</a></td>";
+  }
   echo "</tr>\n";
 }
 
 echo "</tbody>\n</table>\n</div>";
-echo "<a href=\"blog_new.php\" class=\"btn btn-success pull-left\">Create New Post</a>";
+if( !empty($_SESSION["user"]) ) {
+  echo "<a href=\"blog_new.php\" class=\"btn btn-success pull-left\">Create New Post</a>";
+}
 
 include 'includes/footer.php';

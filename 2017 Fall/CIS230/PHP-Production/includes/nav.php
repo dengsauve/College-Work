@@ -36,8 +36,14 @@
           <ul class="dropdown-menu">
             <li <?php echo ($title == "Blog" ? "class=\"active\"" : ""); ?>><a href="/blog.php">Latest Blog</a></li>
             <li <?php echo ($title == "All Blogs" ? "class=\"active\"" : ""); ?>><a href="/blog_all.php">All Blogs</a></li>
-            <li role="separator" class="divider"></li>
-            <li <?php echo ($title == "New Blog" ? "class=\"active\"" : ""); ?>><a href="/blog_new.php">New Blog Post</a></li>
+            <?php
+              if( !empty($_SESSION["user"]) ) {
+                echo '<li role="separator" class="divider"></li>';
+                echo "<li ";
+                echo($title == "New Blog" ? 'class="active"' : '');
+                echo "><a href='blog_new.php'>New Blog Post</a></li>";
+              }
+            ?>
           </ul>
         </li>
         <li <?php echo ($title == "Calendar" ? "class=\"active\"" : ""); ?>><a href="/calendar.php">Calendar</a></li>
@@ -74,6 +80,7 @@
             <li <?php echo ($title == "Preferences" ? "class=\"active\"" : ""); ?>><a href="/preferences.php">Preferences</a></li>
             <li role="separator" class="divider"></li>
             <li <?php echo ($title == "Login" ? "class=\"active\"" : ""); ?>><a href="/login.php">Login</a></li>
+            <?php if( !empty($_SESSION["user"]) ){ echo "<li><a href='/logout.php'>Logout</a></li>" ;}?>
           </ul>
         </li>
       </ul>

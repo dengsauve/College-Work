@@ -65,8 +65,8 @@ $website = "Dennis Sauve"
 
   <section class="starter-template">
 <?php
-if( !empty($_SESSION["email"]) ){
-  $_userEmail = $_SESSION["email"];
-  echo "<p class='text-left help-block'>Welcome $_userEmail</p>";
+if( !empty($_SESSION["user"]) ){
+  $_user = $_SESSION["user"];
+  echo "<p class='text-left help-block'>Welcome $_user</p>";
 }
 ?>
