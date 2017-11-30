@@ -18,7 +18,7 @@
         <%= current_page?( controller: "/page", action: "calendar" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Calendar", calendar_path %> </li>
         <%= current_page?( controller: "/page", action: "contact_us" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Contact Us", page_contact_us_path %> </li>
         <%= current_page?( controller: "/page", action: "preferences" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Preferences", page_preferences_path %> </li>
-        <%= current_page?( controller: "/products", action: "index" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Products", products_path %> </li>
+        <%= current_page?( controller: "/stores", action: "index" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Store", stores_path %> </li>
         <%= current_page?( controller: "/restaurants", action: "index" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Restaurants", restaurants_path %> </li>
         <% if user_signed_in? %>
           <li role="presentation" class="dropdown">
