@@ -8,13 +8,20 @@
 
 include 'functions.php';
 
+$allClear = true;
+$sent_message = '';
 $submit = $_POST['submit'];
+
+if( empty($submit) ){
+  $allClear = false;
+}
 
 // Handle Name Input Data
 $name = $_POST['name'];
 $name_error = '';
 if (empty($name) && !empty($submit)){
   $name_error = '<p class="help-block">Please enter a name</p>';
+  $allClear = false;
 }
 
 // Handle Email Input Data
@@ -22,15 +29,36 @@ $email = $_POST['email'];
 $email_error = '';
 if (empty($email) && !empty($submit)){
   $email_error = '<p class="help-block">Please enter an email address</p>';
+  $allClear = false;
 }
 
 //Handle Question Input Data
 $question = $_POST['question'];
 
+if( $allClear ){
+
+  $to = "dengsauve@yahoo.com; $email";
+  $subject = "Question From User";
+  $message = $question;
+  $headers = "From: Prod Questions <phpprod@dennissauve.com>\r\n";
+  // add a blind carbon copy
+  //$headers .= "BCC: dave.jones@SCC.SPOKANE.EDU\r\n";
+
+  $sent = mail( $to, $subject, $message, $headers );
+  if($sent == 1){
+    $sent_message = '<p class="help-block">Question was sent!</p>';
+  }
+  else{
+    $sent_message = '<p class="help-block">Question was not sent!</p>';
+  }
+
+}
+
+
 ?>
 
 <form action="/contactus.php" method="post" class="text-left col-md-6 col-md-offset-3">
-
+  <?php echo $sent_message; ?>
   <hr/>
 
   <div class="form-group">
