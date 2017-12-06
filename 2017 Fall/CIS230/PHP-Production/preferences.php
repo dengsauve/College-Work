@@ -12,6 +12,7 @@ if( !empty($_POST['submit']) )
   $lastName = mysqli_real_escape_string($db, $_POST['lastName']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $subscribe = mysqli_real_escape_string($db, $_POST['subscribe']);
+  $subscribed = $subscribe == "checked";
 
   $noErrors = true;
 
@@ -32,12 +33,29 @@ if( !empty($_POST['submit']) )
 
   if($noErrors)
   {
+    // Check to see if email exists in table
+    $sql = "select count(*) as total from subscribers where email_address='$email'";
+    $result = $db->query($sql);
+    list($total) = $result->fetch_row();
 
+    if($total == 0){
+      // Add subscriber to subscribers table
+      $sql = "insert into subscribers values (NULL, '$firstName', '$lastName', '$email', '$subscribed')";
+      $result = $db->query($sql);
+    }
+    else
+    {
+      // Inform user they're a subscriber
+      $msg = "You're already a subscriber!";
+    }
   }
 }
 
 $title = "Preferences";
 include 'includes/header.php';
+
+echo $msg;
+
 ?>
 
 <h1>Preferences</h1>
