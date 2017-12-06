@@ -37,8 +37,9 @@ $question = $_POST['question'];
 
 if( $allClear ){
 
-  $to = "dengsauve@yahoo.com; $email";
-  $subject = "Question From User";
+  // Send questions to admin
+  $to = "dengsauve@yahoo.com";
+  $subject = "Question From $name";
   $message = $question;
   $headers = "From: Prod Questions <phpprod@dennissauve.com>\r\n";
   // add a blind carbon copy
@@ -51,6 +52,14 @@ if( $allClear ){
   else{
     $sent_message = '<p class="help-block">Question was not sent!</p>';
   }
+
+  // Send the Thank you email!
+  $to = $email;
+  $subject = "Thank you for your Question";
+  $message = "$name, Your question is very important to us. We'll be sure to respond to you within a timely manner.";
+  $headers = "From: Prod Questions <phpprod@dennissauve.com>\r\n";
+
+  $sent = mail( $to, $subject, $message, $headers );
 
 }
 
