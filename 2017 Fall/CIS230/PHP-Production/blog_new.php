@@ -63,7 +63,7 @@ if( !empty($_POST['submit']) ){
     }
     // Redirect
     ob_clean();
-    header("Location: /blog.php?msg=$createdMessage");
+    header("Location: /blog_send.php?id=$id");
     exit;
   }
 }

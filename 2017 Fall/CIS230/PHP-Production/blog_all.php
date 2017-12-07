@@ -27,7 +27,7 @@ $result = $db->query($sql);
 
 $adminString = "";
 if( !empty($_SESSION["user"]) ){
-  $adminString = "<th></th>";
+  $adminString = "<th class='text-right'>Controls</th>";
 }
 
 $tableHead = <<<END_OF_TABLE_HEAD
@@ -55,7 +55,8 @@ while( list($id, $title, $author, $date, $text) = $result->fetch_row() ){
   echo "<td><a href='blog_show.php?id=$id'>" . $title . "</a></td>";
   echo "<td>$author</td><td>$date</td>";
   if( !empty($_SESSION["user"]) ){
-    echo "<td class='text-right'><a href='blog_update.php?id=$id' class='btn btn-info btn-xs'>Update</a>";
+    echo "<td class='text-right'><a href='blog_send.php?id=$id' class='btn btn-xs btn-success'>Send as Newsletter</a>";
+    echo " <a href='blog_update.php?id=$id' class='btn btn-info btn-xs'>Update</a>";
     echo " <a href='blog_all.php?id=$id' class='btn btn-danger btn-xs'>Delete</a></td>";
   }
   echo "</tr>\n";
