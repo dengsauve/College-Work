@@ -74,12 +74,11 @@ img.product-image{
   max-height: 200px;
   max-width: 90%;
   border-radius: 15px;
-  float: right;
 }
 
 img.product-thumb{
-  max-height: 35px;
-  max-width: 35px;
+  height: 50px;
+  width: 50px;
   border-radius: 5px;
 }
 

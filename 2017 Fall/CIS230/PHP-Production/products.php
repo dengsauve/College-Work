@@ -12,7 +12,10 @@ $page_head = <<<END_OF_PAGE_HEAD
 <h1>Products</h1>
 <hr/>
 
-<div class="table-responsive">
+<div class="col-xs-12">
+  <a href="product_new.php" class="btn btn-success pull-left">Add New Product</a>
+</div>
+<div class="table-responsive col-xs-12">
   <table class="table text-left">
     <thead>
       <tr>
@@ -23,6 +26,7 @@ $page_head = <<<END_OF_PAGE_HEAD
         <th class="text-right">Price</th>
         <th class="text-right">Cost</th>
         <th class="text-right">Qty.</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -42,13 +46,20 @@ while( list($id, $name, $description, $price, $cost, $quantity, $image, $thumbna
       <tr>
         <td>$id</td>
         <td><img src='$thumbnail' alt='thumbnail' class='product-thumb' /></td>
-        <td>$name</td>
+        <td><a href='product.php?id=$id'>$name</a></td>
         <td>$description</td>
         <td class='text-right'>$$price</td>
         <td class='text-right'>$$cost</td>
         <td class='text-right'>$quantity</td>
-      </tr>
   ";
+  if( !empty($_SESSION['user']) )
+  {
+    echo "<td>
+            <a href='product_edit.php?id=$id' class='btn btn-info btn-xs'>Update</a> 
+            <a href='product_delete.php?id=$id' class='btn btn-danger btn-xs'>Delete</a>
+          </td>";
+  }
+  echo "</tr>";
 }
 
 $page_foot = <<<END_OF_PAGE_FOOT
