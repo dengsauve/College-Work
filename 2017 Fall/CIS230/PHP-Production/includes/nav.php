@@ -83,6 +83,18 @@
             <?php if( !empty($_SESSION["user"]) ){ echo "<li><a href='/logout.php'>Logout</a></li>" ;}?>
           </ul>
         </li>
+        <?php if( !empty($_SESSION["user"]) ){
+          echo '<li role="presentation" class="dropdown">';
+          echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            Admin <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">';
+          echo "<li><a href='/subscribers.php'>Subscribers</a></li>";
+          echo '</ul>
+        </li>';
+
+        }
+        ?>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
