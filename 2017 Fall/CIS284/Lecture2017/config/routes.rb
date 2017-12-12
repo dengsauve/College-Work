@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :blog_comments
+  resources :blogs
   resources :product_reviews
   resources :articles
   devise_for :users

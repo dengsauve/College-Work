@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav">
         <%= current_page?( controller: "/movies", action: "index" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Movies", movies_path %> </li>
         <%= current_page?( controller: "/articles", action: "index" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Articles", articles_path %> </li>
-        <%= current_page?( controller: "/page", action: "blog" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Blog", page_blog_path %> </li>
+        <%= current_page?( controller: "/blogs", action: "index" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Blogs", blogs_path %> </li>
         <%= current_page?( controller: "/page", action: "calendar" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Calendar", calendar_path %> </li>
         <%= current_page?( controller: "/page", action: "contact_us" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Contact Us", page_contact_us_path %> </li>
         <%= current_page?( controller: "/page", action: "preferences" ) ? "<li class='active'>".html_safe : "<li>".html_safe %><%= link_to "Preferences", page_preferences_path %> </li>
