@@ -6,20 +6,24 @@
 Currently studying in a two year (then 4 year) software development program, this repo will be the source of all my work.
 
 ### Current Enrollment
-* Mobile Development IV
-* Ruby on Rails
-* PHP
-* ASP.NET
+* Advanced ASP.NET
+* Android I
+* JavaScript/Jquery
+* Agile Development
 
 ### Past Enrollment
+* iOS I
+* iOS II
+* PHP
+* Ruby on Rails
+* Ruby I
+* Ruby II
+* ASP.NET
+* C# I
+* C# II
 * HTML/CSS I
 * HTML/CSS II
 * DBMS/SQL
-* Ruby I
-* Ruby II
-* C# I
-* C# II
-* Mobile Development I
 * Photoshop
 * Interpersonal Communication
 
