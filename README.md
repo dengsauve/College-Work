@@ -5,6 +5,12 @@
 
 Currently studying in a two year (then 4 year) software development program, this repo will be the source of all my work.
 
+### SCC Certifications
+* .NET Developer
+* Computer Science
+* Web Design
+* iOS Mobile Development
+
 ### Current Enrollment
 * Advanced ASP.NET
 * Android I
