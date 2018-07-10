@@ -12,12 +12,11 @@ Currently studying in a two year (then 4 year) software development program, thi
 * iOS Mobile Development
 
 ### Current Enrollment
-* Advanced ASP.NET
+
+### Past Enrollment
 * Android I
 * JavaScript/Jquery
 * Agile Development
-
-### Past Enrollment
 * iOS I
 * iOS II
 * PHP
