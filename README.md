@@ -3,7 +3,7 @@
 ## SCC Software Development
 #### All code by Dennis Sauve, not for use by other students' homework assignments.
 
-Currently studying in a two year (then 4 year) software development program, this repo will be the source of all my work.
+Currently studying in a 4 year Bachelor's of Science in Computer Science program, this repo will be the source of all my work.
 
 ### SCC Certifications
 * .NET Developer
@@ -12,6 +12,9 @@ Currently studying in a two year (then 4 year) software development program, thi
 * iOS Mobile Development
 
 ### Current Enrollment
+* Java I
+* Calc I
+* Phys I
 
 ### Past Enrollment
 * Android I
@@ -35,7 +38,5 @@ Currently studying in a two year (then 4 year) software development program, thi
 ## Classes Outside of Spokane Community College
 ### Eastern Washington University
 * Python I
-* Java I
-* Java II
 * Economics 100
 * PSYC 100
